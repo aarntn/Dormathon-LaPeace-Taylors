@@ -1,0 +1,22 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="390" height="150" viewBox="0 0 390 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Map" clip-path="url(#clip0_0_36)">
+<path id="Vector" d="M390 0H0V150H390V0Z" fill="#EEF1F7"/>
+<g id="Vector_2">
+<path d="M0 40L390 70ZM0 110L390 95ZM90 0L130 150ZM250 0L230 150Z" fill="black"/>
+<path d="M0 40L390 70M0 110L390 95M90 0L130 150M250 0L230 150" stroke="white" stroke-width="8"/>
+</g>
+<path id="Vector_3" d="M40 30C90 40 120 70 170 78C220 86 260 90 300 112C340 134 340 128 352 126" stroke="#1B2A4E" stroke-width="5" stroke-linecap="round"/>
+<path id="Vector_4" d="M40 37C43.866 37 47 33.866 47 30C47 26.134 43.866 23 40 23C36.134 23 33 26.134 33 30C33 33.866 36.134 37 40 37Z" fill="#239A6C" stroke="white" stroke-width="3"/>
+<path id="Vector_5" d="M352 133C355.866 133 359 129.866 359 126C359 122.134 355.866 119 352 119C348.134 119 345 122.134 345 126C345 129.866 348.134 133 352 133Z" fill="#1B2A4E" stroke="white" stroke-width="3"/>
+<path id="Vector_6" d="M214 90C217.314 90 220 87.3137 220 84C220 80.6863 217.314 78 214 78C210.686 78 208 80.6863 208 84C208 87.3137 210.686 90 214 90Z" fill="#E8A317" stroke="white" stroke-width="2.5"/>
+<path id="Vector_7" d="M262 102C265.314 102 268 99.3137 268 96C268 92.6863 265.314 90 262 90C258.686 90 256 92.6863 256 96C256 99.3137 258.686 102 262 102Z" fill="#EF4F44" stroke="white" stroke-width="2.5"/>
+<path id="Vector_8" d="M120 60.5C122.485 60.5 124.5 58.4853 124.5 56C124.5 53.5147 122.485 51.5 120 51.5C117.515 51.5 115.5 53.5147 115.5 56C115.5 58.4853 117.515 60.5 120 60.5Z" fill="#797979" stroke="white" stroke-width="2"/>
+<path id="Vector_9" d="M300 116.5C302.485 116.5 304.5 114.485 304.5 112C304.5 109.515 302.485 107.5 300 107.5C297.515 107.5 295.5 109.515 295.5 112C295.5 114.485 297.515 116.5 300 116.5Z" fill="#797979" stroke="white" stroke-width="2"/>
+<path id="Vector_10" d="M320 124.5C322.485 124.5 324.5 122.485 324.5 120C324.5 117.515 322.485 115.5 320 115.5C317.515 115.5 315.5 117.515 315.5 120C315.5 122.485 317.515 124.5 320 124.5Z" fill="#797979" stroke="white" stroke-width="2"/>
+</g>
+<defs>
+<clipPath id="clip0_0_36">
+<rect width="390" height="150" fill="white"/>
+</clipPath>
+</defs>
+</svg>

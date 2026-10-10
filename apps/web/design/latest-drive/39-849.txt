@@ -1,0 +1,152 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/eba2de48-7309-47ca-8cf7-7105e1c146b7";
+const imgGroup = `${assetPathPrefix}/c0773.svg`;
+const imgIndicators = `${assetPathPrefix}/4c1f7.svg`;
+const imgTrack = `${assetPathPrefix}/d663f.svg`;
+const imgLevel = `${assetPathPrefix}/a4bc7.svg`;
+const imgArt = `${assetPathPrefix}/1afbb.svg`;
+const imgGroup1 = `${assetPathPrefix}/d86f4.svg`;
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default";
+  style?: "Light";
+};
+
+function Button({ className, label = "Button", state = "Default", style = "Light" }: ButtonProps) {
+  return (
+    <div className={className || "bg-[var(--bg\\/card,white)] content-stretch cursor-pointer flex h-[56px] items-center justify-center relative rounded-[18px] w-[390px]"} data-node-id="27:7">
+      <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[18px] text-[color:var(--brand\/navy,#1b2a4e)] tracking-[-0.1152px] whitespace-nowrap" data-node-id="27:8">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+type IconButtonProps = {
+  className?: string;
+  icon?: "Back";
+  theme?: "Dark";
+};
+
+function IconButton({ className, icon = "Back", theme = "Dark" }: IconButtonProps) {
+  return (
+    <div className={className || "bg-[rgba(255,255,255,0.14)] content-stretch flex items-center justify-center relative rounded-[20px] size-[40px]"} data-node-id="27:27">
+      <div className="overflow-clip relative shrink-0 size-[20px]" data-node-id="27:28" data-name="icon/back">
+        <div className="absolute bottom-1/4 left-[20.83%] right-[20.83%] top-1/4" data-node-id="27:29" data-name="Group">
+          <div className="absolute inset-[-7.92%_-6.79%]">
+            <img alt="" className="block max-w-none size-full" src={imgGroup} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+type StatusBarProps = {
+  className?: string;
+  theme?: "Dark";
+};
+
+function StatusBar({ className, theme = "Dark" }: StatusBarProps) {
+  return (
+    <div className={className || "h-[54px] relative w-[430px]"} data-node-id="27:145">
+      <p className="[word-break:break-word] absolute font-['SF_Pro:Semibold'] font-[590] leading-[normal] left-[52px] text-[17px] text-white top-[18px] tracking-[-0.408px] whitespace-nowrap" data-node-id="27:146" style={{ fontVariationSettings: '"wdth" 100' }}>
+        9:41
+      </p>
+      <div className="absolute bg-black h-[36px] left-[153px] rounded-[18px] top-[11px] w-[123.999px]" data-node-id="27:147" data-name="Dynamic Island" />
+      <div className="absolute h-[13px] left-[308px] top-[21px] w-[70px]" data-node-id="27:148" data-name="Indicators">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIndicators} />
+      </div>
+    </div>
+  );
+}
+
+export default function Component04QuickEyeCheck() {
+  return (
+    <div className="bg-[var(--drive\/bg,#0b1220)] relative size-full" data-node-id="39:849" data-name="04 Quick eye check">
+      <StatusBar className="absolute h-[54px] left-0 top-0 w-[430px]" />
+      <div className="absolute content-stretch flex flex-col gap-[20px] items-start left-0 overflow-clip pb-[24px] pt-[8px] px-[20px] top-[54px] w-[430px]" data-node-id="39:861" data-name="Content">
+        <IconButton className="bg-[rgba(255,255,255,0.14)] content-stretch cursor-pointer flex items-center justify-center relative rounded-[20px] shrink-0 size-[40px]" />
+        <div className="content-stretch flex flex-col gap-[8px] items-center overflow-clip relative shrink-0 w-full" data-node-id="39:866" data-name="Steps">
+          <div className="content-stretch flex gap-[6px] h-[4px] items-start overflow-clip relative shrink-0 w-[160px]" data-node-id="39:867" data-name="Frame">
+            <div className="bg-[var(--drive\/accent,#3bc48d)] flex-[1_0_0] h-[4px] min-w-px relative rounded-[2px]" data-node-id="39:868" data-name="Rectangle" />
+            <div className="bg-[var(--drive\/accent,#3bc48d)] flex-[1_0_0] h-[4px] min-w-px relative rounded-[2px]" data-node-id="39:869" data-name="Rectangle" />
+            <div className="bg-[var(--drive\/accent,#3bc48d)] flex-[1_0_0] h-[4px] min-w-px relative rounded-[2px]" data-node-id="39:870" data-name="Rectangle" />
+          </div>
+          <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[normal] not-italic relative shrink-0 text-[12px] text-[color:var(--drive\/text-secondary,#95a0b3)] tracking-[0.0024px] whitespace-nowrap" data-node-id="39:871">
+            Before you drive · 3 of 3
+          </p>
+        </div>
+        <div className="[word-break:break-word] content-stretch flex flex-col gap-[8px] items-center not-italic overflow-clip relative shrink-0 text-center w-full" data-node-id="39:872" data-name="Heading">
+          <p className="font-['Inter:Bold'] font-bold leading-[normal] relative shrink-0 text-[28px] text-[color:var(--text\/inverse,white)] tracking-[-0.2632px] w-full" data-node-id="39:873">
+            Quick eye check
+          </p>
+          <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[16px] text-[color:var(--drive\/text-secondary,#95a0b3)] tracking-[-0.0784px] w-full" data-node-id="39:874">
+            Look ahead, then blink twice. This adjusts to the light in your car today.
+          </p>
+        </div>
+        <div className="h-[280px] overflow-clip relative shrink-0 w-[390px]" data-node-id="39:875" data-name="Check progress">
+          <div className="absolute left-[65px] size-[260px] top-[10px]" data-node-id="39:876" data-name="Track">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgTrack} />
+          </div>
+          <div className="absolute left-[65px] size-[260px] top-[10px]" data-node-id="39:877" data-name="Level">
+            <div className="absolute inset-[0_0_0_7.78%]">
+              <img alt="" className="block max-w-none size-full" src={imgLevel} />
+            </div>
+          </div>
+          <div className="absolute h-[55px] left-[120px] top-[70px] w-[150px]" data-node-id="39:878" data-name="Eye landmarks">
+            <div className="absolute h-[55px] left-0 top-0 w-[149.999px]" data-node-id="I39:878;27:187" data-name="Art">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgArt} />
+            </div>
+          </div>
+          <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Inter:Bold'] font-bold leading-[normal] left-[195.5px] not-italic text-[28px] text-[color:var(--text\/inverse,white)] text-center top-[138px] tracking-[-0.2632px] whitespace-nowrap" data-node-id="39:900">
+            Blink twice
+          </p>
+          <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[1.4] left-[195.5px] not-italic text-[14px] text-[color:var(--drive\/text-secondary,#95a0b3)] text-center top-[180px] tracking-[-0.042px] whitespace-nowrap" data-node-id="39:901">
+            1 of 2
+          </p>
+        </div>
+        <div className="bg-[var(--drive\/card,#141e30)] content-stretch flex flex-col gap-[12px] items-start overflow-clip p-[18px] relative rounded-[20px] shrink-0 w-full" data-node-id="39:902" data-name="Check steps">
+          <div className="content-stretch flex gap-[12px] items-center overflow-clip relative shrink-0 w-full" data-node-id="39:903" data-name="Frame">
+            <div className="bg-[var(--drive\/accent,#3bc48d)] content-stretch flex items-center justify-center overflow-clip relative rounded-[12px] shrink-0 size-[24px]" data-node-id="39:904" data-name="Frame">
+              <div className="overflow-clip relative shrink-0 size-[14px]" data-node-id="39:905" data-name="icon/check">
+                <div className="absolute inset-[31.25%_20.83%_29.17%_20.83%]" data-node-id="39:906" data-name="Group">
+                  <div className="absolute inset-[-15.79%_-10.71%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup1} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/inverse,white)] tracking-[-0.042px] whitespace-nowrap" data-node-id="39:908">
+              Looked ahead for 3 seconds
+            </p>
+          </div>
+          <div className="content-stretch flex gap-[12px] items-center overflow-clip relative shrink-0 w-full" data-node-id="39:909" data-name="Frame">
+            <div className="border-2 border-[var(--drive\/accent,#3bc48d)] border-solid relative rounded-[12px] shrink-0 size-[24px]" data-node-id="39:910" data-name="Frame" />
+            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/inverse,white)] tracking-[-0.042px] whitespace-nowrap" data-node-id="39:911">
+              Blink twice
+            </p>
+          </div>
+          <div className="content-stretch flex gap-[12px] items-center overflow-clip relative shrink-0 w-full" data-node-id="39:912" data-name="Frame">
+            <div className="bg-[var(--drive\/line,#22304a)] relative rounded-[12px] shrink-0 size-[24px]" data-node-id="39:913" data-name="Frame" />
+            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--drive\/text-secondary,#95a0b3)] tracking-[-0.042px] whitespace-nowrap" data-node-id="39:914">
+              Ready to drive
+            </p>
+          </div>
+        </div>
+      </div>
+      <Button className="absolute bg-[var(--bg\/card,white)] content-stretch cursor-pointer flex h-[56px] items-center justify-center left-[20px] rounded-[18px] top-[842px] w-[390px]" label="Start driving" />
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Label/Small: Font(family: "Inter", style: Medium, size: 12, weight: 500, lineHeight: 100, letterSpacing: 0.019999999552965164), Heading/Large: Font(family: "Inter", style: Bold, size: 28, weight: 700, lineHeight: 100, letterSpacing: -0.9399999976158142), Body/Regular: Font(family: "Inter", style: Regular, size: 16, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.49000000953674316), Body/Small: Font(family: "Inter", style: Regular, size: 14, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.30000001192092896), Body/Small Strong: Font(family: "Inter", style: Semi Bold, size: 14, weight: 600, lineHeight: 100, letterSpacing: -0.30000001192092896).
+Images and SVGs will be stored as constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

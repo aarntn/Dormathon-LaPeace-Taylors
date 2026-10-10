@@ -1,0 +1,231 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/cbf3e7e6-6830-4f32-b013-2bcc0dba1048";
+const imgPhaseHidden = `${assetPathPrefix}/9132f.svg`;
+const imgPhaseShown = `${assetPathPrefix}/4c185.svg`;
+const imgTrack = `${assetPathPrefix}/a54e1.svg`;
+const imgProgress = `${assetPathPrefix}/93bf5.svg`;
+const imgProgress1 = `${assetPathPrefix}/885bf.svg`;
+const imgProgress2 = `${assetPathPrefix}/762ce.svg`;
+const imgProgress3 = `${assetPathPrefix}/13a0f.svg`;
+const imgProgress4 = `${assetPathPrefix}/38549.svg`;
+const imgProgress5 = `${assetPathPrefix}/23f5b.svg`;
+const imgProgress6 = `${assetPathPrefix}/4c868.svg`;
+const imgProgress7 = `${assetPathPrefix}/04a56.svg`;
+const imgPhaseStart = `${assetPathPrefix}/8c467.svg`;
+const imgPhaseEnd = `${assetPathPrefix}/063a7.svg`;
+const imgColorGreenPhaseA = `${assetPathPrefix}/693b3.svg`;
+const imgColorGreenPhaseB = `${assetPathPrefix}/44a85.svg`;
+const imgColorRedPhaseA = `${assetPathPrefix}/d1016.svg`;
+const imgColorRedPhaseB = `${assetPathPrefix}/1a481.svg`;
+const imgToneDarkStep1 = `${assetPathPrefix}/c1db0.svg`;
+const imgToneDarkStep2 = `${assetPathPrefix}/7b010.svg`;
+const imgToneDarkStep3 = `${assetPathPrefix}/ab6c4.svg`;
+const imgToneLightStep1 = `${assetPathPrefix}/6cd6b.svg`;
+const imgToneLightStep2 = `${assetPathPrefix}/a53df.svg`;
+const imgToneLightStep3 = `${assetPathPrefix}/da616.svg`;
+
+type TapDotProps = {
+  className?: string;
+  phase?: "Hidden" | "Shown";
+};
+
+function TapDot({ className, phase = "Hidden" }: TapDotProps) {
+  const isShown = phase === "Shown";
+  return (
+    <div className={className || "relative size-[150px]"} id={isShown ? "node-185_1954" : "node-185_1951"}>
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={isShown ? imgPhaseShown : imgPhaseHidden} />
+    </div>
+  );
+}
+
+type ScanLineProps = {
+  className?: string;
+  phase?: "Top" | "Bottom";
+};
+
+function ScanLine({ className, phase = "Top" }: ScanLineProps) {
+  const isBottom = phase === "Bottom";
+  return (
+    <div className={className || "h-[380px] relative w-[350px]"} id={isBottom ? "node-185_1945" : "node-185_1942"}>
+      <div className={`absolute bg-gradient-to-b from-[rgba(59,196,141,0)] h-[30px] left-0 to-[rgba(59,196,141,0.35)] w-[350px] ${isBottom ? "top-[314px]" : "top-[-14px]"}`} id={isBottom ? "node-185_1946" : "node-185_1943"} data-name="Glow" />
+      <div className={`${String.raw`absolute bg-[var(--drive\/accent,#3bc48d)] h-[2px] left-0 rounded-[1px] w-[350px] `}${isBottom ? "top-[344px]" : "top-[16px]"}`} id={isBottom ? "node-185_1947" : "node-185_1944"} data-name="Line" />
+    </div>
+  );
+}
+
+type WaveformProps = {
+  className?: string;
+  phase?: "A" | "B" | "C";
+};
+
+function Waveform({ className, phase = "A" }: WaveformProps) {
+  const isB = phase === "B";
+  const isC = phase === "C";
+  return (
+    <div className={className || "h-[48px] relative w-[330px]"} id={isC ? "node-185_1901" : isB ? "node-185_1864" : "node-185_1827"}>
+      <div className={`${String.raw`absolute bg-[var(--brand\/navy,#1b2a4e)] left-0 rounded-[3px] w-[6px] `}${isC ? "h-[48px] top-0" : isB ? "h-[42px] top-[3px]" : "h-[14px] top-[17px]"}`} id={isC ? "node-185_1902" : isB ? "node-185_1865" : "node-185_1828"} data-name="Bar 1" />
+      <div className={`${String.raw`absolute bg-[var(--brand\/navy,#1b2a4e)] left-[9.25px] rounded-[3px] w-[6px] `}${isC ? "h-[20px] top-[14px]" : isB ? "h-[27px] top-[10.5px]" : "h-[24px] top-[12px]"}`} id={isC ? "node-185_1903" : isB ? "node-185_1866" : "node-185_1829"} data-name="Bar 2" />
+      <div className={`${String.raw`absolute bg-[var(--brand\/navy,#1b2a4e)] left-[18.5px] rounded-[3px] w-[6px] `}${isC ? "h-[43px] top-[2.5px]" : isB ? "h-[46px] top-px" : "h-[18px] top-[15px]"}`} id={isC ? "node-185_1904" : isB ? "node-185_1867" : "node-185_1830"} data-name="Bar 3" />
+      <div className={`${String.raw`absolute bg-[var(--brand\/navy,#1b2a4e)] left-[27.75px] rounded-[3px] w-[6px] `}${isC ? "h-[37px] top-[5.5px]" : isB ? "h-[19px] top-[14.5px]" : "h-[32px] top-[8px]"}`} id={isC ? "node-185_1905" : isB ? "node-185_1868" : "node-185_1831"} data-name="Bar 4" />
+      <div className={`${String.raw`absolute bg-[var(--brand\/navy,#1b2a4e)] left-[37px] rounded-[3px] w-[6px] `}${isC ? "h-[28px] top-[10px]" : isB ? "h-[48px] top-0" : "h-[22px] top-[13px]"}`} id={isC ? "node-185_1906" : isB ? "node-185_1869" : "node-185_1832"} data-name="Bar 5" />
+      <div className={`${String.raw`absolute bg-[var(--brand\/navy,#1b2a4e)] left-[46.25px] rounded-[3px] w-[6px] `}${isC ? "h-[47px] top-[0.5px]" : isB ? "h-[15px] top-[16.5px]" : "h-[40px] top-[4px]"}`} id={isC ? "node-185_1907" : isB ? "node-185_1870" : "node-185_1833"} data-name="Bar 6" />
+      <div className={`${String.raw`absolute bg-[var(--brand\/navy,#1b2a4e)] left-[55.5px] rounded-[3px] w-[6px] `}${isC ? "h-[12px] top-[18px]" : isB ? "h-[47px] top-[0.5px]" : "h-[28px] top-[10px]"}`} id={isC ? "node-185_1908" : isB ? "node-185_1871" : "node-185_1834"} data-name="Bar 7" />
+      <div className={`${String.raw`absolute bg-[var(--brand\/navy,#1b2a4e)] left-[64.75px] rounded-[3px] w-[6px] `}${isC ? "h-[46px] top-px" : isB ? "h-[24px] top-[12px]" : "h-[36px] top-[6px]"}`} id={isC ? "node-185_1909" : isB ? "node-185_1872" : "node-185_1835"} data-name="Bar 8" />
+      <div className={`${String.raw`absolute bg-[var(--brand\/navy,#1b2a4e)] left-[74px] rounded-[3px] w-[6px] `}${isC ? "h-[31px] top-[8.5px]" : isB ? "h-[44px] top-[2px]" : "h-[20px] top-[14px]"}`} id={isC ? "node-185_1910" : isB ? "node-185_1873" : "node-185_1836"} data-name="Bar 9" />
+      <div className={`${String.raw`absolute bg-[var(--brand\/navy,#1b2a4e)] left-[83.25px] rounded-[3px] w-[6px] `}${isC ? "h-[34px] top-[7px]" : isB ? "h-[32px] top-[8px]" : "h-[30px] top-[9px]"}`} id={isC ? "node-185_1911" : isB ? "node-185_1874" : "node-185_1837"} data-name="Bar 10" />
+      <div className={`${String.raw`absolute bg-[var(--brand\/navy,#1b2a4e)] left-[92.5px] rounded-[3px] w-[6px] `}${isB ? "h-[39px] top-[4.5px]" : "h-[44px] top-[2px]"}`} id={isC ? "node-185_1912" : isB ? "node-185_1875" : "node-185_1838"} data-name="Bar 11" />
+      <div className={`${String.raw`absolute bg-[var(--brand\/navy,#1b2a4e)] left-[101.75px] rounded-[3px] w-[6px] `}${isC ? "h-[16px] top-[16px]" : isB ? "h-[39px] top-[4.5px]" : "h-[24px] top-[12px]"}`} id={isC ? "node-185_1913" : isB ? "node-185_1876" : "node-185_1839"} data-name="Bar 12" />
+      <div className={`${String.raw`absolute bg-[var(--brand\/navy,#1b2a4e)] left-[111px] rounded-[3px] w-[6px] `}${isC ? "h-[48px] top-0" : isB ? "h-[32px] top-[8px]" : "h-[16px] top-[16px]"}`} id={isC ? "node-185_1914" : isB ? "node-185_1877" : "node-185_1840"} data-name="Bar 13" />
+      <div className={`${String.raw`absolute bg-[var(--brand\/navy,#1b2a4e)] left-[120.25px] rounded-[3px] w-[6px] `}${isC ? "h-[24px] top-[12px]" : isB ? "h-[44px] top-[2px]" : "h-[34px] top-[7px]"}`} id={isC ? "node-185_1915" : isB ? "node-185_1878" : "node-185_1841"} data-name="Bar 14" />
+      <div className={`${String.raw`absolute bg-[var(--brand\/navy,#1b2a4e)] left-[129.5px] rounded-[3px] w-[6px] `}${isC ? "h-[40px] top-[4px]" : isB ? "h-[24px] top-[12px]" : "h-[28px] top-[10px]"}`} id={isC ? "node-185_1916" : isB ? "node-185_1879" : "node-185_1842"} data-name="Bar 15" />
+      <div className={`${String.raw`absolute bg-[var(--brand\/navy,#1b2a4e)] left-[138.75px] rounded-[3px] w-[6px] `}${isC ? "h-[40px] top-[4px]" : isB ? "h-[47px] top-[0.5px]" : "h-[20px] top-[14px]"}`} id={isC ? "node-185_1917" : isB ? "node-185_1880" : "node-185_1843"} data-name="Bar 16" />
+      <div className={`${String.raw`absolute bg-[var(--brand\/navy,#1b2a4e)] left-[148px] rounded-[3px] w-[6px] `}${isC ? "h-[24px] top-[12px]" : isB ? "h-[15px] top-[16.5px]" : "h-[38px] top-[5px]"}`} id={isC ? "node-185_1918" : isB ? "node-185_1881" : "node-185_1844"} data-name="Bar 17" />
+      <div className={`${String.raw`absolute bg-[var(--brand\/navy,#1b2a4e)] left-[157.25px] rounded-[3px] w-[6px] `}${["B", "C"].includes(phase) ? "h-[48px] top-0" : "h-[26px] top-[11px]"}`} id={isC ? "node-185_1919" : isB ? "node-185_1882" : "node-185_1845"} data-name="Bar 18" />
+      <div className={`${String.raw`absolute bg-[var(--brand\/navy,#1b2a4e)] left-[166.5px] rounded-[3px] w-[6px] `}${isC ? "h-[16px] top-[16px]" : isB ? "h-[19px] top-[14.5px]" : "h-[18px] top-[15px]"}`} id={isC ? "node-185_1920" : isB ? "node-185_1883" : "node-185_1846"} data-name="Bar 19" />
+      <div className={`${String.raw`absolute bg-[var(--brand\/navy,#1b2a4e)] left-[175.75px] rounded-[3px] w-[6px] `}${isC ? "h-[44px] top-[2px]" : isB ? "h-[46px] top-px" : "h-[32px] top-[8px]"}`} id={isC ? "node-185_1921" : isB ? "node-185_1884" : "node-185_1847"} data-name="Bar 20" />
+      <div className={`${String.raw`absolute bg-[var(--brand\/navy,#1b2a4e)] left-[185px] rounded-[3px] w-[6px] `}${isC ? "h-[34px] top-[7px]" : isB ? "h-[27px] top-[10.5px]" : "h-[24px] top-[12px]"}`} id={isC ? "node-185_1922" : isB ? "node-185_1885" : "node-185_1848"} data-name="Bar 21" />
+      <div className={`${String.raw`absolute bg-[var(--brand\/navy,#1b2a4e)] left-[194.25px] rounded-[3px] w-[6px] `}${isC ? "h-[31px] top-[8.5px]" : isB ? "h-[42px] top-[3px]" : "h-[14px] top-[17px]"}`} id={isC ? "node-185_1923" : isB ? "node-185_1886" : "node-185_1849"} data-name="Bar 22" />
+      <div className={`${String.raw`absolute bg-[var(--line\/default,#e8eaed)] left-[203.5px] rounded-[3px] w-[6px] `}${isC ? "h-[46px] top-px" : isB ? "h-[35px] top-[6.5px]" : "h-[20px] top-[14px]"}`} id={isC ? "node-185_1924" : isB ? "node-185_1887" : "node-185_1850"} data-name="Bar 23" />
+      <div className={`${String.raw`absolute bg-[var(--line\/default,#e8eaed)] left-[212.75px] rounded-[3px] w-[6px] `}${isC ? "h-[12px] top-[18px]" : isB ? "h-[36px] top-[6px]" : "h-[26px] top-[11px]"}`} id={isC ? "node-185_1925" : isB ? "node-185_1888" : "node-185_1851"} data-name="Bar 24" />
+      <div className={`${String.raw`absolute bg-[var(--line\/default,#e8eaed)] left-[222px] rounded-[3px] w-[6px] `}${isC ? "h-[47px] top-[0.5px]" : isB ? "h-[41px] top-[3.5px]" : "h-[18px] top-[15px]"}`} id={isC ? "node-185_1926" : isB ? "node-185_1889" : "node-185_1852"} data-name="Bar 25" />
+      <div className={`${String.raw`absolute bg-[var(--line\/default,#e8eaed)] left-[231.25px] rounded-[3px] w-[6px] `}${isC ? "h-[28px] top-[10px]" : isB ? "h-[29px] top-[9.5px]" : "h-[22px] top-[13px]"}`} id={isC ? "node-185_1927" : isB ? "node-185_1890" : "node-185_1853"} data-name="Bar 26" />
+      <div className={`${String.raw`absolute bg-[var(--line\/default,#e8eaed)] left-[240.5px] rounded-[3px] w-[6px] `}${isC ? "h-[13px] top-[17.5px]" : isB ? "h-[16px] top-[16px]" : "h-[10px] top-[19px]"}`} id={isC ? "node-185_1928" : isB ? "node-185_1891" : "node-185_1854"} data-name="Bar 27" />
+      <div className={`${String.raw`absolute bg-[var(--line\/default,#e8eaed)] left-[249.75px] rounded-[3px] w-[6px] `}${isC ? "h-[15px] top-[16.5px]" : isB ? "h-[7px] top-[20.5px]" : "h-[8px] top-[20px]"}`} id={isC ? "node-185_1929" : isB ? "node-185_1892" : "node-185_1855"} data-name="Bar 28" />
+      <div className={`${String.raw`absolute bg-[var(--line\/default,#e8eaed)] left-[259px] rounded-[3px] w-[6px] `}${isC ? "h-[7px] top-[20.5px]" : isB ? "h-[17px] top-[15.5px]" : "h-[10px] top-[19px]"}`} id={isC ? "node-185_1930" : isB ? "node-185_1893" : "node-185_1856"} data-name="Bar 29" />
+      <div className={`${String.raw`absolute bg-[var(--line\/default,#e8eaed)] left-[268.25px] rounded-[3px] `}${isC ? "h-[17px] top-[15.5px] w-[6px]" : "size-[6px] top-[21px]"}`} id={isC ? "node-185_1931" : isB ? "node-185_1894" : "node-185_1857"} data-name="Bar 30" />
+      <div className={`${String.raw`absolute bg-[var(--line\/default,#e8eaed)] left-[277.5px] rounded-[3px] w-[6px] `}${isC ? "h-[7px] top-[20.5px]" : isB ? "h-[17px] top-[15.5px]" : "h-[8px] top-[20px]"}`} id={isC ? "node-185_1932" : isB ? "node-185_1895" : "node-185_1858"} data-name="Bar 31" />
+      <div className={`${String.raw`absolute bg-[var(--line\/default,#e8eaed)] left-[286.75px] rounded-[3px] `}${isC ? "h-[15px] top-[16.5px] w-[6px]" : isB ? "h-[8px] top-[20px] w-[6px]" : "size-[6px] top-[21px]"}`} id={isC ? "node-185_1933" : isB ? "node-185_1896" : "node-185_1859"} data-name="Bar 32" />
+      <div className={`${String.raw`absolute bg-[var(--line\/default,#e8eaed)] left-[296px] rounded-[3px] w-[6px] `}${isC ? "h-[13px] top-[17.5px]" : isB ? "h-[16px] top-[16px]" : "h-[10px] top-[19px]"}`} id={isC ? "node-185_1934" : isB ? "node-185_1897" : "node-185_1860"} data-name="Bar 33" />
+      <div className={`${String.raw`absolute bg-[var(--line\/default,#e8eaed)] left-[305.25px] rounded-[3px] w-[6px] `}${isC ? "h-[10px] top-[19px]" : isB ? "h-[11px] top-[18.5px]" : "h-[8px] top-[20px]"}`} id={isC ? "node-185_1935" : isB ? "node-185_1898" : "node-185_1861"} data-name="Bar 34" />
+      <div className={`${String.raw`absolute bg-[var(--line\/default,#e8eaed)] left-[314.5px] rounded-[3px] `}${isC ? "h-[16px] top-[16px] w-[6px]" : isB ? "h-[14px] top-[17px] w-[6px]" : "size-[6px] top-[21px]"}`} id={isC ? "node-185_1936" : isB ? "node-185_1899" : "node-185_1862"} data-name="Bar 35" />
+      <div className={`${String.raw`absolute bg-[var(--line\/default,#e8eaed)] left-[323.75px] rounded-[3px] `}${isC ? "size-[6px] top-[21px]" : isB ? "h-[13px] top-[17.5px] w-[6px]" : "h-[8px] top-[20px] w-[6px]"}`} id={isC ? "node-185_1937" : isB ? "node-185_1900" : "node-185_1863"} data-name="Bar 36" />
+    </div>
+  );
+}
+
+type AlarmFlashProps = {
+  className?: string;
+  phase?: boolean;
+};
+
+function AlarmFlash({ className, phase = false }: AlarmFlashProps) {
+  const isPhase = phase;
+  return (
+    <div className={className || "h-[932px] relative w-[430px]"} id={isPhase ? "node-185_1822" : "node-185_1820"}>
+      <div className={`absolute h-[932px] left-0 top-0 w-[430px] ${isPhase ? "bg-[rgba(255,255,255,0.18)]" : "bg-[rgba(255,255,255,0)]"}`} id={isPhase ? "node-185_1823" : "node-185_1821"} data-name="Flash" />
+    </div>
+  );
+}
+
+type CountdownProps = {
+  className?: string;
+  seconds?: "8" | "7" | "6" | "5" | "4" | "3" | "2" | "1";
+};
+
+function Countdown({ className, seconds = "8" }: CountdownProps) {
+  const is1 = seconds === "1";
+  const is2 = seconds === "2";
+  const is3 = seconds === "3";
+  const is4 = seconds === "4";
+  const is5 = seconds === "5";
+  const is6 = seconds === "6";
+  const is7 = seconds === "7";
+  return (
+    <div className={className || "relative size-[160px]"} id={is1 ? "node-185_1808" : is2 ? "node-185_1804" : is3 ? "node-185_1800" : is4 ? "node-185_1796" : is5 ? "node-185_1792" : is6 ? "node-185_1788" : is7 ? "node-185_1784" : "node-185_1780"}>
+      <div className="absolute left-0 size-[160px] top-0" id={is1 ? "node-185_1809" : is2 ? "node-185_1805" : is3 ? "node-185_1801" : is4 ? "node-185_1797" : is5 ? "node-185_1793" : is6 ? "node-185_1789" : is7 ? "node-185_1785" : "node-185_1781"} data-name="Track">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgTrack} />
+      </div>
+      <div className="absolute left-0 size-[160px] top-0" id={is1 ? "node-185_1810" : is2 ? "node-185_1806" : is3 ? "node-185_1802" : is4 ? "node-185_1798" : is5 ? "node-185_1794" : is6 ? "node-185_1790" : is7 ? "node-185_1786" : "node-185_1782"} data-name="Progress">
+        {["7", "6", "5", "4", "3", "2", "1"].includes(seconds) && (
+          <div className={`absolute ${is1 ? "bottom-[86.41%] left-1/2 right-[20.61%] top-0" : is2 ? "bottom-[63.91%] left-1/2 right-[2.45%] top-0" : is3 ? "bottom-[34.55%] left-1/2 right-0 top-0" : is4 ? "bottom-[9.55%] left-1/2 right-0 top-0" : is5 ? "bottom-0 left-1/2 right-0 top-0" : is6 ? "inset-[0_0_0_20.61%]" : "inset-[0_0_0_2.45%]"}`}>
+            <img alt="" className="block max-w-none size-full" src={is1 ? imgProgress7 : is2 ? imgProgress6 : is3 ? imgProgress5 : is4 ? imgProgress4 : is5 ? imgProgress3 : is6 ? imgProgress2 : imgProgress1} />
+          </div>
+        )}
+        {seconds === "8" && <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgProgress} />}
+      </div>
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Inter:Bold'] font-bold leading-[normal] left-[80px] not-italic text-[44px] text-[color:var(--text\/inverse,white)] text-center top-[53.5px] tracking-[-0.88px] whitespace-nowrap" id={is1 ? "node-185_1811" : is2 ? "node-185_1807" : is3 ? "node-185_1803" : is4 ? "node-185_1799" : is5 ? "node-185_1795" : is6 ? "node-185_1791" : is7 ? "node-185_1787" : "node-185_1783"}>
+        {is1 ? "1" : is2 ? "2" : is3 ? "3" : is4 ? "4" : is5 ? "5" : is6 ? "6" : is7 ? "7" : "8"}
+      </p>
+    </div>
+  );
+}
+
+type ScanRingProps = {
+  className?: string;
+  phase?: "Start" | "End";
+};
+
+function ScanRing({ className, phase = "Start" }: ScanRingProps) {
+  const isEnd = phase === "End";
+  return (
+    <div className={className || "relative size-[300px]"} id={isEnd ? "node-185_1775" : "node-185_1772"}>
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={isEnd ? imgPhaseEnd : imgPhaseStart} />
+    </div>
+  );
+}
+
+type LiveDotProps = {
+  className?: string;
+  color?: "Green" | "Red";
+  phase?: "A" | "B";
+};
+
+function LiveDot({ className, color = "Green", phase = "A" }: LiveDotProps) {
+  const isGreenAndB = color === "Green" && phase === "B";
+  const isRedAndA = color === "Red" && phase === "A";
+  const isRedAndB = color === "Red" && phase === "B";
+  return (
+    <div className={className || "relative size-[16px]"} id={isRedAndB ? "node-185_1764" : isRedAndA ? "node-185_1761" : isGreenAndB ? "node-185_1758" : "node-185_1755"}>
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={isRedAndB ? imgColorRedPhaseB : isRedAndA ? imgColorRedPhaseA : isGreenAndB ? imgColorGreenPhaseB : imgColorGreenPhaseA} />
+    </div>
+  );
+}
+
+type ProgressBarProps = {
+  className?: string;
+  phase?: "Start" | "End";
+};
+
+function ProgressBar({ className, phase = "Start" }: ProgressBarProps) {
+  const isEnd = phase === "End";
+  return (
+    <div className={className || "h-[6px] relative w-[200px]"} id={isEnd ? "node-185_1750" : "node-185_1747"}>
+      <div className="absolute bg-[rgba(255,255,255,0.15)] h-[6px] left-0 rounded-[3px] top-0 w-[200px]" id={isEnd ? "node-185_1751" : "node-185_1748"} data-name="Track" />
+      <div className={`${String.raw`absolute bg-[var(--drive\/accent,#3bc48d)] h-[6px] left-0 rounded-[3px] top-0 `}${isEnd ? "w-[200px]" : "w-[10px]"}`} id={isEnd ? "node-185_1752" : "node-185_1749"} data-name="Fill" />
+    </div>
+  );
+}
+
+type LoadingDotsProps = {
+  className?: string;
+  step?: "1" | "2" | "3";
+  tone?: "Dark" | "Light";
+};
+
+function LoadingDots({ className, step = "1", tone = "Dark" }: LoadingDotsProps) {
+  const isDarkAnd2 = tone === "Dark" && step === "2";
+  const isDarkAnd3 = tone === "Dark" && step === "3";
+  const isLightAnd1 = tone === "Light" && step === "1";
+  const isLightAnd2 = tone === "Light" && step === "2";
+  const isLightAnd3 = tone === "Light" && step === "3";
+  return (
+    <div className={className || "h-[12px] relative w-[44px]"} id={isLightAnd3 ? "node-185_1736" : isLightAnd2 ? "node-185_1732" : isLightAnd1 ? "node-185_1728" : isDarkAnd3 ? "node-185_1724" : isDarkAnd2 ? "node-185_1720" : "node-185_1716"}>
+      <div className="absolute inset-[0_0_-8.33%_0]">
+        <img alt="" className="block max-w-none size-full" src={isLightAnd3 ? imgToneLightStep3 : isLightAnd2 ? imgToneLightStep2 : isLightAnd1 ? imgToneLightStep1 : isDarkAnd3 ? imgToneDarkStep3 : isDarkAnd2 ? imgToneDarkStep2 : imgToneDarkStep1} />
+      </div>
+    </div>
+  );
+}
+
+export default function Motion() {
+  return <div className="bg-[#f2f3f5] relative size-full" data-node-id="185:1715" data-name="Motion" />;
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Heading/Display: Font(family: "Inter", style: Bold, size: 44, weight: 700, lineHeight: 100, letterSpacing: -2).
+Images and SVGs will be stored as constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

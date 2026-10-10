@@ -1,0 +1,9 @@
+import {useEffect,useRef} from 'react';
+import {IconButton} from '../../components';
+
+/** An isolated design preview. It neither reads nor sends an SMS. */
+export function EmergencyReceipt({close}:{close:()=>void}){
+ const dialog=useRef<HTMLDialogElement>(null);
+ useEffect(()=>{const element=dialog.current;const overflow=document.body.style.overflow;document.body.style.overflow='hidden';element?.showModal();return()=>{element?.close();document.body.style.overflow=overflow;};},[]);
+ return <dialog className="emergency-receipt" ref={dialog} aria-label="Example emergency text on Mum’s phone" onCancel={e=>{e.preventDefault();close();}}><header><IconButton icon="Back" onClick={close}/><div className="receipt-avatar"><img src="/assets/drive-current/7d1c8.svg" width="30" height="30" alt=""/></div><h1 className="text-body-strong">BUCKL alerts</h1><p className="text-label-small">Text message · Mum’s phone</p></header><main><p className="text-label-small receipt-time">Today 11:24 pm</p><section><div className="receipt-bubble"><p className="text-body-regular">Aaron isn’t responding to his BUCKL alarm while driving. His last location is on the PLUS highway near Nilai, northbound.</p><p className="text-body-small-strong receipt-map">maps.google.com/?q=2.8162,101.7955</p></div><p className="text-label-small">Delivered</p></section><section><div className="receipt-bubble"><p className="text-body-regular">Live location is being shared until he says he’s OK. If you can’t reach him, call 999.</p></div><p className="text-label-small">11:24 pm</p></section><p className="text-label-small receipt-time">Today 11:31 pm</p><section><div className="receipt-bubble"><p className="text-body-regular">Aaron says he’s OK. He has stopped at the R&amp;R and is taking a break.</p></div><p className="text-label-small">11:31 pm</p></section></main></dialog>;
+}

@@ -43,3 +43,54 @@
 .trips-danger { color:var(--state-danger); }
 .trips-warning { color:var(--state-warning); }
 .trips-success { color:var(--state-success); }
+
+/* T1 Trips, T1b no drives yet, T2 When you get tired */
+.trips-pattern-head { display:flex;align-items:center;justify-content:space-between;color:var(--text-secondary); }
+.trips-pattern-head .trips-art { width:auto;height:auto;margin-right:6px; }
+.trips-pattern-note { color:var(--text-secondary); }
+.trips-bars { display:flex;align-items:flex-end;justify-content:space-between;height:48px; }
+.trips-bar { display:block;width:34px;height:4px;border-radius:6px;background:#c9d0dd; }
+.trips-bar--day { background:#c9d0dd; }
+.trips-bar--night { background:var(--state-warning-dot); }
+.trips-bars--large { height:auto;align-items:flex-end;min-height:110px; }
+.trips-bar-col { display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:6px; }
+.trips-bar-col small { color:var(--text-tertiary); }
+.trips-chart-head { display:flex;justify-content:space-between;align-items:center; }
+.trips-chart-head h2 { color:var(--text-secondary);font-size:inherit;font-weight:inherit; }
+.trips-group { display:flex;flex-direction:column;gap:12px; }
+.trips-dot { width:8px;height:8px;border-radius:4px;background:currentColor; }
+.trips-danger .trips-dot { background:var(--state-danger); }
+.trips-warning .trips-dot { background:var(--state-warning-dot); }
+.trips-success .trips-dot { background:var(--state-success); }
+.trips-empty .trips-content { gap:20px;padding-top:max(66px,calc(env(safe-area-inset-top,0px) + 12px)); }
+.trips-empty-art { display:flex;justify-content:center;padding:72px 0 8px; }
+.trips-empty-art img { width:288px;height:112px;opacity:.35; }
+.trips-empty-copy { display:flex;flex-direction:column;gap:8px;text-align:center; }
+.trips-empty-copy p { color:var(--text-secondary); }
+.trips-empty-cta { display:flex;justify-content:center;padding-top:8px; }
+.trips-empty-cta .button { width:240px; }
+
+/* T1 Trips, T1b no drives yet, T2 When you get tired */
+.trips-pattern-head { display:flex;align-items:center;justify-content:space-between;color:var(--text-secondary); }
+.trips-pattern-head .trips-art { width:auto;height:auto;margin-right:6px; }
+.trips-pattern-note { color:var(--text-secondary); }
+.trips-bars { display:flex;align-items:flex-end;justify-content:space-between;height:48px; }
+.trips-bar { display:block;width:34px;height:4px;border-radius:6px;background:#c9d0dd; }
+.trips-bar--night { background:var(--state-warning-dot); }
+.trips-bars--large { height:auto;align-items:flex-end;min-height:110px; }
+.trips-bar-col { display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:6px; }
+.trips-bar-col small { color:var(--text-tertiary); }
+.trips-chart-head { display:flex;justify-content:space-between;align-items:center; }
+.trips-chart-head h2 { color:var(--text-secondary);font-size:inherit;font-weight:inherit; }
+.trips-group { display:flex;flex-direction:column;gap:12px; }
+.trips-dot { width:8px;height:8px;border-radius:4px;background:currentColor; }
+.trips-danger .trips-dot { background:var(--state-danger); }
+.trips-warning .trips-dot { background:var(--state-warning-dot); }
+.trips-success .trips-dot { background:var(--state-success); }
+.trips-empty .trips-content { gap:20px;padding-top:max(66px,calc(env(safe-area-inset-top,0px) + 12px)); }
+.trips-empty-art { display:flex;justify-content:center;padding:72px 0 8px; }
+.trips-empty-art img { width:288px;height:112px;opacity:.35; }
+.trips-empty-copy { display:flex;flex-direction:column;gap:8px;text-align:center; }
+.trips-empty-copy p { color:var(--text-secondary); }
+.trips-empty-cta { display:flex;justify-content:center;padding-top:8px; }
+.trips-empty-cta .button { width:240px; }

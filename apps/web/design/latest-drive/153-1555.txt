@@ -1,0 +1,119 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/293e3761-f748-400b-a87e-dea662ee6401";
+const imgGroup = `${assetPathPrefix}/027af.svg`;
+const imgIndicators = `${assetPathPrefix}/a391f.svg`;
+const imgArt = `${assetPathPrefix}/7d1c8.svg`;
+
+type IconButtonProps = {
+  className?: string;
+  icon?: "Back";
+  theme?: "Light";
+};
+
+function IconButton({ className, icon = "Back", theme = "Light" }: IconButtonProps) {
+  return (
+    <div className={className || "bg-[var(--bg\\/card,white)] border border-[var(--line\\/default,#e8eaed)] border-solid content-stretch drop-shadow-[0px_6px_8px_rgba(0,0,0,0.06)] flex items-center justify-center relative rounded-[20px] size-[40px]"} data-node-id="27:14">
+      <div className="overflow-clip relative shrink-0 size-[20px]" data-node-id="27:15" data-name="icon/back">
+        <div className="absolute bottom-1/4 left-[20.83%] right-[20.83%] top-1/4" data-node-id="27:16" data-name="Group">
+          <div className="absolute inset-[-7.92%_-6.79%]">
+            <img alt="" className="block max-w-none size-full" src={imgGroup} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+type StatusBarProps = {
+  className?: string;
+  theme?: "Light";
+};
+
+function StatusBar({ className, theme = "Light" }: StatusBarProps) {
+  return (
+    <div className={className || "h-[54px] relative w-[430px]"} data-node-id="27:134">
+      <p className="[word-break:break-word] absolute font-['SF_Pro:Semibold'] font-[590] leading-[normal] left-[52px] text-[17px] text-[color:var(--text\/primary,#282828)] top-[18px] tracking-[-0.408px] whitespace-nowrap" data-node-id="27:135" style={{ fontVariationSettings: '"wdth" 100' }}>
+        9:41
+      </p>
+      <div className="absolute bg-black h-[36px] left-[153px] rounded-[18px] top-[11px] w-[123.999px]" data-node-id="27:136" data-name="Dynamic Island" />
+      <div className="absolute h-[13px] left-[308px] top-[21px] w-[70px]" data-node-id="27:137" data-name="Indicators">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIndicators} />
+      </div>
+    </div>
+  );
+}
+
+export default function Component08DWhatMumReceives() {
+  return (
+    <div className="bg-[var(--bg\/screen,#fcfcfe)] relative size-full" data-node-id="153:1555" data-name="08d What Mum receives">
+      <StatusBar className="absolute h-[54px] left-0 top-0 w-[430px]" />
+      <div className="absolute content-stretch flex flex-col gap-[6px] items-center left-0 overflow-clip pb-[14px] pt-[8px] px-[20px] top-[54px] w-[430px]" data-node-id="153:1567" data-name="Header">
+        <div className="content-stretch flex items-start overflow-clip relative shrink-0 w-full" data-node-id="153:1572" data-name="Top bar">
+          <IconButton className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch cursor-pointer drop-shadow-[0px_6px_8px_rgba(0,0,0,0.06)] flex items-center justify-center relative rounded-[20px] shrink-0 size-[40px]" />
+        </div>
+        <div className="bg-[var(--brand\/navy,#1b2a4e)] content-stretch flex items-center justify-center overflow-clip relative rounded-[28px] shrink-0 size-[56px]" data-node-id="153:1573" data-name="Avatar">
+          <div className="relative shrink-0 size-[30px]" data-node-id="153:1574" data-name="Logo mark">
+            <div className="absolute left-0 size-[30px] top-0" data-node-id="I153:1574;37:777" data-name="Art">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgArt} />
+            </div>
+          </div>
+        </div>
+        <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px] whitespace-nowrap" data-node-id="153:1582">
+          BUCKL alerts
+        </p>
+        <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[normal] not-italic relative shrink-0 text-[12px] text-[color:var(--text\/tertiary,#a6a6a6)] tracking-[0.0024px] whitespace-nowrap" data-node-id="153:1583">
+          Text message · Mum’s phone
+        </p>
+      </div>
+      <div className="absolute bg-[var(--bg\/field,#f2f3f5)] h-px left-0 top-[221.27px] w-[430px]" data-node-id="153:1584" data-name="Rectangle" />
+      <div className="absolute content-stretch flex flex-col gap-[10px] items-start left-0 overflow-clip px-[20px] py-[16px] top-[222.27px] w-[430px]" data-node-id="153:1585" data-name="Thread">
+        <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[normal] not-italic relative shrink-0 text-[12px] text-[color:var(--text\/tertiary,#a6a6a6)] text-center tracking-[0.0024px] whitespace-nowrap" data-node-id="153:1586">
+          Today 11:24 pm
+        </p>
+        <div className="[word-break:break-word] content-stretch flex flex-col gap-[4px] items-start not-italic overflow-clip relative shrink-0" data-node-id="153:1587" data-name="Bubble">
+          <div className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex flex-col gap-[6px] items-start overflow-clip px-[14px] py-[12px] relative rounded-[20px] shrink-0 w-[300px]" data-node-id="153:1588" data-name="Frame">
+            <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px] w-full" data-node-id="153:1589">
+              Aaron isn’t responding to his BUCKL alarm while driving. His last location is on the PLUS highway near Nilai, northbound.
+            </p>
+            <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] relative shrink-0 text-[14px] text-[color:var(--brand\/navy,#1b2a4e)] tracking-[-0.042px] w-full" data-node-id="153:1590">
+              maps.google.com/?q=2.8162,101.7955
+            </p>
+          </div>
+          <p className="font-['Inter:Medium'] font-medium leading-[normal] relative shrink-0 text-[12px] text-[color:var(--text\/tertiary,#a6a6a6)] tracking-[0.0024px] whitespace-nowrap" data-node-id="153:1591">
+            Delivered
+          </p>
+        </div>
+        <div className="content-stretch flex flex-col gap-[4px] items-start overflow-clip relative shrink-0" data-node-id="153:1592" data-name="Bubble">
+          <div className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex flex-col items-start overflow-clip px-[14px] py-[12px] relative rounded-[20px] shrink-0 w-[300px]" data-node-id="153:1593" data-name="Frame">
+            <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.4] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px] w-full" data-node-id="153:1594">
+              Live location is being shared until he says he’s OK. If you can’t reach him, call 999.
+            </p>
+          </div>
+          <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[normal] not-italic relative shrink-0 text-[12px] text-[color:var(--text\/tertiary,#a6a6a6)] tracking-[0.0024px] whitespace-nowrap" data-node-id="153:1595">
+            11:24 pm
+          </p>
+        </div>
+        <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[normal] not-italic relative shrink-0 text-[12px] text-[color:var(--text\/tertiary,#a6a6a6)] text-center tracking-[0.0024px] whitespace-nowrap" data-node-id="153:1596">
+          Today 11:31 pm
+        </p>
+        <div className="content-stretch flex flex-col gap-[4px] items-start overflow-clip relative shrink-0" data-node-id="153:1597" data-name="Bubble">
+          <div className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex flex-col items-start overflow-clip px-[14px] py-[12px] relative rounded-[20px] shrink-0 w-[300px]" data-node-id="153:1598" data-name="Frame">
+            <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.4] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px] w-full" data-node-id="153:1599">{`Aaron says he’s OK. He has stopped at the R&R and is taking a break.`}</p>
+          </div>
+          <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[normal] not-italic relative shrink-0 text-[12px] text-[color:var(--text\/tertiary,#a6a6a6)] tracking-[0.0024px] whitespace-nowrap" data-node-id="153:1600">
+            11:31 pm
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Body/Strong: Font(family: "Inter", style: Semi Bold, size: 16, weight: 600, lineHeight: 100, letterSpacing: -0.49000000953674316), Label/Small: Font(family: "Inter", style: Medium, size: 12, weight: 500, lineHeight: 100, letterSpacing: 0.019999999552965164), Body/Regular: Font(family: "Inter", style: Regular, size: 16, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.49000000953674316), Body/Small Strong: Font(family: "Inter", style: Semi Bold, size: 14, weight: 600, lineHeight: 100, letterSpacing: -0.30000001192092896).
+Images and SVGs will be stored as constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

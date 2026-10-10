@@ -1,0 +1,1121 @@
+{
+  "checkedAt": "2026-10-10T16:13:58.017Z",
+  "captured": [
+    {
+      "name": "home",
+      "path": "/drive/home",
+      "text": "M\n\nPerodua Myvi\n\nReady to drive\n2 things to check\nStay awake on the road\n\nA one-minute check before you go, then BUCKL watches your eyes and wakes you if they start to close.\n\nStart drive watch\nYour car needs attention\nWeak battery · brakes due for a check\nRecent trips\nPJ → UM\n24 min · alert the whole way",
+      "width": 430,
+      "broken": [],
+      "geometry": {
+        ".readiness-result__icon": null,
+        ".readiness-chip": null,
+        ".drive-heading": {
+          "x": 20,
+          "y": 357.796875,
+          "width": 390,
+          "height": 108
+        },
+        ".readiness-findings": null,
+        ".readiness-plan": null,
+        ".reading-ring": null,
+        ".reading-checks": null,
+        ".tap-test-progress": null,
+        ".tap-test-area": null,
+        ".readiness-loading__card": null,
+        ".passenger-icon": null,
+        ".passenger-why": null,
+        ".no-response-ring": null,
+        ".contact-alert-icon": null,
+        ".contact-alert-location": null,
+        ".summary-route": null,
+        ".summary-trip-stats": null,
+        ".summary-risk": null,
+        ".summary-chart": null,
+        ".drive-gauge": null,
+        ".drive-trip-stats": null,
+        ".drive-waze-card": null,
+        ".seatbelt-check": null,
+        ".app-frame__footer": {
+          "x": 20,
+          "y": 832,
+          "width": 390,
+          "height": 66
+        }
+      }
+    },
+    {
+      "name": "before",
+      "path": "/drive/before-you-drive",
+      "text": "Quick check before you go\n\nUnder a minute. It helps us judge how tired you are before you set off.\n\nHow long did you sleep last night?\nUnder 5 h\n5–6 h\n6–7 h\n7 h +\nHow long have you been awake?\nUnder 8 h\n8–12 h\n12–16 h\n16 h +\nHow alert do you feel?\nVery alert\nOK\nA bit tired\nVery tired\nHow long is the drive?\nUnder 30 min\n30–60 min\n1–2 h\n2 h +\nNext: a 15-second face reading, then a tap test\n\nWe look for slow blinks and yawning, then time how fast you react. Nothing is recorded.\n\nNext",
+      "width": 430,
+      "broken": [],
+      "geometry": {
+        ".readiness-result__icon": null,
+        ".readiness-chip": null,
+        ".drive-heading": {
+          "x": 20,
+          "y": 122,
+          "width": 390,
+          "height": 86
+        },
+        ".readiness-findings": null,
+        ".readiness-plan": null,
+        ".reading-ring": null,
+        ".reading-checks": null,
+        ".tap-test-progress": null,
+        ".tap-test-area": null,
+        ".readiness-loading__card": null,
+        ".passenger-icon": null,
+        ".passenger-why": null,
+        ".no-response-ring": null,
+        ".contact-alert-icon": null,
+        ".contact-alert-location": null,
+        ".summary-route": null,
+        ".summary-trip-stats": null,
+        ".summary-risk": null,
+        ".summary-chart": null,
+        ".drive-gauge": null,
+        ".drive-trip-stats": null,
+        ".drive-waze-card": null,
+        ".seatbelt-check": null,
+        ".app-frame__footer": {
+          "x": 20,
+          "y": 842,
+          "width": 390,
+          "height": 56
+        }
+      }
+    },
+    {
+      "name": "mount",
+      "path": "/drive/mount-your-phone",
+      "text": "Before you drive · 1 of 3\n\nMount your phone\n\nDo this while parked. The front camera needs a clear view of your eyes.\n\nBest\nOK on a vent\nToo low\n\nAt eye level, just left of the wheel\n\nAbout an arm’s length from your face\n\nNot blocking your view of the road\n\nI’m a passenger\nMy phone is mounted",
+      "width": 430,
+      "broken": [],
+      "geometry": {
+        ".readiness-result__icon": null,
+        ".readiness-chip": null,
+        ".drive-heading": {
+          "x": 20,
+          "y": 165,
+          "width": 390,
+          "height": 86.78125
+        },
+        ".readiness-findings": null,
+        ".readiness-plan": null,
+        ".reading-ring": null,
+        ".reading-checks": null,
+        ".tap-test-progress": null,
+        ".tap-test-area": null,
+        ".readiness-loading__card": null,
+        ".passenger-icon": null,
+        ".passenger-why": null,
+        ".no-response-ring": null,
+        ".contact-alert-icon": null,
+        ".contact-alert-location": null,
+        ".summary-route": null,
+        ".summary-trip-stats": null,
+        ".summary-risk": null,
+        ".summary-chart": null,
+        ".drive-gauge": null,
+        ".drive-trip-stats": null,
+        ".drive-waze-card": null,
+        ".seatbelt-check": null,
+        ".app-frame__footer": {
+          "x": 20,
+          "y": 842,
+          "width": 390,
+          "height": 56
+        }
+      }
+    },
+    {
+      "name": "lineup",
+      "path": "/drive/line-up-your-face",
+      "text": "Before you drive · 2 of 3\n\nLine up your face\n\nSit the way you normally drive. We’ll guide you.\n\nTurn your phone a little to the right\n\nSpoken aloud too\n\nFace in view\n\nBoth eyes visible\n\nYour right eye is cut off\n\nGood distance\n\nSeatbelt across your chest\nWaiting for both eyes",
+      "width": 430,
+      "broken": [],
+      "geometry": {
+        ".readiness-result__icon": null,
+        ".readiness-chip": null,
+        ".drive-heading": {
+          "x": 20,
+          "y": 165,
+          "width": 390,
+          "height": 64.390625
+        },
+        ".readiness-findings": null,
+        ".readiness-plan": null,
+        ".reading-ring": null,
+        ".reading-checks": null,
+        ".tap-test-progress": null,
+        ".tap-test-area": null,
+        ".readiness-loading__card": null,
+        ".passenger-icon": null,
+        ".passenger-why": null,
+        ".no-response-ring": null,
+        ".contact-alert-icon": null,
+        ".contact-alert-location": null,
+        ".summary-route": null,
+        ".summary-trip-stats": null,
+        ".summary-risk": null,
+        ".summary-chart": null,
+        ".drive-gauge": null,
+        ".drive-trip-stats": null,
+        ".drive-waze-card": null,
+        ".seatbelt-check": {
+          "x": 20,
+          "y": 746.984375,
+          "width": 390,
+          "height": 58
+        },
+        ".app-frame__footer": {
+          "x": 20,
+          "y": 842,
+          "width": 390,
+          "height": 56
+        }
+      }
+    },
+    {
+      "name": "quick",
+      "path": "/drive/quick-eye-check",
+      "text": "Before you drive · 3 of 3\n\nQuick eye check\n\nLook ahead, then blink twice. This adjusts to the light in your car today.\n\nBlink twice\n\n1 of 2\n\nLooked ahead for 3 seconds\n\nBlink twice\n\nReady to drive\n\nStart driving",
+      "width": 430,
+      "broken": [],
+      "geometry": {
+        ".readiness-result__icon": null,
+        ".readiness-chip": null,
+        ".drive-heading": {
+          "x": 20,
+          "y": 169,
+          "width": 390,
+          "height": 86.78125
+        },
+        ".readiness-findings": null,
+        ".readiness-plan": null,
+        ".reading-ring": null,
+        ".reading-checks": null,
+        ".tap-test-progress": null,
+        ".tap-test-area": null,
+        ".readiness-loading__card": null,
+        ".passenger-icon": null,
+        ".passenger-why": null,
+        ".no-response-ring": null,
+        ".contact-alert-icon": null,
+        ".contact-alert-location": null,
+        ".summary-route": null,
+        ".summary-trip-stats": null,
+        ".summary-risk": null,
+        ".summary-chart": null,
+        ".drive-gauge": {
+          "x": 20,
+          "y": 275.78125,
+          "width": 390,
+          "height": 280
+        },
+        ".drive-trip-stats": null,
+        ".drive-waze-card": null,
+        ".seatbelt-check": null,
+        ".app-frame__footer": {
+          "x": 20,
+          "y": 842,
+          "width": 390,
+          "height": 56
+        }
+      }
+    },
+    {
+      "name": "driving",
+      "path": "/drive/driving",
+      "text": "Eyes tracked\n\nControls available\n\nAlert\n\nEyes open, blinking normally\n\nDriving for\n\n42 min\n\nNext break\n\nin 18 min\n\nSpeed\n\n— km/h\n\nOpen Waze\nWe keep watching while it’s open\nEnd drive",
+      "width": 430,
+      "broken": [],
+      "geometry": {
+        ".readiness-result__icon": null,
+        ".readiness-chip": null,
+        ".drive-heading": null,
+        ".readiness-findings": null,
+        ".readiness-plan": null,
+        ".reading-ring": null,
+        ".reading-checks": null,
+        ".tap-test-progress": null,
+        ".tap-test-area": null,
+        ".readiness-loading__card": null,
+        ".passenger-icon": null,
+        ".passenger-why": null,
+        ".no-response-ring": null,
+        ".contact-alert-icon": null,
+        ".contact-alert-location": null,
+        ".summary-route": null,
+        ".summary-trip-stats": null,
+        ".summary-risk": null,
+        ".summary-chart": null,
+        ".drive-gauge": {
+          "x": 20,
+          "y": 110,
+          "width": 390,
+          "height": 320
+        },
+        ".drive-trip-stats": {
+          "x": 20,
+          "y": 454,
+          "width": 390,
+          "height": 88
+        },
+        ".drive-waze-card": {
+          "x": 20,
+          "y": 566,
+          "width": 390,
+          "height": 74
+        },
+        ".seatbelt-check": null,
+        ".app-frame__footer": {
+          "x": 20,
+          "y": 842,
+          "width": 390,
+          "height": 56
+        }
+      }
+    },
+    {
+      "name": "lost",
+      "path": "/drive/cant-see-your-eyes",
+      "text": "Eyes not found\n\nDriving 46 min\n\nCan’t see your eyes\n\nYour phone may have moved, or your head is turned away. Adjust it when it’s safe.\n\nTilt the phone up a little\n\nSpoken: “I can’t see your eyes. Adjust your phone when it’s safe.”\n\nWatching starts again on its own once your eyes are back in view.\n\nOK",
+      "width": 430,
+      "broken": [],
+      "geometry": {
+        ".readiness-result__icon": null,
+        ".readiness-chip": null,
+        ".drive-heading": {
+          "x": 20,
+          "y": 230,
+          "width": 390,
+          "height": 86.78125
+        },
+        ".readiness-findings": null,
+        ".readiness-plan": null,
+        ".reading-ring": null,
+        ".reading-checks": null,
+        ".tap-test-progress": null,
+        ".tap-test-area": null,
+        ".readiness-loading__card": null,
+        ".passenger-icon": null,
+        ".passenger-why": null,
+        ".no-response-ring": null,
+        ".contact-alert-icon": null,
+        ".contact-alert-location": null,
+        ".summary-route": null,
+        ".summary-trip-stats": null,
+        ".summary-risk": null,
+        ".summary-chart": null,
+        ".drive-gauge": null,
+        ".drive-trip-stats": null,
+        ".drive-waze-card": null,
+        ".seatbelt-check": null,
+        ".app-frame__footer": {
+          "x": 20,
+          "y": 788.8125,
+          "width": 390,
+          "height": 109.1875
+        }
+      }
+    },
+    {
+      "name": "tired",
+      "path": "/drive/getting-tired",
+      "text": "Signs of tiredness\n\nDriving 1 h 05 min\n\nTired\n\nSlow blinks · 3 yawns in 10 min\n\nTake a 15-minute break\n\nNext safe stop: R&R Seremban · 12 km · about 9 min\n\nGo to rest stop\n\nOpens in Waze · your saved places stay there\n\nSpoken: “You may be getting tired. Let’s take a 15-minute break at the next rest stop.”\n\nRemind me in 10 min",
+      "width": 430,
+      "broken": [],
+      "geometry": {
+        ".readiness-result__icon": null,
+        ".readiness-chip": null,
+        ".drive-heading": null,
+        ".readiness-findings": null,
+        ".readiness-plan": null,
+        ".reading-ring": null,
+        ".reading-checks": null,
+        ".tap-test-progress": null,
+        ".tap-test-area": null,
+        ".readiness-loading__card": null,
+        ".passenger-icon": null,
+        ".passenger-why": null,
+        ".no-response-ring": null,
+        ".contact-alert-icon": null,
+        ".contact-alert-location": null,
+        ".summary-route": null,
+        ".summary-trip-stats": null,
+        ".summary-risk": null,
+        ".summary-chart": null,
+        ".drive-gauge": {
+          "x": 20,
+          "y": 104,
+          "width": 390,
+          "height": 272
+        },
+        ".drive-trip-stats": null,
+        ".drive-waze-card": null,
+        ".seatbelt-check": null,
+        ".app-frame__footer": {
+          "x": 20,
+          "y": 842,
+          "width": 390,
+          "height": 56
+        }
+      }
+    },
+    {
+      "name": "alarm",
+      "path": "/drive/microsleep-alarm",
+      "text": "Wake up\n\nYour eyes closed for 1.8 seconds while driving.\n\nPull over and rest\n\nR&R Seremban · 4 km · about 3 min\n\nGo to rest stop\n\nOpens in Waze · your saved places stay there\n\nEnable on-device voice\n\nThe alarm keeps sounding until you tap below or say “I’m awake”.\n\nI'm awake",
+      "width": 430,
+      "broken": [],
+      "geometry": {
+        ".readiness-result__icon": null,
+        ".readiness-chip": null,
+        ".drive-heading": null,
+        ".readiness-findings": null,
+        ".readiness-plan": null,
+        ".reading-ring": null,
+        ".reading-checks": null,
+        ".tap-test-progress": null,
+        ".tap-test-area": null,
+        ".readiness-loading__card": null,
+        ".passenger-icon": null,
+        ".passenger-why": null,
+        ".no-response-ring": null,
+        ".contact-alert-icon": null,
+        ".contact-alert-location": null,
+        ".summary-route": null,
+        ".summary-trip-stats": null,
+        ".summary-risk": null,
+        ".summary-chart": null,
+        ".drive-gauge": null,
+        ".drive-trip-stats": null,
+        ".drive-waze-card": null,
+        ".seatbelt-check": null,
+        ".app-frame__footer": {
+          "x": 20,
+          "y": 788.8125,
+          "width": 390,
+          "height": 109.1875
+        }
+      }
+    },
+    {
+      "name": "maps",
+      "path": "/drive/waze-open-still-watching",
+      "text": "300 m\n\nTurn right onto Jalan Universiti\n\nStill watching your eyes\n\nTap to go back to BUCKL\n\n18 min\n\n14 km · arrive 4:22 pm",
+      "width": 430,
+      "broken": [],
+      "geometry": {
+        ".readiness-result__icon": null,
+        ".readiness-chip": null,
+        ".drive-heading": null,
+        ".readiness-findings": null,
+        ".readiness-plan": null,
+        ".reading-ring": null,
+        ".reading-checks": null,
+        ".tap-test-progress": null,
+        ".tap-test-area": null,
+        ".readiness-loading__card": null,
+        ".passenger-icon": null,
+        ".passenger-why": null,
+        ".no-response-ring": null,
+        ".contact-alert-icon": null,
+        ".contact-alert-location": null,
+        ".summary-route": null,
+        ".summary-trip-stats": null,
+        ".summary-risk": null,
+        ".summary-chart": null,
+        ".drive-gauge": null,
+        ".drive-trip-stats": null,
+        ".drive-waze-card": null,
+        ".seatbelt-check": null,
+        ".app-frame__footer": null
+      }
+    },
+    {
+      "name": "tired-maps",
+      "path": "/drive/tired-while-waze-is-open",
+      "text": "You look tired\n\nLong blinks for 2 minutes. Rest stop in 6 km.\n\nGo to rest stop\nI’m OK\n\n18 min\n\n14 km · arrive 4:22 pm",
+      "width": 430,
+      "broken": [],
+      "geometry": {
+        ".readiness-result__icon": null,
+        ".readiness-chip": null,
+        ".drive-heading": null,
+        ".readiness-findings": null,
+        ".readiness-plan": null,
+        ".reading-ring": null,
+        ".reading-checks": null,
+        ".tap-test-progress": null,
+        ".tap-test-area": null,
+        ".readiness-loading__card": null,
+        ".passenger-icon": null,
+        ".passenger-why": null,
+        ".no-response-ring": null,
+        ".contact-alert-icon": null,
+        ".contact-alert-location": null,
+        ".summary-route": null,
+        ".summary-trip-stats": null,
+        ".summary-risk": null,
+        ".summary-chart": null,
+        ".drive-gauge": null,
+        ".drive-trip-stats": null,
+        ".drive-waze-card": null,
+        ".seatbelt-check": null,
+        ".app-frame__footer": null
+      }
+    },
+    {
+      "name": "safe",
+      "path": "/drive/check-result",
+      "text": "Safe to drive\nYou’re good to go\n\nYour reactions are as sharp as usual.\n\nReaction time\n262 ms\nYour usual\n268 ms\nSleep last night\n7 h +\nAwake for\n8–12 h\nEyes\nNormal\nYou said\nOK\nTrip length\n30–60 min\nWe’ll still watch your eyes the whole way\n\nTiredness can build up on the road, even after a good night.\n\nA safety indication, not a medical diagnosis.\n\nMount my phone",
+      "width": 430,
+      "broken": [],
+      "geometry": {
+        ".readiness-result__icon": {
+          "x": 179,
+          "y": 114,
+          "width": 72,
+          "height": 72
+        },
+        ".readiness-chip": {
+          "x": 153.671875,
+          "y": 198,
+          "width": 122.65625,
+          "height": 29
+        },
+        ".drive-heading": {
+          "x": 20,
+          "y": 239,
+          "width": 390,
+          "height": 64
+        },
+        ".readiness-findings": {
+          "x": 20,
+          "y": 315,
+          "width": 390,
+          "height": 248
+        },
+        ".readiness-plan": {
+          "x": 20,
+          "y": 575,
+          "width": 390,
+          "height": 92.1875
+        },
+        ".reading-ring": null,
+        ".reading-checks": null,
+        ".tap-test-progress": null,
+        ".tap-test-area": null,
+        ".readiness-loading__card": null,
+        ".passenger-icon": null,
+        ".passenger-why": null,
+        ".no-response-ring": null,
+        ".contact-alert-icon": null,
+        ".contact-alert-location": null,
+        ".summary-route": null,
+        ".summary-trip-stats": null,
+        ".summary-risk": null,
+        ".summary-chart": null,
+        ".drive-gauge": null,
+        ".drive-trip-stats": null,
+        ".drive-waze-card": null,
+        ".seatbelt-check": null,
+        ".app-frame__footer": {
+          "x": 20,
+          "y": 842,
+          "width": 390,
+          "height": 56
+        }
+      }
+    },
+    {
+      "name": "caution",
+      "path": "/drive/check-result",
+      "text": "Caution\nMore tired than usual\n\nYou can drive, but plan a break.\n\nReaction time\n312 ms\nYour usual\n268 ms\nSleep last night\n6–7 h\nAwake for\n12–16 h\nEyes\nSlower blinks\nYou said\nA bit tired\nTrip length\n1–2 h\nWe’ve adjusted tonight’s drive\n\nThe alarm reacts sooner, and we’ll suggest a break after 30 minutes.\n\nA safety indication, not a medical diagnosis.\n\nNot driving now\nMount my phone",
+      "width": 430,
+      "broken": [],
+      "geometry": {
+        ".readiness-result__icon": {
+          "x": 179,
+          "y": 114,
+          "width": 72,
+          "height": 72
+        },
+        ".readiness-chip": {
+          "x": 169.828125,
+          "y": 198,
+          "width": 90.34375,
+          "height": 29
+        },
+        ".drive-heading": {
+          "x": 20,
+          "y": 239,
+          "width": 390,
+          "height": 64
+        },
+        ".readiness-findings": {
+          "x": 20,
+          "y": 315,
+          "width": 390,
+          "height": 248
+        },
+        ".readiness-plan": {
+          "x": 20,
+          "y": 575,
+          "width": 390,
+          "height": 92.1875
+        },
+        ".reading-ring": null,
+        ".reading-checks": null,
+        ".tap-test-progress": null,
+        ".tap-test-area": null,
+        ".readiness-loading__card": null,
+        ".passenger-icon": null,
+        ".passenger-why": null,
+        ".no-response-ring": null,
+        ".contact-alert-icon": null,
+        ".contact-alert-location": null,
+        ".summary-route": null,
+        ".summary-trip-stats": null,
+        ".summary-risk": null,
+        ".summary-chart": null,
+        ".drive-gauge": null,
+        ".drive-trip-stats": null,
+        ".drive-waze-card": null,
+        ".seatbelt-check": null,
+        ".app-frame__footer": {
+          "x": 20,
+          "y": 776,
+          "width": 390,
+          "height": 122
+        }
+      }
+    },
+    {
+      "name": "high",
+      "path": "/drive/check-result",
+      "text": "High risk\nPlease don’t drive yet\n\nYour reactions are much slower than usual.\n\nReaction time\n455 ms\nYour usual\n268 ms\nSleep last night\nUnder 5 h\nAwake for\n16 h +\nEyes\nLong blinks, yawning\nYou said\nVery tired\nTrip length\n2 h +\nA short rest helps most\n\nA 20-minute nap, then try the check again. If you must drive, we’ll watch extra closely.\n\nA safety indication, not a medical diagnosis.\n\nDrive anyway\nGet a ride instead\nRemind me in 20 min",
+      "width": 430,
+      "broken": [],
+      "geometry": {
+        ".readiness-result__icon": {
+          "x": 179,
+          "y": 114,
+          "width": 72,
+          "height": 72
+        },
+        ".readiness-chip": {
+          "x": 166.21875,
+          "y": 198,
+          "width": 97.5625,
+          "height": 29
+        },
+        ".drive-heading": {
+          "x": 20,
+          "y": 239,
+          "width": 390,
+          "height": 64
+        },
+        ".readiness-findings": {
+          "x": 20,
+          "y": 315,
+          "width": 390,
+          "height": 248
+        },
+        ".readiness-plan": {
+          "x": 20,
+          "y": 575,
+          "width": 390,
+          "height": 92.1875
+        },
+        ".reading-ring": null,
+        ".reading-checks": null,
+        ".tap-test-progress": null,
+        ".tap-test-area": null,
+        ".readiness-loading__card": null,
+        ".passenger-icon": null,
+        ".passenger-why": null,
+        ".no-response-ring": null,
+        ".contact-alert-icon": null,
+        ".contact-alert-location": null,
+        ".summary-route": null,
+        ".summary-trip-stats": null,
+        ".summary-risk": null,
+        ".summary-chart": null,
+        ".drive-gauge": null,
+        ".drive-trip-stats": null,
+        ".drive-waze-card": null,
+        ".seatbelt-check": null,
+        ".app-frame__footer": {
+          "x": 20,
+          "y": 776,
+          "width": 390,
+          "height": 122
+        }
+      }
+    },
+    {
+      "name": "face",
+      "path": "/drive/face-reading",
+      "text": "Quick face reading\n\nLook at the camera for 15 seconds\n\n9 s\n\nFace found\n\nBlinking a little slower than usual\n\nChecking for yawns\n\nNothing is recorded or uploaded",
+      "width": 430,
+      "broken": [],
+      "geometry": {
+        ".readiness-result__icon": null,
+        ".readiness-chip": null,
+        ".drive-heading": {
+          "x": 20,
+          "y": 120,
+          "width": 390,
+          "height": 64
+        },
+        ".readiness-findings": null,
+        ".readiness-plan": null,
+        ".reading-ring": {
+          "x": 65,
+          "y": 220,
+          "width": 300,
+          "height": 300
+        },
+        ".reading-checks": {
+          "x": 20,
+          "y": 599,
+          "width": 390,
+          "height": 136
+        },
+        ".tap-test-progress": null,
+        ".tap-test-area": null,
+        ".readiness-loading__card": null,
+        ".passenger-icon": null,
+        ".passenger-why": null,
+        ".no-response-ring": null,
+        ".contact-alert-icon": null,
+        ".contact-alert-location": null,
+        ".summary-route": null,
+        ".summary-trip-stats": null,
+        ".summary-risk": null,
+        ".summary-chart": null,
+        ".drive-gauge": null,
+        ".drive-trip-stats": null,
+        ".drive-waze-card": null,
+        ".seatbelt-check": null,
+        ".app-frame__footer": {
+          "x": 20,
+          "y": 878.40625,
+          "width": 390,
+          "height": 19.59375
+        }
+      }
+    },
+    {
+      "name": "tap",
+      "path": "/drive/tap-test",
+      "text": "Tap when the dot appears\n\nDon’t tap early. 18 seconds left.\n\nTaps\n\n7 of 12\n\nAverage so far\n\n312 ms",
+      "width": 430,
+      "broken": [],
+      "geometry": {
+        ".readiness-result__icon": null,
+        ".readiness-chip": null,
+        ".drive-heading": {
+          "x": 20,
+          "y": 118,
+          "width": 390,
+          "height": 64
+        },
+        ".readiness-findings": null,
+        ".readiness-plan": null,
+        ".reading-ring": null,
+        ".reading-checks": null,
+        ".tap-test-progress": {
+          "x": 20,
+          "y": 198,
+          "width": 390,
+          "height": 4
+        },
+        ".tap-test-area": {
+          "x": 20,
+          "y": 218,
+          "width": 390,
+          "height": 440
+        },
+        ".readiness-loading__card": null,
+        ".passenger-icon": null,
+        ".passenger-why": null,
+        ".no-response-ring": null,
+        ".contact-alert-icon": null,
+        ".contact-alert-location": null,
+        ".summary-route": null,
+        ".summary-trip-stats": null,
+        ".summary-risk": null,
+        ".summary-chart": null,
+        ".drive-gauge": null,
+        ".drive-trip-stats": null,
+        ".drive-waze-card": null,
+        ".seatbelt-check": null,
+        ".app-frame__footer": null
+      }
+    },
+    {
+      "name": "working",
+      "path": "/drive/working-out-your-result",
+      "text": "Tap when the dot appears\n\nDon’t tap early. 18 seconds left.\n\nTaps\n\n7 of 12\n\nAverage so far\n\n312 ms\n\nWorking out your result…\n\nComparing with your usual reaction time",
+      "width": 430,
+      "broken": [],
+      "geometry": {
+        ".readiness-result__icon": null,
+        ".readiness-chip": null,
+        ".drive-heading": {
+          "x": 20,
+          "y": 118,
+          "width": 390,
+          "height": 64
+        },
+        ".readiness-findings": null,
+        ".readiness-plan": null,
+        ".reading-ring": null,
+        ".reading-checks": null,
+        ".tap-test-progress": {
+          "x": 20,
+          "y": 198,
+          "width": 390,
+          "height": 4
+        },
+        ".tap-test-area": {
+          "x": 20,
+          "y": 218,
+          "width": 390,
+          "height": 440
+        },
+        ".readiness-loading__card": {
+          "x": 60,
+          "y": 388.90625,
+          "width": 310,
+          "height": 154.1875
+        },
+        ".passenger-icon": null,
+        ".passenger-why": null,
+        ".no-response-ring": null,
+        ".contact-alert-icon": null,
+        ".contact-alert-location": null,
+        ".summary-route": null,
+        ".summary-trip-stats": null,
+        ".summary-risk": null,
+        ".summary-chart": null,
+        ".drive-gauge": null,
+        ".drive-trip-stats": null,
+        ".drive-waze-card": null,
+        ".seatbelt-check": null,
+        ".app-frame__footer": null
+      }
+    },
+    {
+      "name": "route",
+      "path": "/drive/pick-your-route",
+      "text": "Pick your route\n\nBased on your check, we suggest a break about 40 minutes in.\n\nGoing to\nSafer route · 1 h 04 min\nPasses 2 rest stops and a 24-hour workshop\nFastest route · 58 min\nNo rest stop for the first 45 km\nOpens in Waze\n\nYour rest stops are added as stops on the way. BUCKL keeps watching while Waze is open.\n\nUse this route",
+      "width": 430,
+      "broken": [],
+      "geometry": {
+        ".readiness-result__icon": null,
+        ".readiness-chip": null,
+        ".drive-heading": {
+          "x": 20,
+          "y": 122,
+          "width": 390,
+          "height": 86.78125
+        },
+        ".readiness-findings": null,
+        ".readiness-plan": null,
+        ".reading-ring": null,
+        ".reading-checks": null,
+        ".tap-test-progress": null,
+        ".tap-test-area": null,
+        ".readiness-loading__card": null,
+        ".passenger-icon": null,
+        ".passenger-why": null,
+        ".no-response-ring": null,
+        ".contact-alert-icon": null,
+        ".contact-alert-location": null,
+        ".summary-route": null,
+        ".summary-trip-stats": null,
+        ".summary-risk": null,
+        ".summary-chart": null,
+        ".drive-gauge": null,
+        ".drive-trip-stats": null,
+        ".drive-waze-card": null,
+        ".seatbelt-check": null,
+        ".app-frame__footer": {
+          "x": 20,
+          "y": 842,
+          "width": 390,
+          "height": 56
+        }
+      }
+    },
+    {
+      "name": "passenger",
+      "path": "/drive/passenger-mode",
+      "text": "Passenger mode\n\nBUCKL won’t watch faces or sound alarms. Maps, car checks and trips still work.\n\nWhy this exists\n\nThe camera should only ever watch the driver. If the phone is with a passenger, switch this on so nobody gets a false alarm.\n\nSwitch to driver mode",
+      "width": 430,
+      "broken": [],
+      "geometry": {
+        ".readiness-result__icon": null,
+        ".readiness-chip": null,
+        ".drive-heading": {
+          "x": 20,
+          "y": 238,
+          "width": 390,
+          "height": 86
+        },
+        ".readiness-findings": null,
+        ".readiness-plan": null,
+        ".reading-ring": null,
+        ".reading-checks": null,
+        ".tap-test-progress": null,
+        ".tap-test-area": null,
+        ".readiness-loading__card": null,
+        ".passenger-icon": {
+          "x": 179,
+          "y": 146,
+          "width": 72,
+          "height": 72
+        },
+        ".passenger-why": {
+          "x": 20,
+          "y": 344,
+          "width": 390,
+          "height": 113.78125
+        },
+        ".no-response-ring": null,
+        ".contact-alert-icon": null,
+        ".contact-alert-location": null,
+        ".summary-route": null,
+        ".summary-trip-stats": null,
+        ".summary-risk": null,
+        ".summary-chart": null,
+        ".drive-gauge": null,
+        ".drive-trip-stats": null,
+        ".drive-waze-card": null,
+        ".seatbelt-check": null,
+        ".app-frame__footer": {
+          "x": 20,
+          "y": 842,
+          "width": 390,
+          "height": 56
+        }
+      }
+    },
+    {
+      "name": "countdown",
+      "path": "/drive/no-response",
+      "text": "7\nNo response\n\nWhen the timer ends, we send Mum your location.\n\nThe alarm keeps sounding. Tap below or say “I’m OK”.\n\nI’m OK, cancel",
+      "width": 430,
+      "broken": [],
+      "geometry": {
+        ".readiness-result__icon": null,
+        ".readiness-chip": null,
+        ".drive-heading": {
+          "x": 20,
+          "y": 290,
+          "width": 390,
+          "height": 64.390625
+        },
+        ".readiness-findings": null,
+        ".readiness-plan": null,
+        ".reading-ring": null,
+        ".reading-checks": null,
+        ".tap-test-progress": null,
+        ".tap-test-area": null,
+        ".readiness-loading__card": null,
+        ".passenger-icon": null,
+        ".passenger-why": null,
+        ".no-response-ring": {
+          "x": 135,
+          "y": 110,
+          "width": 160,
+          "height": 160
+        },
+        ".contact-alert-icon": null,
+        ".contact-alert-location": null,
+        ".summary-route": null,
+        ".summary-trip-stats": null,
+        ".summary-risk": null,
+        ".summary-chart": null,
+        ".drive-gauge": null,
+        ".drive-trip-stats": null,
+        ".drive-waze-card": null,
+        ".seatbelt-check": null,
+        ".app-frame__footer": {
+          "x": 20,
+          "y": 806.40625,
+          "width": 390,
+          "height": 91.59375
+        }
+      }
+    },
+    {
+      "name": "contact",
+      "path": "/drive/contact-alerted",
+      "text": "We’ve alerted Mum\n\nShe has your live location. Sent at 11:24 pm.\n\nYour location\n\nPLUS highway near Nilai, northbound\n\nShared until you tell her you’re OK\n\nIf you’re hurt or can’t talk, call 999. Your location is ready to read out.\n\nCall 999\nI’m OK, tell Mum",
+      "width": 430,
+      "broken": [],
+      "geometry": {
+        ".readiness-result__icon": null,
+        ".readiness-chip": null,
+        ".drive-heading": {
+          "x": 20,
+          "y": 274,
+          "width": 390,
+          "height": 64
+        },
+        ".readiness-findings": null,
+        ".readiness-plan": null,
+        ".reading-ring": null,
+        ".reading-checks": null,
+        ".tap-test-progress": null,
+        ".tap-test-area": null,
+        ".readiness-loading__card": null,
+        ".passenger-icon": null,
+        ".passenger-why": null,
+        ".no-response-ring": null,
+        ".contact-alert-icon": {
+          "x": 179,
+          "y": 182,
+          "width": 72,
+          "height": 72
+        },
+        ".contact-alert-location": {
+          "x": 20,
+          "y": 358,
+          "width": 390,
+          "height": 100.59375
+        },
+        ".summary-route": null,
+        ".summary-trip-stats": null,
+        ".summary-risk": null,
+        ".summary-chart": null,
+        ".drive-gauge": null,
+        ".drive-trip-stats": null,
+        ".drive-waze-card": null,
+        ".seatbelt-check": null,
+        ".app-frame__footer": {
+          "x": 20,
+          "y": 776,
+          "width": 390,
+          "height": 122
+        }
+      }
+    },
+    {
+      "name": "receipt",
+      "path": "/drive/home",
+      "text": "M\n\nPerodua Myvi\n\nReady to drive\n2 things to check\nStay awake on the road\n\nA one-minute check before you go, then BUCKL watches your eyes and wakes you if they start to close.\n\nStart drive watch\nYour car needs attention\nWeak battery · brakes due for a check\nRecent trips\nPJ → UM\n24 min · alert the whole way\nBUCKL alerts\n\nText message · Mum’s phone\n\nToday 11:24 pm\n\nAaron isn’t responding to his BUCKL alarm while driving. His last location is on the PLUS highway near Nilai, northbound.\n\nmaps.google.com/?q=2.8162,101.7955\n\nDelivered\n\nLive location is being shared until he says he’s OK. If you can’t reach him, call 999.\n\n11:24 pm\n\nToday 11:31 pm\n\nAaron says he’s OK. He has stopped at the R&R and is taking a break.\n\n11:31 pm",
+      "width": 430,
+      "broken": [],
+      "geometry": {
+        ".readiness-result__icon": null,
+        ".readiness-chip": null,
+        ".drive-heading": {
+          "x": 20,
+          "y": 357.796875,
+          "width": 390,
+          "height": 108
+        },
+        ".readiness-findings": null,
+        ".readiness-plan": null,
+        ".reading-ring": null,
+        ".reading-checks": null,
+        ".tap-test-progress": null,
+        ".tap-test-area": null,
+        ".readiness-loading__card": null,
+        ".passenger-icon": null,
+        ".passenger-why": null,
+        ".no-response-ring": null,
+        ".contact-alert-icon": null,
+        ".contact-alert-location": null,
+        ".summary-route": null,
+        ".summary-trip-stats": null,
+        ".summary-risk": null,
+        ".summary-chart": null,
+        ".drive-gauge": null,
+        ".drive-trip-stats": null,
+        ".drive-waze-card": null,
+        ".seatbelt-check": null,
+        ".app-frame__footer": {
+          "x": 20,
+          "y": 832,
+          "width": 390,
+          "height": 66
+        }
+      }
+    },
+    {
+      "name": "summary",
+      "path": "/drive/trip-summary",
+      "text": "PJ → Seremban\n\nToday · 1 h 12 min · 68 km\n\nTired\nMicrosleep\nHard braking\n\nDistance\n\n68 km\n\nDuration\n\n1 h 12 min\n\nAvg speed\n\n57 km/h\nSafety score · 74 / 100\nMedium\nFatigue warning at 11:40 pm, then a 15-minute break\n3 harsh-braking events\nPhone controls locked the whole drive\nFewer hard stops than your last 5 trips\nDrowsiness on this trip\n1 microsleep\nStart\n36 min\n72 min\nMicrosleep\n58 min\n\nEyes closed 1.8 s · alarm sounded\n\nYawning\n44 min\n\n3 times in 5 minutes\n\nSlow blinks\n39 min\n\nBlinks were getting longer\n\nHard braking\n3 times\n\nMostly where traffic slowed near Kajang\n\nDemo rule: 100 minus points for microsleeps, tired alerts and hard brakes.\n\nDone",
+      "width": 430,
+      "broken": [],
+      "geometry": {
+        ".readiness-result__icon": null,
+        ".readiness-chip": null,
+        ".drive-heading": {
+          "x": 20,
+          "y": 122,
+          "width": 390,
+          "height": 64
+        },
+        ".readiness-findings": null,
+        ".readiness-plan": null,
+        ".reading-ring": null,
+        ".reading-checks": null,
+        ".tap-test-progress": null,
+        ".tap-test-area": null,
+        ".readiness-loading__card": null,
+        ".passenger-icon": null,
+        ".passenger-why": null,
+        ".no-response-ring": null,
+        ".contact-alert-icon": null,
+        ".contact-alert-location": null,
+        ".summary-route": {
+          "x": 20,
+          "y": 206,
+          "width": 390,
+          "height": 188.21875
+        },
+        ".summary-trip-stats": {
+          "x": 20,
+          "y": 414.21875,
+          "width": 390,
+          "height": 67
+        },
+        ".summary-risk": {
+          "x": 20,
+          "y": 501.21875,
+          "width": 390,
+          "height": 199
+        },
+        ".summary-chart": {
+          "x": 20,
+          "y": 720.21875,
+          "width": 390,
+          "height": 185
+        },
+        ".drive-gauge": null,
+        ".drive-trip-stats": null,
+        ".drive-waze-card": null,
+        ".seatbelt-check": null,
+        ".app-frame__footer": {
+          "x": 20,
+          "y": 842,
+          "width": 390,
+          "height": 56
+        }
+      }
+    }
+  ],
+  "runtimeErrors": [],
+  "networkErrors": []
+}

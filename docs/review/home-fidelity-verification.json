@@ -1,0 +1,55 @@
+{
+  "checkedAt": "2026-10-10T15:55:14.939Z",
+  "figmaNode": "28:2",
+  "geometry": {
+    ".drive-home__top": {
+      "x": 20,
+      "y": 66,
+      "width": 390,
+      "height": 40.796875
+    },
+    ".drive-car-hero": {
+      "x": 20,
+      "y": 126.796875,
+      "width": 390,
+      "height": 199
+    },
+    ".drive-home__pitch": {
+      "x": 20,
+      "y": 345.796875,
+      "width": 390,
+      "height": 192
+    },
+    ".drive-home-attention": {
+      "x": 20,
+      "y": 557.796875,
+      "width": 390,
+      "height": 74
+    },
+    ".drive-recent": {
+      "x": 20,
+      "y": 651.796875,
+      "width": 390,
+      "height": 113
+    },
+    ".drive-recent__card": {
+      "x": 20,
+      "y": 690.796875,
+      "width": 390,
+      "height": 74
+    },
+    ".tab-bar": {
+      "x": 85,
+      "y": 832,
+      "width": 260,
+      "height": 66
+    }
+  },
+  "checkedWidths": [
+    430,
+    390,
+    360
+  ],
+  "previewStartRoutesToSetup": true,
+  "runtimeErrors": []
+}

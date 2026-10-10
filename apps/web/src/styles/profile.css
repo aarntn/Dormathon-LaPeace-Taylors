@@ -82,3 +82,42 @@ button.profile-row { background:transparent;border:0;color:var(--text-primary); 
 .profile-notice { display:flex;gap:14px;align-items:flex-start;padding:16px;border-radius:18px;background:var(--state-warning-soft); }
 .profile-notice>div { display:flex;flex-direction:column;gap:4px;min-width:0;flex:1; }
 .profile-version { text-align:center; }
+
+.profile-notice-line { margin-top:-8px;text-align:center; }
+.profile-stat-link { border:0;background:transparent;padding:0;color:var(--text-inverse); }
+.profile-text-action .profile-art { width:auto;height:auto; }
+
+/* P2 Driving stats */
+.profile-stats-heading { gap:10px; }
+.profile-period>span { cursor:pointer; }
+.profile-period-active { color:var(--text-primary); }
+.profile-alert-chart .profile-bars { display:flex;align-items:flex-end;justify-content:space-between;gap:10px;min-height:118px; }
+.profile-bar-col { flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:6px;min-width:0; }
+.profile-bar { display:block;width:100%;border-radius:8px;background:var(--brand-navy); }
+.profile-bar--empty { background:var(--line-default); }
+.profile-hour-bars { display:flex;align-items:flex-end;justify-content:space-between;height:56px;gap:2px; }
+.profile-hour-bar { flex:1;max-width:11px;border-radius:3px;background:#dfe3ea; }
+.profile-hour-bar--day { background:#cbd1dd; }
+.profile-hour-bar--night { background:var(--state-warning-dot); }
+.profile-hour-labels { display:flex;justify-content:space-between; }
+.profile-empty { text-align:center; }
+
+/* P3 My cars, P4 Add a car */
+.profile-garage-switch,.profile-garage-edit { border:0;background:transparent;padding:0; }
+.profile-garage-switch { color:var(--brand-navy); }
+.profile-garage-edit { color:var(--text-secondary); }
+.profile-garage-actions .profile-art { width:auto;height:auto; }
+.profile-car-picture .profile-art { width:auto;height:auto; }
+.profile-manual { align-self:center;margin-top:8px; }
+.profile-scan { width:100%;text-align:left;color:var(--text-primary); }
+
+/* P6 Emergency contact */
+.profile-contact-card { padding:0 16px;display:flex;flex-direction:column; }
+.profile-contact-row { display:flex;align-items:center;gap:14px;padding:16px 0;width:100%;text-align:left;border:0;background:transparent;color:var(--text-primary); }
+.profile-contact-row + .profile-contact-row { border-top:1px solid var(--bg-field); }
+.profile-contact-avatar { width:44px;height:44px;border-radius:22px;background:var(--bg-tint);color:var(--brand-navy);display:grid;place-items:center;flex-shrink:0; }
+.profile-contact-add { color:var(--brand-navy); }
+.profile-contact-add .profile-contact-avatar { background:var(--bg-field); }
+.profile-contact-edit { border:0;background:transparent;color:var(--brand-navy);padding:0; }
+.profile-frame .car-footer-stack { display:flex;flex-direction:column;gap:10px; }
+.profile-frame:has(.car-footer-stack) .app-frame__content--with-footer { padding-bottom:calc(188px + env(safe-area-inset-bottom,0px)); }

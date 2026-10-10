@@ -1,0 +1,92 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/1e4632ad-6579-4242-b1b5-90c8a9490b67";
+const imgIndicators = `${assetPathPrefix}/4c1f7.svg`;
+const imgMapYourMapsApp = `${assetPathPrefix}/1f7f4.svg`;
+const imgFrame = `${assetPathPrefix}/973a1.svg`;
+const imgFrame1 = `${assetPathPrefix}/b40a5.svg`;
+const imgArt = `${assetPathPrefix}/1bd76.svg`;
+
+type StatusBarProps = {
+  className?: string;
+  theme?: "Dark";
+};
+
+function StatusBar({ className, theme = "Dark" }: StatusBarProps) {
+  return (
+    <div className={className || "h-[54px] relative w-[430px]"} data-node-id="27:145">
+      <p className="[word-break:break-word] absolute font-['SF_Pro:Semibold'] font-[590] leading-[normal] left-[52px] text-[17px] text-white top-[18px] tracking-[-0.408px] whitespace-nowrap" data-node-id="27:146" style={{ fontVariationSettings: '"wdth" 100' }}>
+        9:41
+      </p>
+      <div className="absolute bg-black h-[36px] left-[153px] rounded-[18px] top-[11px] w-[123.999px]" data-node-id="27:147" data-name="Dynamic Island" />
+      <div className="absolute h-[13px] left-[308px] top-[21px] w-[70px]" data-node-id="27:148" data-name="Indicators">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIndicators} />
+      </div>
+    </div>
+  );
+}
+
+export default function Component05AWazeOpenStillWatching() {
+  return (
+    <div className="bg-[var(--drive\/bg,#0b1220)] relative size-full" data-node-id="51:1160" data-name="05a Waze open · still watching">
+      <div className="absolute h-[932px] left-0 top-0 w-[430px]" data-node-id="51:1161" data-name="Map (your maps app)">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgMapYourMapsApp} />
+      </div>
+      <StatusBar className="absolute h-[54px] left-0 top-0 w-[430px]" />
+      <a className="absolute block cursor-pointer h-[620px] left-0 top-[170px] w-[430px]" data-node-id="51:1190" data-name="Demo hotspot: tap map to simulate tiredness" />
+      <div className="absolute bg-[#2b3446] content-stretch flex gap-[14px] items-center left-[16px] overflow-clip pl-[14px] pr-[16px] py-[14px] rounded-[18px] top-[62px] w-[398px]" data-node-id="51:1191" data-name="Turn card (maps app)">
+        <div className="bg-[#3a4660] content-stretch flex items-center justify-center overflow-clip relative rounded-[14px] shrink-0 size-[48px]" data-node-id="51:1192" data-name="Arrow">
+          <div className="relative shrink-0 size-[28px]" data-node-id="51:1193" data-name="Frame">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame} />
+          </div>
+        </div>
+        <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start min-w-px not-italic overflow-clip relative whitespace-nowrap" data-node-id="51:1196" data-name="Text">
+          <p className="font-['Inter:Bold'] font-bold leading-[normal] relative shrink-0 text-[24px] text-[color:var(--text\/inverse,white)] tracking-[-0.24px]" data-node-id="51:1197">
+            300 m
+          </p>
+          <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[14px] text-[color:var(--drive\/text-secondary,#95a0b3)] tracking-[-0.042px]" data-node-id="51:1198">
+            Turn right onto Jalan Universiti
+          </p>
+        </div>
+      </div>
+      <div className="absolute bg-[#121925] content-stretch flex items-center justify-between left-0 overflow-clip pb-[30px] pt-[18px] px-[24px] rounded-tl-[24px] rounded-tr-[24px] top-[820px] w-[430px]" data-node-id="51:1199" data-name="ETA (maps app)">
+        <div className="[word-break:break-word] content-stretch flex flex-col gap-[2px] items-start not-italic overflow-clip relative shrink-0 whitespace-nowrap" data-node-id="51:1200" data-name="Frame">
+          <p className="font-['Inter:Bold'] font-bold leading-[normal] relative shrink-0 text-[24px] text-[color:var(--drive\/accent,#3bc48d)] tracking-[-0.24px]" data-node-id="51:1201">
+            18 min
+          </p>
+          <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[14px] text-[color:var(--drive\/text-secondary,#95a0b3)] tracking-[-0.042px]" data-node-id="51:1202">
+            14 km · arrive 4:22 pm
+          </p>
+        </div>
+        <div className="bg-[#22304a] content-stretch flex items-center justify-center overflow-clip relative rounded-[22px] shrink-0 size-[44px]" data-node-id="51:1203" data-name="Frame">
+          <div className="relative shrink-0 size-[18px]" data-node-id="51:1204" data-name="Frame">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame1} />
+          </div>
+        </div>
+      </div>
+      <a className="absolute bg-[var(--drive\/card,#141e30)] border-3 border-[var(--drive\/accent,#3bc48d)] border-solid content-stretch cursor-pointer flex items-center justify-center left-[350px] overflow-clip rounded-[32px] shadow-[0px_6px_16px_0px_rgba(0,0,0,0.4)] size-[64px] top-[360px]" data-node-id="51:1206" data-name="Dormathon bubble">
+        <div className="relative shrink-0 size-[36px]" data-node-id="51:1207" data-name="Logo mark">
+          <div className="absolute left-0 size-[36px] top-0" data-node-id="I51:1207;37:777" data-name="Art">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgArt} />
+          </div>
+        </div>
+      </a>
+      <div className="[word-break:break-word] absolute bg-[rgba(11,18,32,0.92)] content-stretch flex flex-col gap-[2px] items-start leading-[normal] left-[143px] not-italic overflow-clip px-[14px] py-[10px] rounded-[14px] top-[365px] whitespace-nowrap" data-node-id="51:1215" data-name="Callout">
+        <p className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[14px] text-[color:var(--text\/inverse,white)] tracking-[-0.042px]" data-node-id="51:1216">
+          Still watching your eyes
+        </p>
+        <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[12px] text-[color:var(--drive\/text-secondary,#95a0b3)] tracking-[0.0024px]" data-node-id="51:1217">
+          Tap to go back to BUCKL
+        </p>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Numeric/Large: Font(family: "Inter", style: Bold, size: 24, weight: 700, lineHeight: 100, letterSpacing: -1), Body/Small: Font(family: "Inter", style: Regular, size: 14, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.30000001192092896), Body/Small Strong: Font(family: "Inter", style: Semi Bold, size: 14, weight: 600, lineHeight: 100, letterSpacing: -0.30000001192092896), Label/Small: Font(family: "Inter", style: Medium, size: 12, weight: 500, lineHeight: 100, letterSpacing: 0.019999999552965164).
+Images and SVGs will be stored as constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

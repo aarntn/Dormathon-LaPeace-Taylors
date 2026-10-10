@@ -11,6 +11,7 @@ import './styles/profile.css';
 import './styles/eyewatch.css';
 import './styles/motion.css';
 import './styles/catch-up.css';
+import './styles/drive-current.css';
 
 createRoot(document.getElementById('root')!).render(<StrictMode><BrowserRouter><App /></BrowserRouter></StrictMode>);
 

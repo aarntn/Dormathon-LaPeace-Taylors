@@ -29,12 +29,13 @@ export function Frame({ children, back, footer, className = '' }: { children: Re
   const go = useProfileNavigation();
   return <AppFrame className={'profile-frame ' + className} footer={footer}><main className="profile-content">{back && <div className="profile-topbar"><IconButton icon="Back" onClick={() => go(back, true)} /></div>}{children}</main></AppFrame>;
 }
-export type RowData = { title: string; icon: string; value?: string; to?: string; danger?: boolean };
+export type RowData = { title: string; icon: string; value?: string; to?: string; onSelect?: () => void; danger?: boolean };
 export function RowList({ rows, label }: { rows: RowData[]; label: string }) {
   const go = useProfileNavigation();
   return <div className="profile-list profile-panel" aria-label={label}>{rows.map(row => {
-    const content = <><span className={'profile-row-icon' + (row.danger ? ' profile-row-icon--danger' : '')}><Art name={row.icon} /></span><span className="profile-row-title text-body-strong">{row.title}</span>{row.value && <span className="text-body-small profile-secondary">{row.value}</span>}<Art name="chevron" /></>;
-    return row.to ? <button key={row.title} type="button" className="profile-row" onClick={() => go(row.to!)}>{content}</button> : <div key={row.title} className={'profile-row' + (row.danger ? ' profile-danger' : '')}>{content}</div>;
+    const content = <><span className={'profile-row-icon' + (row.danger ? ' profile-row-icon--danger' : '')}><Art name={row.icon} /></span><span className={'profile-row-title text-body-strong' + (row.danger ? ' profile-danger' : '')}>{row.title}</span>{row.value && <span className="text-body-small profile-secondary">{row.value}</span>}<Art name="chevron" /></>;
+    const action = row.onSelect ?? (row.to ? () => go(row.to!) : undefined);
+    return action ? <button key={row.title} type="button" className="profile-row" onClick={action}>{content}</button> : <div key={row.title} className="profile-row">{content}</div>;
   })}</div>;
 }
 export function Chart({ name, height, label }: { name: string; height: number; label: string }) {

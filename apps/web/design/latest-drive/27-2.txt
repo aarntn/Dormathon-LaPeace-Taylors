@@ -1,0 +1,308 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/88734cf1-1e7f-43d8-8bff-62d9121c723a";
+const imgFrame = `${assetPathPrefix}/770e3.svg`;
+const imgMark = `${assetPathPrefix}/991f8.svg`;
+const imgMark1 = `${assetPathPrefix}/9e2c3.svg`;
+const imgArt = `${assetPathPrefix}/c972f.svg`;
+const imgArt1 = `${assetPathPrefix}/01b12.svg`;
+const imgIndicators = `${assetPathPrefix}/a391f.svg`;
+const imgIndicators1 = `${assetPathPrefix}/4c1f7.svg`;
+const imgGroup = `${assetPathPrefix}/c69bb.svg`;
+const imgGroup1 = `${assetPathPrefix}/9bf1f.svg`;
+const imgGroup2 = `${assetPathPrefix}/b8ab3.svg`;
+const imgGroup3 = `${assetPathPrefix}/e566d.svg`;
+const imgGroup4 = `${assetPathPrefix}/fe23d.svg`;
+const imgGroup5 = `${assetPathPrefix}/28aa2.svg`;
+const imgGroup6 = `${assetPathPrefix}/849ae.svg`;
+const imgGroup7 = `${assetPathPrefix}/34337.svg`;
+const imgGroup8 = `${assetPathPrefix}/d3c65.svg`;
+const imgGroup9 = `${assetPathPrefix}/a9f50.svg`;
+const imgGroup10 = `${assetPathPrefix}/339ce.svg`;
+const imgGroup11 = `${assetPathPrefix}/8af19.svg`;
+const imgGroup12 = `${assetPathPrefix}/8521d.svg`;
+const imgGroup13 = `${assetPathPrefix}/810bd.svg`;
+const imgGroup14 = `${assetPathPrefix}/027af.svg`;
+const imgGroup15 = `${assetPathPrefix}/09694.svg`;
+const imgGroup16 = `${assetPathPrefix}/9e094.svg`;
+const imgGroup17 = `${assetPathPrefix}/c0773.svg`;
+const imgGroup18 = `${assetPathPrefix}/5ab83.svg`;
+const imgGroup19 = `${assetPathPrefix}/aeb28.svg`;
+const imgArt2 = `${assetPathPrefix}/ad753.svg`;
+
+type OptionProps = {
+  className?: string;
+  description?: string;
+  state?: "Default" | "Selected";
+  title?: string;
+};
+
+function Option({ className, description = "Description", state = "Default", title = "Title" }: OptionProps) {
+  const isSelected = state === "Selected";
+  return (
+    <button className={className || `${String.raw`bg-[var(--bg\/card,white)] border-solid content-stretch flex gap-[14px] items-center pl-[18px] pr-[16px] py-[16px] relative rounded-[18px] w-[390px] `}${isSelected ? String.raw`border-2 border-[var(--brand\/navy,#1b2a4e)]` : String.raw`border border-[var(--line\/default,#e8eaed)]`}`} id={isSelected ? "node-31_298" : "node-31_293"}>
+      <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start min-w-px not-italic overflow-clip relative text-left" id={isSelected ? "node-31_299" : "node-31_294"} data-name="Text">
+        <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px] whitespace-nowrap" data-node-id="31:295">
+          {title}
+        </p>
+        <p className="font-['Inter:Regular'] font-normal leading-[1.4] min-w-full relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] w-[min-content]" data-node-id="31:296">
+          {description}
+        </p>
+      </div>
+      <div className={`relative rounded-[12px] shrink-0 size-[24px] ${isSelected ? String.raw`bg-[var(--brand\/navy,#1b2a4e)] overflow-clip` : String.raw`border-2 border-[var(--line\/default,#e8eaed)] border-solid`}`} id={isSelected ? "node-31_302" : "node-31_297"} data-name="Indicator">
+        {isSelected && (
+          <div className="absolute left-[5px] size-[14px] top-[5px]" data-node-id="31:303" data-name="Frame">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame} />
+          </div>
+        )}
+      </div>
+    </button>
+  );
+}
+
+type InputProps = {
+  className?: string;
+  state?: "Placeholder" | "Filled" | "Focused";
+  text?: string;
+};
+
+function Input({ className, state = "Placeholder", text = "Value" }: InputProps) {
+  const isFocused = state === "Focused";
+  return (
+    <div className={className || `content-stretch flex h-[56px] items-center px-[18px] relative rounded-[16px] w-[390px] ${isFocused ? String.raw`bg-[var(--bg\/card,white)] border-[1.5px] border-[var(--brand\/navy,#1b2a4e)] border-solid` : String.raw`bg-[var(--bg\/field,#f2f3f5)]`}`} id={isFocused ? "node-31_290" : state === "Filled" ? "node-31_288" : "node-31_286"}>
+      {["Filled", "Focused"].includes(state) && (
+        <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[1.4] min-w-px not-italic relative text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="31:289">
+          {text}
+        </p>
+      )}
+      {state === "Placeholder" && (
+        <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[1.4] min-w-px not-italic relative text-[16px] text-[color:var(--text\/tertiary,#a6a6a6)] tracking-[-0.0784px]" data-node-id="31:287">
+          {text}
+        </p>
+      )}
+    </div>
+  );
+}
+
+type BrandMarkProps = {
+  className?: string;
+  theme?: "Navy" | "White";
+};
+
+function BrandMark({ className, theme = "Navy" }: BrandMarkProps) {
+  const isWhite = theme === "White";
+  return (
+    <div className={className || "relative size-[71.999px]"} id={isWhite ? "node-31_279" : "node-31_273"}>
+      <div className="absolute left-0 size-[71.999px] top-0" id={isWhite ? "node-37_800" : "node-37_791"} data-name="Mark">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={isWhite ? imgMark1 : imgMark} />
+      </div>
+    </div>
+  );
+}
+
+function EyeLandmarks({ className }: { className?: string }) {
+  return (
+    <div className={className || "h-[110px] relative w-[300px]"} data-node-id="27:186" data-name="Eye landmarks">
+      <div className="absolute h-[109.999px] left-0 top-0 w-[299.998px]" data-node-id="27:187" data-name="Art">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgArt} />
+      </div>
+    </div>
+  );
+}
+
+function CarTop({ className }: { className?: string }) {
+  return <div className={className || "h-[300px] relative w-[160px]"} data-node-id="27:172" data-name="Car/Top" />;
+}
+
+function CarSide({ className }: { className?: string }) {
+  return (
+    <div className={className || "h-[140px] relative w-[360px]"} data-node-id="27:157" data-name="Car/Side">
+      <div className="absolute h-[139.999px] left-0 top-0 w-[359.997px]" data-node-id="27:158" data-name="Art">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgArt1} />
+      </div>
+    </div>
+  );
+}
+
+type StatusBarProps = {
+  className?: string;
+  theme?: "Light" | "Dark";
+};
+
+function StatusBar({ className, theme = "Light" }: StatusBarProps) {
+  const isDark = theme === "Dark";
+  return (
+    <div className={className || "h-[54px] relative w-[430px]"} id={isDark ? "node-27_145" : "node-27_134"}>
+      <p className={`[word-break:break-word] absolute font-["SF_Pro:Semibold"] font-[590] leading-[normal] left-[52px] text-[17px] top-[18px] tracking-[-0.408px] whitespace-nowrap ${isDark ? "text-white" : String.raw`text-[color:var(--text\/primary,#282828)]`}`} id={isDark ? "node-27_146" : "node-27_135"} style={{ fontVariationSettings: '"wdth" 100' }}>
+        9:41
+      </p>
+      <div className="absolute bg-black h-[36px] left-[153px] rounded-[18px] top-[11px] w-[123.999px]" id={isDark ? "node-27_147" : "node-27_136"} data-name="Dynamic Island" />
+      <div className="absolute h-[13px] left-[308px] top-[21px] w-[70px]" id={isDark ? "node-27_148" : "node-27_137"} data-name="Indicators">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={isDark ? imgIndicators1 : imgIndicators} />
+      </div>
+    </div>
+  );
+}
+
+type TabBarProps = {
+  className?: string;
+  active?: "Home" | "Trips" | "Car" | "Profile";
+};
+
+function TabBar({ className, active = "Home" }: TabBarProps) {
+  const isCar = active === "Car";
+  const isProfile = active === "Profile";
+  const isTrips = active === "Trips";
+  const isTripsOrCarOrProfile = ["Trips", "Car", "Profile"].includes(active);
+  return (
+    <div className={className || "bg-[var(--bg\\/card,white)] border border-[var(--line\\/default,#e8eaed)] border-solid content-stretch drop-shadow-[0px_10px_14px_rgba(0,0,0,0.08)] flex gap-[6px] items-start p-[8px] relative rounded-[26px]"} id={isProfile ? "node-27_110" : isCar ? "node-27_87" : isTrips ? "node-27_64" : "node-27_41"}>
+      <div className={`content-stretch flex h-[48px] items-center justify-center overflow-clip relative rounded-[18px] shrink-0 w-[56px] ${isTripsOrCarOrProfile ? "" : String.raw`bg-[var(--brand\/navy,#1b2a4e)]`}`} id={isProfile ? "node-27_111" : isCar ? "node-27_88" : isTrips ? "node-27_65" : "node-27_42"} data-name="Tab home">
+        <div className="overflow-clip relative shrink-0 size-[22px]" id={isProfile ? "node-27_112" : isCar ? "node-27_89" : isTrips ? "node-27_66" : "node-27_43"} data-name="icon/home">
+          <div className="absolute inset-[12.5%]" id={isProfile ? "node-27_113" : isCar ? "node-27_90" : isTrips ? "node-27_67" : "node-27_44"} data-name="Group">
+            <div className="absolute inset-[-5.28%]">
+              <img alt="" className="block max-w-none size-full" src={isTripsOrCarOrProfile ? imgGroup4 : imgGroup} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <a className={`content-stretch cursor-pointer flex h-[48px] items-center justify-center overflow-clip relative rounded-[18px] shrink-0 w-[56px] ${isTrips ? String.raw`bg-[var(--brand\/navy,#1b2a4e)]` : ""}`} id={isProfile ? "node-27_115" : isCar ? "node-27_92" : isTrips ? "node-27_69" : "node-27_46"} data-name="Tab trips">
+        <div className="overflow-clip relative shrink-0 size-[22px]" id={isProfile ? "node-27_116" : isCar ? "node-27_93" : isTrips ? "node-27_70" : "node-27_47"} data-name="icon/trips">
+          <div className="absolute inset-[12.2%_12.5%_12.8%_12.5%]" id={isProfile ? "node-27_117" : isCar ? "node-27_94" : isTrips ? "node-27_71" : "node-27_48"} data-name="Group">
+            <div className="absolute inset-[-5.28%]">
+              <img alt="" className="block max-w-none size-full" src={isProfile ? imgGroup11 : isCar ? imgGroup8 : isTrips ? imgGroup5 : imgGroup1} />
+            </div>
+          </div>
+        </div>
+      </a>
+      <div className={`content-stretch flex h-[48px] items-center justify-center overflow-clip relative rounded-[18px] shrink-0 w-[56px] ${isCar ? String.raw`bg-[var(--brand\/navy,#1b2a4e)]` : ""}`} id={isProfile ? "node-27_121" : isCar ? "node-27_98" : isTrips ? "node-27_75" : "node-27_52"} data-name="Tab car">
+        <div className="overflow-clip relative shrink-0 size-[22px]" id={isProfile ? "node-27_122" : isCar ? "node-27_99" : isTrips ? "node-27_76" : "node-27_53"} data-name="icon/car">
+          <div className="absolute inset-[23.33%_12.5%_20.83%_12.5%]" id={isProfile ? "node-27_123" : isCar ? "node-27_100" : isTrips ? "node-27_77" : "node-27_54"} data-name="Group">
+            <div className="absolute inset-[-7.09%_-5.28%]">
+              <img alt="" className="block max-w-none size-full" src={isProfile ? imgGroup12 : isCar ? imgGroup9 : isTrips ? imgGroup6 : imgGroup2} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={`content-stretch flex h-[48px] items-center justify-center overflow-clip relative rounded-[18px] shrink-0 w-[56px] ${isProfile ? String.raw`bg-[var(--brand\/navy,#1b2a4e)]` : ""}`} id={isProfile ? "node-27_128" : isCar ? "node-27_105" : isTrips ? "node-27_82" : "node-27_59"} data-name="Tab profile">
+        <div className="overflow-clip relative shrink-0 size-[22px]" id={isProfile ? "node-27_129" : isCar ? "node-27_106" : isTrips ? "node-27_83" : "node-27_60"} data-name="icon/profile">
+          <div className={`absolute ${isTripsOrCarOrProfile ? "inset-[16.67%]" : "inset-[16.66%_16.67%_16.67%_16.67%]"}`} id={isProfile ? "node-27_130" : isCar ? "node-27_107" : isTrips ? "node-27_84" : "node-27_61"} data-name="Group">
+            <div className="absolute inset-[-5.94%]">
+              <img alt="" className="block max-w-none size-full" src={isProfile ? imgGroup13 : isCar ? imgGroup10 : isTrips ? imgGroup7 : imgGroup3} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+type IconButtonProps = {
+  className?: string;
+  icon?: "Back" | "Close" | "Share";
+  theme?: "Light" | "Dark";
+};
+
+function IconButton({ className, icon = "Back", theme = "Light" }: IconButtonProps) {
+  const isBackAndDark = icon === "Back" && theme === "Dark";
+  const isCloseAndDark = icon === "Close" && theme === "Dark";
+  const isShareAndDark = icon === "Share" && theme === "Dark";
+  return (
+    <div className={className || `content-stretch flex items-center justify-center relative rounded-[20px] size-[40px] ${theme === "Dark" ? "bg-[rgba(255,255,255,0.14)]" : String.raw`bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid drop-shadow-[0px_6px_8px_rgba(0,0,0,0.06)]`}`} id={isShareAndDark ? "node-27_35" : isCloseAndDark ? "node-27_31" : isBackAndDark ? "node-27_27" : icon === "Share" && theme === "Light" ? "node-27_22" : icon === "Close" && theme === "Light" ? "node-27_18" : "node-27_14"}>
+      {icon === "Back" && (
+        <div className="overflow-clip relative shrink-0 size-[20px]" id={isBackAndDark ? "node-27_28" : "node-27_15"} data-name="icon/back">
+          <div className="absolute bottom-1/4 left-[20.83%] right-[20.83%] top-1/4" id={isBackAndDark ? "node-27_29" : "node-27_16"} data-name="Group">
+            <div className="absolute inset-[-7.92%_-6.79%]">
+              <img alt="" className="block max-w-none size-full" src={isBackAndDark ? imgGroup17 : imgGroup14} />
+            </div>
+          </div>
+        </div>
+      )}
+      {icon === "Close" && (
+        <div className="overflow-clip relative shrink-0 size-[20px]" id={isCloseAndDark ? "node-27_32" : "node-27_19"} data-name="icon/close">
+          <div className="absolute inset-1/4" id={isCloseAndDark ? "node-27_33" : "node-27_20"} data-name="Group">
+            <div className="absolute inset-[-7.92%]">
+              <img alt="" className="block max-w-none size-full" src={isCloseAndDark ? imgGroup18 : imgGroup15} />
+            </div>
+          </div>
+        </div>
+      )}
+      {icon === "Share" && (
+        <div className="overflow-clip relative shrink-0 size-[20px]" id={isShareAndDark ? "node-27_36" : "node-27_23"} data-name="icon/share">
+          <div className="absolute inset-[12.5%_20.83%]" id={isShareAndDark ? "node-27_37" : "node-27_24"} data-name="Group">
+            <div className="absolute inset-[-5.28%_-6.78%_-5.28%_-6.79%]">
+              <img alt="" className="block max-w-none size-full" src={isShareAndDark ? imgGroup19 : imgGroup16} />
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default" | "Pressed";
+  style?: "Primary" | "Secondary" | "Light" | "Outline" | "Drive";
+};
+
+function Button({ className, label = "Button", state = "Default", style = "Primary" }: ButtonProps) {
+  const isDriveAndDefault = style === "Drive" && state === "Default";
+  const isDriveAndPressed = style === "Drive" && state === "Pressed";
+  const isLightAndDefault = style === "Light" && state === "Default";
+  const isLightAndPressed = style === "Light" && state === "Pressed";
+  const isOutlineAndDefault = style === "Outline" && state === "Default";
+  const isOutlineAndPressed = style === "Outline" && state === "Pressed";
+  const isPrimaryAndPressed = style === "Primary" && state === "Pressed";
+  const isSecondaryAndDefault = style === "Secondary" && state === "Default";
+  const isSecondaryAndPressed = style === "Secondary" && state === "Pressed";
+  return (
+    <div className={className || `content-stretch flex h-[56px] items-center justify-center relative rounded-[18px] w-[390px] ${isDriveAndPressed ? "bg-[#0c1424]" : isOutlineAndPressed ? String.raw`bg-[var(--bg\/field,#f2f3f5)] border-[1.5px] border-[rgba(255,255,255,0.9)] border-solid` : isLightAndPressed ? "bg-[#e9ecf2]" : isSecondaryAndPressed ? String.raw`bg-[var(--bg\/field,#f2f3f5)] border border-[var(--line\/default,#e8eaed)] border-solid` : isPrimaryAndPressed ? "bg-[#101c38]" : isDriveAndDefault ? String.raw`bg-[var(--drive\/card,#141e30)] cursor-pointer` : isOutlineAndDefault ? "border-[1.5px] border-[rgba(255,255,255,0.9)] border-solid cursor-pointer" : isLightAndDefault ? String.raw`bg-[var(--bg\/card,white)] cursor-pointer` : isSecondaryAndDefault ? String.raw`bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid cursor-pointer` : String.raw`bg-[var(--brand\/navy,#1b2a4e)] cursor-pointer`}`} id={isDriveAndPressed ? "node-185_2296" : isOutlineAndPressed ? "node-185_2293" : isLightAndPressed ? "node-185_2290" : isSecondaryAndPressed ? "node-185_2287" : isPrimaryAndPressed ? "node-185_2284" : isDriveAndDefault ? "node-27_11" : isOutlineAndDefault ? "node-27_9" : isLightAndDefault ? "node-27_7" : isSecondaryAndDefault ? "node-27_5" : "node-27_3"}>
+      {state === "Pressed" && (
+        <p className={`[word-break:break-word] font-["Inter:Semi_Bold"] font-semibold leading-[normal] not-italic relative shrink-0 text-[18px] tracking-[-0.1152px] whitespace-nowrap ${state === "Pressed" && ["Outline", "Drive"].includes(style) ? "text-white" : isLightAndPressed ? String.raw`text-[color:var(--brand\/navy,#1b2a4e)]` : isSecondaryAndPressed ? String.raw`text-[color:var(--text\/primary,#282828)]` : String.raw`text-[color:var(--text\/inverse,white)]`}`} id={isDriveAndPressed ? "node-185_2297" : isOutlineAndPressed ? "node-185_2294" : isLightAndPressed ? "node-185_2291" : isSecondaryAndPressed ? "node-185_2288" : "node-185_2285"}>
+          Button
+        </p>
+      )}
+      {state === "Default" && ["Outline", "Drive"].includes(style) && (
+        <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[18px] text-white tracking-[-0.1152px] whitespace-nowrap" data-node-id="27:10">
+          {label}
+        </p>
+      )}
+      {style === "Primary" && state === "Default" && (
+        <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[18px] text-[color:var(--text\/inverse,white)] tracking-[-0.1152px] whitespace-nowrap" data-node-id="27:4">
+          {label}
+        </p>
+      )}
+      {isSecondaryAndDefault && (
+        <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[18px] text-[color:var(--text\/primary,#282828)] tracking-[-0.1152px] whitespace-nowrap" data-node-id="27:6">
+          {label}
+        </p>
+      )}
+      {isLightAndDefault && (
+        <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[18px] text-[color:var(--brand\/navy,#1b2a4e)] tracking-[-0.1152px] whitespace-nowrap" data-node-id="27:8">
+          {label}
+        </p>
+      )}
+    </div>
+  );
+}
+
+export default function Components() {
+  return (
+    <div className="bg-[var(--bg\/field,#f2f3f5)] overflow-clip relative rounded-[29.817px] size-full" data-node-id="27:2" data-name="Components">
+      <CarSide className="absolute h-[140px] left-[727px] top-[540px] w-[360px]" />
+      <CarTop className="absolute h-[300px] left-[440px] top-[420px] w-[160px]" />
+      <div className="absolute h-[299.998px] left-[511px] top-[219px] w-[159.999px]" data-node-id="27:173" data-name="Art">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgArt2} />
+      </div>
+      <EyeLandmarks className="absolute h-[110px] left-[660px] top-[440px] w-[300px]" />
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+Images and SVGs will be stored as constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

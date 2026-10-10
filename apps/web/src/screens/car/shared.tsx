@@ -39,21 +39,11 @@ export function Card({title,description,icon,tone='tint',aside,asideInHeading=fa
 export function DetailRow({label,value}:{label:string;value:string}){
   return <div className="car-detail-row"><dt className="text-body-regular">{label}</dt><dd className="text-body-strong">{value}</dd></div>;
 }
-export function WorkshopButton({service='cooling'}:{service?:Service}){
-  const data=useAppData();const [loading,setLoading]=useState(false);
-  const openFallback=()=>window.open('https://www.google.com/maps/search/car+workshop+near+me','_blank','noopener,noreferrer');
-  const find=()=>{
-    if(loading)return;
-    if(!navigator.geolocation){openFallback();return;}
-    setLoading(true);
-    navigator.geolocation.getCurrentPosition(position=>{
-      void data.api.workshops({lat:position.coords.latitude,lng:position.coords.longitude},service).then(result=>{
-        window.open(result.workshops[0]?.google_maps_url??'https://www.google.com/maps/search/car+workshop+near+me','_blank','noopener,noreferrer');
-      }).catch(openFallback).finally(()=>setLoading(false));
-    },()=>{setLoading(false);openFallback();},{enableHighAccuracy:false,timeout:10_000,maximumAge:300_000});
-  };
-  return <Button label={loading?'Finding workshop…':'Find a workshop nearby'} onClick={find} disabled={loading}/>;
+export function WorkshopButton({service='cooling',style='Primary'}:{service?:Service;style?:'Primary'|'Secondary'}){
+  const go=useCarNavigation();
+  return <Button style={style} label="Find a workshop nearby" onClick={()=>go('workshops-near-you?service='+service)}/>;
 }
+export function FooterStack({children}:{children:ReactNode}){return <div className="car-footer-stack">{children}</div>;}
 export function ResponsiveChart({children}:{children:ReactNode}){
   const container=useRef<HTMLDivElement>(null);const [scale,setScale]=useState(1);
   useLayoutEffect(()=>{

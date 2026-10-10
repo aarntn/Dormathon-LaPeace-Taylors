@@ -12,8 +12,13 @@ const appRoot = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const artifactRoot = resolve(appRoot, '../../docs/review');
 await mkdir(artifactRoot, { recursive: true });
 const mime = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.woff2': 'font/woff2', '.png': 'image/png', '.txt': 'text/plain', '.wasm':'application/wasm', '.task':'application/octet-stream', '.wav':'audio/wav' };
+let fixtureConfigFailure=false;
 const server = createServer(async (request, response) => {
   const pathname = decodeURIComponent(new URL(request.url, 'http://localhost').pathname);
+  if((process.argv.includes('--home')||process.argv.includes('--current-drive'))&&pathname==='/api/auth/config'){response.writeHead(200,{'Content-Type':'application/json'});response.end(JSON.stringify({configured:false}));return;}
+  if(process.argv.includes('--home')&&['/review/home-comparison.html','/review/home-figma.png','/review/home-current.png'].includes(pathname)){
+    const filename=join(artifactRoot,pathname.split('/').at(-1));const bytes=await readFile(filename);response.writeHead(200,{'Content-Type':mime[extname(filename)]});response.end(bytes);return;
+  }
   if(process.argv.includes('--integration')&&pathname.startsWith('/api/')){
     // Isolated HTTP fixtures: no database, credentials, geocoding or messages.
     let body='';for await(const chunk of request)body+=chunk;
@@ -21,10 +26,11 @@ const server = createServer(async (request, response) => {
     const car={id:'car-one',user_id:'first',make:'Perodua',model:'Myvi',year:2022,plate:'BUCKL 1'};
     const trip={id:'trip-one',car_id:car.id,user_id:'first',started_at:'2026-10-10T00:00:00Z',ended_at:'2026-10-10T00:10:00Z',distance_km:2.2,safety_score:92,passenger_mode:false,route_choice:'safer'};
     let value;
-    if(pathname==='/api/auth/config')value={configured:true};
+    if(pathname==='/api/auth/config'){if(fixtureConfigFailure){response.writeHead(503);response.end();return;}value={configured:true};}
     else if(pathname==='/api/auth/token'){const user=input.email==='first@example.test'?'first':'second';value={session:{access_token:'fixture-'+user,refresh_token:'fixture-refresh',expires_at:Math.floor(Date.now()/1000)+3600,user:{id:user,email:input.email,user_metadata:{name:user==='first'?'BUCKL Driver':'New Driver'}}}};}
     else if(pathname==='/api/auth/logout'){response.writeHead(204);response.end();return;}
     else if(pathname==='/api/cars')value=first?[car]:[];
+    else if(pathname==='/api/cars/car-one/report'&&first)value={car_id:car.id,dashboard:null,startup:{id:'startup-one',crank_seconds:3,verdict:'Battery may be weak',urgency:'soon',urgency_label:'Book service soon',stub:true},brakes:{hard_stops_per_week:[],trend_per_week:0,urgency:'monitor',urgency_label:'Monitor',verdict:'No brake trend yet',score_source:'demo_rule'}};
     else if(pathname==='/api/trips')value=first?[trip]:[];
     else if(pathname==='/api/emergency-contacts')value=[];
     else if(pathname==='/api/patterns')value={slots:[{from_hour:12,tired_alerts:2}],late_night_share:0};
@@ -96,15 +102,50 @@ try {
   };
   const screenshot = async (filename, clip) => { const result = await send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true, ...(clip ? { clip: { ...clip, scale: 1 } } : {}) }); await writeFile(join(artifactRoot, filename), Buffer.from(result.data, 'base64')); };
   await send('Page.enable'); await send('Runtime.enable'); await send('Network.enable');
-  if (process.argv.includes('--integration')) {
+  if (process.argv.includes('--current-drive')) {
+    const captured=[];
+    const capture=async(name,path)=>{if(path)await navigate(path);await settle();await viewport(430,932);const state=await evaluate("({path:location.pathname,text:document.body.innerText,width:document.documentElement.scrollWidth,broken:[...document.images].filter(i=>!i.complete||!i.naturalWidth).map(i=>i.src),geometry:Object.fromEntries(['.readiness-result__icon','.readiness-chip','.drive-heading','.readiness-findings','.readiness-plan','.reading-ring','.reading-checks','.tap-test-progress','.tap-test-area','.readiness-loading__card','.passenger-icon','.passenger-why','.no-response-ring','.contact-alert-icon','.contact-alert-location','.summary-route','.summary-trip-stats','.summary-risk','.summary-chart','.drive-gauge','.drive-trip-stats','.drive-waze-card','.seatbelt-check','.app-frame__footer'].map(s=>{const e=document.querySelector(s);if(!e)return [s,null];const r=e.getBoundingClientRect();return [s,{x:r.x,y:r.y,width:r.width,height:r.height}]}))})");assert.equal(state.width,430,name+' overflow');assert.deepEqual(state.broken,[],name+' broken images');captured.push({name,...state});await screenshot('drive-current-'+name+'.png',{x:0,y:0,width:430,height:932});};
+    for(const [name,path] of [['home','/drive/home'],['before','/drive/before-you-drive'],['mount','/drive/mount-your-phone'],['lineup','/drive/line-up-your-face'],['quick','/drive/quick-eye-check'],['driving','/drive/driving'],['lost','/drive/cant-see-your-eyes'],['tired','/drive/getting-tired'],['alarm','/drive/microsleep-alarm'],['maps','/drive/waze-open-still-watching'],['tired-maps','/drive/tired-while-waze-is-open']])await capture(name,path);
+    for(const [name,label] of [['safe','Safe to drive'],['caution','Caution'],['high','High risk'],['face','Face reading'],['tap','Tap test'],['working','Working out your result'],['route','Pick your route'],['passenger','Passenger mode'],['countdown','No response countdown'],['contact','Contact alerted'],['receipt','What Mum receives'],['summary','Trip summary']]){await navigate('/drive/home');await evaluate("(()=>{const b=document.querySelector('[aria-label=\"BUCKL logo\"]');b.click();b.click();b.click();})()");await until("document.querySelector('.drive-demo[open]')");await evaluate('[...document.querySelectorAll(".drive-demo button")].find(b=>b.textContent==='+JSON.stringify(label)+').click()');await capture(name);}
+    await writeFile(join(artifactRoot,'drive-current-verification.json'),JSON.stringify({checkedAt:new Date().toISOString(),captured,runtimeErrors,networkErrors},null,2));assert.deepEqual(runtimeErrors,[]);console.log('Captured '+captured.length+' current Drive states.');
+  } else if (process.argv.includes('--current-driving')) {
+    await viewport(430,932);await navigate('/drive/driving');
+    assert.equal(await evaluate("document.querySelectorAll('.drive-trip-bar').length"),1);
+    assert.equal(await evaluate("document.querySelectorAll('.drive-trip-stats > div').length"),3);
+    assert.equal(await evaluate("document.querySelector('.speed-stat')"),null);
+    const gauge=await evaluate("document.querySelector('.drive-gauge').getBoundingClientRect().y");
+    assert.ok(Math.abs(gauge-110)<=2,'Gauge should begin at y=110: '+gauge);
+    await screenshot('driving-current.png',{x:0,y:0,width:430,height:932});
+    for(const width of [390,360]){await viewport(width,844);await navigate('/drive/driving');assert.equal(await evaluate('document.documentElement.scrollWidth'),width);}
+    assert.deepEqual(runtimeErrors,[]);console.log('Current Driving layout checks passed.');
+  } else if (process.argv.includes('--home')) {
+    await viewport(430,932); await navigate('/drive/home');
+    await screenshot('home-current.png',{x:0,y:0,width:430,height:932});
+    const text=await evaluate('document.body.innerText');
+    assert.ok(text.includes('Stay awake on the road'));
+    assert.ok(text.includes('Weak battery · brakes due for a check'));
+    assert.ok(text.includes('PJ → UM'));
+    assert.ok(!text.includes('database configuration'));
+    const geometry=await evaluate(`Object.fromEntries(['.drive-home__top','.drive-car-hero','.drive-home__pitch','.drive-home-attention','.drive-recent','.drive-recent__card','.tab-bar'].map(s=>{const r=document.querySelector(s).getBoundingClientRect();return [s,{x:r.x,y:r.y,width:r.width,height:r.height}]}))`);
+    const expected={'.drive-home__top':[20,66,390,40.8],'.drive-car-hero':[20,126.8,390,199],'.drive-home__pitch':[20,345.8,390,192],'.drive-home-attention':[20,557.8,390,74],'.drive-recent':[20,651.8,390,113],'.drive-recent__card':[20,690.8,390,74],'.tab-bar':[85,832,260,66]};
+    for(const [selector,bounds] of Object.entries(expected))for(const [index,key] of ['x','y','width','height'].entries())assert.ok(Math.abs(geometry[selector][key]-bounds[index])<=2,selector+' '+key+': '+geometry[selector][key]);
+    for(const width of [390,360]){await viewport(width,844);await navigate('/drive/home');const layout=await evaluate("({width:document.documentElement.scrollWidth,broken:[...document.images].filter(i=>!i.complete||!i.naturalWidth).map(i=>i.src)})");assert.equal(layout.width,width);assert.deepEqual(layout.broken,[]);await screenshot('home-'+width+'.png',{x:0,y:0,width,height:844});}
+    await viewport(430,932);await navigate('/drive/home');await evaluate("document.querySelector('.drive-start-button').click()");await settle();assert.equal(await evaluate('location.pathname'),'/onboarding/welcome');
+    assert.deepEqual(runtimeErrors,[]);await writeFile(join(artifactRoot,'home-fidelity-verification.json'),JSON.stringify({checkedAt:new Date().toISOString(),figmaNode:'28:2',geometry,checkedWidths:[430,390,360],previewStartRoutesToSetup:true,runtimeErrors},null,2));
+    await writeFile(join(artifactRoot,'home-figma.png'),await readFile(join(appRoot,'design/home-current-reference.png')));
+    await writeFile(join(artifactRoot,'home-comparison.html'),'<!doctype html><html lang="en"><meta charset="utf-8"><title>BUCKL Home comparison</title><style>body{margin:0;padding:24px;font:16px system-ui;background:#e8eaed;color:#282828}main{display:flex;gap:24px}figure{margin:0}figcaption{margin:0 0 12px}img{display:block;width:430px;height:932px}</style><main><figure><figcaption>Figma · 01 Home · 28:2</figcaption><img src="home-figma.png" alt="Current Figma Home frame"></figure><figure><figcaption>Running app · 430 × 932</figcaption><img src="home-current.png" alt="Browser screenshot of the corrected Home screen"></figure></main></html>');
+    await viewport(932,1020);await send('Page.navigate',{url:origin+'/review/home-comparison.html'});await until("document.images.length===2&&[...document.images].every(i=>i.complete&&i.naturalWidth)");await screenshot('home-side-by-side.png',{x:0,y:0,width:932,height:1020});console.log('Home fidelity checks passed.');
+  } else if (process.argv.includes('--integration')) {
     await viewport(430,932);
     const click=async label=>{await evaluate(`[...document.querySelectorAll('button')].find(b=>b.textContent===${JSON.stringify(label)}).click()`);await settle();};
     const fill=async (selector,value)=>evaluate(`(()=>{const element=document.querySelector(${JSON.stringify(selector)});Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(element,${JSON.stringify(value)});element.dispatchEvent(new Event('input',{bubbles:true}));})()`);
     const login=async email=>{await navigate('/onboarding/sign-up?mode=signin');await fill('input[type=email]',email);await fill('input[type=password]','fixture-password');await click('Sign in');await until("location.pathname==='/drive/home'||location.pathname==='/onboarding/whats-your-car'");await settle();};
-    await navigate('/drive/home');assert.ok((await evaluate('document.body.innerText')).includes('Sign in to save checks'));
-    await login('first@example.test');await until("document.body.innerText.includes('BUCKL 1')");
+    await navigate('/drive/home');assert.ok((await evaluate('document.body.innerText')).includes('Set up your car'));assert.ok(!(await evaluate('document.body.innerText')).includes('PJ → UM'));
+    fixtureConfigFailure=true;await navigate('/drive/home');await until("document.body.innerText.includes('Couldn’t load account settings')");assert.ok(!(await evaluate('document.body.innerText')).includes('PJ → UM'));fixtureConfigFailure=false;
+    await login('first@example.test');await until("document.body.innerText.includes('2.2 km trip')&&document.body.innerText.includes('Battery may be weak')");assert.ok(!(await evaluate('document.body.innerText')).includes('PJ → UM'));await screenshot('home-authenticated.png',{x:0,y:0,width:430,height:932});
+    await evaluate("document.querySelector('.drive-home-attention').click()");await settle();await until("document.body.innerText.includes('Battery may be weak')");assert.ok(!(await evaluate('document.body.innerText')).includes('Scratch on rear bumper'));await screenshot('home-authenticated-report.png',{x:0,y:0,width:430,height:932});
     await navigate('/profile');assert.ok((await evaluate('document.body.innerText')).includes('first@example.test'));
-    await navigate('/trips');await until("document.querySelector('.trips-row')");await evaluate("document.querySelector('.trips-row').click()");await settle();await until("document.body.innerText.includes('92/100')");
+    await navigate('/trips');await until("document.querySelector('.trips-row')");await evaluate("document.querySelector('.trips-row').click()");await settle();await until("document.body.innerText.includes('92 / 100')");
     assert.ok((await evaluate('document.body.innerText')).includes('Demo rule'));assert.ok(await evaluate("document.querySelector('svg[aria-label=\"Recorded trip route\"]')!==null"));await screenshot('integration-trip-summary.png');
     await navigate('/drive/before-you-drive');await evaluate("document.querySelector('.readiness-question button').click()");assert.equal(await evaluate("document.querySelector('.readiness-question button').getAttribute('aria-pressed')"),'true');
     await navigate('/drive/line-up-your-face');assert.equal(await evaluate("document.querySelector('.app-frame__footer button').disabled"),true);

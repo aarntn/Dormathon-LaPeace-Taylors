@@ -1,18 +1,22 @@
 import { CarCheck } from './CarCheck';
-import { FirstCheck } from './FirstCheck';
-import { EngineSoundCheck } from './EngineSoundCheck';
+import { EngineSoundCheck, CheckingTheSound } from './EngineSoundCheck';
 import { CarReport } from './CarReport';
-import { ScratchDetail } from './ScratchDetail';
-import { BeltSquealTrend } from './BeltSquealTrend';
+import { BrakeCheck } from './BrakeCheck';
+import { WorkshopsNearYou } from './WorkshopsNearYou';
+import { WarningLightResult, CouldntReadTheLight, DidntHearTheEngine } from './Results';
 
 export const carRoutes=[
   {path:'/car',Screen:CarCheck},
   {path:'/car/car-check',Screen:CarCheck},
-  {path:'/car/first-check',Screen:FirstCheck},
-  // The camera is rendered as a sheet by App; direct entry gets an overview underneath.
-  {path:'/car/photo-walk-around',Screen:CarCheck},
+  // The camera and its loading card are sheets rendered by App; direct entry gets Car check underneath.
+  {path:'/car/scan-a-warning-light',Screen:CarCheck},
+  {path:'/car/reading-the-light',Screen:CarCheck},
+  {path:'/car/warning-light-result',Screen:WarningLightResult},
+  {path:'/car/couldnt-read-the-light',Screen:CouldntReadTheLight},
   {path:'/car/engine-sound-check',Screen:EngineSoundCheck},
+  {path:'/car/checking-the-sound',Screen:CheckingTheSound},
+  {path:'/car/didnt-hear-the-engine',Screen:DidntHearTheEngine},
   {path:'/car/car-report',Screen:CarReport},
-  {path:'/car/scratch-detail',Screen:ScratchDetail},
-  {path:'/car/belt-squeal-trend',Screen:BeltSquealTrend},
+  {path:'/car/brake-check',Screen:BrakeCheck},
+  {path:'/car/workshops-near-you',Screen:WorkshopsNearYou},
 ];

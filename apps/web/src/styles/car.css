@@ -47,7 +47,6 @@
 .car-first-steps p { color:var(--text-secondary); }
 .car-step-number { display:grid;place-items:center;width:28px;height:28px;border-radius:14px;background:var(--bg-tint);color:var(--brand-navy);flex-shrink:0; }
 .car-recorder { width:100%;height:300px;position:relative;overflow:hidden; }
-.car-engine .car-heading p { max-width:370px;margin-inline:auto; }
 .car-recorder-track { position:absolute;top:0;left:calc(50% - 110px); }
 .car-recorder-progress { position:absolute;top:0;left:calc(50% - 64.656px); }
 .car-listening { position:absolute;top:62px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:6px;color:var(--state-danger); }
@@ -124,3 +123,97 @@
 .car-skip { position:absolute;right:calc(28px + env(safe-area-inset-right,0px));top:98px;background:transparent;border:0;padding:0;color:var(--drive-text-secondary); }
 .car-camera-error { position:absolute;top:calc(var(--camera-top) + 168px);left:calc(40px + env(safe-area-inset-left,0px));right:calc(40px + env(safe-area-inset-right,0px));padding:20px;border-radius:18px;background:var(--drive-card);display:flex;flex-direction:column;gap:16px; }
 @media(max-width:400px) { .car-photo-quality { gap:12px; } .car-captured { left:calc(20px + env(safe-area-inset-left,0px)); } }
+
+.dashboard-sample { position:relative; width:360px; height:250px; overflow:hidden; }
+.dashboard-sample__bg { position:absolute; inset:0; width:100%; height:100%; max-width:none; }
+.dashboard-sample__layer { position:absolute; display:block; }
+.dashboard-sample__inner { position:absolute; display:block; }
+.dashboard-sample__layer img { display:block; max-width:none; width:100%; height:100%; }
+.dashboard-sample__fill { position:absolute; inset:0; }
+
+/* C2 Scan a warning light · C2b Reading the light */
+.scan-sheet { position:absolute;top:0;bottom:0;left:50%;width:min(430px,100%);margin-left:calc(min(430px,100%) / -2);height:100dvh;overflow:hidden;background:var(--drive-bg);color:var(--text-inverse);padding:max(62px,calc(env(safe-area-inset-top,0px) + 8px)) 20px 24px;display:flex;flex-direction:column;gap:16px; }
+.scan-top { display:flex; }
+.scan-heading { display:flex;flex-direction:column;gap:8px;text-align:center; }
+.scan-heading p { color:var(--drive-text-secondary); }
+.scan-viewfinder { position:relative;height:420px;flex-shrink:0;border-radius:24px;background:#141a26;overflow:hidden; }
+.scan-video { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0; }
+.scan-video--ready { opacity:1; }
+.scan-sample { position:absolute;left:15px;top:70px;width:360px;height:250px;overflow:hidden; }
+.scan-detection { position:absolute;left:202px;top:256px;width:46px;height:50px;border:2.5px solid var(--state-warning-dot);border-radius:8px; }
+.scan-tag { position:absolute;left:173px;top:222px;padding:5px 10px;border-radius:8px;background:var(--state-warning-dot);color:var(--text-primary); }
+.scan-viewfinder .scan-line { position:absolute;left:20px;top:20px;width:350px;height:380px;background:transparent;border-radius:0; }
+.scan-corners { position:absolute;left:20px;top:20px;width:350px;height:380px; }
+.scan-shutter-wrap { display:flex;justify-content:center;padding-top:12px; }
+.scan-shutter { width:76px;height:76px;padding:0;border:0;background:transparent;border-radius:50%;display:block; }
+.scan-shutter:disabled { opacity:.5; }
+.scan-shutter .car-art { width:76px;height:76px; }
+.scan-status { text-align:center;color:var(--drive-text-secondary);display:flex;flex-direction:column;gap:8px;align-items:center; }
+.scan-retry { border:0;background:transparent;color:var(--text-inverse);text-decoration:underline; }
+
+/* Loading card (Figma Motion: Loading card) shown over the waiting screen */
+.car-loading { position:absolute;inset:0;z-index:20;display:flex;align-items:center;justify-content:center;padding:0 60px;box-sizing:border-box; }
+.car-loading--dark { background:rgb(5 10 18 / .72); }
+.car-loading--light { background:rgb(40 40 40 / .35); }
+.car-loading-card { width:100%;max-width:310px;border-radius:24px;padding:24px 20px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center; }
+.car-loading--dark .car-loading-card { background:var(--drive-card);border:1px solid var(--drive-line);color:var(--text-inverse); }
+.car-loading--dark .car-loading-card p { color:var(--drive-text-secondary); }
+.car-loading--light .car-loading-card { background:var(--bg-card);color:var(--text-primary); }
+.car-loading--light .car-loading-card p { color:var(--text-secondary); }
+.car-loading-card h2 { font-size:18px;font-weight:600; }
+.car-footer-stack { display:flex;flex-direction:column;gap:10px; }
+
+/* C3 / C3b / C4b results, C6 brake check, C7 workshops */
+.car-recorder-arc { position:absolute;top:0;left:calc(50% - 110px);width:220px;height:220px; }
+.car-heard-empty { color:var(--text-secondary); }
+.car-result .app-frame__content--with-footer,.car-brakes .app-frame__content--with-footer { padding-bottom:calc(188px + env(safe-area-inset-bottom,0px)); }
+.car-result .car-content { gap:16px; }
+.car-tips .car-content { gap:20px; }
+.car-result-icon { margin-top:2.73px;width:72px;height:72px;border-radius:36px;display:grid;place-items:center;align-self:center;flex-shrink:0; }
+.car-tips .car-result-icon { margin-top:26.73px; }
+.car-result-icon .car-art { width:32px;height:32px; }
+.car-result-icon--danger { background:var(--state-danger-soft); }
+.car-result-icon--warning { background:var(--state-warning-soft); }
+.car-result-icon--success { background:var(--state-success-soft); }
+.car-result-icon--none { background:var(--bg-field); }
+.car-severity { display:flex;flex-direction:column;gap:4px;padding:16px;border-radius:18px; }
+.car-severity p { color:var(--text-primary); }
+.car-severity--danger { background:var(--state-danger-soft); }
+.car-severity--danger strong { color:var(--state-danger); }
+.car-severity--warning { background:var(--state-warning-soft); }
+.car-severity--warning strong { color:var(--state-warning); }
+.car-severity--success { background:var(--state-success-soft); }
+.car-severity--success strong { color:var(--state-success); }
+.car-severity--tint { background:var(--bg-tint); }
+.car-severity--tint strong { color:var(--brand-navy); }
+.car-steps,.car-tips-card,.car-chart-card { padding:16px;display:flex;flex-direction:column;gap:14px; }
+.car-steps h2,.car-tips-card h2 { color:var(--text-secondary); }
+.car-steps ol { list-style:none;display:flex;flex-direction:column;gap:14px; }
+.car-steps li { display:flex;gap:12px;align-items:flex-start; }
+.car-steps .car-step-number { width:24px;height:24px;border-radius:12px; }
+.car-steps li p { flex:1;min-width:0;color:var(--text-primary); }
+.car-tips-card ul { list-style:none;display:flex;flex-direction:column;gap:14px; }
+.car-tips-card li { display:flex;gap:12px;align-items:flex-start; }
+.car-tips-card li .car-art { width:6px;height:14px;margin-top:4px; }
+.car-tips-card li p { flex:1;min-width:0;color:var(--text-primary); }
+.car-chart-head { display:flex;justify-content:space-between;align-items:center; }
+.car-chart-head p:first-child { color:var(--text-secondary); }
+.car-bars { display:flex;align-items:flex-end;justify-content:space-between;min-height:118px; }
+.car-bar { display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:6px; }
+.car-bar span { display:block;width:34px;border-radius:6px;background:#c9d0dd; }
+.car-bar span.car-bar--warn { background:var(--state-warning-dot); }
+.car-bar small { color:var(--text-tertiary);white-space:nowrap; }
+.car-service-filter { display:flex;gap:6px; }
+.car-service-filter button { flex:1;min-width:0;height:40px;border:0;border-radius:12px;background:var(--bg-field);color:var(--text-primary); }
+.car-service-filter button.active { background:var(--brand-navy);color:var(--text-inverse); }
+.car-shops { padding:4px 16px;display:flex;flex-direction:column; }
+.car-shops-note { padding:14px 0;color:var(--text-secondary);text-align:center; }
+.car-shop { display:flex;flex-direction:column;gap:10px;padding:14px 0; }
+.car-shop + .car-shop { border-top:1px solid var(--bg-field); }
+.car-shop-head { display:flex;gap:12px;align-items:flex-start; }
+.car-shop-head>div { flex:1;min-width:0;display:flex;flex-direction:column;gap:2px; }
+.car-shop-head p { color:var(--text-secondary); }
+.car-shop-head>span { color:var(--brand-navy);white-space:nowrap; }
+.car-shop-actions { display:flex;gap:8px; }
+.car-shop-action { display:flex;align-items:center;gap:6px;padding:8px 12px;border-radius:12px;background:var(--bg-field);color:var(--brand-navy);text-decoration:none; }
+.car-shop-action .car-art { width:16px;height:16px; }

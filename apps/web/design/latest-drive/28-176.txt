@@ -1,0 +1,178 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/0bf8fb9b-b888-456b-97a5-0f6a7a8eceb0";
+const imgColorGreenPhaseA = `${assetPathPrefix}/693b3.svg`;
+const imgIndicators = `${assetPathPrefix}/4c1f7.svg`;
+const imgIconLock = `${assetPathPrefix}/eaad6.svg`;
+const imgTrack = `${assetPathPrefix}/fe148.svg`;
+const imgLevel = `${assetPathPrefix}/46c58.svg`;
+const imgArt = `${assetPathPrefix}/0b27f.svg`;
+const imgFrame = `${assetPathPrefix}/6c013.svg`;
+const imgFrame1 = `${assetPathPrefix}/aa4e0.svg`;
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default";
+  style?: "Drive";
+};
+
+function Button({ className, label = "Button", state = "Default", style = "Drive" }: ButtonProps) {
+  return (
+    <div className={className || "bg-[var(--drive\\/card,#141e30)] content-stretch cursor-pointer flex h-[56px] items-center justify-center relative rounded-[18px] w-[390px]"} data-node-id="27:11">
+      <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[18px] text-white tracking-[-0.1152px] whitespace-nowrap" data-node-id="27:12">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+type LiveDotProps = {
+  className?: string;
+  color?: "Green";
+  phase?: "A";
+};
+
+function LiveDot({ className, color = "Green", phase = "A" }: LiveDotProps) {
+  return (
+    <div className={className || "relative size-[16px]"} data-node-id="185:1755">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgColorGreenPhaseA} />
+    </div>
+  );
+}
+
+type StatusBarProps = {
+  className?: string;
+  theme?: "Dark";
+};
+
+function StatusBar({ className, theme = "Dark" }: StatusBarProps) {
+  return (
+    <div className={className || "h-[54px] relative w-[430px]"} data-node-id="27:145">
+      <p className="[word-break:break-word] absolute font-['SF_Pro:Semibold'] font-[590] leading-[normal] left-[52px] text-[17px] text-white top-[18px] tracking-[-0.408px] whitespace-nowrap" data-node-id="27:146" style={{ fontVariationSettings: '"wdth" 100' }}>
+        9:41
+      </p>
+      <div className="absolute bg-black h-[36px] left-[153px] rounded-[18px] top-[11px] w-[123.999px]" data-node-id="27:147" data-name="Dynamic Island" />
+      <div className="absolute h-[13px] left-[308px] top-[21px] w-[70px]" data-node-id="27:148" data-name="Indicators">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIndicators} />
+      </div>
+    </div>
+  );
+}
+
+export default function Component05Driving() {
+  return (
+    <div className="bg-[var(--drive\/bg,#0b1220)] relative size-full" data-node-id="28:176" data-name="05 Driving">
+      <StatusBar className="absolute h-[54px] left-0 top-0 w-[430px]" />
+      <div className="absolute content-stretch flex flex-col gap-[24px] items-start left-0 overflow-clip pb-[24px] pt-[12px] px-[20px] top-[54px] w-[430px]" data-node-id="28:188" data-name="Content">
+        <div className="content-stretch flex items-center justify-between overflow-clip relative shrink-0 w-full" data-node-id="28:189" data-name="Trip bar">
+          <div className="content-stretch flex gap-[4px] items-center overflow-clip relative shrink-0" data-node-id="28:190" data-name="Frame">
+            <LiveDot className="relative shrink-0 size-[16px]" />
+            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/inverse,white)] tracking-[-0.042px] whitespace-nowrap" data-node-id="28:192">
+              Eyes tracked
+            </p>
+          </div>
+          <div className="content-stretch flex gap-[6px] items-center overflow-clip relative shrink-0" data-node-id="28:193" data-name="Frame">
+            <div className="relative shrink-0 size-[18px]" data-node-id="162:1627" data-name="icon/lock">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconLock} />
+            </div>
+            <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.4] not-italic relative shrink-0 text-[14px] text-[color:var(--drive\/text-secondary,#95a0b3)] tracking-[-0.042px] whitespace-nowrap" data-node-id="28:198">
+              Controls locked
+            </p>
+          </div>
+        </div>
+        <a className="block cursor-pointer h-[320px] overflow-clip relative shrink-0 w-[390px]" data-node-id="28:199" data-name="Alert gauge">
+          <div className="absolute left-[55px] size-[280px] top-[20px]" data-node-id="28:200" data-name="Track">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgTrack} />
+          </div>
+          <div className="absolute left-[55px] size-[280px] top-[20px]" data-node-id="28:201" data-name="Level">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgLevel} />
+          </div>
+          <div className="absolute h-[60.5px] left-[112.5px] top-[78px] w-[165px]" data-node-id="28:202" data-name="Eye landmarks">
+            <div className="absolute h-[60.5px] left-0 top-0 w-[164.999px]" data-node-id="I28:202;27:187" data-name="Art">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgArt} />
+            </div>
+          </div>
+          <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Inter:Bold'] font-bold leading-[normal] left-[195px] not-italic text-[44px] text-[color:var(--text\/inverse,white)] text-center top-[148px] tracking-[-0.88px] whitespace-nowrap" data-node-id="28:224">
+            Alert
+          </p>
+          <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[1.4] left-[195px] not-italic text-[14px] text-[color:var(--drive\/text-secondary,#95a0b3)] text-center top-[206px] tracking-[-0.042px] whitespace-nowrap" data-node-id="28:225">
+            Eyes open, blinking normally
+          </p>
+        </a>
+        <div className="bg-[var(--drive\/card,#141e30)] content-stretch flex items-start overflow-clip p-[20px] relative rounded-[20px] shrink-0 w-full" data-node-id="28:226" data-name="Trip info">
+          <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start leading-[normal] min-w-px not-italic overflow-clip relative whitespace-nowrap" data-node-id="28:227" data-name="Frame">
+            <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[12px] text-[color:var(--drive\/text-secondary,#95a0b3)] tracking-[0.0024px]" data-node-id="28:228">
+              Driving for
+            </p>
+            <p className="font-['Inter:Bold'] font-bold relative shrink-0 text-[24px] text-[color:var(--text\/inverse,white)] tracking-[-0.24px]" data-node-id="28:229">
+              42 min
+            </p>
+          </div>
+          <div className="bg-[var(--drive\/line,#22304a)] h-[44px] relative shrink-0 w-px" data-node-id="28:230" data-name="Divider" />
+          <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start leading-[normal] min-w-px not-italic overflow-clip pl-[20px] relative whitespace-nowrap" data-node-id="28:231" data-name="Frame">
+            <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[12px] text-[color:var(--drive\/text-secondary,#95a0b3)] tracking-[0.0024px]" data-node-id="28:232">
+              Next break
+            </p>
+            <p className="font-['Inter:Bold'] font-bold relative shrink-0 text-[24px] text-[color:var(--text\/inverse,white)] tracking-[-0.24px]" data-node-id="28:233">
+              in 18 min
+            </p>
+          </div>
+          <div className="bg-[var(--drive\/line,#22304a)] h-[44px] relative shrink-0 w-px" data-node-id="175:1813" data-name="Divider" />
+          <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start leading-[normal] min-w-px not-italic overflow-clip pl-[20px] relative whitespace-nowrap" data-node-id="175:1814" data-name="Frame">
+            <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[12px] text-[color:var(--drive\/text-secondary,#95a0b3)] tracking-[0.0024px]" data-node-id="175:1815">
+              Speed
+            </p>
+            <p className="font-['Inter:Bold'] font-bold relative shrink-0 text-[24px] text-[color:var(--text\/inverse,white)] tracking-[-0.24px]" data-node-id="175:1816">
+              82 km/h
+            </p>
+          </div>
+        </div>
+        <a className="bg-[var(--drive\/card,#141e30)] border border-[var(--drive\/line,#22304a)] border-solid content-stretch cursor-pointer flex gap-[14px] items-center overflow-clip pl-[14px] pr-[16px] py-[14px] relative rounded-[18px] shrink-0 w-full" data-node-id="51:1426" data-name="Navigate card">
+          <div className="bg-[var(--drive\/line,#22304a)] content-stretch flex items-center justify-center overflow-clip relative rounded-[14px] shrink-0 size-[44px]" data-node-id="51:1427" data-name="Frame">
+            <div className="relative shrink-0 size-[22px]" data-node-id="51:1428" data-name="Frame">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame} />
+            </div>
+          </div>
+          <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start min-w-px not-italic overflow-clip relative text-left whitespace-nowrap" data-node-id="51:1431" data-name="Frame">
+            <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] relative shrink-0 text-[16px] text-[color:var(--text\/inverse,white)] tracking-[-0.0784px]" data-node-id="51:1432">
+              Open Waze
+            </p>
+            <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[14px] text-[color:var(--drive\/text-secondary,#95a0b3)] tracking-[-0.042px]" data-node-id="51:1433">
+              We keep watching while it’s open
+            </p>
+          </div>
+          <div className="relative shrink-0 size-[20px]" data-node-id="51:1434" data-name="Frame">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame1} />
+          </div>
+        </a>
+        <div className="[word-break:break-word] content-stretch cursor-pointer flex flex-col font-['Inter:Regular'] font-normal gap-[12px] items-start leading-[0] not-italic overflow-clip relative shrink-0 text-[14px] text-[color:var(--drive\/text-secondary,#95a0b3)] text-center tracking-[-0.042px] w-full" data-node-id="51:1437" data-name="Demo links">
+          <a className="block relative shrink-0 w-full" data-node-id="39:1028">
+            <p className="leading-[1.4]">Demo: getting tired</p>
+          </a>
+          <a className="block relative shrink-0 w-full" data-node-id="28:234">
+            <p className="leading-[1.4]">Demo: eyes close for 1.8 s</p>
+          </a>
+          <a className="block relative shrink-0 w-full" data-node-id="38:836">
+            <p className="leading-[1.4]">Demo: phone gets knocked</p>
+          </a>
+          <a className="block relative shrink-0 w-full" data-node-id="51:1438">
+            <p className="leading-[1.4]">Demo: split screen (Android)</p>
+          </a>
+          <a className="block relative shrink-0 w-full" data-node-id="51:1440">
+            <p className="leading-[1.4]">Demo: Maps open on iPhone</p>
+          </a>
+        </div>
+      </div>
+      <Button className="absolute bg-[var(--drive\/card,#141e30)] content-stretch cursor-pointer flex h-[56px] items-center justify-center left-[20px] rounded-[18px] top-[842px] w-[390px]" label="End drive" />
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Body/Small Strong: Font(family: "Inter", style: Semi Bold, size: 14, weight: 600, lineHeight: 100, letterSpacing: -0.30000001192092896), Body/Small: Font(family: "Inter", style: Regular, size: 14, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.30000001192092896), Heading/Display: Font(family: "Inter", style: Bold, size: 44, weight: 700, lineHeight: 100, letterSpacing: -2), Label/Small: Font(family: "Inter", style: Medium, size: 12, weight: 500, lineHeight: 100, letterSpacing: 0.019999999552965164), Numeric/Large: Font(family: "Inter", style: Bold, size: 24, weight: 700, lineHeight: 100, letterSpacing: -1), Body/Strong: Font(family: "Inter", style: Semi Bold, size: 16, weight: 600, lineHeight: 100, letterSpacing: -0.49000000953674316).
+Images and SVGs will be stored as constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

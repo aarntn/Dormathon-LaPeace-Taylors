@@ -1,0 +1,351 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/177a44c3-d48b-477c-9c12-75ce18b1ed96";
+const imgIndicators = `${assetPathPrefix}/a391f.svg`;
+const imgGroup = `${assetPathPrefix}/09694.svg`;
+const imgMap = `${assetPathPrefix}/868ca.svg`;
+const imgEllipse = `${assetPathPrefix}/6cb7a.svg`;
+const imgEllipse1 = `${assetPathPrefix}/6665a.svg`;
+const imgEllipse2 = `${assetPathPrefix}/fd9b0.svg`;
+const imgFrame = `${assetPathPrefix}/008f0.svg`;
+const imgGroup1 = `${assetPathPrefix}/0ad48.svg`;
+const imgGroup2 = `${assetPathPrefix}/616ac.svg`;
+const imgGroup3 = `${assetPathPrefix}/5ade7.svg`;
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default";
+  style?: "Primary";
+};
+
+function Button({ className, label = "Button", state = "Default", style = "Primary" }: ButtonProps) {
+  return (
+    <div className={className || "bg-[var(--brand\\/navy,#1b2a4e)] content-stretch cursor-pointer flex h-[56px] items-center justify-center relative rounded-[18px] w-[390px]"} data-node-id="27:3">
+      <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[18px] text-[color:var(--text\/inverse,white)] tracking-[-0.1152px] whitespace-nowrap" data-node-id="27:4">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+type StatusBarProps = {
+  className?: string;
+  theme?: "Light";
+};
+
+function StatusBar({ className, theme = "Light" }: StatusBarProps) {
+  return (
+    <div className={className || "h-[54px] relative w-[430px]"} data-node-id="27:134">
+      <p className="[word-break:break-word] absolute font-['SF_Pro:Semibold'] font-[590] leading-[normal] left-[52px] text-[17px] text-[color:var(--text\/primary,#282828)] top-[18px] tracking-[-0.408px] whitespace-nowrap" data-node-id="27:135" style={{ fontVariationSettings: '"wdth" 100' }}>
+        9:41
+      </p>
+      <div className="absolute bg-black h-[36px] left-[153px] rounded-[18px] top-[11px] w-[123.999px]" data-node-id="27:136" data-name="Dynamic Island" />
+      <div className="absolute h-[13px] left-[308px] top-[21px] w-[70px]" data-node-id="27:137" data-name="Indicators">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIndicators} />
+      </div>
+    </div>
+  );
+}
+
+type IconButtonProps = {
+  className?: string;
+  icon?: "Close";
+  theme?: "Light";
+};
+
+function IconButton({ className, icon = "Close", theme = "Light" }: IconButtonProps) {
+  return (
+    <div className={className || "bg-[var(--bg\\/card,white)] border border-[var(--line\\/default,#e8eaed)] border-solid content-stretch drop-shadow-[0px_6px_8px_rgba(0,0,0,0.06)] flex items-center justify-center relative rounded-[20px] size-[40px]"} data-node-id="27:18">
+      <div className="overflow-clip relative shrink-0 size-[20px]" data-node-id="27:19" data-name="icon/close">
+        <div className="absolute inset-1/4" data-node-id="27:20" data-name="Group">
+          <div className="absolute inset-[-7.92%]">
+            <img alt="" className="block max-w-none size-full" src={imgGroup} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function Component09TripSummary() {
+  return (
+    <div className="bg-[var(--bg\/screen,#fcfcfe)] relative size-full" data-node-id="29:153" data-name="09 Trip summary">
+      <div className="absolute content-stretch flex flex-col gap-[20px] items-start left-0 overflow-clip pb-[120px] pt-[8px] px-[20px] top-[54px] w-[430px]" data-node-id="29:165" data-name="Content">
+        <IconButton className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch cursor-pointer drop-shadow-[0px_6px_8px_rgba(0,0,0,0.06)] flex items-center justify-center relative rounded-[20px] shrink-0 size-[40px]" />
+        <div className="[word-break:break-word] content-stretch flex flex-col gap-[8px] items-center not-italic overflow-clip relative shrink-0 text-center w-full" data-node-id="29:170" data-name="Heading">
+          <p className="font-['Inter:Bold'] font-bold leading-[normal] relative shrink-0 text-[28px] text-[color:var(--text\/primary,#282828)] tracking-[-0.2632px] w-full" data-node-id="29:171">
+            PJ → Seremban
+          </p>
+          <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[16px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.0784px] w-full" data-node-id="29:172">
+            Today · 1 h 12 min · 68 km
+          </p>
+        </div>
+        <div className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch flex flex-col items-start overflow-clip relative rounded-[18px] shadow-[0px_6px_16px_0px_rgba(0,0,0,0.04)] shrink-0 w-full" data-node-id="175:1817" data-name="Route map">
+          <div className="h-[150px] relative shrink-0 w-[390px]" data-node-id="175:1818" data-name="Map">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgMap} />
+          </div>
+          <div className="content-stretch flex gap-[14px] items-center overflow-clip pb-[12px] pt-[10px] px-[14px] relative shrink-0 w-full" data-node-id="175:1829" data-name="Legend">
+            <div className="content-stretch flex gap-[6px] items-center overflow-clip relative shrink-0" data-node-id="175:1830" data-name="Frame">
+              <div className="relative shrink-0 size-[8px]" data-node-id="175:1831" data-name="Ellipse">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse} />
+              </div>
+              <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[normal] not-italic relative shrink-0 text-[12px] text-[color:var(--text\/secondary,#797979)] tracking-[0.0024px] whitespace-nowrap" data-node-id="175:1832">
+                Tired
+              </p>
+            </div>
+            <div className="content-stretch flex gap-[6px] items-center overflow-clip relative shrink-0" data-node-id="175:1833" data-name="Frame">
+              <div className="relative shrink-0 size-[8px]" data-node-id="175:1834" data-name="Ellipse">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse1} />
+              </div>
+              <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[normal] not-italic relative shrink-0 text-[12px] text-[color:var(--text\/secondary,#797979)] tracking-[0.0024px] whitespace-nowrap" data-node-id="175:1835">
+                Microsleep
+              </p>
+            </div>
+            <div className="content-stretch flex gap-[6px] items-center overflow-clip relative shrink-0" data-node-id="175:1836" data-name="Frame">
+              <div className="relative shrink-0 size-[8px]" data-node-id="175:1837" data-name="Ellipse">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse2} />
+              </div>
+              <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[normal] not-italic relative shrink-0 text-[12px] text-[color:var(--text\/secondary,#797979)] tracking-[0.0024px] whitespace-nowrap" data-node-id="175:1838">
+                Hard braking
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="[word-break:break-word] bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch flex items-start justify-between leading-[normal] not-italic overflow-clip px-[18px] py-[14px] relative rounded-[18px] shrink-0 w-full whitespace-nowrap" data-node-id="175:1839" data-name="Trip stats">
+          <div className="content-stretch flex flex-col gap-[2px] items-start overflow-clip relative shrink-0" data-node-id="175:1840" data-name="Frame">
+            <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[12px] text-[color:var(--text\/secondary,#797979)] tracking-[0.0024px]" data-node-id="175:1841">
+              Distance
+            </p>
+            <p className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="175:1842">
+              68 km
+            </p>
+          </div>
+          <div className="content-stretch flex flex-col gap-[2px] items-start overflow-clip relative shrink-0" data-node-id="175:1843" data-name="Frame">
+            <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[12px] text-[color:var(--text\/secondary,#797979)] tracking-[0.0024px]" data-node-id="175:1844">
+              Duration
+            </p>
+            <p className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="175:1845">
+              1 h 12 min
+            </p>
+          </div>
+          <div className="content-stretch flex flex-col gap-[2px] items-start overflow-clip relative shrink-0" data-node-id="175:1846" data-name="Frame">
+            <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[12px] text-[color:var(--text\/secondary,#797979)] tracking-[0.0024px]" data-node-id="175:1847">
+              Avg speed
+            </p>
+            <p className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="175:1848">
+              57 km/h
+            </p>
+          </div>
+        </div>
+        <div className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch flex flex-col gap-[10px] items-start overflow-clip p-[16px] relative rounded-[18px] shadow-[0px_6px_16px_0px_rgba(0,0,0,0.04)] shrink-0 w-full" data-node-id="162:1630" data-name="Trip risk">
+          <div className="content-stretch flex items-center justify-between overflow-clip relative shrink-0 w-full" data-node-id="162:1631" data-name="Frame">
+            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] whitespace-nowrap" data-node-id="162:1632">
+              Safety score · 74 / 100
+            </p>
+            <div className="bg-[var(--state\/warning-soft,#fcf0da)] content-stretch flex gap-[6px] items-center overflow-clip px-[10px] py-[4px] relative rounded-[8px] shrink-0" data-node-id="162:1633" data-name="Frame">
+              <div className="relative shrink-0 size-[8px]" data-node-id="162:1634" data-name="Ellipse">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse} />
+              </div>
+              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--state\/warning,#b86e00)] tracking-[-0.042px] whitespace-nowrap" data-node-id="162:1635">
+                Medium
+              </p>
+            </div>
+          </div>
+          <div className="content-stretch flex gap-[10px] items-start overflow-clip relative shrink-0 w-full" data-node-id="162:1636" data-name="Frame">
+            <div className="h-[13px] relative shrink-0 w-[6px]" data-node-id="162:1638" data-name="Frame">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame} />
+            </div>
+            <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[1.4] min-w-px not-italic relative text-[14px] text-[color:var(--text\/primary,#282828)] tracking-[-0.042px]" data-node-id="162:1639">
+              Fatigue warning at 11:40 pm, then a 15-minute break
+            </p>
+          </div>
+          <div className="content-stretch flex gap-[10px] items-start overflow-clip relative shrink-0 w-full" data-node-id="162:1640" data-name="Frame">
+            <div className="h-[13px] relative shrink-0 w-[6px]" data-node-id="162:1642" data-name="Frame">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame} />
+            </div>
+            <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[1.4] min-w-px not-italic relative text-[14px] text-[color:var(--text\/primary,#282828)] tracking-[-0.042px]" data-node-id="162:1643">
+              3 harsh-braking events
+            </p>
+          </div>
+          <div className="content-stretch flex gap-[10px] items-start overflow-clip relative shrink-0 w-full" data-node-id="162:1644" data-name="Frame">
+            <div className="h-[13px] relative shrink-0 w-[6px]" data-node-id="162:1646" data-name="Frame">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame} />
+            </div>
+            <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[1.4] min-w-px not-italic relative text-[14px] text-[color:var(--text\/primary,#282828)] tracking-[-0.042px]" data-node-id="162:1647">
+              Phone controls locked the whole drive
+            </p>
+          </div>
+          <div className="content-stretch flex gap-[10px] items-start overflow-clip relative shrink-0 w-full" data-node-id="162:1648" data-name="Frame">
+            <div className="h-[13px] relative shrink-0 w-[6px]" data-node-id="162:1650" data-name="Frame">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame} />
+            </div>
+            <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[1.4] min-w-px not-italic relative text-[14px] text-[color:var(--text\/primary,#282828)] tracking-[-0.042px]" data-node-id="162:1651">
+              Fewer hard stops than your last 5 trips
+            </p>
+          </div>
+        </div>
+        <div className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch flex flex-col gap-[14px] items-start overflow-clip p-[20px] relative rounded-[20px] shadow-[0px_6px_16px_0px_rgba(0,0,0,0.04)] shrink-0 w-full" data-node-id="29:173" data-name="Drowsiness chart">
+          <div className="content-stretch flex items-center justify-between overflow-clip relative shrink-0 w-full" data-node-id="29:174" data-name="Frame">
+            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px] whitespace-nowrap" data-node-id="29:175">
+              Drowsiness on this trip
+            </p>
+            <div className="content-stretch flex gap-[6px] items-center overflow-clip relative shrink-0" data-node-id="29:176" data-name="Frame">
+              <div className="relative shrink-0 size-[8px]" data-node-id="29:177" data-name="Dot">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse1} />
+              </div>
+              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--state\/danger,#ef4f44)] tracking-[-0.042px] whitespace-nowrap" data-node-id="29:178">
+                1 microsleep
+              </p>
+            </div>
+          </div>
+          <div className="content-stretch flex gap-[4px] h-[80px] items-end overflow-clip relative shrink-0 w-full" data-node-id="29:179" data-name="Bars">
+            <div className="bg-[var(--state\/success,#239a6c)] flex-[1_0_0] h-[8px] min-w-px relative rounded-[3px]" data-node-id="29:180" data-name="Rectangle" />
+            <div className="bg-[var(--state\/success,#239a6c)] flex-[1_0_0] h-[10px] min-w-px relative rounded-[3px]" data-node-id="29:181" data-name="Rectangle" />
+            <div className="bg-[var(--state\/success,#239a6c)] flex-[1_0_0] h-[8px] min-w-px relative rounded-[3px]" data-node-id="29:182" data-name="Rectangle" />
+            <div className="bg-[var(--state\/success,#239a6c)] flex-[1_0_0] h-[11px] min-w-px relative rounded-[3px]" data-node-id="29:183" data-name="Rectangle" />
+            <div className="bg-[var(--state\/success,#239a6c)] flex-[1_0_0] h-[10px] min-w-px relative rounded-[3px]" data-node-id="29:184" data-name="Rectangle" />
+            <div className="bg-[var(--state\/success,#239a6c)] flex-[1_0_0] h-[13px] min-w-px relative rounded-[3px]" data-node-id="29:185" data-name="Rectangle" />
+            <div className="bg-[var(--state\/success,#239a6c)] flex-[1_0_0] h-[11px] min-w-px relative rounded-[3px]" data-node-id="29:186" data-name="Rectangle" />
+            <div className="bg-[var(--state\/success,#239a6c)] flex-[1_0_0] h-[14px] min-w-px relative rounded-[3px]" data-node-id="29:187" data-name="Rectangle" />
+            <div className="bg-[var(--state\/success,#239a6c)] flex-[1_0_0] h-[16px] min-w-px relative rounded-[3px]" data-node-id="29:188" data-name="Rectangle" />
+            <div className="bg-[var(--state\/success,#239a6c)] flex-[1_0_0] h-[18px] min-w-px relative rounded-[3px]" data-node-id="29:189" data-name="Rectangle" />
+            <div className="bg-[var(--state\/success,#239a6c)] flex-[1_0_0] h-[21px] min-w-px relative rounded-[3px]" data-node-id="29:190" data-name="Rectangle" />
+            <div className="bg-[var(--state\/success,#239a6c)] flex-[1_0_0] h-[24px] min-w-px relative rounded-[3px]" data-node-id="29:191" data-name="Rectangle" />
+            <div className="bg-[var(--state\/success,#239a6c)] flex-[1_0_0] h-[27px] min-w-px relative rounded-[3px]" data-node-id="29:192" data-name="Rectangle" />
+            <div className="bg-[var(--state\/warning-dot,#e8a317)] flex-[1_0_0] h-[30px] min-w-px relative rounded-[3px]" data-node-id="29:193" data-name="Rectangle" />
+            <div className="bg-[var(--state\/warning-dot,#e8a317)] flex-[1_0_0] h-[35px] min-w-px relative rounded-[3px]" data-node-id="29:194" data-name="Rectangle" />
+            <div className="bg-[var(--state\/warning-dot,#e8a317)] flex-[1_0_0] h-[38px] min-w-px relative rounded-[3px]" data-node-id="29:195" data-name="Rectangle" />
+            <div className="bg-[var(--state\/warning-dot,#e8a317)] flex-[1_0_0] h-[46px] min-w-px relative rounded-[3px]" data-node-id="29:196" data-name="Rectangle" />
+            <div className="bg-[var(--state\/danger,#ef4f44)] flex-[1_0_0] h-[77px] min-w-px relative rounded-[3px]" data-node-id="29:197" data-name="Rectangle" />
+            <div className="bg-[var(--state\/warning-dot,#e8a317)] flex-[1_0_0] h-[32px] min-w-px relative rounded-[3px]" data-node-id="29:198" data-name="Rectangle" />
+            <div className="bg-[var(--state\/success,#239a6c)] flex-[1_0_0] h-[24px] min-w-px relative rounded-[3px]" data-node-id="29:199" data-name="Rectangle" />
+            <div className="bg-[var(--state\/success,#239a6c)] flex-[1_0_0] h-[19px] min-w-px relative rounded-[3px]" data-node-id="29:200" data-name="Rectangle" />
+            <div className="bg-[var(--state\/success,#239a6c)] flex-[1_0_0] h-[16px] min-w-px relative rounded-[3px]" data-node-id="29:201" data-name="Rectangle" />
+            <div className="bg-[var(--state\/success,#239a6c)] flex-[1_0_0] h-[14px] min-w-px relative rounded-[3px]" data-node-id="29:202" data-name="Rectangle" />
+            <div className="bg-[var(--state\/success,#239a6c)] flex-[1_0_0] h-[13px] min-w-px relative rounded-[3px]" data-node-id="29:203" data-name="Rectangle" />
+          </div>
+          <div className="[word-break:break-word] content-stretch flex font-['Inter:Medium'] font-medium items-start justify-between leading-[normal] not-italic overflow-clip relative shrink-0 text-[12px] text-[color:var(--text\/tertiary,#a6a6a6)] tracking-[0.0024px] w-full whitespace-nowrap" data-node-id="29:204" data-name="Frame">
+            <p className="relative shrink-0" data-node-id="29:205">
+              Start
+            </p>
+            <p className="relative shrink-0" data-node-id="29:206">
+              36 min
+            </p>
+            <p className="relative shrink-0" data-node-id="29:207">
+              72 min
+            </p>
+          </div>
+        </div>
+        <div className="content-stretch flex flex-col gap-[10px] items-start overflow-clip relative shrink-0 w-full" data-node-id="29:208" data-name="Events">
+          <div className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch flex gap-[14px] items-center overflow-clip pl-[14px] pr-[16px] py-[14px] relative rounded-[18px] shadow-[0px_6px_16px_0px_rgba(0,0,0,0.04)] shrink-0 w-full" data-node-id="29:213" data-name="Event microsleep">
+            <div className="bg-[var(--state\/danger-soft,#fde7e5)] content-stretch flex items-center justify-center overflow-clip relative rounded-[14px] shrink-0 size-[44px]" data-node-id="29:214" data-name="Frame">
+              <div className="overflow-clip relative shrink-0 size-[22px]" data-node-id="29:209" data-name="icon/eyeOff">
+                <div className="absolute inset-[12.5%_8.33%]" data-node-id="29:210" data-name="Group">
+                  <div className="absolute inset-[-5.28%_-4.75%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup1} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start min-w-px not-italic overflow-clip relative" data-node-id="29:215" data-name="Frame">
+              <div className="content-stretch flex gap-[8px] items-center leading-[normal] overflow-clip relative shrink-0 w-full" data-node-id="29:216" data-name="Frame">
+                <p className="flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold min-w-px relative text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="29:217">
+                  Microsleep
+                </p>
+                <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[12px] text-[color:var(--text\/tertiary,#a6a6a6)] tracking-[0.0024px] whitespace-nowrap" data-node-id="29:218">
+                  58 min
+                </p>
+              </div>
+              <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] w-full" data-node-id="29:219">
+                Eyes closed 1.8 s · alarm sounded
+              </p>
+            </div>
+          </div>
+          <div className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch flex gap-[14px] items-center overflow-clip pl-[14px] pr-[16px] py-[14px] relative rounded-[18px] shadow-[0px_6px_16px_0px_rgba(0,0,0,0.04)] shrink-0 w-full" data-node-id="29:225" data-name="Event yawning">
+            <div className="bg-[var(--state\/warning-soft,#fcf0da)] content-stretch flex items-center justify-center overflow-clip relative rounded-[14px] shrink-0 size-[44px]" data-node-id="29:226" data-name="Frame">
+              <div className="overflow-clip relative shrink-0 size-[22px]" data-node-id="29:220" data-name="icon/yawn">
+                <div className="absolute inset-[12.5%]" data-node-id="29:221" data-name="Group">
+                  <div className="absolute inset-[-5.28%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup2} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start min-w-px not-italic overflow-clip relative" data-node-id="29:227" data-name="Frame">
+              <div className="content-stretch flex gap-[8px] items-center leading-[normal] overflow-clip relative shrink-0 w-full" data-node-id="29:228" data-name="Frame">
+                <p className="flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold min-w-px relative text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="29:229">
+                  Yawning
+                </p>
+                <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[12px] text-[color:var(--text\/tertiary,#a6a6a6)] tracking-[0.0024px] whitespace-nowrap" data-node-id="29:230">
+                  44 min
+                </p>
+              </div>
+              <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] w-full" data-node-id="29:231">
+                3 times in 5 minutes
+              </p>
+            </div>
+          </div>
+          <div className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch flex gap-[14px] items-center overflow-clip pl-[14px] pr-[16px] py-[14px] relative rounded-[18px] shadow-[0px_6px_16px_0px_rgba(0,0,0,0.04)] shrink-0 w-full" data-node-id="29:236" data-name="Event slow blinks">
+            <div className="bg-[var(--state\/warning-soft,#fcf0da)] content-stretch flex items-center justify-center overflow-clip relative rounded-[14px] shrink-0 size-[44px]" data-node-id="29:237" data-name="Frame">
+              <div className="overflow-clip relative shrink-0 size-[22px]" data-node-id="29:232" data-name="icon/blink">
+                <div className="absolute bottom-[22.92%] left-[8.33%] right-[8.33%] top-1/2" data-node-id="29:233" data-name="Group">
+                  <div className="absolute inset-[-14.62%_-4.75%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup3} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start min-w-px not-italic overflow-clip relative" data-node-id="29:238" data-name="Frame">
+              <div className="content-stretch flex gap-[8px] items-center leading-[normal] overflow-clip relative shrink-0 w-full" data-node-id="29:239" data-name="Frame">
+                <p className="flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold min-w-px relative text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="29:240">
+                  Slow blinks
+                </p>
+                <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[12px] text-[color:var(--text\/tertiary,#a6a6a6)] tracking-[0.0024px] whitespace-nowrap" data-node-id="29:241">
+                  39 min
+                </p>
+              </div>
+              <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] w-full" data-node-id="29:242">
+                Blinks were getting longer
+              </p>
+            </div>
+          </div>
+          <div className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch flex gap-[14px] items-center overflow-clip pl-[14px] pr-[16px] py-[14px] relative rounded-[18px] shadow-[0px_6px_16px_0px_rgba(0,0,0,0.04)] shrink-0 w-full" data-node-id="140:1518" data-name="Event hard braking">
+            <div className="bg-[var(--state\/warning-soft,#fcf0da)] content-stretch flex items-center justify-center overflow-clip relative rounded-[14px] shrink-0 size-[44px]" data-node-id="140:1519" data-name="Frame">
+              <div className="overflow-clip relative shrink-0 size-[22px]" data-node-id="140:1520" data-name="icon/blink">
+                <div className="absolute bottom-[22.92%] left-[8.33%] right-[8.33%] top-1/2" data-node-id="140:1521" data-name="Group">
+                  <div className="absolute inset-[-14.62%_-4.75%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup3} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start min-w-px not-italic overflow-clip relative" data-node-id="140:1524" data-name="Frame">
+              <div className="content-stretch flex gap-[8px] items-center leading-[normal] overflow-clip relative shrink-0 w-full" data-node-id="140:1525" data-name="Frame">
+                <p className="flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold min-w-px relative text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="140:1526">
+                  Hard braking
+                </p>
+                <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[12px] text-[color:var(--text\/tertiary,#a6a6a6)] tracking-[0.0024px] whitespace-nowrap" data-node-id="140:1527">
+                  3 times
+                </p>
+              </div>
+              <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] w-full" data-node-id="140:1528">
+                Mostly where traffic slowed near Kajang
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <StatusBar className="absolute h-[54px] left-0 top-0 w-[430px]" />
+      <Button className="absolute bg-[var(--brand\/navy,#1b2a4e)] content-stretch cursor-pointer flex h-[56px] items-center justify-center left-[20px] rounded-[18px] top-[842px] w-[390px]" label="Done" />
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Heading/Large: Font(family: "Inter", style: Bold, size: 28, weight: 700, lineHeight: 100, letterSpacing: -0.9399999976158142), Body/Regular: Font(family: "Inter", style: Regular, size: 16, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.49000000953674316), Label/Small: Font(family: "Inter", style: Medium, size: 12, weight: 500, lineHeight: 100, letterSpacing: 0.019999999552965164), Body/Strong: Font(family: "Inter", style: Semi Bold, size: 16, weight: 600, lineHeight: 100, letterSpacing: -0.49000000953674316), Body/Small Strong: Font(family: "Inter", style: Semi Bold, size: 14, weight: 600, lineHeight: 100, letterSpacing: -0.30000001192092896), Body/Small: Font(family: "Inter", style: Regular, size: 14, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.30000001192092896).
+Images and SVGs will be stored as constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

@@ -1,0 +1,170 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/442b7f4d-d1fd-4c38-8545-b3b8560faea5";
+const imgGroup = `${assetPathPrefix}/027af.svg`;
+const imgIndicators = `${assetPathPrefix}/a391f.svg`;
+const imgArt = `${assetPathPrefix}/742ca.svg`;
+const imgGroup1 = `${assetPathPrefix}/d8df5.svg`;
+const imgGroup2 = `${assetPathPrefix}/30181.svg`;
+const imgGroup3 = `${assetPathPrefix}/d6288.svg`;
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default";
+  style?: "Primary";
+};
+
+function Button({ className, label = "Button", state = "Default", style = "Primary" }: ButtonProps) {
+  return (
+    <div className={className || "bg-[var(--brand\\/navy,#1b2a4e)] content-stretch cursor-pointer flex h-[56px] items-center justify-center relative rounded-[18px] w-[390px]"} data-node-id="27:3">
+      <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[18px] text-[color:var(--text\/inverse,white)] tracking-[-0.1152px] whitespace-nowrap" data-node-id="27:4">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+type IconButtonProps = {
+  className?: string;
+  icon?: "Back";
+  theme?: "Light";
+};
+
+function IconButton({ className, icon = "Back", theme = "Light" }: IconButtonProps) {
+  return (
+    <div className={className || "bg-[var(--bg\\/card,white)] border border-[var(--line\\/default,#e8eaed)] border-solid content-stretch drop-shadow-[0px_6px_8px_rgba(0,0,0,0.06)] flex items-center justify-center relative rounded-[20px] size-[40px]"} data-node-id="27:14">
+      <div className="overflow-clip relative shrink-0 size-[20px]" data-node-id="27:15" data-name="icon/back">
+        <div className="absolute bottom-1/4 left-[20.83%] right-[20.83%] top-1/4" data-node-id="27:16" data-name="Group">
+          <div className="absolute inset-[-7.92%_-6.79%]">
+            <img alt="" className="block max-w-none size-full" src={imgGroup} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+type StatusBarProps = {
+  className?: string;
+  theme?: "Light";
+};
+
+function StatusBar({ className, theme = "Light" }: StatusBarProps) {
+  return (
+    <div className={className || "h-[54px] relative w-[430px]"} data-node-id="27:134">
+      <p className="[word-break:break-word] absolute font-['SF_Pro:Semibold'] font-[590] leading-[normal] left-[52px] text-[17px] text-[color:var(--text\/primary,#282828)] top-[18px] tracking-[-0.408px] whitespace-nowrap" data-node-id="27:135" style={{ fontVariationSettings: '"wdth" 100' }}>
+        9:41
+      </p>
+      <div className="absolute bg-black h-[36px] left-[153px] rounded-[18px] top-[11px] w-[123.999px]" data-node-id="27:136" data-name="Dynamic Island" />
+      <div className="absolute h-[13px] left-[308px] top-[21px] w-[70px]" data-node-id="27:137" data-name="Indicators">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIndicators} />
+      </div>
+    </div>
+  );
+}
+
+export default function Component02MountYourPhone() {
+  return (
+    <div className="bg-[var(--bg\/screen,#fcfcfe)] relative size-full" data-node-id="38:837" data-name="02 Mount your phone">
+      <StatusBar className="absolute h-[54px] left-0 top-0 w-[430px]" />
+      <div className="absolute content-stretch flex flex-col gap-[18px] items-start left-0 overflow-clip pb-[24px] pt-[8px] px-[20px] top-[54px] w-[430px]" data-node-id="38:849" data-name="Content">
+        <IconButton className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch cursor-pointer drop-shadow-[0px_6px_8px_rgba(0,0,0,0.06)] flex items-center justify-center relative rounded-[20px] shrink-0 size-[40px]" />
+        <div className="content-stretch flex flex-col gap-[8px] items-center overflow-clip relative shrink-0 w-full" data-node-id="38:854" data-name="Steps">
+          <div className="content-stretch flex gap-[6px] h-[4px] items-start overflow-clip relative shrink-0 w-[160px]" data-node-id="38:855" data-name="Frame">
+            <div className="bg-[var(--brand\/navy,#1b2a4e)] flex-[1_0_0] h-[4px] min-w-px relative rounded-[2px]" data-node-id="38:856" data-name="Rectangle" />
+            <div className="bg-[var(--line\/default,#e8eaed)] flex-[1_0_0] h-[4px] min-w-px relative rounded-[2px]" data-node-id="38:857" data-name="Rectangle" />
+            <div className="bg-[var(--line\/default,#e8eaed)] flex-[1_0_0] h-[4px] min-w-px relative rounded-[2px]" data-node-id="38:858" data-name="Rectangle" />
+          </div>
+          <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[normal] not-italic relative shrink-0 text-[12px] text-[color:var(--text\/tertiary,#a6a6a6)] tracking-[0.0024px] whitespace-nowrap" data-node-id="38:859">
+            Before you drive · 1 of 3
+          </p>
+        </div>
+        <div className="[word-break:break-word] content-stretch flex flex-col gap-[8px] items-center not-italic overflow-clip relative shrink-0 text-center w-full" data-node-id="38:860" data-name="Heading">
+          <p className="font-['Inter:Bold'] font-bold leading-[normal] relative shrink-0 text-[28px] text-[color:var(--text\/primary,#282828)] tracking-[-0.2632px] w-full" data-node-id="38:861">
+            Mount your phone
+          </p>
+          <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[16px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.0784px] w-full" data-node-id="38:862">
+            Do this while parked. The front camera needs a clear view of your eyes.
+          </p>
+        </div>
+        <div className="bg-[var(--bg\/tint,#eef1f7)] h-[280px] overflow-clip relative rounded-[24px] shrink-0 w-[390px]" data-node-id="38:863" data-name="Dashboard illustration">
+          <div className="absolute h-[280px] left-0 top-0 w-[390px]" data-node-id="38:864" data-name="Art">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgArt} />
+          </div>
+          <div className="absolute bg-[var(--state\/success,#239a6c)] content-stretch flex items-start left-[220px] overflow-clip px-[9px] py-[4px] rounded-[8px] top-[140px]" data-node-id="38:878" data-name="Tag Best">
+            <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[normal] not-italic relative shrink-0 text-[12px] text-[color:var(--text\/inverse,white)] tracking-[0.0024px] whitespace-nowrap" data-node-id="38:879">
+              Best
+            </p>
+          </div>
+          <div className="absolute bg-[var(--state\/warning-dot,#e8a317)] content-stretch flex items-start left-[120px] overflow-clip px-[9px] py-[4px] rounded-[8px] top-[168px]" data-node-id="38:880" data-name="Tag OK on a vent">
+            <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[normal] not-italic relative shrink-0 text-[12px] text-[color:var(--text\/primary,#282828)] tracking-[0.0024px] whitespace-nowrap" data-node-id="38:881">
+              OK on a vent
+            </p>
+          </div>
+          <div className="absolute bg-[var(--state\/danger,#ef4f44)] content-stretch flex items-start left-[60px] overflow-clip px-[9px] py-[4px] rounded-[8px] top-[248px]" data-node-id="38:882" data-name="Tag Too low">
+            <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[normal] not-italic relative shrink-0 text-[12px] text-[color:var(--text\/inverse,white)] tracking-[0.0024px] whitespace-nowrap" data-node-id="38:883">
+              Too low
+            </p>
+          </div>
+        </div>
+        <div className="content-stretch flex flex-col gap-[14px] items-start overflow-clip pt-[2px] px-[6px] relative shrink-0 w-full" data-node-id="38:884" data-name="Tips">
+          <div className="content-stretch flex gap-[14px] items-center overflow-clip relative shrink-0 w-full" data-node-id="38:885" data-name="Frame">
+            <div className="bg-[var(--bg\/tint,#eef1f7)] content-stretch flex items-center justify-center overflow-clip relative rounded-[11px] shrink-0 size-[36px]" data-node-id="38:886" data-name="Frame">
+              <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="38:887" data-name="icon/eye">
+                <div className="absolute inset-[20.83%_8.33%]" data-node-id="38:888" data-name="Group">
+                  <div className="absolute inset-[-6.79%_-4.75%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup1} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold leading-[normal] min-w-px not-italic relative text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="38:891">
+              At eye level, just left of the wheel
+            </p>
+          </div>
+          <div className="content-stretch flex gap-[14px] items-center overflow-clip relative shrink-0 w-full" data-node-id="38:892" data-name="Frame">
+            <div className="bg-[var(--bg\/tint,#eef1f7)] content-stretch flex items-center justify-center overflow-clip relative rounded-[11px] shrink-0 size-[36px]" data-node-id="38:893" data-name="Frame">
+              <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="38:894" data-name="icon/ruler">
+                <div className="absolute inset-[37.5%_12.5%]" data-node-id="38:895" data-name="Group">
+                  <div className="absolute inset-[-15.83%_-5.28%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup2} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold leading-[normal] min-w-px not-italic relative text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="38:897">
+              About an arm’s length from your face
+            </p>
+          </div>
+          <div className="content-stretch flex gap-[14px] items-center overflow-clip relative shrink-0 w-full" data-node-id="38:898" data-name="Frame">
+            <div className="bg-[var(--bg\/tint,#eef1f7)] content-stretch flex items-center justify-center overflow-clip relative rounded-[11px] shrink-0 size-[36px]" data-node-id="38:899" data-name="Frame">
+              <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="38:900" data-name="icon/road">
+                <div className="absolute inset-[12.5%_20.83%]" data-node-id="38:901" data-name="Group">
+                  <div className="absolute inset-[-5.28%_-6.79%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup3} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold leading-[normal] min-w-px not-italic relative text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="38:903">
+              Not blocking your view of the road
+            </p>
+          </div>
+        </div>
+      </div>
+      <Button className="absolute bg-[var(--brand\/navy,#1b2a4e)] content-stretch cursor-pointer flex h-[56px] items-center justify-center left-[20px] rounded-[18px] top-[842px] w-[390px]" label="My phone is mounted" />
+      <a className="-translate-x-1/2 [word-break:break-word] absolute block cursor-pointer font-['Inter:Semi_Bold'] font-semibold h-[22px] leading-[0] left-[215px] not-italic text-[16px] text-[color:var(--brand\/navy,#1b2a4e)] text-center top-[806px] tracking-[-0.0784px] w-[390px]" data-node-id="163:1698">
+        <p className="leading-[normal]">I’m a passenger</p>
+      </a>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Label/Small: Font(family: "Inter", style: Medium, size: 12, weight: 500, lineHeight: 100, letterSpacing: 0.019999999552965164), Heading/Large: Font(family: "Inter", style: Bold, size: 28, weight: 700, lineHeight: 100, letterSpacing: -0.9399999976158142), Body/Regular: Font(family: "Inter", style: Regular, size: 16, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.49000000953674316), Body/Strong: Font(family: "Inter", style: Semi Bold, size: 16, weight: 600, lineHeight: 100, letterSpacing: -0.49000000953674316).
+Images and SVGs will be stored as constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

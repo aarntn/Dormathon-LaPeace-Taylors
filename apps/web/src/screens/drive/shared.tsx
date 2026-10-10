@@ -1,8 +1,12 @@
 import type { ReactNode } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { AppFrame, Button, IconButton } from '../../components';
+import { currentAssets, currentAssetAliases } from './currentAssets';
 
-export const asset = (name: string) => `/assets/drive/${name}`;
+export const asset = (name: string) => {
+  const current = currentAssetAliases[name] ?? name;
+  return currentAssets.has(current) ? `/assets/drive-current/${current}` : `/assets/drive/${name}`;
+};
 export function Art({ name, className = '', alt = '' }: { name: string; className?: string; alt?: string }) {
   return <img src={asset(name)} alt={alt} className={`drive-art ${className}`} />;
 }
@@ -38,8 +42,8 @@ export function Steps({ step, dark = false }: { step: number; dark?: boolean }) 
 export function Heading({ title, children, dark = false }: { title: string; children?: ReactNode; dark?: boolean }) {
   return <header className={`drive-heading ${dark ? 'drive-heading--dark' : ''}`}><h1 className="text-heading-large">{title}</h1>{children && <p className="text-body-regular">{children}</p>}</header>;
 }
-export function TripBar({ status, duration, alarm = false, warning = false, alarmStatus='Alarm on' }: { status: string; duration?: string; alarm?: boolean; warning?: boolean; alarmStatus?:string }) {
-  return <div className="drive-trip-bar"><div className="drive-trip-status"><Art name={warning ? '6cb7a.svg' : 'd0a0b.svg'} /><p className="text-body-small-strong">{status}</p></div>{alarm ? <div className="drive-alarm-status"><Glyph name="b3b52.svg" size={18} /><p className="text-body-small">{alarmStatus}</p></div> : <p className="text-body-small drive-secondary">{duration}</p>}</div>;
+export function TripBar({ status, duration, alarm = false, warning = false, alarmStatus='Alarm on', controls }: { status: string; duration?: string; alarm?: boolean; warning?: boolean; alarmStatus?:string; controls?:string }) {
+  return <div className="drive-trip-bar"><div className="drive-trip-status"><Art name={warning ? '6cb7a.svg' : 'd0a0b.svg'} /><p className="text-body-small-strong">{status}</p></div>{controls?<div className="drive-alarm-status"><img src="/assets/drive-current/eaad6.svg" width="18" height="18" alt=""/><p className="text-body-small">{controls}</p></div>:alarm ? <div className="drive-alarm-status"><Glyph name="b3b52.svg" size={18} /><p className="text-body-small">{alarmStatus}</p></div> : <p className="text-body-small drive-secondary">{duration}</p>}</div>;
 }
 export function Gauge({ mode, title, detail }: { mode: 'check' | 'alert' | 'tired'; title: string; detail: string }) {
   return <div className={`drive-gauge drive-gauge--${mode}`} role="img" aria-label={`${title}. ${detail}`}><Art name={mode === 'alert' ? 'fe148.svg' : 'd663f.svg'} className="drive-gauge__track" /><Art name={mode === 'alert' ? '46c58.svg' : mode === 'tired' ? '24551.svg' : 'a4bc7.svg'} className="drive-gauge__level" /><Art name={mode === 'alert' ? '5c642.svg' : 'b7757.svg'} className="drive-gauge__eyes" /><p className={`drive-gauge__title ${mode === 'check' ? 'text-heading-large' : 'text-heading-display'}`}>{title}</p><p className="drive-gauge__detail text-body-small">{detail}</p></div>;

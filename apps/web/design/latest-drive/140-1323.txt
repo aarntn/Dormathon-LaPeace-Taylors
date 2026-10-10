@@ -1,0 +1,207 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/6583d1fc-5b47-4c7f-a770-fe31d45a811d";
+const imgGroup = `${assetPathPrefix}/027af.svg`;
+const imgIndicators = `${assetPathPrefix}/a391f.svg`;
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default";
+  style?: "Primary";
+};
+
+function Button({ className, label = "Button", state = "Default", style = "Primary" }: ButtonProps) {
+  return (
+    <div className={className || "bg-[var(--brand\\/navy,#1b2a4e)] content-stretch cursor-pointer flex h-[56px] items-center justify-center relative rounded-[18px] w-[390px]"} data-node-id="27:3">
+      <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[18px] text-[color:var(--text\/inverse,white)] tracking-[-0.1152px] whitespace-nowrap" data-node-id="27:4">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+type IconButtonProps = {
+  className?: string;
+  icon?: "Back";
+  theme?: "Light";
+};
+
+function IconButton({ className, icon = "Back", theme = "Light" }: IconButtonProps) {
+  return (
+    <div className={className || "bg-[var(--bg\\/card,white)] border border-[var(--line\\/default,#e8eaed)] border-solid content-stretch drop-shadow-[0px_6px_8px_rgba(0,0,0,0.06)] flex items-center justify-center relative rounded-[20px] size-[40px]"} data-node-id="27:14">
+      <div className="overflow-clip relative shrink-0 size-[20px]" data-node-id="27:15" data-name="icon/back">
+        <div className="absolute bottom-1/4 left-[20.83%] right-[20.83%] top-1/4" data-node-id="27:16" data-name="Group">
+          <div className="absolute inset-[-7.92%_-6.79%]">
+            <img alt="" className="block max-w-none size-full" src={imgGroup} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+type StatusBarProps = {
+  className?: string;
+  theme?: "Light";
+};
+
+function StatusBar({ className, theme = "Light" }: StatusBarProps) {
+  return (
+    <div className={className || "h-[54px] relative w-[430px]"} data-node-id="27:134">
+      <p className="[word-break:break-word] absolute font-['SF_Pro:Semibold'] font-[590] leading-[normal] left-[52px] text-[17px] text-[color:var(--text\/primary,#282828)] top-[18px] tracking-[-0.408px] whitespace-nowrap" data-node-id="27:135" style={{ fontVariationSettings: '"wdth" 100' }}>
+        9:41
+      </p>
+      <div className="absolute bg-black h-[36px] left-[153px] rounded-[18px] top-[11px] w-[123.999px]" data-node-id="27:136" data-name="Dynamic Island" />
+      <div className="absolute h-[13px] left-[308px] top-[21px] w-[70px]" data-node-id="27:137" data-name="Indicators">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIndicators} />
+      </div>
+    </div>
+  );
+}
+
+export default function Component01ABeforeYouDrive() {
+  return (
+    <div className="bg-[var(--bg\/screen,#fcfcfe)] relative size-full" data-node-id="140:1323" data-name="01a Before you drive">
+      <StatusBar className="absolute h-[54px] left-0 top-0 w-[430px]" />
+      <div className="absolute content-stretch flex flex-col gap-[20px] items-start left-0 overflow-clip pb-[24px] pt-[8px] px-[20px] top-[54px] w-[430px]" data-node-id="140:1335" data-name="Content">
+        <div className="content-stretch flex items-start overflow-clip relative shrink-0 w-full" data-node-id="140:1336" data-name="Top bar">
+          <IconButton className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch cursor-pointer drop-shadow-[0px_6px_8px_rgba(0,0,0,0.06)] flex items-center justify-center relative rounded-[20px] shrink-0 size-[40px]" />
+        </div>
+        <div className="[word-break:break-word] content-stretch flex flex-col gap-[8px] items-start not-italic overflow-clip relative shrink-0 text-center w-full" data-node-id="140:1342" data-name="Heading">
+          <p className="font-['Inter:Bold'] font-bold leading-[normal] relative shrink-0 text-[28px] text-[color:var(--text\/primary,#282828)] tracking-[-0.2632px] w-full" data-node-id="140:1343">
+            Quick check before you go
+          </p>
+          <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[16px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.0784px] w-full" data-node-id="140:1344">
+            Under a minute. It helps us judge how tired you are before you set off.
+          </p>
+        </div>
+        <div className="content-stretch flex flex-col gap-[10px] items-start overflow-clip relative shrink-0 w-full" data-node-id="140:1345" data-name="Question">
+          <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px] whitespace-nowrap" data-node-id="140:1346">
+            How long did you sleep last night?
+          </p>
+          <div className="content-stretch flex gap-[8px] items-start overflow-clip relative shrink-0 w-full" data-node-id="140:1347" data-name="Tiles">
+            <div className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex flex-[1_0_0] h-[52px] items-center justify-center min-w-px overflow-clip relative rounded-[14px]" data-node-id="140:1348" data-name="Tile Under 5 h">
+              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px] whitespace-nowrap" data-node-id="140:1349">
+                Under 5 h
+              </p>
+            </div>
+            <div className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex flex-[1_0_0] h-[52px] items-center justify-center min-w-px overflow-clip relative rounded-[14px]" data-node-id="140:1350" data-name="Tile 5–6 h">
+              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px] whitespace-nowrap" data-node-id="140:1351">
+                5–6 h
+              </p>
+            </div>
+            <div className="bg-[var(--brand\/navy,#1b2a4e)] content-stretch flex flex-[1_0_0] h-[52px] items-center justify-center min-w-px overflow-clip relative rounded-[14px]" data-node-id="140:1352" data-name="Tile 6–7 h">
+              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/inverse,white)] tracking-[-0.0784px] whitespace-nowrap" data-node-id="140:1353">
+                6–7 h
+              </p>
+            </div>
+            <div className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex flex-[1_0_0] h-[52px] items-center justify-center min-w-px overflow-clip relative rounded-[14px]" data-node-id="140:1354" data-name="Tile 7 h +">
+              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px] whitespace-nowrap" data-node-id="140:1355">
+                7 h +
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex flex-col gap-[10px] items-start overflow-clip relative shrink-0 w-full" data-node-id="140:1356" data-name="Question">
+          <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px] whitespace-nowrap" data-node-id="140:1357">
+            How long have you been awake?
+          </p>
+          <div className="content-stretch flex gap-[8px] items-start overflow-clip relative shrink-0 w-full" data-node-id="140:1358" data-name="Tiles">
+            <div className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex flex-[1_0_0] h-[52px] items-center justify-center min-w-px overflow-clip relative rounded-[14px]" data-node-id="140:1359" data-name="Tile Under 8 h">
+              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px] whitespace-nowrap" data-node-id="140:1360">
+                Under 8 h
+              </p>
+            </div>
+            <div className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex flex-[1_0_0] h-[52px] items-center justify-center min-w-px overflow-clip relative rounded-[14px]" data-node-id="140:1361" data-name="Tile 8–12 h">
+              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px] whitespace-nowrap" data-node-id="140:1362">
+                8–12 h
+              </p>
+            </div>
+            <div className="bg-[var(--brand\/navy,#1b2a4e)] content-stretch flex flex-[1_0_0] h-[52px] items-center justify-center min-w-px overflow-clip relative rounded-[14px]" data-node-id="140:1363" data-name="Tile 12–16 h">
+              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/inverse,white)] tracking-[-0.0784px] whitespace-nowrap" data-node-id="140:1364">
+                12–16 h
+              </p>
+            </div>
+            <div className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex flex-[1_0_0] h-[52px] items-center justify-center min-w-px overflow-clip relative rounded-[14px]" data-node-id="140:1365" data-name="Tile 16 h +">
+              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px] whitespace-nowrap" data-node-id="140:1366">
+                16 h +
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex flex-col gap-[10px] items-start overflow-clip relative shrink-0 w-full" data-node-id="175:1681" data-name="Question">
+          <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px] whitespace-nowrap" data-node-id="175:1682">
+            How alert do you feel?
+          </p>
+          <div className="content-stretch flex gap-[8px] items-start overflow-clip relative shrink-0 w-full" data-node-id="175:1683" data-name="Tiles">
+            <div className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex flex-[1_0_0] h-[48px] items-center justify-center min-w-px overflow-clip relative rounded-[14px]" data-node-id="175:1684" data-name="Tile Very alert">
+              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/primary,#282828)] tracking-[-0.042px] whitespace-nowrap" data-node-id="175:1685">
+                Very alert
+              </p>
+            </div>
+            <div className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex flex-[1_0_0] h-[48px] items-center justify-center min-w-px overflow-clip relative rounded-[14px]" data-node-id="175:1686" data-name="Tile OK">
+              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/primary,#282828)] tracking-[-0.042px] whitespace-nowrap" data-node-id="175:1687">
+                OK
+              </p>
+            </div>
+            <div className="bg-[var(--brand\/navy,#1b2a4e)] content-stretch flex flex-[1_0_0] h-[48px] items-center justify-center min-w-px overflow-clip relative rounded-[14px]" data-node-id="175:1688" data-name="Tile A bit tired">
+              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/inverse,white)] tracking-[-0.042px] whitespace-nowrap" data-node-id="175:1689">
+                A bit tired
+              </p>
+            </div>
+            <div className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex flex-[1_0_0] h-[48px] items-center justify-center min-w-px overflow-clip relative rounded-[14px]" data-node-id="175:1690" data-name="Tile Very tired">
+              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/primary,#282828)] tracking-[-0.042px] whitespace-nowrap" data-node-id="175:1691">
+                Very tired
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex flex-col gap-[10px] items-start overflow-clip relative shrink-0 w-full" data-node-id="175:1692" data-name="Question">
+          <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px] whitespace-nowrap" data-node-id="175:1693">
+            How long is the drive?
+          </p>
+          <div className="content-stretch flex gap-[8px] items-start overflow-clip relative shrink-0 w-full" data-node-id="175:1694" data-name="Tiles">
+            <div className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex flex-[1_0_0] h-[48px] items-center justify-center min-w-px overflow-clip relative rounded-[14px]" data-node-id="175:1695" data-name="Tile Under 30 min">
+              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/primary,#282828)] tracking-[-0.042px] whitespace-nowrap" data-node-id="175:1696">
+                Under 30 min
+              </p>
+            </div>
+            <div className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex flex-[1_0_0] h-[48px] items-center justify-center min-w-px overflow-clip relative rounded-[14px]" data-node-id="175:1697" data-name="Tile 30–60 min">
+              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/primary,#282828)] tracking-[-0.042px] whitespace-nowrap" data-node-id="175:1698">
+                30–60 min
+              </p>
+            </div>
+            <div className="bg-[var(--brand\/navy,#1b2a4e)] content-stretch flex flex-[1_0_0] h-[48px] items-center justify-center min-w-px overflow-clip relative rounded-[14px]" data-node-id="175:1699" data-name="Tile 1–2 h">
+              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/inverse,white)] tracking-[-0.042px] whitespace-nowrap" data-node-id="175:1700">
+                1–2 h
+              </p>
+            </div>
+            <div className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex flex-[1_0_0] h-[48px] items-center justify-center min-w-px overflow-clip relative rounded-[14px]" data-node-id="175:1701" data-name="Tile 2 h +">
+              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/primary,#282828)] tracking-[-0.042px] whitespace-nowrap" data-node-id="175:1702">
+                2 h +
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="[word-break:break-word] bg-[var(--bg\/tint,#eef1f7)] content-stretch flex flex-col gap-[4px] items-start not-italic overflow-clip p-[16px] relative rounded-[18px] shrink-0 text-[14px] tracking-[-0.042px] w-full" data-node-id="140:1367" data-name="Next">
+          <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] relative shrink-0 text-[color:var(--brand\/navy,#1b2a4e)] w-full" data-node-id="140:1368">
+            Next: a 15-second face reading, then a tap test
+          </p>
+          <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[color:var(--text\/primary,#282828)] w-full" data-node-id="140:1369">
+            We look for slow blinks and yawning, then time how fast you react. Nothing is recorded.
+          </p>
+        </div>
+      </div>
+      <Button className="absolute bg-[var(--brand\/navy,#1b2a4e)] content-stretch cursor-pointer flex h-[56px] items-center justify-center left-[20px] rounded-[18px] top-[842px] w-[390px]" label="Next" />
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Heading/Large: Font(family: "Inter", style: Bold, size: 28, weight: 700, lineHeight: 100, letterSpacing: -0.9399999976158142), Body/Regular: Font(family: "Inter", style: Regular, size: 16, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.49000000953674316), Body/Strong: Font(family: "Inter", style: Semi Bold, size: 16, weight: 600, lineHeight: 100, letterSpacing: -0.49000000953674316), Body/Small Strong: Font(family: "Inter", style: Semi Bold, size: 14, weight: 600, lineHeight: 100, letterSpacing: -0.30000001192092896), Body/Small: Font(family: "Inter", style: Regular, size: 14, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.30000001192092896).
+Images and SVGs will be stored as constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

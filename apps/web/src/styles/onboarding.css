@@ -119,9 +119,23 @@
 .ob-scan-checks .complete { color:var(--text-inverse); }
 .ob-scan-checks .complete > span { background:var(--drive-accent); }
 .ob-face-scan footer p { text-align:center; color:var(--drive-text-secondary); }
-.ob-all-set .ob-content { align-items:center; padding-top:max(126px,calc(env(safe-area-inset-top,0px) + 72px)); gap:24px; }
+.ob-all-set .ob-content { align-items:center; padding-top:max(206px,calc(env(safe-area-inset-top,0px) + 152px)); gap:24px; }
 .ob-success { display:grid; place-items:center; width:88px; height:88px; border-radius:44px; background:var(--state-success-soft); }
 .ob-summary { width:100%; padding:4px 16px; border:1px solid var(--line-default); border-radius:20px; background:var(--bg-card); box-shadow:var(--onboarding-card-shadow); }
 .ob-summary > div { display:flex; gap:14px; align-items:center; padding:14px 0; border-bottom:1px solid var(--line-default); }
 .ob-summary > div:last-child { border:0; }
 .ob-summary-icon { display:grid; place-items:center; width:44px; height:44px; flex-shrink:0; border-radius:14px; background:var(--bg-tint); }
+
+.ob-how-it-works { border-radius:18px; gap:4px; }
+.ob-how-it-works strong { color:var(--brand-navy); }
+.ob-how-it-works p { color:var(--text-primary); }
+
+.ob-permissions { width:100%; padding:4px 16px; border:1px solid var(--line-default); border-radius:18px; background:var(--bg-card); box-shadow:0 6px 16px rgba(0,0,0,.04); }
+.ob-permission { display:flex; align-items:center; gap:14px; padding:14px 0; }
+.ob-permission + .ob-permission { border-top:1px solid var(--bg-field); }
+.ob-permission__icon { flex:0 0 44px; width:44px; height:44px; border-radius:14px; background:var(--bg-tint); display:grid; place-items:center; }
+.ob-permission__icon .ob-art { width:22px; height:22px; }
+.ob-permission__text { flex:1; min-width:0; display:flex; flex-direction:column; gap:2px; }
+.ob-permission__text p { color:var(--text-secondary); }
+.ob-permission__action { border:0; padding:0; background:transparent; color:var(--brand-navy); white-space:nowrap; }
+.ob-permission__action--done { color:var(--state-success); }

@@ -1,39 +1,65 @@
 import { useEffect, useRef, useState } from 'react';
-import { Button } from '../../components';
-import { Art,Card,Frame,Heading,useCarNavigation } from './shared';
+import { useSearchParams } from 'react-router';
+import { Button, LiveDot, Waveform } from '../../components';
+import { MicrophoneMeter } from '../../components/motion/microphone';
+import { Art, Card, Frame, Heading, useCarNavigation } from './shared';
+import { LoadingCard } from './LoadingCard';
 import { useCarSession } from './session';
-export type EngineSoundCheckProps={elapsedSeconds?:number;durationSeconds?:number;idleFinding?:string;squealFinding?:string};
-export function EngineSoundCheck({elapsedSeconds=9,durationSeconds=15,idleFinding='Idle is steady',squealFinding='High squeal at start-up'}:EngineSoundCheckProps){
-  const go=useCarNavigation();const {analyseStartup,startup,uploading,notify}=useCarSession();
-  const [recording,setRecording]=useState(false);const [elapsed,setElapsed]=useState(startup?durationSeconds:0);
-  const recorder=useRef<MediaRecorder|null>(null);const stream=useRef<MediaStream|null>(null);const timer=useRef<number|null>(null);const discard=useRef(false);
-  const stop=()=>{if(timer.current!==null)window.clearInterval(timer.current);recorder.current?.state==='recording'&&recorder.current.stop();stream.current?.getTracks().forEach(track=>track.stop());};
-  useEffect(()=>()=>{discard.current=true;stop();},[]);
-  const start=async()=>{
-    if(recording||uploading)return;
-    if(!navigator.mediaDevices?.getUserMedia||!window.MediaRecorder){notify('Audio recording is not available in this browser.');return;}
-    try{
-      discard.current=false;const nextStream=await navigator.mediaDevices.getUserMedia({audio:true});stream.current=nextStream;
-      const chunks:BlobPart[]=[];const nextRecorder=new MediaRecorder(nextStream);recorder.current=nextRecorder;setElapsed(0);setRecording(true);
-      nextRecorder.ondataavailable=event=>{if(event.data.size)chunks.push(event.data);};
-      nextRecorder.onstop=()=>{
-        nextStream.getTracks().forEach(track=>track.stop());setRecording(false);
-        if(discard.current)return;
-        const audio=new Blob(chunks,{type:nextRecorder.mimeType||'audio/webm'});
-        if(audio.size)void analyseStartup(audio).catch(error=>notify(error instanceof Error?error.message:'Could not save the start-up recording.'));
-      };
-      nextRecorder.start();let seconds=0;timer.current=window.setInterval(()=>{seconds+=1;setElapsed(seconds);if(seconds>=durationSeconds)stop();},1000);
-    }catch{notify('Microphone access is needed to record the engine start.');}
+
+const DURATION_SECONDS = 5;
+const MINIMUM_CHECKING_MS = 1000;
+const QUIET_LEVEL = 0.04; // below this the phone heard no engine
+const RADIUS = 106.7;
+const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
+const clock = (seconds: number) => `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
+
+/** C4 Start-up battery check. It records only while this screen is listening, then uploads once. */
+export function EngineSoundCheck({ checkingPreview = false }: { checkingPreview?: boolean }) {
+  const go = useCarNavigation(); const [params] = useSearchParams(); const preview = params.has('preview');
+  const { analyseStartup, startup, uploading, notify } = useCarSession();
+  const [recording, setRecording] = useState(false); const [elapsed, setElapsed] = useState(0); const [checking, setChecking] = useState(false); const [stream, setStream] = useState<MediaStream | null>(null);
+  const recorder = useRef<MediaRecorder | null>(null); const timer = useRef<number | null>(null); const discard = useRef(false); const meter = useRef<MicrophoneMeter | null>(null); const loudest = useRef(0);
+  const stop = () => { if (timer.current !== null) window.clearInterval(timer.current); timer.current = null; if (recorder.current?.state === 'recording') recorder.current.stop(); };
+  const release = (media: MediaStream | null) => { media?.getTracks().forEach(track => track.stop()); meter.current?.stop(); meter.current = null; };
+  useEffect(() => () => { discard.current = true; stop(); recorder.current?.stream.getTracks().forEach(track => track.stop()); meter.current?.stop(); }, []);
+  const start = async () => {
+    if (recording || checking || uploading) return;
+    if (!navigator.mediaDevices?.getUserMedia || !window.MediaRecorder) { notify('Audio recording is not available in this browser.'); return; }
+    try {
+      discard.current = false; loudest.current = 0;
+      const media = await navigator.mediaDevices.getUserMedia({ audio: true }); setStream(media);
+      const chunks: BlobPart[] = []; const next = new MediaRecorder(media); recorder.current = next; setElapsed(0); setRecording(true);
+      meter.current = new MicrophoneMeter(); void meter.current.start(media, level => { loudest.current = Math.max(loudest.current, level); }).catch(() => undefined);
+      next.ondataavailable = event => { if (event.data.size) chunks.push(event.data); };
+      next.onstop = () => { release(media); setStream(null); setRecording(false); if (!discard.current) void finish(new Blob(chunks, { type: next.mimeType || 'audio/webm' })); };
+      next.start(); let seconds = 0;
+      timer.current = window.setInterval(() => { seconds += 1; setElapsed(seconds); if (seconds >= DURATION_SECONDS) stop(); }, 1000);
+    } catch { notify('Microphone access is needed to record the engine start.'); }
   };
-  const title=startup?.verdict??(recording?'Listening to the engine start…':'Record while the engine starts');
-  const warning=startup?.urgency==='soon'||startup?.urgency==='stop';
-  return <Frame
-    back="car-check"
-    className="car-engine"
-    footer={<Button label={recording?'Recording…':uploading==='startup'?'Analysing…':startup?'See my report':'Record start-up'} onClick={startup?()=>go('car-report'):()=>void start()} disabled={recording||uploading==='startup'}/>}
-  >
-    <Heading title="Start-up sound check">Before you start the engine, place the phone about 30 cm from it.</Heading>
-    <div className="car-recorder"><Art name="93915.svg" className="car-recorder-track"/><Art name="b2d0c.svg" className="car-recorder-progress"/><div className="car-listening text-body-small-strong"><Art name="6665a.svg"/>{recording?'Listening':'Ready'}</div><p className="car-recorded-time text-heading-display">{Math.floor((recording?elapsed:startup?durationSeconds:elapsedSeconds)/60)}:{String(Math.floor((recording?elapsed:startup?durationSeconds:elapsedSeconds)%60)).padStart(2,'0')}</p><p className="car-recording-duration text-body-small">of {durationSeconds} seconds</p><Art name="waveform.svg" className="car-waveform"/></div>
-    <section className="car-heard"><h2 className="text-body-strong">{startup?'Start-up result':'What we hear so far'}</h2><Card title={startup?title:idleFinding} description={startup?.stub?'A demo indication — not a vehicle diagnosis.':undefined} icon={warning?'de6af.svg':'90ace.svg'} tone={warning?'warning':'success'} aside={<span className={'text-body-small-strong '+(warning?'car-warning':'car-success')}>{warning?startup?.urgency_label??'Check':'Normal'}</span>}/>{!startup&&<Card title={squealFinding} icon="de6af.svg" tone="warning" aside={<span className="text-body-small-strong car-warning">Check</span>}/>}</section>
+  const finish = async (audio: Blob) => {
+    if (!audio.size || loudest.current < QUIET_LEVEL) { go('didnt-hear-the-engine'); return; }
+    setChecking(true); const started = performance.now(); let failed = false;
+    try { await analyseStartup(audio); } catch (error) { failed = true; notify(error instanceof Error ? error.message : 'Could not save the start-up recording.'); }
+    await new Promise(resolve => setTimeout(resolve, Math.max(0, MINIMUM_CHECKING_MS - (performance.now() - started))));
+    if (!discard.current) { setChecking(false); if (failed) go('didnt-hear-the-engine'); }
+  };
+  const shown = recording ? elapsed : startup || checkingPreview ? DURATION_SECONDS : 0;
+  const warning = startup ? startup.urgency !== 'monitor' : false;
+  return <Frame back="car-check" className="car-engine" footer={<Button label={recording ? 'Recording…' : startup ? 'See my report' : 'Record start-up'} onClick={startup && !recording ? () => go('car-report') : () => void start()} disabled={recording || checking || checkingPreview} />}>
+    <Heading title="Start-up battery check">We only listen while you start the engine. It can flag a possible weak battery, not every engine fault.</Heading>
+    <div className="car-recorder">
+      <Art name="93915.svg" className="car-recorder-track" />
+      <svg className="car-recorder-arc" viewBox="0 0 220 220" aria-hidden="true"><circle cx="110" cy="110" r={RADIUS} fill="none" stroke="var(--brand-navy)" strokeWidth="6.6" strokeDasharray={`${CIRCUMFERENCE * Math.min(1, shown / DURATION_SECONDS)} ${CIRCUMFERENCE}`} transform="rotate(-90 110 110)" /></svg>
+      {(recording || preview) && <div className="car-listening text-body-small-strong"><LiveDot color="Red" />Listening</div>}
+      <p className="car-recorded-time text-heading-display">{clock(shown)}</p>
+      <p className="car-recording-duration text-body-small">{recording ? 'Start your engine now' : startup ? 'Recorded' : 'Tap record, then start your engine'}</p>
+      <div className="car-waveform"><Waveform stream={stream} active={recording} /></div>
+    </div>
+    <section className="car-heard"><h2 className="text-body-strong">What we heard</h2>
+      {startup ? <Card title={startup.crank_seconds && warning ? `Slow start: ${startup.crank_seconds} s` : startup.verdict} description={startup.stub ? 'A demo indication, not a vehicle diagnosis.' : undefined} icon={warning ? 'de6af.svg' : '90ace.svg'} tone={warning ? 'warning' : 'success'} aside={<span className={'text-body-small-strong ' + (warning ? 'car-warning' : 'car-success')}>{warning ? 'Check' : 'Normal'}</span>} />
+        : <p className="car-heard-empty text-body-small">Your result will appear here after the recording.</p>}
+    </section>
+    {(checking || checkingPreview) && <LoadingCard title="Checking the start-up sound…" tone="light">Measuring how long the engine took to start</LoadingCard>}
   </Frame>;
 }
+export const CheckingTheSound = () => <EngineSoundCheck checkingPreview />;

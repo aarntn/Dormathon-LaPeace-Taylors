@@ -82,6 +82,10 @@
 .drive-trip-stats { display: flex; align-items: center; padding: 20px; background: var(--drive-card); border-radius: 20px; }
 .drive-trip-stats > div { flex: 1; display: flex; flex-direction: column; gap: 4px; }
 .drive-trip-stats > div:last-child { padding-left: 20px; }
+.drive-trip-stats > div { min-width:0; }
+.drive-trip-stats > div ~ div { padding-left:20px; }
+.drive-trip-stats .text-numeric-large { white-space:nowrap; }
+@media(max-width:400px){.drive-trip-stats{padding:16px;}.drive-trip-stats>div~div{padding-left:10px;}.drive-trip-stats .text-numeric-large{font-size:20px;}}
 .drive-trip-stats .text-label-small { color: var(--drive-text-secondary); }
 .drive-trip-stats__divider { width: 1px; height: 44px; background: var(--drive-line); }
 .drive-waze-card { display: flex; align-items: center; gap: 14px; padding: 14px 16px 14px 14px; border: 1px solid var(--drive-line); border-radius: 18px; color: var(--text-inverse); background: var(--drive-card); text-align: left; }
@@ -121,6 +125,17 @@
 .drive-home__pitch { padding-top: 12px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
 .drive-start-button { width: 232px; height: 52px; }
 .drive-home .app-frame__footer { display: flex; justify-content: center; }
+.drive-home .drive-logo { display: block; line-height: 0; }
+.drive-home .drive-logo img { display: block; width: 139.8px; height: 40.8px; }
+.drive-home .drive-car-hero .text-title-medium { line-height: 22px; }
+.drive-home .drive-car-status { line-height: 17px; }
+.drive-home .text-body-strong { line-height: 19px; }
+.drive-home .drive-home__pitch .drive-heading h1 { line-height: 34px; }
+.drive-home .drive-home__pitch .drive-heading p { line-height: 22px; }
+.drive-home .drive-list-card { padding-right: 16px; min-height: 74px; }
+.drive-home-attention > img { flex-shrink: 0; }
+.drive-home .drive-car-status { justify-content: center; flex-wrap: wrap; }
+.drive-home-empty { color: var(--text-secondary); }
 .drive-recent { padding-top: 8px; display: flex; flex-direction: column; gap: 12px; }
 .drive-recent h2 { color: var(--text-secondary); }
 .drive-list-card { display: flex; align-items: center; gap: 14px; padding: 14px; border: 1px solid var(--line-default); border-radius: 18px; background: var(--bg-card); color: var(--text-primary); box-shadow: var(--drive-card-shadow); text-align: left; width: 100%; }

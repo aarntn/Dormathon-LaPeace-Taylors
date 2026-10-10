@@ -1,0 +1,50 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="430" height="932" viewBox="0 0 430 932" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Map (your maps app)" clip-path="url(#clip0_0_48)">
+<path id="Vector" d="M430 0H0V932H430V0Z" fill="#1A2130"/>
+<path id="Vector_2" d="M388 730H262C255.373 730 250 735.373 250 742V828C250 834.627 255.373 840 262 840H388C394.627 840 400 834.627 400 828V742C400 735.373 394.627 730 388 730Z" fill="#1C2A2A"/>
+<path id="Vector_3" d="M168 360H32C25.3726 360 20 365.373 20 372V468C20 474.627 25.3726 480 32 480H168C174.627 480 180 474.627 180 468V372C180 365.373 174.627 360 168 360Z" fill="#1C2A2A"/>
+<g id="Vector_4">
+<path d="M-10 130L440 160Z" fill="black"/>
+<path d="M-10 130L440 160" stroke="#2A3446" stroke-width="12"/>
+</g>
+<g id="Vector_5">
+<path d="M-10 310L440 340Z" fill="black"/>
+<path d="M-10 310L440 340" stroke="#2A3446" stroke-width="12"/>
+</g>
+<g id="Vector_6">
+<path d="M-10 490L440 520Z" fill="black"/>
+<path d="M-10 490L440 520" stroke="#2A3446" stroke-width="12"/>
+</g>
+<g id="Vector_7">
+<path d="M-10 670L440 700Z" fill="black"/>
+<path d="M-10 670L440 700" stroke="#2A3446" stroke-width="12"/>
+</g>
+<g id="Vector_8">
+<path d="M-10 850L440 880Z" fill="black"/>
+<path d="M-10 850L440 880" stroke="#2A3446" stroke-width="12"/>
+</g>
+<g id="Vector_9">
+<path d="M70 -10V942Z" fill="black"/>
+<path d="M70 -10V942" stroke="#2A3446" stroke-width="12"/>
+</g>
+<g id="Vector_10">
+<path d="M390 -10V942Z" fill="black"/>
+<path d="M390 -10V942" stroke="#2A3446" stroke-width="12"/>
+</g>
+<g id="Vector_11">
+<path d="M-20 950L450 570Z" fill="black"/>
+<path d="M-20 950L450 570" stroke="#323D52" stroke-width="22"/>
+</g>
+<path id="Vector_12" d="M215 952V570L330 460V-20" stroke="#354159" stroke-width="26" stroke-linejoin="round"/>
+<path id="Vector_13" d="M215 952V570L330 460V-20" stroke="#1F3E7A" stroke-width="16" stroke-linejoin="round"/>
+<path id="Vector_14" d="M215 690V570L330 460V-20" stroke="#4C8DFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_15" d="M215 716C229.359 716 241 704.359 241 690C241 675.641 229.359 664 215 664C200.641 664 189 675.641 189 690C189 704.359 200.641 716 215 716Z" fill="#4C8DFF" fill-opacity="0.22"/>
+<path id="Vector_16" d="M215 705C223.284 705 230 698.284 230 690C230 681.716 223.284 675 215 675C206.716 675 200 681.716 200 690C200 698.284 206.716 705 215 705Z" fill="white"/>
+<path id="Vector_17" d="M215 681L222 697L215 693L208 697L215 681Z" fill="#4C8DFF"/>
+</g>
+<defs>
+<clipPath id="clip0_0_48">
+<rect width="430" height="932" fill="white"/>
+</clipPath>
+</defs>
+</svg>

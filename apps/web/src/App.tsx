@@ -15,7 +15,7 @@ import { OnboardingProvider } from './screens/onboarding/draft';
 import { PeroduaMyviSheet } from './screens/onboarding/PeroduaMyviSheet';
 import { carRoutes } from './screens/car/routes';
 import { CarProvider } from './screens/car/session';
-import { PhotoWalkAround } from './screens/car/PhotoWalkAround';
+import { ScanAWarningLight } from './screens/car/ScanAWarningLight';
 import { tripsRoutes } from './screens/trips/routes';
 import { TripsProvider } from './screens/trips/session';
 import { profileRoutes } from './screens/profile/routes';
@@ -69,6 +69,6 @@ export function App() {
         </Routes>
       </PageTransition>
     </AnimatePresence></div>
-    <AnimatePresence custom={location.pathname==='/car/engine-sound-check'&&direction===1?'push':'sheet'}>{isSheet && (location.pathname === '/onboarding/perodua-myvi-sheet' ? <PeroduaMyviSheet key="car-sheet" /> : location.pathname === '/car/photo-walk-around' ? <PhotoWalkAround key="car-camera" /> : <SheetPreview key="sheet" />)}</AnimatePresence>
+    <AnimatePresence custom={['/car/warning-light-result','/car/couldnt-read-the-light'].includes(location.pathname)&&direction===1?'push':'sheet'}>{isSheet && (location.pathname === '/onboarding/perodua-myvi-sheet' ? <PeroduaMyviSheet key="car-sheet" /> : ['/car/scan-a-warning-light','/car/reading-the-light'].includes(location.pathname) ? <ScanAWarningLight key="car-camera" /> : <SheetPreview key="sheet" />)}</AnimatePresence>
   </TripsProvider></CarProvider></OnboardingProvider></DemoProvider></DriveProvider></EyeWatchProvider></AppDataProvider>;
 }

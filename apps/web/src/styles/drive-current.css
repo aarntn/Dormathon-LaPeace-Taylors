@@ -1,0 +1,119 @@
+/* Layout measurements from the current Drive watch frames. */
+.readiness-before>.catch-up-card.tint { color:var(--text-primary); }
+.readiness-before>.catch-up-card.tint strong { color:var(--brand-navy); }
+.readiness-result { --result-tone:var(--state-success);--result-soft:var(--state-success-soft); }
+.readiness-result--caution { --result-tone:var(--state-warning);--result-soft:var(--state-warning-soft); }
+.readiness-result--high { --result-tone:var(--state-danger);--result-soft:var(--state-danger-soft); }
+.readiness-result__content { gap:12px; }
+.readiness-result__content>.icon-button { align-self:flex-start; }
+.readiness-result__icon { width:72px;height:72px;border-radius:36px;background:var(--result-soft);align-self:center;display:grid;place-items:center; }
+.readiness-result .readiness-chip { display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:10px; }
+.readiness-findings { padding:16px;border:1px solid var(--line-default);border-radius:18px;background:var(--bg-card);box-shadow:var(--drive-card-shadow);display:flex;flex-direction:column;gap:10px; }
+.readiness-findings>div { display:flex;justify-content:space-between;gap:12px;align-items:center; }
+.readiness-findings>div { height:22px; }
+.readiness-question legend { padding:0; }
+.readiness-question button { padding:0; }
+.readiness-before .drive-heading p,.readiness-result .drive-heading p,.face-reading .drive-heading p,.passenger-content .drive-heading p,.contact-alerted-content .drive-heading p,.tap-test-content .drive-heading p,.current-summary .drive-heading p { line-height:22px; }
+.readiness-route { gap:20px; }
+.readiness-route .ob-field { margin:0;display:flex;flex-direction:column;gap:8px; }
+.readiness-route .ob-field>span { color:var(--text-secondary); }
+.readiness-route .input { height:52.18px; }
+.readiness-route-options { display:flex;flex-direction:column;gap:8px; }
+.readiness-route-note { border:0;background:var(--bg-tint);padding:16px;border-radius:18px;display:flex;flex-direction:column;gap:4px; }
+.readiness-route-note strong { color:var(--brand-navy); }
+.readiness-route-note p { line-height:20px; }
+.readiness-findings>div>span { color:var(--text-secondary); }
+.readiness-result__value { color:var(--result-tone); }
+.readiness-plan { display:flex;flex-direction:column;gap:4px;background:var(--bg-tint);padding:16px;border-radius:18px; }
+.readiness-plan strong { color:var(--brand-navy); }
+.readiness-result--caution .readiness-plan { background:var(--state-success-soft); }
+.readiness-result--caution .readiness-plan strong { color:var(--state-success); }
+.readiness-result--high .readiness-plan { background:var(--state-danger-soft); }
+.readiness-result--high .readiness-plan strong { color:var(--state-danger); }
+.readiness-disclaimer { text-align:center;color:var(--text-tertiary); }
+.readiness-override { text-align:center;color:var(--brand-navy);background:none;border:0;padding:0; }
+.readiness-actions { display:flex;flex-direction:column;gap:10px; }
+.readiness-result--caution .app-frame__content--with-footer,.readiness-result--high .app-frame__content--with-footer { padding-bottom:calc(168px + env(safe-area-inset-bottom,0px)); }
+.face-reading .drive-heading { margin-top:-2px; }
+.reading-checks { margin-top:10px;background:var(--drive-card);padding:20px;border-radius:20px;display:flex;flex-direction:column;gap:12px;text-align:left; }
+.reading-checks>div { display:flex;align-items:center;gap:12px; }
+.reading-footer { display:flex;flex-direction:column;gap:16px;text-align:center; }
+.reading-footer p { margin:0; }
+.reading-checks .drive-check-step { display:grid;place-items:center; }
+.reading-eyes { position:absolute;left:75px;top:105px;display:block; }
+.drive-face-camera { height:275px; }
+.drive-voice-chip { top:232px; }
+.drive-live-check.seatbelt-check { padding:12px 16px 12px 12px;background:var(--bg-card);position:relative;cursor:pointer; }
+.seatbelt-check input { position:absolute;width:1px;height:1px;opacity:0; }
+.seatbelt-check:has(input:focus-visible) { outline:2px solid var(--drive-accent);outline-offset:4px; }
+.seatbelt-unchecked { background:var(--bg-field); }
+.button--waiting:disabled { opacity:1; }
+.tap-test-content { gap:16px; }
+.tap-test-progress { height:4px;background:var(--drive-line);border-radius:2px;overflow:hidden; }
+.tap-test-progress>span { display:block;height:4px;background:var(--drive-accent);border-radius:2px; }
+.tap-test-content .tap-test-area { height:440px;border-radius:28px; }
+.tap-test-content .catch-up-stats .text-body-small { font-size:var(--label-small-font-size);font-weight:var(--label-small-font-weight);line-height:normal; }
+.readiness-loading { position:fixed;inset:0;z-index:6;background:rgb(5 10 20 / .55);display:grid;place-items:center; }
+.readiness-loading__card { display:flex;flex-direction:column;gap:12px;align-items:center;width:min(310px,calc(100% - 60px));padding:28px 24px;border:1px solid var(--drive-line);border-radius:24px;background:var(--drive-card);text-align:center; }
+.readiness-loading__card p { margin:0; }
+.passenger-content { gap:20px; }
+.passenger-icon { margin-top:24px;align-self:center;width:72px;height:72px;border-radius:36px;background:var(--bg-tint);display:grid;place-items:center; }
+.passenger-why { padding:16px;border:1px solid var(--line-default);border-radius:18px;background:var(--bg-card);display:flex;flex-direction:column;gap:4px; }
+.passenger-why strong { color:var(--text-secondary); }
+.emergency-countdown .no-response-ring { margin:48px auto 0; }
+.emergency-countdown .drive-heading p { color:var(--text-inverse); }
+.emergency-countdown .app-frame__footer { display:flex;flex-direction:column;gap:16px; }
+.emergency-countdown .app-frame__footer>p { margin:0;text-align:center; }
+.emergency-voice { position:absolute;top:410px;left:20px;right:20px;text-align:center; }
+.emergency-voice .quiet-link { color:var(--text-inverse); }
+.contact-alerted-content { gap:20px;padding-top:max(182px,calc(env(safe-area-inset-top,0px) + 128px)); }
+.contact-alert-icon { width:72px;height:72px;border-radius:36px;background:#3a1a1f;display:grid;place-items:center;align-self:center; }
+.contact-alert-location { border:1px solid var(--drive-line);padding:16px;border-radius:18px;display:flex;flex-direction:column;gap:6px; }
+.contact-alert-location>strong { font-size:var(--label-small-font-size);color:var(--drive-text-secondary);font-weight:var(--label-small-font-weight); }
+.contact-alert-note { padding:16px;background:var(--drive-card);border:1px solid var(--drive-line);border-radius:18px; }
+.contact-alerted .app-frame__content--with-footer { padding-bottom:calc(168px + env(safe-area-inset-bottom,0px)); }
+.emergency-countdown .voice-acknowledgement:empty { display:none; }
+.current-summary { gap:20px; }
+.summary-route { background:var(--bg-card);border:1px solid var(--line-default);border-radius:18px;overflow:hidden;box-shadow:var(--drive-card-shadow); }
+.summary-route>img { display:block;max-width:100%; }
+.summary-route .catch-card { margin:0;border:0;border-radius:0;height:150px;box-shadow:none;padding:0;overflow:hidden;background:var(--bg-tint); }
+.summary-route .catch-card svg { height:150px;flex-shrink:0; }
+.summary-route figcaption { display:none; }
+.summary-legend { display:flex;gap:14px;align-items:center;padding:10px 14px 12px;color:var(--text-secondary); }
+.summary-legend>span { display:flex;align-items:center;gap:6px; }
+.summary-trip-stats { display:flex;justify-content:space-between;padding:14px 18px;border:1px solid var(--line-default);border-radius:18px;background:var(--bg-card); }
+.summary-trip-stats>div { display:flex;flex-direction:column;gap:2px; }
+.summary-trip-stats p { color:var(--text-secondary); }
+.summary-risk { display:flex;flex-direction:column;gap:10px;padding:16px;background:var(--bg-card);border:1px solid var(--line-default);border-radius:18px;box-shadow:var(--drive-card-shadow); }
+.summary-risk>div { display:flex;align-items:center;justify-content:space-between;gap:8px; }
+.summary-risk h2 { color:var(--text-secondary); }
+.summary-risk-badge { display:flex;align-items:center;gap:6px;padding:4px 10px;border-radius:8px;background:var(--state-warning-soft);color:var(--state-warning); }
+.summary-risk ul { display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none; }
+.summary-risk li { display:flex;gap:10px;align-items:flex-start; }
+.summary-risk li { line-height:20px; }
+.summary-risk li img { flex-shrink:0; }
+.summary-rule { color:var(--text-secondary); }
+.summary-chart { display:flex;flex-direction:column;gap:14px;background:var(--bg-card);padding:20px;border:1px solid var(--line-default);border-radius:20px;box-shadow:var(--drive-card-shadow); }
+.summary-chart>header { display:flex;align-items:center;justify-content:space-between;gap:12px; }
+.summary-chart-bars { height:80px;display:flex;align-items:flex-end;gap:4px; }
+.summary-chart-bars>span { flex:1;min-width:0;border-radius:3px;background:var(--state-success); }
+.summary-chart-bars>.warning { background:var(--state-warning-dot); }
+.summary-chart-bars>.danger { background:var(--state-danger); }
+.summary-chart-labels { display:flex;justify-content:space-between;color:var(--text-tertiary); }
+.summary-event-title { display:flex;align-items:center;gap:8px;justify-content:space-between; }
+.summary-event-title>span { color:var(--text-tertiary); }
+.current-summary .drive-card-icon img { max-width:22px;max-height:22px; }
+.drive-card-icon--danger { background:var(--state-danger-soft); }
+.emergency-receipt { position:fixed;inset:0;margin:0 auto;padding:0;border:0;max-width:430px;width:100%;height:100dvh;max-height:none;background:var(--bg-screen);color:var(--text-primary);overflow:auto;font-family:Inter,sans-serif; }
+.emergency-receipt::backdrop { background:var(--sheet-backdrop); }
+.emergency-receipt p,.emergency-receipt h1 { margin:0; }
+.emergency-receipt header { display:flex;flex-direction:column;align-items:center;gap:6px;padding:62px 20px 14px;border-bottom:1px solid var(--bg-field); }
+.emergency-receipt header>.icon-button { align-self:flex-start; }
+.receipt-avatar { width:56px;height:56px;border-radius:28px;display:grid;place-items:center;background:var(--brand-navy); }
+.emergency-receipt header>p { color:var(--text-tertiary); }
+.emergency-receipt main { display:flex;flex-direction:column;gap:10px;padding:16px 20px; }
+.emergency-receipt section { display:flex;flex-direction:column;gap:4px; }
+.emergency-receipt section>.text-label-small,.receipt-time { color:var(--text-tertiary); }
+.receipt-bubble { display:flex;flex-direction:column;gap:6px;padding:12px 14px;width:min(300px,100%);background:var(--bg-field);border-radius:20px; }
+.receipt-bubble p { line-height:22px; }
+.receipt-map { color:var(--brand-navy);overflow-wrap:anywhere; }
