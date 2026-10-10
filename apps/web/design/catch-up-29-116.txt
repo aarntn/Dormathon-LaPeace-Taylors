@@ -1,0 +1,136 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/f1805653-a09f-465a-8f28-85870dc24b3a";
+const imgIndicators = `${assetPathPrefix}/4c1f7.svg`;
+const imgGroup = `${assetPathPrefix}/7792c.svg`;
+const imgGroup1 = `${assetPathPrefix}/dad67.svg`;
+const imgGroup2 = `${assetPathPrefix}/43460.svg`;
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default";
+  style?: "Primary" | "Outline";
+};
+
+function Button({ className, label = "Button", state = "Default", style = "Primary" }: ButtonProps) {
+  const isOutlineAndDefault = style === "Outline" && state === "Default";
+  return (
+    <div className={className || `content-stretch cursor-pointer flex h-[56px] items-center justify-center relative rounded-[18px] w-[390px] ${isOutlineAndDefault ? "border-[1.5px] border-[rgba(255,255,255,0.9)] border-solid" : String.raw`bg-[var(--brand\/navy,#1b2a4e)]`}`} id={isOutlineAndDefault ? "node-27_9" : "node-27_3"}>
+      {style === "Primary" && state === "Default" && (
+        <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[18px] text-[color:var(--text\/inverse,white)] tracking-[-0.1152px] whitespace-nowrap" data-node-id="27:4">
+          {label}
+        </p>
+      )}
+      {isOutlineAndDefault && (
+        <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[18px] text-white tracking-[-0.1152px] whitespace-nowrap" data-node-id="27:10">
+          {label}
+        </p>
+      )}
+    </div>
+  );
+}
+
+type StatusBarProps = {
+  className?: string;
+  theme?: "Dark";
+};
+
+function StatusBar({ className, theme = "Dark" }: StatusBarProps) {
+  return (
+    <div className={className || "h-[54px] relative w-[430px]"} data-node-id="27:145">
+      <p className="[word-break:break-word] absolute font-['SF_Pro:Semibold'] font-[590] leading-[normal] left-[52px] text-[17px] text-white top-[18px] tracking-[-0.408px] whitespace-nowrap" data-node-id="27:146" style={{ fontVariationSettings: '"wdth" 100' }}>
+        9:41
+      </p>
+      <div className="absolute bg-black h-[36px] left-[153px] rounded-[18px] top-[11px] w-[123.999px]" data-node-id="27:147" data-name="Dynamic Island" />
+      <div className="absolute h-[13px] left-[308px] top-[21px] w-[70px]" data-node-id="27:148" data-name="Indicators">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIndicators} />
+      </div>
+    </div>
+  );
+}
+
+type AlarmFlashProps = {
+  className?: string;
+  phase?: boolean;
+};
+
+function AlarmFlash({ className, phase = false }: AlarmFlashProps) {
+  return (
+    <div className={className || "h-[932px] relative w-[430px]"} data-node-id="185:1820">
+      <div className="absolute bg-[rgba(255,255,255,0)] h-[932px] left-0 top-0 w-[430px]" data-node-id="185:1821" data-name="Flash" />
+    </div>
+  );
+}
+
+export default function Component08MicrosleepAlarm() {
+  return (
+    <div className="bg-[var(--state\/danger,#ef4f44)] relative size-full" data-node-id="29:116" data-name="08 Microsleep alarm">
+      <AlarmFlash className="absolute h-[932px] left-0 top-0 w-[430px]" />
+      <StatusBar className="absolute h-[54px] left-0 top-0 w-[430px]" />
+      <div className="absolute content-stretch flex flex-col gap-[20px] items-center left-0 overflow-clip pb-[24px] pt-[72px] px-[20px] top-[54px] w-[430px]" data-node-id="29:128" data-name="Content">
+        <div className="bg-[rgba(255,255,255,0.2)] content-stretch flex items-center justify-center overflow-clip relative rounded-[48px] shrink-0 size-[96px]" data-node-id="29:129" data-name="Alert icon">
+          <div className="overflow-clip relative shrink-0 size-[44px]" data-node-id="29:130" data-name="icon/alert">
+            <div className="absolute inset-[14.58%_10.42%_16.67%_10.42%]" data-node-id="29:131" data-name="Group">
+              <div className="absolute inset-[-6.06%_-5.26%]">
+                <img alt="" className="block max-w-none size-full" src={imgGroup} />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="[word-break:break-word] content-stretch flex flex-col gap-[8px] items-center not-italic overflow-clip relative shrink-0 text-[color:var(--text\/inverse,white)] text-center w-full" data-node-id="29:134" data-name="Heading">
+          <p className="font-['Inter:Bold'] font-bold leading-[normal] relative shrink-0 text-[44px] tracking-[-0.88px] w-full" data-node-id="29:135">
+            Wake up
+          </p>
+          <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[16px] tracking-[-0.0784px] w-full" data-node-id="29:136">
+            Your eyes closed for 1.8 seconds while driving.
+          </p>
+        </div>
+        <div className="bg-[var(--bg\/card,white)] content-stretch flex flex-col gap-[16px] items-start overflow-clip p-[20px] relative rounded-[24px] shrink-0 w-full" data-node-id="29:137" data-name="Rest stop">
+          <div className="content-stretch flex gap-[14px] items-center overflow-clip relative shrink-0 w-full" data-node-id="29:138" data-name="Frame">
+            <div className="bg-[var(--state\/danger-soft,#fde7e5)] content-stretch flex items-center justify-center overflow-clip relative rounded-[16px] shrink-0 size-[48px]" data-node-id="29:139" data-name="Frame">
+              <div className="overflow-clip relative shrink-0 size-[24px]" data-node-id="29:140" data-name="icon/coffee">
+                <div className="absolute inset-[12.5%_12.5%_20.83%_16.67%]" data-node-id="29:141" data-name="Group">
+                  <div className="absolute inset-[-5.94%_-5.59%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup1} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start min-w-px not-italic overflow-clip relative" data-node-id="29:145" data-name="Frame">
+              <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] relative shrink-0 text-[18px] text-[color:var(--text\/primary,#282828)] tracking-[-0.1152px] whitespace-nowrap" data-node-id="29:146">
+                Pull over and rest
+              </p>
+              <p className="font-['Inter:Regular'] font-normal leading-[1.4] min-w-full relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] w-[min-content]" data-node-id="29:147">{`R&R Seremban · 4 km · about 3 min`}</p>
+            </div>
+          </div>
+          <Button className="bg-[var(--brand\/navy,#1b2a4e)] content-stretch cursor-pointer flex h-[56px] items-center justify-center relative rounded-[18px] shrink-0 w-full" label="Go to rest stop" />
+          <div className="content-stretch flex gap-[6px] items-center justify-center overflow-clip relative shrink-0 w-full" data-node-id="40:996" data-name="Opens in maps app">
+            <div className="overflow-clip relative shrink-0 size-[14px]" data-node-id="40:997" data-name="icon/ext">
+              <div className="absolute inset-[16.67%]" data-node-id="40:998" data-name="Group">
+                <div className="absolute inset-[-6.25%]">
+                  <img alt="" className="block max-w-none size-full" src={imgGroup2} />
+                </div>
+              </div>
+            </div>
+            <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[normal] not-italic relative shrink-0 text-[12px] text-[color:var(--text\/secondary,#797979)] tracking-[0.0024px] whitespace-nowrap" data-node-id="40:1001">
+              Opens in Waze · your saved places stay there
+            </p>
+          </div>
+        </div>
+      </div>
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[1.4] left-[215px] not-italic text-[14px] text-[color:var(--text\/inverse,white)] text-center top-[806px] tracking-[-0.042px] w-[390px]" data-node-id="29:150">
+        The alarm keeps sounding until you tap below or say “I’m awake”.
+      </p>
+      <Button className="absolute border-[1.5px] border-[rgba(255,255,255,0.9)] border-solid content-stretch cursor-pointer flex h-[56px] items-center justify-center left-[20px] rounded-[18px] top-[842px] w-[390px]" label="I'm awake" style="Outline" />
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Heading/Display: Font(family: "Inter", style: Bold, size: 44, weight: 700, lineHeight: 100, letterSpacing: -2), Body/Regular: Font(family: "Inter", style: Regular, size: 16, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.49000000953674316), Title/Medium: Font(family: "Inter", style: Semi Bold, size: 18, weight: 600, lineHeight: 100, letterSpacing: -0.6399999856948853), Body/Small: Font(family: "Inter", style: Regular, size: 14, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.30000001192092896), Label/Small: Font(family: "Inter", style: Medium, size: 12, weight: 500, lineHeight: 100, letterSpacing: 0.019999999552965164).
+Images and SVGs will be stored as constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

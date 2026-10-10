@@ -1,0 +1,167 @@
+{
+  "checkedAt": "2026-10-10T10:54:15.132Z",
+  "mode": "fake",
+  "transport": "api.ts \u2192 local HTTP \u2192 FastAPI",
+  "predrive": {
+    "id": "501ec2c4-c130-4eff-9dbc-08cab77f6637",
+    "level": "safe",
+    "label": "Safe to drive",
+    "reasons": [
+      "Your check did not flag a tiredness warning."
+    ],
+    "plan": "Stay alert and take breaks on your journey.",
+    "disclaimer": "A safety indication, not a medical diagnosis.",
+    "score": 0,
+    "score_source": "demo_rule",
+    "stub": true
+  },
+  "routeOptions": {
+    "fastest": {
+      "distance_km": 10,
+      "duration_seconds": 600,
+      "route_polyline": [
+        [
+          3,
+          101.6
+        ],
+        [
+          3,
+          101.7
+        ]
+      ],
+      "support_count": 1,
+      "stops": [
+        {
+          "name": "Fuel station",
+          "lat": 3,
+          "lng": 101.62
+        }
+      ],
+      "stub": false,
+      "choice": "fastest"
+    },
+    "safer": {
+      "distance_km": 12,
+      "duration_seconds": 750,
+      "route_polyline": [
+        [
+          3,
+          101.6
+        ],
+        [
+          3.05,
+          101.6
+        ],
+        [
+          3,
+          101.7
+        ]
+      ],
+      "support_count": 2,
+      "stops": [
+        {
+          "name": "Brake shop",
+          "lat": 3.05,
+          "lng": 101.6
+        },
+        {
+          "name": "Roadside stop",
+          "lat": 3.05,
+          "lng": 101.6005
+        }
+      ],
+      "stub": false,
+      "choice": "safer"
+    },
+    "explanation": "Safer means more rest areas, fuel stations and workshops within 1 km of the route. It is not a prediction of driving risk.",
+    "stub": false
+  },
+  "testText": {
+    "id": "0dae5951-2f6c-4274-b622-8a3ab005cb35",
+    "status": "sent",
+    "test": true
+  },
+  "summary": {
+    "trip_id": "ba1af604-9891-479d-a3a9-a3bcf6f057b5",
+    "passenger_mode": false,
+    "distance_km": 2.221,
+    "duration_seconds": 730,
+    "avg_speed_kmh": 10.95,
+    "route_polyline": [
+      [
+        3,
+        101.6
+      ],
+      [
+        3,
+        101.61
+      ],
+      [
+        3,
+        101.61999999999999
+      ]
+    ],
+    "events": [
+      {
+        "id": "40a08f67-c079-4557-a8b3-436c1b2ad1ea",
+        "trip_id": "ba1af604-9891-479d-a3a9-a3bcf6f057b5",
+        "lat": 3,
+        "lng": 101.61,
+        "at": "2026-10-10T04:09:40Z",
+        "kind": "hard_brake",
+        "details": {},
+        "event_key": "2026-10-10T04:09:40+00:00:hard_brake"
+      },
+      {
+        "id": "4f2d1794-3d85-4ff7-aa8b-705a5463a625",
+        "trip_id": "ba1af604-9891-479d-a3a9-a3bcf6f057b5",
+        "lat": 3,
+        "lng": 101.61,
+        "at": "2026-10-10T04:09:50Z",
+        "kind": "hard_brake",
+        "details": {},
+        "event_key": "2026-10-10T04:09:50+00:00:hard_brake"
+      }
+    ],
+    "hard_brake_count": 2,
+    "safety_score": 92,
+    "score_source": "demo_rule",
+    "trip_risk_lines": [
+      "0 microsleep alarms",
+      "0 tiredness alerts",
+      "2 hard brakes"
+    ],
+    "score_explanation": "A simple rule based on recorded events, not a model or a guarantee of safety."
+  },
+  "mocked_sms": [
+    {
+      "to": "+60123456789",
+      "body": "Aaron isn't responding to their BUCKL alarm while driving. Last location at 10 Oct 2026, 12:10 MYT: https://maps.google.com/?q=3.0,101.62. If you can't reach them, call 999."
+    },
+    {
+      "to": "+60111111111",
+      "body": "Aaron isn't responding to their BUCKL alarm while driving. Last location at 10 Oct 2026, 12:10 MYT: https://maps.google.com/?q=3.0,101.62. If you can't reach them, call 999."
+    },
+    {
+      "to": "+60123456789",
+      "body": "BUCKL location update: Aaron still hasn't responded. Last location at 12:12 MYT: https://maps.google.com/?q=3.01,101.63. If you can't reach them, call 999."
+    },
+    {
+      "to": "+60123456789",
+      "body": "Aaron says they're OK."
+    },
+    {
+      "to": "+60111111111",
+      "body": "BUCKL location update: Aaron still hasn't responded. Last location at 12:12 MYT: https://maps.google.com/?q=3.01,101.63. If you can't reach them, call 999."
+    },
+    {
+      "to": "+60111111111",
+      "body": "Aaron says they're OK."
+    },
+    {
+      "to": "+60111111111",
+      "body": "BUCKL TEST ONLY: Aaron is testing their emergency contact. This is not an emergency. No action is needed."
+    }
+  ],
+  "external_services": "Supabase Auth, Twilio, OSRM and Overpass are mocked; storage is in memory."
+}

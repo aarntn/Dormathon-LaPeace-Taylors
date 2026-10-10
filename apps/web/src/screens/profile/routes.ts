@@ -3,7 +3,9 @@ import { DrivingStats } from './DrivingStats';
 import { MyCars } from './MyCars';
 import { AddACar } from './AddACar';
 import { PrivacyAndLegal } from './PrivacyAndLegal';
+import {EmergencyContact} from './EmergencyContact';
 export const profileRoutes = [
+  {path:'/profile/emergency-contact',Screen:EmergencyContact},
   { path: '/profile', Screen: Profile },
   { path: '/profile/profile', Screen: Profile },
   { path: '/profile/driving-stats', Screen: DrivingStats },

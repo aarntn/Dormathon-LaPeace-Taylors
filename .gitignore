@@ -7,3 +7,6 @@ dist/
 *.log
 apps/web/.cert/
 *.tsbuildinfo
+__pycache__/
+.pytest_cache/
+.venv/

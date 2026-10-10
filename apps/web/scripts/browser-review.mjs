@@ -14,6 +14,24 @@ await mkdir(artifactRoot, { recursive: true });
 const mime = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.woff2': 'font/woff2', '.png': 'image/png', '.txt': 'text/plain', '.wasm':'application/wasm', '.task':'application/octet-stream', '.wav':'audio/wav' };
 const server = createServer(async (request, response) => {
   const pathname = decodeURIComponent(new URL(request.url, 'http://localhost').pathname);
+  if(process.argv.includes('--integration')&&pathname.startsWith('/api/')){
+    // Isolated HTTP fixtures: no database, credentials, geocoding or messages.
+    let body='';for await(const chunk of request)body+=chunk;
+    const input=body?JSON.parse(body):{};const first=(request.headers.authorization??'').includes('fixture-first');
+    const car={id:'car-one',user_id:'first',make:'Perodua',model:'Myvi',year:2022,plate:'BUCKL 1'};
+    const trip={id:'trip-one',car_id:car.id,user_id:'first',started_at:'2026-10-10T00:00:00Z',ended_at:'2026-10-10T00:10:00Z',distance_km:2.2,safety_score:92,passenger_mode:false,route_choice:'safer'};
+    let value;
+    if(pathname==='/api/auth/config')value={configured:true};
+    else if(pathname==='/api/auth/token'){const user=input.email==='first@example.test'?'first':'second';value={session:{access_token:'fixture-'+user,refresh_token:'fixture-refresh',expires_at:Math.floor(Date.now()/1000)+3600,user:{id:user,email:input.email,user_metadata:{name:user==='first'?'BUCKL Driver':'New Driver'}}}};}
+    else if(pathname==='/api/auth/logout'){response.writeHead(204);response.end();return;}
+    else if(pathname==='/api/cars')value=first?[car]:[];
+    else if(pathname==='/api/trips')value=first?[trip]:[];
+    else if(pathname==='/api/emergency-contacts')value=[];
+    else if(pathname==='/api/patterns')value={slots:[{from_hour:12,tired_alerts:2}],late_night_share:0};
+    else if(pathname==='/api/trips/trip-one/summary'&&first)value={trip_id:trip.id,passenger_mode:false,distance_km:2.2,duration_seconds:600,avg_speed_kmh:30,route_polyline:[[3,101.6],[3,101.61],[3,101.62]],events:[],hard_brake_count:2,safety_score:92,score_source:'demo_rule',trip_risk_lines:['2 hard brakes'],score_explanation:'Demo rule, not a model output.'};
+    else {response.writeHead(404,{'Content-Type':'application/json'});response.end(JSON.stringify({detail:'Not in browser fixture'}));return;}
+    response.writeHead(200,{'Content-Type':'application/json','Cache-Control':'no-store'});response.end(JSON.stringify(value));return;
+  }
   const candidate = resolve(appRoot, 'dist', '.' + pathname);
   if (!candidate.startsWith(resolve(appRoot, 'dist') + '\\') && !candidate.startsWith(resolve(appRoot, 'dist') + '/')) {
     response.writeHead(400); response.end(); return;
@@ -29,7 +47,7 @@ let executable;
 for (const candidate of candidates) { try { await access(candidate); executable = candidate; break; } catch {} }
 if (!executable) { server.close(); throw new Error('Set DORMATHON_CHROME to a Chromium executable'); }
 const profile = await mkdtemp(join(tmpdir(), 'dormathon-review-'));
-const browser = spawn(executable, ['--headless=new', '--remote-debugging-port=0', `--user-data-dir=${profile}`, '--no-first-run', '--no-default-browser-check', ...((process.argv.includes('--car-camera')||process.argv.includes('--eyes'))?['--use-fake-device-for-media-stream']:[]), 'about:blank'], { windowsHide: true });
+const browser = spawn(executable, ['--headless=new', '--remote-debugging-port=0', `--user-data-dir=${profile}`, '--no-first-run', '--no-default-browser-check', ...((process.argv.includes('--car-camera')||process.argv.includes('--eyes')||process.argv.includes('--motion'))?['--use-fake-device-for-media-stream']:[]), 'about:blank'], { windowsHide: true });
 let socket;
 try {
   const endpoint = await new Promise((resolve, reject) => {
@@ -46,10 +64,12 @@ try {
   let sequence = 0;
   const pending = new Map();
   const runtimeErrors = [];
+  const networkErrors = [];
   socket.addEventListener('message', event => {
     const message = JSON.parse(event.data);
     if (message.id) { const item = pending.get(message.id); if (!item) return; clearTimeout(item.timer); pending.delete(message.id); message.error ? item.reject(new Error(JSON.stringify(message.error))) : item.resolve(message.result); }
     if (message.method === 'Runtime.exceptionThrown') runtimeErrors.push(message.params.exceptionDetails.text);
+    if (message.method === 'Network.loadingFailed') networkErrors.push(message.params.errorText);
   });
   const send = (method, params = {}) => new Promise((resolve, reject) => {
     const id = ++sequence;
@@ -65,7 +85,7 @@ try {
     const deadline = Date.now() + (process.argv.includes('--eyes')?45000:10000);
     while (Date.now() < deadline) { if (await evaluate(`Boolean(${expression})`)) return; await new Promise(resolve => setTimeout(resolve, 100)); }
     const state=await evaluate("({path:location.pathname,text:document.body.innerText,camera:[...document.querySelectorAll('video')].map(v=>({width:v.videoWidth,height:v.videoHeight,readyState:v.readyState,paused:v.paused})),streams:window.__reviewStreams?.map(s=>({active:s.active,tracks:s.getTracks().map(t=>t.readyState)}))})");
-    throw new Error(`Condition not met: ${expression}\n${JSON.stringify(state)}`);
+    throw new Error(`Condition not met: ${expression}\n${JSON.stringify({state,runtimeErrors,networkErrors})}`);
   };
   const settle = async () => evaluate("new Promise(resolve => setTimeout(() => document.fonts.ready.then(() => resolve(true)), 650))");
   const viewport = (width, height) => send('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile: true });
@@ -75,7 +95,115 @@ try {
     await settle();
   };
   const screenshot = async (filename, clip) => { const result = await send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true, ...(clip ? { clip: { ...clip, scale: 1 } } : {}) }); await writeFile(join(artifactRoot, filename), Buffer.from(result.data, 'base64')); };
-  await send('Page.enable'); await send('Runtime.enable');
+  await send('Page.enable'); await send('Runtime.enable'); await send('Network.enable');
+  if (process.argv.includes('--integration')) {
+    await viewport(430,932);
+    const click=async label=>{await evaluate(`[...document.querySelectorAll('button')].find(b=>b.textContent===${JSON.stringify(label)}).click()`);await settle();};
+    const fill=async (selector,value)=>evaluate(`(()=>{const element=document.querySelector(${JSON.stringify(selector)});Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(element,${JSON.stringify(value)});element.dispatchEvent(new Event('input',{bubbles:true}));})()`);
+    const login=async email=>{await navigate('/onboarding/sign-up?mode=signin');await fill('input[type=email]',email);await fill('input[type=password]','fixture-password');await click('Sign in');await until("location.pathname==='/drive/home'||location.pathname==='/onboarding/whats-your-car'");await settle();};
+    await navigate('/drive/home');assert.ok((await evaluate('document.body.innerText')).includes('Sign in to save checks'));
+    await login('first@example.test');await until("document.body.innerText.includes('BUCKL 1')");
+    await navigate('/profile');assert.ok((await evaluate('document.body.innerText')).includes('first@example.test'));
+    await navigate('/trips');await until("document.querySelector('.trips-row')");await evaluate("document.querySelector('.trips-row').click()");await settle();await until("document.body.innerText.includes('92/100')");
+    assert.ok((await evaluate('document.body.innerText')).includes('Demo rule'));assert.ok(await evaluate("document.querySelector('svg[aria-label=\"Recorded trip route\"]')!==null"));await screenshot('integration-trip-summary.png');
+    await navigate('/drive/before-you-drive');await evaluate("document.querySelector('.readiness-question button').click()");assert.equal(await evaluate("document.querySelector('.readiness-question button').getAttribute('aria-pressed')"),'true');
+    await navigate('/drive/line-up-your-face');assert.equal(await evaluate("document.querySelector('.app-frame__footer button').disabled"),true);
+    await navigate('/profile');await click('Sign out');await until("location.pathname==='/onboarding/welcome'");assert.equal(await evaluate("sessionStorage.getItem('buckl.session.v1')"),null);
+    await login('second@example.test');assert.equal(await evaluate('location.pathname'),'/onboarding/whats-your-car');await navigate('/drive/home');assert.ok(!(await evaluate('document.body.innerText')).includes('BUCKL 1'));await navigate('/trips');await until("document.body.innerText.includes('Your first trip starts here')");assert.equal(await evaluate("document.querySelectorAll('.trips-row').length"),0);await screenshot('integration-trips-empty.png');
+    const pages=['/drive/home','/drive/check-result','/drive/pick-your-route','/profile/emergency-contact','/profile/my-cars','/profile/add-a-car','/profile/driving-stats','/profile/privacy-and-legal','/trips/when-you-get-tired','/onboarding/emergency-contact','/onboarding/allow-access'];
+    const geometry=[];for(const width of [430,390,360]){await viewport(width,932);for(const path of pages){await navigate(path);const dimensions=await evaluate("({width:document.documentElement.scrollWidth,viewport:innerWidth,broken:[...document.images].filter(i=>!i.complete||!i.naturalWidth).map(i=>i.src)})");assert.equal(dimensions.width,width,path+' overflows');assert.deepEqual(dimensions.broken,[],path+' has broken assets');geometry.push({path,...dimensions});}}
+    assert.deepEqual(runtimeErrors,[]);await writeFile(join(artifactRoot,'integration-browser-verification.json'),JSON.stringify({checkedAt:new Date().toISOString(),mode:'isolated fake HTTP; no external services',passed:['sign in through account form','authenticated car/history/profile','trip summary and demo-rule disclosure','readiness selection','seatbelt/camera gate','sign out clears session','second account has empty history','430/390/360px pages and assets','no runtime exceptions'],geometry},null,2));console.log('Integration browser checks passed.');
+  } else if (process.argv.includes('--api-docs')) {
+    await viewport(1100,1000);
+    await send('Page.navigate',{url:'http://127.0.0.1:8000/docs'});
+    await until("document.querySelector('.swagger-ui .opblock')");
+    assert.ok((await evaluate("document.querySelector('.swagger-ui .info .title').textContent")).includes('BUCKL API'));
+    const schema=await evaluate("fetch('openapi.json').then(r=>r.json())");
+    assert.equal(schema.info.version,'0.4c');
+    assert.equal(schema.servers[0].url,'.');
+    assert.ok(schema.paths['/trips/{trip_id}/summary'] && schema.paths['/route-options']);
+    assert.ok(schema.paths['/trips/{trip_id}/emergency'].post.parameters.some(p=>p.name==='idempotency-key'&&p.required));
+    assert.deepEqual(runtimeErrors,[]);
+    await screenshot('catch-up-api-docs.png',{x:0,y:0,width:1100,height:1000});
+    console.log('API docs browser check passed: Swagger loaded, relative OpenAPI/server paths and emergency episode header.');
+  } else if (process.argv.includes('--motion')) {
+    await send('Browser.grantPermissions', { origin, permissions: ['audioCapture'] });
+    await send('Page.addScriptToEvaluateOnNewDocument', { source: `
+      window.__motionStreams=[];window.__motionAudioCloses=0;window.__motionSamples=0;
+      const get=navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+      navigator.mediaDevices.getUserMedia=async options=>{const stream=await get(options);window.__motionStreams.push(stream);return stream;};
+      const close=AudioContext.prototype.close;AudioContext.prototype.close=function(){window.__motionAudioCloses++;return close.call(this);};
+      const sample=AnalyserNode.prototype.getFloatTimeDomainData;AnalyserNode.prototype.getFloatTimeDomainData=function(data){sample.call(this,data);window.__motionSamples++;if(window.__testMicrophoneLevel!==undefined)data.fill(window.__testMicrophoneLevel);};
+    ` });
+    const pause = ms => evaluate(`new Promise(resolve=>setTimeout(()=>resolve(true),${ms}))`);
+    const click = label => evaluate(`[...document.querySelectorAll('button')].find(b=>b.textContent===${JSON.stringify(label)}).click()`);
+    await viewport(430, 932); await navigate('/components');
+    assert.equal(await evaluate('document.querySelectorAll("#buttons .button").length'), 10);
+    assert.equal(await evaluate('document.querySelectorAll("#buttons [data-button-state=Pressed]").length'), 5);
+    const dimensions = await evaluate(`['.button','.icon-button','.tab-bar','.motion-ring--scan','.motion-ring--countdown','.waveform','.tap-dot'].map(selector=>{const r=document.querySelector(selector).getBoundingClientRect();return [selector,r.width,r.height]})`);
+    assert.deepEqual(dimensions, [['.button',390,56],['.icon-button',40,40],['.tab-bar',260,66],['.motion-ring--scan',300,300],['.motion-ring--countdown',160,160],['.waveform',330,48],['.tap-dot',150,150]]);
+    const pressedFills = await evaluate(`[...document.querySelectorAll('#buttons [data-button-state=Pressed]')].map(e=>getComputedStyle(e).backgroundColor)`);
+    assert.deepEqual(pressedFills, ['rgb(16, 28, 56)','rgb(242, 243, 245)','rgb(233, 236, 242)','rgb(242, 243, 245)','rgb(12, 20, 36)']);
+    await evaluate("document.querySelector('#buttons .button').scrollIntoView({block:'center'})"); await pause(300);
+    const point = await evaluate("(()=>{const r=document.querySelector('#buttons .button').getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2}})()");
+    await send('Input.dispatchMouseEvent',{type:'mouseMoved',...point});
+    await send('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',buttons:1,clickCount:1,...point});
+    await until("getComputedStyle(document.querySelector('#buttons .button')).backgroundColor==='rgb(16, 28, 56)'");
+    assert.equal(await evaluate("getComputedStyle(document.querySelector('#buttons .button')).backgroundColor"), pressedFills[0]);
+    assert.ok((await evaluate("document.querySelector('#buttons .button').getBoundingClientRect().width")) < 390);
+    await send('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',buttons:0,clickCount:1,...point}); await pause(180);
+    assert.equal(await evaluate("document.querySelector('#buttons .button').getBoundingClientRect().width"), 390);
+    await evaluate("document.querySelector('#motion').scrollIntoView()");
+    const dots = [];
+    for(let i=0;i<10;i++){dots.push(await evaluate("[...document.querySelectorAll('.loading-dots:first-of-type > span')].map(e=>getComputedStyle(e).transform).join('|')"));await pause(100);}
+    assert.ok(new Set(dots).size > 2, 'LoadingDots must visibly traverse a complete loop');
+    await click('Replay progress'); await pause(400);
+    const partial = await evaluate("new DOMMatrix(getComputedStyle(document.querySelector('.motion-progress > span')).transform).a");
+    assert.ok(partial > .05 && partial < 1);
+    await pause(2000); assert.equal(await evaluate("new DOMMatrix(getComputedStyle(document.querySelector('.motion-progress > span')).transform).a"), 1);
+    await click('Start countdown'); await pause(1200); assert.equal(await evaluate("document.querySelector('.motion-countdown-number').textContent"), '7'); await click('Cancel countdown');
+    await click('Show tap dot'); await pause(200); assert.equal(await evaluate("document.querySelector('.tap-dot button').disabled"), false);
+    await evaluate("document.querySelector('.tap-dot button').click()"); assert.ok((await evaluate("document.querySelector('[data-tap-result]').textContent")).startsWith('Tapped in '));
+    await click('Show tap dot'); await pause(1100); assert.equal(await evaluate("document.querySelector('.tap-dot button').disabled"), true);
+    assert.equal(await evaluate("document.querySelector('[data-tap-result]').textContent"), 'Dot expired');
+    await evaluate("document.querySelector('.motion-alarm-sample').scrollIntoView({block:'center'})");
+    const flash = [];for(let i=0;i<40;i++){flash.push(await evaluate("Number(getComputedStyle(document.querySelector('.alarm-flash')).opacity)"));await pause(40);}
+    assert.ok(Math.max(...flash) > .15 && Math.max(...flash) <= .18001 && Math.min(...flash) < .03, `Alarm opacity samples: ${JSON.stringify(flash)}`);
+    await click('Start microphone preview'); await until("document.querySelector('.waveform').dataset.waveformSource==='microphone'");
+    await evaluate('window.__testMicrophoneLevel=0'); await pause(200);
+    assert.equal(await evaluate("document.querySelector('.waveform > span').getBoundingClientRect().height"), 6);
+    await evaluate('window.__testMicrophoneLevel=.25'); await pause(200);
+    assert.ok((await evaluate("document.querySelector('.waveform > span').getBoundingClientRect().height")) > 6);
+    await click('Stop microphone preview'); await until("window.__motionStreams.every(s=>s.getTracks().every(t=>t.readyState==='ended'))");
+    assert.ok(await evaluate('window.__motionSamples>0 && window.__motionAudioCloses>0'));
+    assert.equal(await evaluate("document.querySelector('.waveform').dataset.waveformSource"), 'fallback');
+    await send('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});await pause(300);
+    const still = await evaluate("getComputedStyle(document.querySelector('.scan-line__sweep')).transform");await pause(500);
+    assert.equal(await evaluate("getComputedStyle(document.querySelector('.scan-line__sweep')).transform"),still);
+    await click('Show tap dot');await pause(200);assert.equal(await evaluate("getComputedStyle(document.querySelector('.tap-dot button')).transform"),'none');
+    await send('Emulation.setEmulatedMedia',{features:[]});await pause(300);
+    await evaluate("document.querySelector('#motion').scrollIntoView()");
+    const clip=await evaluate("(()=>{const r=document.querySelector('#motion').getBoundingClientRect();return {x:r.x+scrollX,y:r.y+scrollY,width:r.width,height:r.height}})()");
+    await screenshot('catch-up-motion-gallery.png',clip);
+    for(const width of [390,360]){await viewport(width,844);assert.equal(await evaluate('document.documentElement.scrollWidth'),width);}
+    await viewport(430,932);await click('Start microphone preview');await until("document.querySelector('.waveform').dataset.waveformSource==='microphone'");
+    await click('Push · 0.45 s');await until("location.pathname==='/components/preview/push'");
+    await until("window.__motionStreams.every(s=>s.getTracks().every(t=>t.readyState==='ended'))");
+    await navigate('/components');
+    await evaluate("window.__originalCapture=navigator.mediaDevices.getUserMedia;navigator.mediaDevices.getUserMedia=async()=>{throw new DOMException('Denied','NotAllowedError')}");
+    await click('Start microphone preview');await until("document.querySelector('[data-microphone-status]').textContent.includes('unavailable')");
+    assert.equal(await evaluate("document.querySelector('.waveform').dataset.waveformSource"),'fallback');
+    await evaluate("navigator.mediaDevices.getUserMedia=async options=>{const stream=await window.__originalCapture(options);return new Promise(resolve=>window.__releaseCapture=()=>resolve(stream))}");
+    await click('Start microphone preview');await until('window.__releaseCapture');
+    await click('Push · 0.45 s');await until("location.pathname==='/components/preview/push'");
+    await evaluate('window.__releaseCapture()');
+    await until("window.__motionStreams.every(s=>s.getTracks().every(t=>t.readyState==='ended'))");
+    await navigate('/components/canvas');
+    assert.equal(await evaluate('document.querySelectorAll(".canvas-buttons .button").length'),10);
+    assert.deepEqual(runtimeErrors,[]);
+    await writeFile(join(artifactRoot,'catch-up-motion-verification.json'),JSON.stringify({checkedAt:new Date().toISOString(),dimensions,pressedFills,passed:['10 button variants and held/released state','loading loop and 2.2 s progress','seconds-driven countdown','tap response and expiry','alarm flash bounds','real microphone analysis with silence/loud input','stream/context cleanup on stop and navigation','permission denial uses fallback','late microphone permission releases stream after navigation','reduced-motion movement replaced by fades','360/390/430 px widths','no runtime errors']},null,2));
+    console.log('Motion browser checks passed: button states, timing, props, microphone analysis and cleanup, reduced motion, phone widths.');
+  } else
   if(process.argv.includes('--eyes')) {
     await send('Browser.grantPermissions',{origin,permissions:['videoCapture']});
     await send('Page.addScriptToEvaluateOnNewDocument',{source:`
@@ -590,7 +718,7 @@ try {
   assert.equal(await evaluate("document.querySelector('input').value"), 'Myvi');
   assert.equal(await evaluate("document.querySelector('input').classList.contains('input--focused')"), true);
   await evaluate("document.querySelector('.button--primary').click()");
-  await until("document.querySelector('[role=status]').textContent.includes('Primary button pressed')");
+  await until("document.querySelector('.gallery__feedback')?.textContent.includes('Primary button pressed')");
   await viewport(390, 844); await settle();
   assert.equal(await evaluate('document.documentElement.scrollWidth'), 390);
   await viewport(430, 932);

@@ -21,6 +21,8 @@ import { TripsProvider } from './screens/trips/session';
 import { profileRoutes } from './screens/profile/routes';
 import { EyeWatchProvider } from './eyewatch/useEyeWatch';
 import { TestEyes } from './eyewatch/TestEyes';
+import { AppDataProvider } from './integration/AppData';
+import { DriveProvider } from './screens/drive/session';
 
 export function App() {
   const location = useLocation();
@@ -48,7 +50,7 @@ export function App() {
     return () => { scrollPositions.current.set(mainLocation.key, window.scrollY); };
   }, [mainLocation.key]);
 
-  return <EyeWatchProvider><DemoProvider><OnboardingProvider><CarProvider><TripsProvider>
+  return <AppDataProvider><EyeWatchProvider><DriveProvider><DemoProvider><OnboardingProvider><CarProvider><TripsProvider>
     <div className="route-stack"><AnimatePresence initial={false} custom={context}>
       <PageTransition key={mainLocation.key} context={context}>
         <Routes location={mainLocation}>
@@ -68,5 +70,5 @@ export function App() {
       </PageTransition>
     </AnimatePresence></div>
     <AnimatePresence custom={location.pathname==='/car/engine-sound-check'&&direction===1?'push':'sheet'}>{isSheet && (location.pathname === '/onboarding/perodua-myvi-sheet' ? <PeroduaMyviSheet key="car-sheet" /> : location.pathname === '/car/photo-walk-around' ? <PhotoWalkAround key="car-camera" /> : <SheetPreview key="sheet" />)}</AnimatePresence>
-  </TripsProvider></CarProvider></OnboardingProvider></DemoProvider></EyeWatchProvider>;
+  </TripsProvider></CarProvider></OnboardingProvider></DemoProvider></DriveProvider></EyeWatchProvider></AppDataProvider>;
 }

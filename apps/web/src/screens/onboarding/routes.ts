@@ -10,7 +10,9 @@ import { WhichMapsApp } from './WhichMapsApp';
 import { FaceScanIntro } from './FaceScanIntro';
 import { FaceScan } from './FaceScan';
 import { AllSet } from './AllSet';
+import {EmergencyContactSetup,AllowAccess} from './Access';
 export const onboardingRoutes = [
+  {path:'/onboarding/emergency-contact',Screen:EmergencyContactSetup},{path:'/onboarding/allow-access',Screen:AllowAccess},
   { path:'/onboarding/splash',Screen:Splash },{path:'/onboarding/loading',Screen:Loading},
   {path:'/onboarding/welcome',Screen:Welcome},{path:'/onboarding/sign-up',Screen:SignUp},
   {path:'/onboarding/whats-your-car',Screen:WhatsYourCar},{path:'/onboarding/perodua-myvi-sheet',Screen:WhatsYourCar},

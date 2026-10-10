@@ -9,5 +9,5 @@ export type BrandMarkProps = { theme?: 'Navy' | 'White'; version?: 'On light' | 
 export function BrandMark({ theme = 'Navy', version, className = '' }: BrandMarkProps) {
   const markup = version ? { 'On light': onLight, 'On dark': onDark, Mono: mono }[version] : theme === 'White' ? white : navy;
   // Only trusted, checked-in SVG exports are inserted; preserve their source geometry.
-  return <span role="img" aria-label="Dormathon" className={`brand-mark ${className}`} dangerouslySetInnerHTML={{ __html: markup }} />;
+  return <span role="img" aria-label="BUCKL" className={`brand-mark ${className}`} dangerouslySetInnerHTML={{ __html: markup }} />;
 }

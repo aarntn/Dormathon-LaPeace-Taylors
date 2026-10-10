@@ -1,0 +1,61 @@
+{
+  "checkedAt": "2026-10-10T09:13:05.976Z",
+  "dimensions": [
+    [
+      ".button",
+      390,
+      56
+    ],
+    [
+      ".icon-button",
+      40,
+      40
+    ],
+    [
+      ".tab-bar",
+      260,
+      66
+    ],
+    [
+      ".motion-ring--scan",
+      300,
+      300
+    ],
+    [
+      ".motion-ring--countdown",
+      160,
+      160
+    ],
+    [
+      ".waveform",
+      330,
+      48
+    ],
+    [
+      ".tap-dot",
+      150,
+      150
+    ]
+  ],
+  "pressedFills": [
+    "rgb(16, 28, 56)",
+    "rgb(242, 243, 245)",
+    "rgb(233, 236, 242)",
+    "rgb(242, 243, 245)",
+    "rgb(12, 20, 36)"
+  ],
+  "passed": [
+    "10 button variants and held/released state",
+    "loading loop and 2.2 s progress",
+    "seconds-driven countdown",
+    "tap response and expiry",
+    "alarm flash bounds",
+    "real microphone analysis with silence/loud input",
+    "stream/context cleanup on stop and navigation",
+    "permission denial uses fallback",
+    "late microphone permission releases stream after navigation",
+    "reduced-motion movement replaced by fades",
+    "360/390/430 px widths",
+    "no runtime errors"
+  ]
+}

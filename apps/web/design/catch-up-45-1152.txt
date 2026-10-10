@@ -1,0 +1,306 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/2f935978-696f-417e-b01c-6932a53ae22e";
+const imgIndicators = `${assetPathPrefix}/a391f.svg`;
+const imgGroup = `${assetPathPrefix}/027af.svg`;
+const imgGroup1 = `${assetPathPrefix}/f1ecd.svg`;
+const imgFrame = `${assetPathPrefix}/748b2.svg`;
+const imgGroup2 = `${assetPathPrefix}/be0e5.svg`;
+const imgFrame1 = `${assetPathPrefix}/1a387.svg`;
+const imgFrame2 = `${assetPathPrefix}/c716b.svg`;
+const imgGroup3 = `${assetPathPrefix}/d8df5.svg`;
+const imgGroup4 = `${assetPathPrefix}/07797.svg`;
+const imgGroup5 = `${assetPathPrefix}/1c082.svg`;
+const imgGroup6 = `${assetPathPrefix}/5c1c3.svg`;
+const imgGroup7 = `${assetPathPrefix}/ccfa7.svg`;
+const imgGroup8 = `${assetPathPrefix}/bcfe3.svg`;
+
+type StatusBarProps = {
+  className?: string;
+  theme?: "Light";
+};
+
+function StatusBar({ className, theme = "Light" }: StatusBarProps) {
+  return (
+    <div className={className || "h-[54px] relative w-[430px]"} data-node-id="27:134">
+      <p className="[word-break:break-word] absolute font-['SF_Pro:Semibold'] font-[590] leading-[normal] left-[52px] text-[17px] text-[color:var(--text\/primary,#282828)] top-[18px] tracking-[-0.408px] whitespace-nowrap" data-node-id="27:135" style={{ fontVariationSettings: '"wdth" 100' }}>
+        9:41
+      </p>
+      <div className="absolute bg-black h-[36px] left-[153px] rounded-[18px] top-[11px] w-[123.999px]" data-node-id="27:136" data-name="Dynamic Island" />
+      <div className="absolute h-[13px] left-[308px] top-[21px] w-[70px]" data-node-id="27:137" data-name="Indicators">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIndicators} />
+      </div>
+    </div>
+  );
+}
+
+type IconButtonProps = {
+  className?: string;
+  icon?: "Back";
+  theme?: "Light";
+};
+
+function IconButton({ className, icon = "Back", theme = "Light" }: IconButtonProps) {
+  return (
+    <div className={className || "bg-[var(--bg\\/card,white)] border border-[var(--line\\/default,#e8eaed)] border-solid content-stretch drop-shadow-[0px_6px_8px_rgba(0,0,0,0.06)] flex items-center justify-center relative rounded-[20px] size-[40px]"} data-node-id="27:14">
+      <div className="overflow-clip relative shrink-0 size-[20px]" data-node-id="27:15" data-name="icon/back">
+        <div className="absolute bottom-1/4 left-[20.83%] right-[20.83%] top-1/4" data-node-id="27:16" data-name="Group">
+          <div className="absolute inset-[-7.92%_-6.79%]">
+            <img alt="" className="block max-w-none size-full" src={imgGroup} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function P5PrivacyAndLegal() {
+  return (
+    <div className="bg-[var(--bg\/screen,#fcfcfe)] relative size-full" data-node-id="45:1152" data-name="P5 Privacy and legal">
+      <div className="absolute content-stretch flex flex-col gap-[20px] items-start left-0 overflow-clip pb-[24px] pt-[8px] px-[20px] top-[54px] w-[430px]" data-node-id="45:1164" data-name="Content">
+        <IconButton className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch cursor-pointer drop-shadow-[0px_6px_8px_rgba(0,0,0,0.06)] flex items-center justify-center relative rounded-[20px] shrink-0 size-[40px]" />
+        <div className="content-stretch flex flex-col items-center overflow-clip relative shrink-0 w-full" data-node-id="45:1169" data-name="Heading">
+          <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[normal] not-italic relative shrink-0 text-[28px] text-[color:var(--text\/primary,#282828)] text-center tracking-[-0.2632px] w-full" data-node-id="45:1170">
+            Privacy and legal
+          </p>
+        </div>
+        <div className="bg-[var(--state\/warning-soft,#fcf0da)] content-stretch flex gap-[14px] items-start overflow-clip p-[16px] relative rounded-[18px] shrink-0 w-full" data-node-id="45:1171" data-name="Driving aid notice">
+          <div className="overflow-clip relative shrink-0 size-[22px]" data-node-id="45:1172" data-name="icon/info">
+            <div className="absolute inset-[12.5%]" data-node-id="45:1173" data-name="Group">
+              <div className="absolute inset-[-5.28%]">
+                <img alt="" className="block max-w-none size-full" src={imgGroup1} />
+              </div>
+            </div>
+          </div>
+          <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px not-italic overflow-clip relative" data-node-id="45:1176" data-name="Frame">
+            <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px] whitespace-nowrap" data-node-id="45:1177">
+              BUCKL is a driving aid
+            </p>
+            <p className="font-['Inter:Regular'] font-normal leading-[1.4] min-w-full relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] w-[min-content]" data-node-id="45:1178">
+              It helps you notice tiredness, but it can miss signs and isn’t a medical device. If you feel sleepy, stop and rest.
+            </p>
+          </div>
+        </div>
+        <div className="content-stretch flex flex-col gap-[10px] items-start overflow-clip relative shrink-0 w-full" data-node-id="155:1751" data-name="Group Safety features">
+          <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] whitespace-nowrap" data-node-id="155:1752">
+            Safety features
+          </p>
+          <div className="bg-[var(--bg\/card,white)] border border-[#e8eaed] border-solid content-stretch flex flex-col items-start overflow-clip px-[16px] py-[4px] relative rounded-[20px] shadow-[0px_6px_16px_0px_rgba(0,0,0,0.04)] shrink-0 w-full" data-node-id="155:1753" data-name="List">
+            <div className="border-[#e8eaed] border-b border-solid content-stretch flex gap-[14px] items-center overflow-clip py-[10px] relative shrink-0 w-full" data-node-id="155:1754" data-name="Row How eye tracking works">
+              <div className="bg-[var(--bg\/tint,#eef1f7)] content-stretch flex items-center justify-center overflow-clip relative rounded-[11px] shrink-0 size-[36px]" data-node-id="155:1755" data-name="Frame">
+                <div className="relative shrink-0 size-[18px]" data-node-id="155:1784" data-name="Frame">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame} />
+                </div>
+              </div>
+              <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold leading-[normal] min-w-px not-italic relative text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="155:1760">
+                Emergency texts
+              </p>
+              <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.4] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] whitespace-nowrap" data-node-id="155:1761">
+                Only if needed
+              </p>
+              <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="155:1762" data-name="icon/chev">
+                <div className="absolute bottom-1/4 left-[37.5%] right-[37.5%] top-1/4" data-node-id="155:1763" data-name="Group">
+                  <div className="absolute inset-[-7.92%_-15.83%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup2} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="border-[#e8eaed] border-b border-solid content-stretch flex gap-[14px] items-center overflow-clip py-[10px] relative shrink-0 w-full" data-node-id="155:1765" data-name="Row Download my data">
+              <div className="bg-[var(--bg\/tint,#eef1f7)] content-stretch flex items-center justify-center overflow-clip relative rounded-[11px] shrink-0 size-[36px]" data-node-id="155:1766" data-name="Frame">
+                <div className="relative shrink-0 size-[18px]" data-node-id="155:1787" data-name="Frame">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame1} />
+                </div>
+              </div>
+              <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold leading-[normal] min-w-px not-italic relative text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="155:1770">
+                Location sharing
+              </p>
+              <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="155:1771" data-name="icon/chev">
+                <div className="absolute bottom-1/4 left-[37.5%] right-[37.5%] top-1/4" data-node-id="155:1772" data-name="Group">
+                  <div className="absolute inset-[-7.92%_-15.83%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup2} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex gap-[14px] items-center overflow-clip py-[10px] relative shrink-0 w-full" data-node-id="155:1774" data-name="Row Delete my data">
+              <div className="bg-[var(--bg\/tint,#eef1f7)] content-stretch flex items-center justify-center overflow-clip relative rounded-[11px] shrink-0 size-[36px]" data-node-id="155:1775" data-name="Frame">
+                <div className="relative shrink-0 size-[18px]" data-node-id="155:1790" data-name="Frame">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame2} />
+                </div>
+              </div>
+              <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold leading-[normal] min-w-px not-italic relative text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="155:1779">
+                Motion and braking data
+              </p>
+              <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="155:1780" data-name="icon/chev">
+                <div className="absolute bottom-1/4 left-[37.5%] right-[37.5%] top-1/4" data-node-id="155:1781" data-name="Group">
+                  <div className="absolute inset-[-7.92%_-15.83%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup2} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.4] min-w-full not-italic relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] w-[min-content]" data-node-id="155:1783">
+            We text your contact only after 10 seconds with no response, and you can cancel. Location is used for your speed and shared only in an emergency. Motion is saved as numbers, never video.
+          </p>
+        </div>
+        <div className="content-stretch flex flex-col gap-[10px] items-start overflow-clip relative shrink-0 w-full" data-node-id="45:1179" data-name="Group Your data">
+          <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] whitespace-nowrap" data-node-id="45:1180">
+            Your data
+          </p>
+          <div className="bg-[var(--bg\/card,white)] border border-[#e8eaed] border-solid content-stretch flex flex-col items-start overflow-clip px-[16px] py-[4px] relative rounded-[20px] shadow-[0px_6px_16px_0px_rgba(0,0,0,0.04)] shrink-0 w-full" data-node-id="45:1181" data-name="List">
+            <div className="border-[#e8eaed] border-b border-solid content-stretch flex gap-[14px] items-center overflow-clip py-[10px] relative shrink-0 w-full" data-node-id="45:1182" data-name="Row How eye tracking works">
+              <div className="bg-[var(--bg\/tint,#eef1f7)] content-stretch flex items-center justify-center overflow-clip relative rounded-[11px] shrink-0 size-[36px]" data-node-id="45:1183" data-name="Frame">
+                <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="45:1184" data-name="icon/eye">
+                  <div className="absolute inset-[20.83%_8.33%]" data-node-id="45:1185" data-name="Group">
+                    <div className="absolute inset-[-6.79%_-4.75%]">
+                      <img alt="" className="block max-w-none size-full" src={imgGroup3} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold leading-[normal] min-w-px not-italic relative text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="45:1188">
+                How eye tracking works
+              </p>
+              <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.4] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] whitespace-nowrap" data-node-id="45:1189">
+                On your phone
+              </p>
+              <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="45:1190" data-name="icon/chev">
+                <div className="absolute bottom-1/4 left-[37.5%] right-[37.5%] top-1/4" data-node-id="45:1191" data-name="Group">
+                  <div className="absolute inset-[-7.92%_-15.83%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup2} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="border-[#e8eaed] border-b border-solid content-stretch flex gap-[14px] items-center overflow-clip py-[10px] relative shrink-0 w-full" data-node-id="45:1193" data-name="Row Download my data">
+              <div className="bg-[var(--bg\/tint,#eef1f7)] content-stretch flex items-center justify-center overflow-clip relative rounded-[11px] shrink-0 size-[36px]" data-node-id="45:1194" data-name="Frame">
+                <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="45:1195" data-name="icon/download">
+                  <div className="absolute inset-[16.67%_20.83%]" data-node-id="45:1196" data-name="Group">
+                    <div className="absolute inset-[-5.94%_-6.79%]">
+                      <img alt="" className="block max-w-none size-full" src={imgGroup4} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold leading-[normal] min-w-px not-italic relative text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="45:1198">
+                Download my data
+              </p>
+              <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="45:1199" data-name="icon/chev">
+                <div className="absolute bottom-1/4 left-[37.5%] right-[37.5%] top-1/4" data-node-id="45:1200" data-name="Group">
+                  <div className="absolute inset-[-7.92%_-15.83%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup2} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex gap-[14px] items-center overflow-clip py-[10px] relative shrink-0 w-full" data-node-id="45:1202" data-name="Row Delete my data">
+              <div className="bg-[var(--state\/danger-soft,#fde7e5)] content-stretch flex items-center justify-center overflow-clip relative rounded-[11px] shrink-0 size-[36px]" data-node-id="45:1203" data-name="Frame">
+                <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="45:1204" data-name="icon/trash">
+                  <div className="absolute inset-[16.67%]" data-node-id="45:1205" data-name="Group">
+                    <div className="absolute inset-[-5.94%]">
+                      <img alt="" className="block max-w-none size-full" src={imgGroup5} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold leading-[normal] min-w-px not-italic relative text-[16px] text-[color:var(--state\/danger,#ef4f44)] tracking-[-0.0784px]" data-node-id="45:1207">
+                Delete my data
+              </p>
+              <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="45:1208" data-name="icon/chev">
+                <div className="absolute bottom-1/4 left-[37.5%] right-[37.5%] top-1/4" data-node-id="45:1209" data-name="Group">
+                  <div className="absolute inset-[-7.92%_-15.83%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup2} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex flex-col gap-[10px] items-start overflow-clip relative shrink-0 w-full" data-node-id="45:1211" data-name="Group Legal">
+          <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] whitespace-nowrap" data-node-id="45:1212">
+            Legal
+          </p>
+          <div className="bg-[var(--bg\/card,white)] border border-[#e8eaed] border-solid content-stretch flex flex-col items-start overflow-clip px-[16px] py-[4px] relative rounded-[20px] shadow-[0px_6px_16px_0px_rgba(0,0,0,0.04)] shrink-0 w-full" data-node-id="45:1213" data-name="List">
+            <div className="border-[#e8eaed] border-b border-solid content-stretch flex gap-[14px] items-center overflow-clip py-[10px] relative shrink-0 w-full" data-node-id="45:1214" data-name="Row Terms of service">
+              <div className="bg-[var(--bg\/tint,#eef1f7)] content-stretch flex items-center justify-center overflow-clip relative rounded-[11px] shrink-0 size-[36px]" data-node-id="45:1215" data-name="Frame">
+                <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="45:1216" data-name="icon/doc">
+                  <div className="absolute inset-[12.5%_20.83%_12.5%_29.17%]" data-node-id="45:1217" data-name="Group">
+                    <div className="absolute inset-[-5.28%_-7.92%]">
+                      <img alt="" className="block max-w-none size-full" src={imgGroup6} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold leading-[normal] min-w-px not-italic relative text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="45:1220">
+                Terms of service
+              </p>
+              <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="45:1221" data-name="icon/chev">
+                <div className="absolute bottom-1/4 left-[37.5%] right-[37.5%] top-1/4" data-node-id="45:1222" data-name="Group">
+                  <div className="absolute inset-[-7.92%_-15.83%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup2} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="border-[#e8eaed] border-b border-solid content-stretch flex gap-[14px] items-center overflow-clip py-[10px] relative shrink-0 w-full" data-node-id="45:1224" data-name="Row Privacy policy">
+              <div className="bg-[var(--bg\/tint,#eef1f7)] content-stretch flex items-center justify-center overflow-clip relative rounded-[11px] shrink-0 size-[36px]" data-node-id="45:1225" data-name="Frame">
+                <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="45:1226" data-name="icon/shield">
+                  <div className="absolute inset-[12.5%_20.83%]" data-node-id="45:1227" data-name="Group">
+                    <div className="absolute inset-[-5.28%_-6.79%]">
+                      <img alt="" className="block max-w-none size-full" src={imgGroup7} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold leading-[normal] min-w-px not-italic relative text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="45:1229">
+                Privacy policy
+              </p>
+              <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="45:1230" data-name="icon/chev">
+                <div className="absolute bottom-1/4 left-[37.5%] right-[37.5%] top-1/4" data-node-id="45:1231" data-name="Group">
+                  <div className="absolute inset-[-7.92%_-15.83%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup2} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex gap-[14px] items-center overflow-clip py-[10px] relative shrink-0 w-full" data-node-id="45:1233" data-name="Row Open-source licences">
+              <div className="bg-[var(--bg\/tint,#eef1f7)] content-stretch flex items-center justify-center overflow-clip relative rounded-[11px] shrink-0 size-[36px]" data-node-id="45:1234" data-name="Frame">
+                <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="45:1235" data-name="icon/code">
+                  <div className="absolute inset-[33.33%_16.67%]" data-node-id="45:1236" data-name="Group">
+                    <div className="absolute inset-[-11.87%_-5.94%_-11.88%_-5.94%]">
+                      <img alt="" className="block max-w-none size-full" src={imgGroup8} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold leading-[normal] min-w-px not-italic relative text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="45:1238">
+                Open-source licences
+              </p>
+              <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="45:1239" data-name="icon/chev">
+                <div className="absolute bottom-1/4 left-[37.5%] right-[37.5%] top-1/4" data-node-id="45:1240" data-name="Group">
+                  <div className="absolute inset-[-7.92%_-15.83%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup2} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[normal] min-w-full not-italic relative shrink-0 text-[12px] text-[color:var(--text\/tertiary,#a6a6a6)] text-center tracking-[0.0024px] w-[min-content]" data-node-id="45:1242">
+          Version 1.0.0
+        </p>
+      </div>
+      <StatusBar className="absolute h-[54px] left-0 top-0 w-[430px]" />
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Heading/Large: Font(family: "Inter", style: Bold, size: 28, weight: 700, lineHeight: 100, letterSpacing: -0.9399999976158142), Body/Strong: Font(family: "Inter", style: Semi Bold, size: 16, weight: 600, lineHeight: 100, letterSpacing: -0.49000000953674316), Body/Small: Font(family: "Inter", style: Regular, size: 14, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.30000001192092896), Body/Small Strong: Font(family: "Inter", style: Semi Bold, size: 14, weight: 600, lineHeight: 100, letterSpacing: -0.30000001192092896), Label/Small: Font(family: "Inter", style: Medium, size: 12, weight: 500, lineHeight: 100, letterSpacing: 0.019999999552965164).
+Images and SVGs will be stored as constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

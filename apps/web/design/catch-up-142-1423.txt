@@ -1,0 +1,237 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/8f6b0c58-74d8-41b0-86a0-081947caf32e";
+const imgGroup = `${assetPathPrefix}/5ab83.svg`;
+const imgIndicators = `${assetPathPrefix}/4c1f7.svg`;
+const imgDashboard = `${assetPathPrefix}/a874d.svg`;
+const imgVector = `${assetPathPrefix}/3a716.svg`;
+const imgVector1 = `${assetPathPrefix}/517ba.svg`;
+const imgVector2 = `${assetPathPrefix}/06334.svg`;
+const imgVector3 = `${assetPathPrefix}/ad164.svg`;
+const imgVector4 = `${assetPathPrefix}/29cfc.svg`;
+const imgVector5 = `${assetPathPrefix}/56c52.svg`;
+const imgVector6 = `${assetPathPrefix}/e6835.svg`;
+const imgVector7 = `${assetPathPrefix}/3b077.svg`;
+const imgVector8 = `${assetPathPrefix}/b3e7f.svg`;
+const imgVector9 = `${assetPathPrefix}/ee7f7.svg`;
+const imgVector10 = `${assetPathPrefix}/a216f.svg`;
+const imgVector11 = `${assetPathPrefix}/6341c.svg`;
+const imgVector12 = `${assetPathPrefix}/d2d90.svg`;
+const imgVector13 = `${assetPathPrefix}/3dbec.svg`;
+const imgVector14 = `${assetPathPrefix}/b9e53.svg`;
+const imgVector15 = `${assetPathPrefix}/153ef.svg`;
+const imgVector16 = `${assetPathPrefix}/98666.svg`;
+const imgVector17 = `${assetPathPrefix}/c99f5.svg`;
+const imgVector18 = `${assetPathPrefix}/5aeb6.svg`;
+const imgGroup1 = `${assetPathPrefix}/b0218.svg`;
+const imgGroup2 = `${assetPathPrefix}/5d7fe.svg`;
+const imgCorners = `${assetPathPrefix}/f2899.svg`;
+const imgShutter = `${assetPathPrefix}/fd203.svg`;
+
+type ScanLineProps = {
+  className?: string;
+  phase?: "Top";
+};
+
+function ScanLine({ className, phase = "Top" }: ScanLineProps) {
+  return (
+    <div className={className || "h-[380px] relative w-[350px]"} data-node-id="185:1942">
+      <div className="absolute bg-gradient-to-b from-[rgba(59,196,141,0)] h-[30px] left-0 to-[rgba(59,196,141,0.35)] top-[-14px] w-[350px]" data-node-id="185:1943" data-name="Glow" />
+      <div className="absolute bg-[var(--drive\/accent,#3bc48d)] h-[2px] left-0 rounded-[1px] top-[16px] w-[350px]" data-node-id="185:1944" data-name="Line" />
+    </div>
+  );
+}
+
+type IconButtonProps = {
+  className?: string;
+  icon?: "Close";
+  theme?: "Dark";
+};
+
+function IconButton({ className, icon = "Close", theme = "Dark" }: IconButtonProps) {
+  return (
+    <div className={className || "bg-[rgba(255,255,255,0.14)] content-stretch flex items-center justify-center relative rounded-[20px] size-[40px]"} data-node-id="27:31">
+      <div className="overflow-clip relative shrink-0 size-[20px]" data-node-id="27:32" data-name="icon/close">
+        <div className="absolute inset-1/4" data-node-id="27:33" data-name="Group">
+          <div className="absolute inset-[-7.92%]">
+            <img alt="" className="block max-w-none size-full" src={imgGroup} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+type StatusBarProps = {
+  className?: string;
+  theme?: "Dark";
+};
+
+function StatusBar({ className, theme = "Dark" }: StatusBarProps) {
+  return (
+    <div className={className || "h-[54px] relative w-[430px]"} data-node-id="27:145">
+      <p className="[word-break:break-word] absolute font-['SF_Pro:Semibold'] font-[590] leading-[normal] left-[52px] text-[17px] text-white top-[18px] tracking-[-0.408px] whitespace-nowrap" data-node-id="27:146" style={{ fontVariationSettings: '"wdth" 100' }}>
+        9:41
+      </p>
+      <div className="absolute bg-black h-[36px] left-[153px] rounded-[18px] top-[11px] w-[123.999px]" data-node-id="27:147" data-name="Dynamic Island" />
+      <div className="absolute h-[13px] left-[308px] top-[21px] w-[70px]" data-node-id="27:148" data-name="Indicators">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIndicators} />
+      </div>
+    </div>
+  );
+}
+
+export default function C2ScanAWarningLight() {
+  return (
+    <div className="bg-[var(--drive\/bg,#0b1220)] relative size-full" data-node-id="142:1423" data-name="C2 Scan a warning light">
+      <StatusBar className="absolute h-[54px] left-0 top-0 w-[430px]" />
+      <div className="absolute content-stretch flex flex-col gap-[16px] items-start left-0 overflow-clip pb-[24px] pt-[8px] px-[20px] top-[54px] w-[430px]" data-node-id="142:1435" data-name="Content">
+        <div className="content-stretch flex items-start overflow-clip relative shrink-0 w-full" data-node-id="142:1436" data-name="Top bar">
+          <IconButton className="bg-[rgba(255,255,255,0.14)] content-stretch cursor-pointer flex items-center justify-center relative rounded-[20px] shrink-0 size-[40px]" />
+        </div>
+        <div className="[word-break:break-word] content-stretch flex flex-col gap-[8px] items-start not-italic overflow-clip relative shrink-0 text-center w-full" data-node-id="142:1441" data-name="Heading">
+          <p className="font-['Inter:Bold'] font-bold leading-[normal] relative shrink-0 text-[28px] text-[color:var(--text\/inverse,white)] tracking-[-0.2632px] w-full" data-node-id="142:1442">
+            Scan a warning light
+          </p>
+          <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[16px] text-[color:var(--drive\/text-secondary,#95a0b3)] tracking-[-0.0784px] w-full" data-node-id="142:1443">
+            Fit the dashboard inside the frame
+          </p>
+        </div>
+        <div className="bg-[#141a26] h-[420px] overflow-clip relative rounded-[24px] shrink-0 w-full" data-node-id="142:1444" data-name="Viewfinder">
+          <div className="absolute h-[250px] left-[15px] overflow-clip top-[70px] w-[360px]" data-node-id="142:1445" data-name="Dashboard">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDashboard} />
+            <div className="absolute inset-[11.2%_45.56%_21.6%_7.78%]" data-node-id="142:1447" data-name="Vector">
+              <div className="absolute inset-[-0.6%]">
+                <img alt="" className="block max-w-none size-full" src={imgVector} />
+              </div>
+            </div>
+            <div className="absolute inset-[64.04%_82.25%_33.12%_15.78%]" data-node-id="142:1448" data-name="Vector">
+              <div className="absolute inset-[-17.61%]">
+                <img alt="" className="block max-w-none size-full" src={imgVector1} />
+              </div>
+            </div>
+            <div className="absolute inset-[53.2%_86.86%_45.56%_10.5%]" data-node-id="142:1449" data-name="Vector">
+              <div className="absolute inset-[-40.33%_-13.16%]">
+                <img alt="" className="block max-w-none size-full" src={imgVector2} />
+              </div>
+            </div>
+            <div className="absolute inset-[39.92%_87.56%_59.44%_9.72%]" data-node-id="142:1450" data-name="Vector">
+              <div className="absolute inset-[-78.14%_-12.76%]">
+                <img alt="" className="block max-w-none size-full" src={imgVector3} />
+              </div>
+            </div>
+            <div className="absolute inset-[26.48%_84.17%_71.2%_13.58%]" data-node-id="142:1451" data-name="Vector">
+              <div className="absolute inset-[-21.55%_-15.43%]">
+                <img alt="" className="block max-w-none size-full" src={imgVector4} />
+              </div>
+            </div>
+            <div className="absolute inset-[17%_77.47%_79.44%_21.28%]" data-node-id="142:1452" data-name="Vector">
+              <div className="absolute inset-[-14.05%_-27.78%]">
+                <img alt="" className="block max-w-none size-full" src={imgVector5} />
+              </div>
+            </div>
+            <div className="absolute inset-[13.6%_68.89%_82.4%_31.11%]" data-node-id="142:1453" data-name="Vector">
+              <div className="absolute inset-[-12.5%_-1.25px]">
+                <img alt="" className="block max-w-none size-full" src={imgVector6} />
+              </div>
+            </div>
+            <div className="absolute inset-[17%_59.06%_79.44%_39.69%]" data-node-id="142:1454" data-name="Vector">
+              <div className="absolute inset-[-14.05%_-27.78%]">
+                <img alt="" className="block max-w-none size-full" src={imgVector7} />
+              </div>
+            </div>
+            <div className="absolute inset-[26.48%_51.36%_71.2%_46.39%]" data-node-id="142:1455" data-name="Vector">
+              <div className="absolute inset-[-21.55%_-15.43%]">
+                <img alt="" className="block max-w-none size-full" src={imgVector8} />
+              </div>
+            </div>
+            <div className="absolute inset-[39.92%_47.5%_59.44%_49.78%]" data-node-id="142:1456" data-name="Vector">
+              <div className="absolute inset-[-78.14%_-12.76%]">
+                <img alt="" className="block max-w-none size-full" src={imgVector9} />
+              </div>
+            </div>
+            <div className="absolute inset-[53.2%_48.28%_45.56%_49.08%]" data-node-id="142:1457" data-name="Vector">
+              <div className="absolute inset-[-40.33%_-13.16%]">
+                <img alt="" className="block max-w-none size-full" src={imgVector10} />
+              </div>
+            </div>
+            <div className="absolute inset-[64.04%_53.56%_33.12%_44.47%]" data-node-id="142:1458" data-name="Vector">
+              <div className="absolute inset-[-17.61%]">
+                <img alt="" className="block max-w-none size-full" src={imgVector11} />
+              </div>
+            </div>
+            <div className="absolute inset-[44.8%_68.89%_38.24%_19.33%]" data-node-id="142:1459" data-name="Vector">
+              <div className="absolute inset-[-3.54%]">
+                <img alt="" className="block max-w-none size-full" src={imgVector12} />
+              </div>
+            </div>
+            <div className="absolute inset-[42.4%_67.22%_52.8%_29.44%]" data-node-id="142:1460" data-name="Vector">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector13} />
+            </div>
+            <div className="absolute inset-[20%_8.33%_30.4%_57.22%]" data-node-id="142:1461" data-name="Vector">
+              <div className="absolute inset-[-0.81%]">
+                <img alt="" className="block max-w-none size-full" src={imgVector14} />
+              </div>
+            </div>
+            <div className="absolute inset-[25.63%_16.14%_61.76%_61.92%]" data-node-id="142:1462" data-name="Vector">
+              <div className="absolute inset-[-6.34%_-2.53%]">
+                <img alt="" className="block max-w-none size-full" src={imgVector15} />
+              </div>
+            </div>
+            <div className="absolute inset-[31.24%_13.03%_61.76%_83.86%]" data-node-id="142:1463" data-name="Vector">
+              <div className="absolute inset-[-14.29%_-22.33%_-14.29%_-22.32%]">
+                <img alt="" className="block max-w-none size-full" src={imgVector16} />
+              </div>
+            </div>
+            <div className="absolute inset-[34.24%_15.08%_55.2%_74.44%]" data-node-id="142:1464" data-name="Vector">
+              <div className="absolute inset-[-5.68%_-3.98%]">
+                <img alt="" className="block max-w-none size-full" src={imgVector17} />
+              </div>
+            </div>
+            <div className="absolute inset-[42.8%_24.17%_53.2%_73.06%]" data-node-id="142:1465" data-name="Vector">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector18} />
+            </div>
+            <div className="absolute contents inset-[77.2%_24.44%_10.17%_21.67%]" data-node-id="142:1466" data-name="Group">
+              <div className="absolute inset-[79.6%_24.44%_12%_21.67%]" data-node-id="142:1467" data-name="Group">
+                <div className="absolute inset-[-4.76%_-0.52%]">
+                  <img alt="" className="block max-w-none size-full" src={imgGroup1} />
+                </div>
+              </div>
+              <div className="absolute inset-[77.2%_37.78%_10.17%_55.56%]" data-node-id="142:1472" data-name="Group">
+                <div className="absolute inset-[-3.17%_-4.17%]">
+                  <img alt="" className="block max-w-none size-full" src={imgGroup2} />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="absolute border-[2.5px] border-[var(--state\/warning-dot,#e8a317)] border-solid h-[50px] left-[202px] rounded-[8px] top-[256px] w-[46px]" data-node-id="142:1475" data-name="Detection" />
+          <div className="absolute bg-[var(--state\/warning-dot,#e8a317)] content-stretch flex items-start left-[173px] overflow-clip px-[10px] py-[5px] rounded-[8px] top-[222px]" data-node-id="142:1476" data-name="Tag">
+            <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[normal] not-italic relative shrink-0 text-[12px] text-[color:var(--text\/primary,#282828)] tracking-[0.0024px] whitespace-nowrap" data-node-id="142:1477">
+              Engine temperature
+            </p>
+          </div>
+          <ScanLine className="absolute h-[380px] left-[20px] top-[20px] w-[350px]" />
+          <div className="absolute h-[380px] left-[20px] top-[20px] w-[350px]" data-node-id="142:1478" data-name="Corners">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgCorners} />
+          </div>
+        </div>
+        <div className="content-stretch flex items-start justify-center overflow-clip pt-[12px] relative shrink-0 w-full" data-node-id="142:1480" data-name="Shutter wrap">
+          <a className="block cursor-pointer relative shrink-0 size-[76px]" data-node-id="142:1481" data-name="Shutter">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgShutter} />
+          </a>
+        </div>
+        <a className="[word-break:break-word] block cursor-pointer font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-[14px] text-[color:var(--drive\/text-secondary,#95a0b3)] text-center tracking-[-0.042px] w-full" data-node-id="155:1565">
+          <p className="leading-[1.4]">Demo: blurry photo</p>
+        </a>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Heading/Large: Font(family: "Inter", style: Bold, size: 28, weight: 700, lineHeight: 100, letterSpacing: -0.9399999976158142), Body/Regular: Font(family: "Inter", style: Regular, size: 16, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.49000000953674316), Label/Small: Font(family: "Inter", style: Medium, size: 12, weight: 500, lineHeight: 100, letterSpacing: 0.019999999552965164), Body/Small: Font(family: "Inter", style: Regular, size: 14, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.30000001192092896).
+Images and SVGs will be stored as constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

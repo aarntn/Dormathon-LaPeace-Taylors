@@ -2,6 +2,8 @@ import type { TransitionKind } from './transitions';
 
 export type RouteMetadata = { path: string; transition: TransitionKind };
 export const routeMetadata: RouteMetadata[] = [
+  ...['face-reading','working-out-your-result','no-response','contact-alerted','passenger-mode'].map(name=>({path:'/drive/'+name,transition:'fade' as const})),
+  { path: '/onboarding/loading', transition: 'fade' },
   { path: '/onboarding/perodua-myvi-sheet', transition: 'sheet' },
   { path: '/car/car-check', transition: 'tab' },
   { path: '/car/photo-walk-around', transition: 'sheet' },

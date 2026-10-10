@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-10T07:01:16.422Z",
+  "checkedAt": "2026-10-10T09:13:31.229Z",
   "initial": {
     "title": "Components",
     "secure": true,
@@ -27,39 +27,74 @@
   ],
   "geometry": [
     {
-      "class": "button text-button button--primary ",
+      "class": "button text-button button--primary  ",
       "width": 390,
       "height": 56,
       "x": 48,
       "y": 48
     },
     {
-      "class": "button text-button button--secondary ",
+      "class": "button text-button button--secondary  ",
       "width": 390,
       "height": 56,
       "x": 48,
       "y": 120
     },
     {
-      "class": "button text-button button--light ",
+      "class": "button text-button button--light  ",
       "width": 390,
       "height": 56,
       "x": 48,
       "y": 192
     },
     {
-      "class": "button text-button button--outline ",
+      "class": "button text-button button--outline  ",
       "width": 390,
       "height": 56,
       "x": 48,
       "y": 264
     },
     {
-      "class": "button text-button button--drive ",
+      "class": "button text-button button--drive  ",
       "width": 390,
       "height": 56,
       "x": 48,
       "y": 336
+    },
+    {
+      "class": "button text-button button--primary button--pressed ",
+      "width": 390,
+      "height": 56,
+      "x": 48,
+      "y": 408
+    },
+    {
+      "class": "button text-button button--secondary button--pressed ",
+      "width": 390,
+      "height": 56,
+      "x": 48,
+      "y": 480
+    },
+    {
+      "class": "button text-button button--light button--pressed ",
+      "width": 390,
+      "height": 56,
+      "x": 48,
+      "y": 552
+    },
+    {
+      "class": "button text-button button--outline button--pressed ",
+      "width": 390,
+      "height": 56,
+      "x": 48,
+      "y": 624
+    },
+    {
+      "class": "button text-button button--drive button--pressed ",
+      "width": 390,
+      "height": 56,
+      "x": 48,
+      "y": 696
     },
     {
       "class": "tab-bar ",
@@ -93,15 +128,15 @@
       "class": "illustration canvas-car-side",
       "width": 360,
       "height": 140,
-      "x": 24,
-      "y": 420
+      "x": 727,
+      "y": 540
     },
     {
       "class": "illustration canvas-car-top",
       "width": 160,
       "height": 300,
-      "x": 440,
-      "y": 420
+      "x": 511,
+      "y": 219
     },
     {
       "class": "illustration canvas-eyes",

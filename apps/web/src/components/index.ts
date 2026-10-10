@@ -7,3 +7,5 @@ export * from './BrandMark';
 export * from './Illustrations';
 export * from './AppFrame';
 export * from './PageTransition';
+export * from './motion/Motion';
+export * from './motion/Waveform';

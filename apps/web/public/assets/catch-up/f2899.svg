@@ -1,0 +1,10 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="350" height="380" viewBox="0 0 350 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Corners" clip-path="url(#clip0_0_19)">
+<path id="Vector" d="M2 30V10C2 7.87827 2.84285 5.84344 4.34315 4.34315C5.84344 2.84285 7.87827 2 10 2H30M320 2H340C342.122 2 344.157 2.84285 345.657 4.34315C347.157 5.84344 348 7.87827 348 10V30M348 350V370C348 372.122 347.157 374.157 345.657 375.657C344.157 377.157 342.122 378 340 378H320M30 378H10C7.87827 378 5.84344 377.157 4.34315 375.657C2.84285 374.157 2 372.122 2 370V350" stroke="white" stroke-width="3" stroke-linecap="round"/>
+</g>
+<defs>
+<clipPath id="clip0_0_19">
+<rect width="350" height="380" fill="white"/>
+</clipPath>
+</defs>
+</svg>

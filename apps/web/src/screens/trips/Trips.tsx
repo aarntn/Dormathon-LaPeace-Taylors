@@ -1,23 +1,10 @@
-import { TabBar, type Tab } from '../../components';
-import { Art, Chart, Frame, Heading, useTripsNavigation } from './shared';
-
-export type Trip = { title: string; detail: string; status: string; tone: 'danger' | 'warning' | 'success' };
-const defaultThisWeek: Trip[] = [
-  { title: 'PJ → Seremban', detail: 'Today · 3:40 pm · 58 min', status: '1 alarm', tone: 'danger' },
-  { title: 'UM → Home', detail: 'Thu · 11:20 pm · 25 min', status: '2 tired', tone: 'warning' },
-  { title: 'Home → Mid Valley', detail: 'Wed · 6:10 pm · 18 min', status: 'All alert', tone: 'success' },
-];
-const defaultLastWeek: Trip[] = [
-  { title: 'Home → UM', detail: 'Mon · 8:05 am · 22 min', status: 'All alert', tone: 'success' },
-  { title: 'Sunway → Home', detail: 'Sat · 12:40 am · 31 min', status: '3 tired', tone: 'warning' },
-];
-function TripList({ trips, label }: { trips: Trip[]; label: string }) {
-  const go = useTripsNavigation();
-  return <section className="trips-list trips-panel" aria-label={label}>{trips.map((trip, index) => <button key={index} type="button" className="trips-row" onClick={() => go('/drive/trip-summary')}><span className="trips-row-copy"><span className="text-body-strong">{trip.title}</span><span className="text-body-small">{trip.detail}</span></span><span className={'trips-status trips-' + trip.tone}><Art name={trip.tone + '.svg'} /><span className="text-body-small-strong">{trip.status}</span></span></button>)}</section>;
-}
-export type TripsProps = { monthSummary?: string; pattern?: string; patternDetail?: string; patternChart?: string; thisWeek?: Trip[]; lastWeek?: Trip[] };
-export function Trips({ monthSummary = '12 drives this month · 9 h 40 min', pattern = 'You get tired faster after 10 pm', patternDetail = '7 of your 9 tired alerts happened late at night.', patternChart = 'pattern.svg', thisWeek = defaultThisWeek, lastWeek = defaultLastWeek }: TripsProps) {
-  const go = useTripsNavigation();
-  const paths: Record<Tab, string> = { Home: '/drive/home', Trips: '/trips/trips', Car: '/car/car-check', Profile: '/profile' };
-  return <Frame className="trips-overview" footer={<TabBar active="Trips" onChange={tab => tab !== 'Trips' && go(paths[tab])} />}><Heading title="Trips">{monthSummary}</Heading><button type="button" className="trips-pattern trips-panel" onClick={() => go('/trips/when-you-get-tired')}><span className="trips-between"><span className="text-body-small-strong trips-secondary">Your pattern</span><Art name="chevron.svg" /></span><span className="text-title-medium">{pattern}</span><Chart name={patternChart} height={44} label={patternDetail} /><span className="text-body-small trips-secondary">{patternDetail}</span></button><h2 className="trips-week text-body-small-strong">This week</h2><TripList trips={thisWeek} label="This week" /><h2 className="trips-week text-body-small-strong">Last week</h2><TripList trips={lastWeek} label="Last week" /></Frame>;
+import {TabBar} from '../../components';
+import {Frame,Heading,useTripsNavigation} from './shared';
+import {useAppData} from '../../integration/AppData';
+import {AccountNotice} from '../../integration/AccountNotice';
+export function Trips(){
+ const go=useTripsNavigation();const d=useAppData();const trips=d.trips.filter(t=>t.ended_at);
+ return <Frame className="trips-overview" footer={<TabBar active="Trips" onChange={t=>go(t==='Home'?'/drive/home':'/'+t.toLowerCase())}/>}>
+ <Heading title="Trips">{trips.length} completed drives</Heading><AccountNotice/>
+ {trips.length===0?<section className="catch-card"><img src="/assets/catch-up/41857.svg" alt="" className="catch-empty-art"/><h2 className="text-title-medium">Your first trip starts here</h2><p className="text-body-small">After your first drive, see your route, alerts and safety score here.</p></section>:<><button className="trips-pattern trips-panel" onClick={()=>go('/trips/when-you-get-tired')}><strong className="text-title-medium">When you get tired</strong><span className="text-body-small">Patterns from your recorded alerts</span></button><section className="trips-list trips-panel">{trips.map(t=><button key={t.id} className="trips-row" onClick={()=>go('/drive/trip-summary?trip='+encodeURIComponent(t.id))}><span className="trips-row-copy"><strong>{new Date(t.started_at).toLocaleString()}</strong><span className="text-body-small">{(t.distance_km??0).toFixed(1)} km · {Math.round((Date.parse(t.ended_at!)-Date.parse(t.started_at))/60000)} min</span></span><span className="text-body-small-strong">{t.passenger_mode?'Passenger':(t.safety_score??'—')+'/100'}</span></button>)}</section></>}</Frame>;
 }

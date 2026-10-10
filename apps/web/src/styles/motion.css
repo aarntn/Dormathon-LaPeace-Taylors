@@ -1,0 +1,51 @@
+:root {
+  /* Pressed variant fills read from Figma Components, 185:2284–185:2296. */
+  --button-primary-pressed: #101c38;
+  --button-secondary-pressed: var(--bg-field);
+  --button-light-pressed: #e9ecf2;
+  --button-outline-pressed: var(--bg-field);
+  --button-drive-pressed: #0c1424;
+}
+.button--primary.button--pressed { background: var(--button-primary-pressed); }
+.button--secondary.button--pressed { background: var(--button-secondary-pressed); }
+.button--light.button--pressed { background: var(--button-light-pressed); }
+.button--outline.button--pressed { background: var(--button-outline-pressed); }
+.button--drive.button--pressed { background: var(--button-drive-pressed); }
+.loading-dots { display: inline-block; position: relative; width: 44px; height: 12px; }
+.loading-dots > span { position: absolute; top: 0; width: 10px; height: 10px; border-radius: 50%; background: var(--text-primary); }
+.loading-dots--light > span { background: var(--text-inverse); }
+.motion-progress { width: 200px; height: 6px; border-radius: 3px; overflow: hidden; background: rgb(255 255 255 / .15); }
+.motion-progress > span { display: block; width: 100%; height: 100%; border-radius: inherit; background: var(--drive-accent); }
+.live-dot { display: inline-block; position: relative; width: 16px; height: 16px; color: var(--drive-accent); }
+.live-dot--red { color: var(--state-danger); }
+.live-dot__core, .live-dot__halo { position: absolute; left: 4px; top: 4px; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+.motion-ring { position: relative; flex-shrink: 0; }
+.motion-ring--scan { width: 300px; height: 300px; }
+.motion-ring--countdown { width: 160px; height: 160px; color: var(--text-inverse); }
+.motion-ring__track { position: absolute; left: 0; top: 0; max-width: none; }
+.motion-ring__fill { --ring-progress: 0; position: absolute; inset: 0; background: conic-gradient(var(--drive-accent) calc(var(--ring-progress) * 1%), transparent 0); mask-repeat: no-repeat; mask-position: top left; }
+.motion-ring--countdown .motion-ring__fill { background: conic-gradient(var(--text-inverse) calc(var(--ring-progress) * 1%), transparent 0); }
+.motion-ring__content { position: absolute; inset: 0; display: grid; place-items: center; }
+.motion-countdown-number { position: absolute; top: 53.5px; left: 0; width: 100%; text-align: center; line-height: 53px; }
+.alarm-flash { position: absolute; inset: 0; background: var(--text-inverse); pointer-events: none; z-index: 1; }
+.waveform { position: relative; width: 330px; max-width: 100%; height: 48px; overflow: hidden; }
+.waveform > span { position: absolute; top: 50%; transform: translateY(-50%); width: 6px; border-radius: 3px; background: var(--brand-navy); }
+.waveform > span:nth-child(n+23) { background: var(--line-default); }
+.scan-line { width: 350px; max-width: 100%; height: 380px; position: relative; overflow: hidden; background: var(--drive-card); border-radius: 16px; }
+.scan-line__sweep { position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: var(--drive-accent); border-radius: 1px; }
+.scan-line__sweep > span { position: absolute; bottom: 2px; left: 0; width: 100%; height: 30px; background: linear-gradient(transparent, rgb(59 196 141 / .35)); }
+.tap-dot { width: 150px; height: 150px; position: relative; }
+.tap-dot > button { position: absolute; inset: 0; border: 0; padding: 0; background: transparent; display: grid; place-items: center; }
+.tap-dot > button:disabled { cursor: default; }
+.tap-dot img { display: block; max-width: none; }
+.tap-dot__halo { position: absolute; top: 0; left: 0; }
+.tap-dot__core { position: absolute; top: 27px; left: 27px; }
+.motion-scan-sample, .motion-tap-sample { align-items: center; }
+.motion-scan-sample > input { width: 300px; max-width: 100%; accent-color: var(--drive-accent); }
+.motion-scan-sample > p, .motion-tap-sample > p { align-self: flex-start; }
+.motion-countdown-sample { align-self: center; background: var(--state-danger); padding: 16px; border-radius: 20px; }
+.motion-alarm-sample { position: relative; display: grid; place-items: center; height: 180px; border-radius: 20px; overflow: hidden; background: var(--state-danger); color: var(--text-inverse); }
+.gallery__nav { flex-wrap: wrap; }
+.canvas-buttons { height: 752px; }
+.canvas-car-side { left: 727px; top: 540px; }
+.canvas-car-top { left: 511px; top: 219px; }

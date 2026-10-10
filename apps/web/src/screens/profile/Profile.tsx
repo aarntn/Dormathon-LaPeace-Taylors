@@ -1,21 +1,14 @@
-import { TabBar, type Tab } from '../../components';
-import { Art, Frame, RowList, useProfileNavigation, type RowData } from './shared';
-
-const settings: RowData[] = [
-  { title: 'Alarm and alerts', icon: 'bell', value: 'Loud' },
-  { title: 'Maps app', icon: 'map', value: 'Waze', to: '/onboarding/which-maps-app' },
-  { title: 'Eye profile', icon: 'eye', value: 'Re-scan', to: '/onboarding/face-scan-intro' },
-  { title: 'Privacy and legal', icon: 'shield', to: '/profile/privacy-and-legal' },
-  { title: 'Help and support', icon: 'help' },
-];
-export type ProfileProps = { name?: string; email?: string; drives?: string; drivingTime?: string; breaks?: string; alerts?: string; car?: string; carStatus?: string; rows?: RowData[] };
-export function Profile({ name = 'Michael Jackson', email = 'mj@example.com', drives = '18', drivingTime = '14 h', breaks = '6', alerts = '5 tiredness alerts and 1 microsleep this month', car = 'Perodua Myvi 1.5 AV', carStatus = 'WXY 4821 · 2 things to check', rows = settings }: ProfileProps) {
-  const go = useProfileNavigation();
-  const paths: Record<Tab, string> = { Home: '/drive/home', Trips: '/trips/trips', Car: '/car/car-check', Profile: '/profile/profile' };
-  return <Frame className="profile-overview" footer={<TabBar active="Profile" onChange={tab => tab !== 'Profile' && go(paths[tab])} />}>
-    <header className="profile-person"><span className="profile-avatar text-heading-large" aria-hidden="true">{name.slice(0, 1)}</span><div className="profile-person-copy"><h1 className="text-heading-large">{name}</h1><p className="text-body-small profile-secondary">{email}</p></div><span className="profile-edit" aria-hidden="true"><Art name="edit" /></span></header>
-    <button type="button" className="profile-stats" onClick={() => go('/profile/driving-stats')}><span className="profile-between"><span className="text-body-strong">This month</span><span className="profile-stat-link text-body-small-strong">See stats<Art name="chevron-white" /></span></span><span className="profile-numbers">{[[drives, 'drives'], [drivingTime, 'driving'], [breaks, 'breaks taken']].map(([value, label]) => <span key={label}><span className="text-numeric-large">{value}</span><span className="text-label-small">{label}</span></span>)}</span><span className="profile-alert-line text-body-small"><span className="profile-dot" />{alerts}</span></button>
-    <section className="profile-group" aria-label="My cars"><div className="profile-between"><h2 className="text-body-small-strong profile-secondary">My cars</h2><button type="button" className="profile-text-action text-body-small-strong" onClick={() => go('/profile/add-a-car')}><Art name="plus" />Add a car</button></div><button type="button" className="profile-current-car profile-panel" onClick={() => go('/profile/my-cars')}><span className="profile-brand"><Art name="brand" /></span><span className="profile-car-copy"><span className="text-body-strong">{car}</span><span className="profile-inline-status text-body-small profile-secondary"><span className="profile-dot" />{carStatus}</span></span><Art name="chevron" /></button></section>
-    <section className="profile-group" aria-label="Settings"><h2 className="text-body-small-strong profile-secondary">Settings</h2><RowList rows={rows} label="Settings" /></section>
-  </Frame>;
+import {Button,TabBar} from '../../components';
+import {Frame,RowList,useProfileNavigation} from './shared';
+import {useAppData} from '../../integration/AppData';
+import {AccountNotice} from '../../integration/AccountNotice';
+export function Profile(){
+ const d=useAppData();const go=useProfileNavigation();const name=d.session?.user.user_metadata?.name??'Your profile';const finished=d.trips.filter(t=>t.ended_at);
+ const minutes=finished.reduce((n,t)=>n+(Date.parse(t.ended_at!)-Date.parse(t.started_at))/60000,0);
+ return <Frame className="profile-overview" footer={<TabBar active="Profile" onChange={t=>go(t==='Home'?'/drive/home':'/'+t.toLowerCase())}/>}>
+ <header className="profile-person"><span className="profile-avatar text-heading-large">{name.slice(0,1)}</span><div className="profile-person-copy"><h1 className="text-heading-large">{name}</h1><p className="text-body-small">{d.session?.user.email}</p></div></header><AccountNotice/>
+ <button className="profile-stats" onClick={()=>go('/profile/driving-stats')}><strong className="text-body-strong">Your driving</strong><span className="profile-numbers">{[[String(finished.length),'drives'],[Math.round(minutes/60)+' h','driving']].map(([v,l])=><span key={l}><span className="text-numeric-large">{v}</span><span className="text-label-small">{l}</span></span>)}</span></button>
+ <section className="profile-group"><h2 className="text-body-small-strong">My cars</h2><RowList rows={[{title:d.selectedCar?d.selectedCar.make+' '+d.selectedCar.model:'Add a car',icon:'brand',to:d.selectedCar?'/profile/my-cars':'/profile/add-a-car'}]} label="My cars"/></section>
+ <section className="profile-group"><h2 className="text-body-small-strong">Settings</h2><RowList rows={[{title:'Emergency contact',icon:'bell',value:d.contacts[0]?.name,to:'/profile/emergency-contact'},{title:'Maps app',icon:'map',value:localStorage.getItem('buckl.mapsApp')??'Waze',to:'/onboarding/which-maps-app'},{title:'Eye profile',icon:'eye',value:'Re-scan',to:'/onboarding/face-scan-intro'},{title:'Privacy and legal',icon:'shield',to:'/profile/privacy-and-legal'}]} label="Settings"/></section>
+ {d.session&&<Button style="Secondary" label="Sign out" onClick={()=>void d.signOut().then(()=>go('/onboarding/welcome')).catch(()=>{})}/>}</Frame>;
 }

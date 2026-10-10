@@ -1,0 +1,361 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/9589229d-50e5-42c7-bb5b-223f8cd8e1eb";
+const imgIndicators = `${assetPathPrefix}/a391f.svg`;
+const imgGroup = `${assetPathPrefix}/afcd0.svg`;
+const imgGroup1 = `${assetPathPrefix}/7632a.svg`;
+const imgDot = `${assetPathPrefix}/6cb7a.svg`;
+const imgGroup2 = `${assetPathPrefix}/224c9.svg`;
+const imgArt = `${assetPathPrefix}/417b9.svg`;
+const imgGroup3 = `${assetPathPrefix}/be0e5.svg`;
+const imgGroup4 = `${assetPathPrefix}/74999.svg`;
+const imgGroup5 = `${assetPathPrefix}/29a80.svg`;
+const imgIconShield = `${assetPathPrefix}/748b2.svg`;
+const imgGroup6 = `${assetPathPrefix}/d8df5.svg`;
+const imgGroup7 = `${assetPathPrefix}/ccfa7.svg`;
+const imgGroup8 = `${assetPathPrefix}/d03cb.svg`;
+const imgGroup9 = `${assetPathPrefix}/fe23d.svg`;
+const imgGroup10 = `${assetPathPrefix}/8af19.svg`;
+const imgGroup11 = `${assetPathPrefix}/8521d.svg`;
+const imgGroup12 = `${assetPathPrefix}/4bda6.svg`;
+
+type StatusBarProps = {
+  className?: string;
+  theme?: "Light";
+};
+
+function StatusBar({ className, theme = "Light" }: StatusBarProps) {
+  return (
+    <div className={className || "h-[54px] relative w-[430px]"} data-node-id="27:134">
+      <p className="[word-break:break-word] absolute font-['SF_Pro:Semibold'] font-[590] leading-[normal] left-[52px] text-[17px] text-[color:var(--text\/primary,#282828)] top-[18px] tracking-[-0.408px] whitespace-nowrap" data-node-id="27:135" style={{ fontVariationSettings: '"wdth" 100' }}>
+        9:41
+      </p>
+      <div className="absolute bg-black h-[36px] left-[153px] rounded-[18px] top-[11px] w-[123.999px]" data-node-id="27:136" data-name="Dynamic Island" />
+      <div className="absolute h-[13px] left-[308px] top-[21px] w-[70px]" data-node-id="27:137" data-name="Indicators">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIndicators} />
+      </div>
+    </div>
+  );
+}
+
+export default function P1Profile() {
+  return (
+    <div className="bg-[var(--bg\/screen,#fcfcfe)] relative size-full" data-node-id="44:934" data-name="P1 Profile">
+      <div className="absolute content-stretch flex flex-col gap-[16px] items-start left-0 overflow-clip pb-[24px] pt-[12px] px-[20px] top-[54px] w-[430px]" data-node-id="44:969" data-name="Content">
+        <div className="content-stretch flex gap-[14px] items-center overflow-clip relative shrink-0 w-full" data-node-id="44:970" data-name="Header">
+          <div className="bg-[var(--brand\/navy,#1b2a4e)] content-stretch flex items-center justify-center overflow-clip relative rounded-[30px] shrink-0 size-[60px]" data-node-id="44:971" data-name="Frame">
+            <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[normal] not-italic relative shrink-0 text-[28px] text-[color:var(--text\/inverse,white)] tracking-[-0.2632px] whitespace-nowrap" data-node-id="44:972">
+              M
+            </p>
+          </div>
+          <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start min-w-px not-italic overflow-clip relative whitespace-nowrap" data-node-id="44:973" data-name="Frame">
+            <p className="font-['Inter:Bold'] font-bold leading-[normal] relative shrink-0 text-[28px] text-[color:var(--text\/primary,#282828)] tracking-[-0.2632px]" data-node-id="44:974">
+              Michael Jackson
+            </p>
+            <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px]" data-node-id="44:975">
+              mj@example.com
+            </p>
+          </div>
+          <div className="bg-[var(--bg\/card,white)] border border-[#e8eaed] border-solid content-stretch flex items-center justify-center overflow-clip relative rounded-[20px] shrink-0 size-[40px]" data-node-id="44:976" data-name="Edit profile">
+            <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="44:977" data-name="icon/edit">
+              <div className="absolute inset-[20.83%_20.83%_16.67%_16.67%]" data-node-id="44:978" data-name="Group">
+                <div className="absolute inset-[-6.33%]">
+                  <img alt="" className="block max-w-none size-full" src={imgGroup} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a className="bg-[var(--brand\/navy,#1b2a4e)] content-stretch cursor-pointer flex flex-col gap-[16px] items-start overflow-clip p-[20px] relative rounded-[24px] shrink-0 w-full" data-node-id="44:980" data-name="Stats card">
+          <div className="content-stretch flex items-center justify-between overflow-clip relative shrink-0 w-full" data-node-id="44:981" data-name="Frame">
+            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/inverse,white)] text-left tracking-[-0.0784px] whitespace-nowrap" data-node-id="44:982">
+              This month
+            </p>
+            <div className="content-stretch flex gap-[2px] items-center overflow-clip relative shrink-0" data-node-id="44:983" data-name="Frame">
+              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/inverse,white)] text-left tracking-[-0.042px] whitespace-nowrap" data-node-id="44:984">
+                See stats
+              </p>
+              <div className="overflow-clip relative shrink-0 size-[16px]" data-node-id="44:985" data-name="icon/chev">
+                <div className="absolute bottom-1/4 left-[37.5%] right-[37.5%] top-1/4" data-node-id="44:986" data-name="Group">
+                  <div className="absolute inset-[-7.92%_-15.83%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup1} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="[word-break:break-word] content-stretch flex items-start leading-[normal] not-italic overflow-clip relative shrink-0 text-[color:var(--text\/inverse,white)] text-left w-full whitespace-nowrap" data-node-id="44:988" data-name="Numbers">
+            <div className="content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start min-w-px overflow-clip relative" data-node-id="44:989" data-name="Frame">
+              <p className="font-['Inter:Bold'] font-bold relative shrink-0 text-[24px] tracking-[-0.24px]" data-node-id="44:990">
+                18
+              </p>
+              <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[12px] tracking-[0.0024px]" data-node-id="44:991">
+                drives
+              </p>
+            </div>
+            <div className="content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start min-w-px overflow-clip relative" data-node-id="44:992" data-name="Frame">
+              <p className="font-['Inter:Bold'] font-bold relative shrink-0 text-[24px] tracking-[-0.24px]" data-node-id="44:993">
+                14 h
+              </p>
+              <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[12px] tracking-[0.0024px]" data-node-id="44:994">
+                driving
+              </p>
+            </div>
+            <div className="content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start min-w-px overflow-clip relative" data-node-id="44:995" data-name="Frame">
+              <p className="font-['Inter:Bold'] font-bold relative shrink-0 text-[24px] tracking-[-0.24px]" data-node-id="44:996">
+                6
+              </p>
+              <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[12px] tracking-[0.0024px]" data-node-id="44:997">
+                breaks taken
+              </p>
+            </div>
+          </div>
+          <div className="bg-[rgba(255,255,255,0.1)] content-stretch flex gap-[8px] items-center overflow-clip px-[12px] py-[10px] relative rounded-[14px] shrink-0 w-full" data-node-id="44:998" data-name="Alert line">
+            <div className="relative shrink-0 size-[8px]" data-node-id="44:999" data-name="Dot">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDot} />
+            </div>
+            <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[1.4] min-w-px not-italic relative text-[14px] text-[color:var(--text\/inverse,white)] text-left tracking-[-0.042px]" data-node-id="44:1000">
+              5 tiredness alerts and 1 microsleep this month
+            </p>
+          </div>
+        </a>
+        <div className="content-stretch flex flex-col gap-[10px] items-start overflow-clip relative shrink-0 w-full" data-node-id="44:1001" data-name="My cars">
+          <div className="content-stretch flex items-center justify-between overflow-clip relative shrink-0 w-full" data-node-id="44:1002" data-name="Frame">
+            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] whitespace-nowrap" data-node-id="44:1003">
+              My cars
+            </p>
+            <a className="content-stretch cursor-pointer flex gap-[4px] items-center overflow-clip relative shrink-0" data-node-id="44:1004" data-name="Add a car link">
+              <div className="overflow-clip relative shrink-0 size-[16px]" data-node-id="44:1005" data-name="icon/plus">
+                <div className="absolute inset-[20.83%]" data-node-id="44:1006" data-name="Group">
+                  <div className="absolute inset-[-7.86%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup2} />
+                  </div>
+                </div>
+              </div>
+              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--brand\/navy,#1b2a4e)] text-left tracking-[-0.042px] whitespace-nowrap" data-node-id="44:1008">
+                Add a car
+              </p>
+            </a>
+          </div>
+          <a className="bg-[var(--bg\/card,white)] border border-[#e8eaed] border-solid content-stretch cursor-pointer flex gap-[14px] items-center overflow-clip pl-[12px] pr-[16px] py-[12px] relative rounded-[20px] shadow-[0px_6px_16px_0px_rgba(0,0,0,0.04)] shrink-0 w-full" data-node-id="44:1009" data-name="Current car">
+            <div className="bg-[var(--bg\/tint,#eef1f7)] content-stretch flex items-center justify-center overflow-clip relative rounded-[16px] shrink-0 size-[56px]" data-node-id="44:1010" data-name="Frame">
+              <div className="relative shrink-0 size-[50.4px]" data-node-id="44:1011" data-name="Logo mark">
+                <div className="absolute left-0 size-[50.4px] top-0" data-node-id="I44:1011;37:770" data-name="Art">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgArt} />
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start min-w-px overflow-clip relative" data-node-id="44:1019" data-name="Frame">
+              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] text-left tracking-[-0.0784px] whitespace-nowrap" data-node-id="44:1020">
+                Perodua Myvi 1.5 AV
+              </p>
+              <div className="content-stretch flex gap-[6px] items-center overflow-clip relative shrink-0" data-node-id="44:1021" data-name="Frame">
+                <div className="relative shrink-0 size-[8px]" data-node-id="44:1022" data-name="Dot">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDot} />
+                </div>
+                <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.4] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] text-left tracking-[-0.042px] whitespace-nowrap" data-node-id="44:1023">
+                  WXY 4821 · 2 things to check
+                </p>
+              </div>
+            </div>
+            <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="44:1024" data-name="icon/chev">
+              <div className="absolute bottom-1/4 left-[37.5%] right-[37.5%] top-1/4" data-node-id="44:1025" data-name="Group">
+                <div className="absolute inset-[-7.92%_-15.83%]">
+                  <img alt="" className="block max-w-none size-full" src={imgGroup3} />
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div className="content-stretch flex flex-col gap-[10px] items-start overflow-clip relative shrink-0 w-full" data-node-id="44:1027" data-name="Group Settings">
+          <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] whitespace-nowrap" data-node-id="44:1028">
+            Settings
+          </p>
+          <div className="bg-[var(--bg\/card,white)] border border-[#e8eaed] border-solid content-stretch flex flex-col items-start overflow-clip px-[16px] py-[4px] relative rounded-[20px] shadow-[0px_6px_16px_0px_rgba(0,0,0,0.04)] shrink-0 w-full" data-node-id="44:1029" data-name="List">
+            <div className="border-[#e8eaed] border-b border-solid content-stretch flex gap-[14px] items-center overflow-clip py-[10px] relative shrink-0 w-full" data-node-id="44:1030" data-name="Row Alarm and alerts">
+              <div className="bg-[var(--bg\/tint,#eef1f7)] content-stretch flex items-center justify-center overflow-clip relative rounded-[11px] shrink-0 size-[36px]" data-node-id="44:1031" data-name="Frame">
+                <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="44:1032" data-name="icon/bell">
+                  <div className="absolute inset-[20.83%_18.75%_8.33%_18.75%]" data-node-id="44:1033" data-name="Group">
+                    <div className="absolute inset-[-5.59%_-6.33%]">
+                      <img alt="" className="block max-w-none size-full" src={imgGroup4} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold leading-[normal] min-w-px not-italic relative text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="44:1036">
+                Alarm and alerts
+              </p>
+              <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.4] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] whitespace-nowrap" data-node-id="44:1037">
+                Loud
+              </p>
+              <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="44:1038" data-name="icon/chev">
+                <div className="absolute bottom-1/4 left-[37.5%] right-[37.5%] top-1/4" data-node-id="44:1039" data-name="Group">
+                  <div className="absolute inset-[-7.92%_-15.83%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup3} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a className="border-[#e8eaed] border-b border-solid content-stretch cursor-pointer flex gap-[14px] items-center overflow-clip py-[10px] relative shrink-0 w-full" data-node-id="44:1041" data-name="Row Maps app">
+              <div className="bg-[var(--bg\/tint,#eef1f7)] content-stretch flex items-center justify-center overflow-clip relative rounded-[11px] shrink-0 size-[36px]" data-node-id="44:1042" data-name="Frame">
+                <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="44:1043" data-name="icon/map">
+                  <div className="absolute inset-[16.67%_12.5%]" data-node-id="44:1044" data-name="Group">
+                    <div className="absolute inset-[-5.94%_-5.28%]">
+                      <img alt="" className="block max-w-none size-full" src={imgGroup5} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold leading-[normal] min-w-px not-italic relative text-[16px] text-[color:var(--text\/primary,#282828)] text-left tracking-[-0.0784px]" data-node-id="44:1047">
+                Maps app
+              </p>
+              <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.4] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] text-left tracking-[-0.042px] whitespace-nowrap" data-node-id="44:1048">
+                Waze
+              </p>
+              <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="44:1049" data-name="icon/chev">
+                <div className="absolute bottom-1/4 left-[37.5%] right-[37.5%] top-1/4" data-node-id="44:1050" data-name="Group">
+                  <div className="absolute inset-[-7.92%_-15.83%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup3} />
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a className="border-[#e8eaed] border-b border-solid content-stretch cursor-pointer flex gap-[14px] items-center overflow-clip py-[10px] relative shrink-0 w-full" data-node-id="155:1678" data-name="Row Emergency contact">
+              <div className="bg-[var(--bg\/tint,#eef1f7)] content-stretch flex items-center justify-center overflow-clip relative rounded-[11px] shrink-0 size-[36px]" data-node-id="155:1679" data-name="Frame">
+                <div className="relative shrink-0 size-[18px]" data-node-id="155:1689" data-name="icon/shield">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconShield} />
+                </div>
+              </div>
+              <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold leading-[normal] min-w-px not-italic relative text-[16px] text-[color:var(--text\/primary,#282828)] text-left tracking-[-0.0784px]" data-node-id="155:1684">
+                Emergency contact
+              </p>
+              <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.4] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] text-left tracking-[-0.042px] whitespace-nowrap" data-node-id="155:1685">
+                Mum
+              </p>
+              <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="155:1686" data-name="icon/chev">
+                <div className="absolute bottom-1/4 left-[37.5%] right-[37.5%] top-1/4" data-node-id="155:1687" data-name="Group">
+                  <div className="absolute inset-[-7.92%_-15.83%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup3} />
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a className="border-[#e8eaed] border-b border-solid content-stretch cursor-pointer flex gap-[14px] items-center overflow-clip py-[10px] relative shrink-0 w-full" data-node-id="44:1052" data-name="Row Eye profile">
+              <div className="bg-[var(--bg\/tint,#eef1f7)] content-stretch flex items-center justify-center overflow-clip relative rounded-[11px] shrink-0 size-[36px]" data-node-id="44:1053" data-name="Frame">
+                <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="44:1054" data-name="icon/eye">
+                  <div className="absolute inset-[20.83%_8.33%]" data-node-id="44:1055" data-name="Group">
+                    <div className="absolute inset-[-6.79%_-4.75%]">
+                      <img alt="" className="block max-w-none size-full" src={imgGroup6} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold leading-[normal] min-w-px not-italic relative text-[16px] text-[color:var(--text\/primary,#282828)] text-left tracking-[-0.0784px]" data-node-id="44:1058">
+                Eye profile
+              </p>
+              <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.4] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] text-left tracking-[-0.042px] whitespace-nowrap" data-node-id="44:1059">
+                Re-scan
+              </p>
+              <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="44:1060" data-name="icon/chev">
+                <div className="absolute bottom-1/4 left-[37.5%] right-[37.5%] top-1/4" data-node-id="44:1061" data-name="Group">
+                  <div className="absolute inset-[-7.92%_-15.83%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup3} />
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a className="border-[#e8eaed] border-b border-solid content-stretch cursor-pointer flex gap-[14px] items-center overflow-clip py-[10px] relative shrink-0 w-full" data-node-id="44:1065" data-name="Row Privacy and legal">
+              <div className="bg-[var(--bg\/tint,#eef1f7)] content-stretch flex items-center justify-center overflow-clip relative rounded-[11px] shrink-0 size-[36px]" data-node-id="44:1066" data-name="Frame">
+                <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="44:1067" data-name="icon/shield">
+                  <div className="absolute inset-[12.5%_20.83%]" data-node-id="44:1068" data-name="Group">
+                    <div className="absolute inset-[-5.28%_-6.79%]">
+                      <img alt="" className="block max-w-none size-full" src={imgGroup7} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold leading-[normal] min-w-px not-italic relative text-[16px] text-[color:var(--text\/primary,#282828)] text-left tracking-[-0.0784px]" data-node-id="44:1070">
+                Privacy and legal
+              </p>
+              <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="44:1071" data-name="icon/chev">
+                <div className="absolute bottom-1/4 left-[37.5%] right-[37.5%] top-1/4" data-node-id="44:1072" data-name="Group">
+                  <div className="absolute inset-[-7.92%_-15.83%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup3} />
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div className="content-stretch flex gap-[14px] items-center overflow-clip py-[10px] relative shrink-0 w-full" data-node-id="44:1074" data-name="Row Help and support">
+              <div className="bg-[var(--bg\/tint,#eef1f7)] content-stretch flex items-center justify-center overflow-clip relative rounded-[11px] shrink-0 size-[36px]" data-node-id="44:1075" data-name="Frame">
+                <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="44:1076" data-name="icon/help">
+                  <div className="absolute inset-[12.5%]" data-node-id="44:1077" data-name="Group">
+                    <div className="absolute inset-[-5.28%]">
+                      <img alt="" className="block max-w-none size-full" src={imgGroup8} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold leading-[normal] min-w-px not-italic relative text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="44:1080">
+                Help and support
+              </p>
+              <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="44:1081" data-name="icon/chev">
+                <div className="absolute bottom-1/4 left-[37.5%] right-[37.5%] top-1/4" data-node-id="44:1082" data-name="Group">
+                  <div className="absolute inset-[-7.92%_-15.83%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup3} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <StatusBar className="absolute h-[54px] left-0 top-0 w-[430px]" />
+      <div className="absolute bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch drop-shadow-[0px_10px_14px_rgba(0,0,0,0.08)] flex gap-[6px] items-start left-[85px] p-[8px] rounded-[26px] top-[832px]" data-node-id="44:946" data-name="Tab bar">
+        <a className="content-stretch cursor-pointer flex h-[48px] items-center justify-center overflow-clip relative rounded-[18px] shrink-0 w-[56px]" data-node-id="I44:946;27:111" data-name="Tab home">
+          <div className="overflow-clip relative shrink-0 size-[22px]" data-node-id="I44:946;27:112" data-name="icon/home">
+            <div className="absolute inset-[12.5%]" data-node-id="I44:946;27:113" data-name="Group">
+              <div className="absolute inset-[-5.28%]">
+                <img alt="" className="block max-w-none size-full" src={imgGroup9} />
+              </div>
+            </div>
+          </div>
+        </a>
+        <a className="content-stretch cursor-pointer flex h-[48px] items-center justify-center overflow-clip relative rounded-[18px] shrink-0 w-[56px]" data-node-id="I44:946;27:115" data-name="Tab trips">
+          <div className="overflow-clip relative shrink-0 size-[22px]" data-node-id="I44:946;27:116" data-name="icon/trips">
+            <div className="absolute inset-[12.2%_12.5%_12.8%_12.5%]" data-node-id="I44:946;27:117" data-name="Group">
+              <div className="absolute inset-[-5.28%]">
+                <img alt="" className="block max-w-none size-full" src={imgGroup10} />
+              </div>
+            </div>
+          </div>
+        </a>
+        <a className="content-stretch cursor-pointer flex h-[48px] items-center justify-center overflow-clip relative rounded-[18px] shrink-0 w-[56px]" data-node-id="I44:946;27:121" data-name="Tab car">
+          <div className="overflow-clip relative shrink-0 size-[22px]" data-node-id="I44:946;27:122" data-name="icon/car">
+            <div className="absolute inset-[23.33%_12.5%_20.83%_12.5%]" data-node-id="I44:946;27:123" data-name="Group">
+              <div className="absolute inset-[-7.09%_-5.28%]">
+                <img alt="" className="block max-w-none size-full" src={imgGroup11} />
+              </div>
+            </div>
+          </div>
+        </a>
+        <div className="bg-[var(--brand\/navy,#1b2a4e)] content-stretch flex h-[48px] items-center justify-center overflow-clip relative rounded-[18px] shrink-0 w-[56px]" data-node-id="I44:946;27:128" data-name="Tab profile">
+          <div className="overflow-clip relative shrink-0 size-[22px]" data-node-id="I44:946;27:129" data-name="icon/profile">
+            <div className="absolute inset-[16.67%]" data-node-id="I44:946;27:130" data-name="Group">
+              <div className="absolute inset-[-5.94%]">
+                <img alt="" className="block max-w-none size-full" src={imgGroup12} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Heading/Large: Font(family: "Inter", style: Bold, size: 28, weight: 700, lineHeight: 100, letterSpacing: -0.9399999976158142), Body/Small: Font(family: "Inter", style: Regular, size: 14, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.30000001192092896), Body/Strong: Font(family: "Inter", style: Semi Bold, size: 16, weight: 600, lineHeight: 100, letterSpacing: -0.49000000953674316), Body/Small Strong: Font(family: "Inter", style: Semi Bold, size: 14, weight: 600, lineHeight: 100, letterSpacing: -0.30000001192092896), Numeric/Large: Font(family: "Inter", style: Bold, size: 24, weight: 700, lineHeight: 100, letterSpacing: -1), Label/Small: Font(family: "Inter", style: Medium, size: 12, weight: 500, lineHeight: 100, letterSpacing: 0.019999999552965164).
+Images and SVGs will be stored as constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

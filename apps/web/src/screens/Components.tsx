@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import source from '../../design/figma-tokens.json';
+import { MotionSamples } from './MotionSamples';
 import { AppFrame, BrandMark, Button, buttonStyles, IconButton, icons, iconThemes, Input, inputStates, Option, TabBar, tabs, CarSide, CarTop, EyeLandmarks, type Tab } from '../components';
 
 const tokenName = (name: string) => name.toLowerCase().replace(/[\s/]+/g, '-');
@@ -19,16 +20,17 @@ export function Components() {
 
   return <AppFrame><main className="gallery">
     <header className="gallery__header">
-      <div className="gallery__brand"><BrandMark /><span className="text-label-small text-text-secondary">DORMATHON</span></div>
+      <div className="gallery__brand"><BrandMark /><span className="text-label-small text-text-secondary">BUCKL</span></div>
       <h1 className="text-heading-large">Components</h1>
       <p className="text-body-regular text-text-secondary">The shared building blocks. Tap, type and explore every state.</p>
-      <nav aria-label="Component sections" className="gallery__nav text-body-small"><a href="#buttons">Buttons</a><a href="#inputs">Inputs</a><a href="#tokens">Tokens</a><Link to="/components/canvas">Canvas view</Link></nav>
+      <nav aria-label="Component sections" className="gallery__nav text-body-small"><a href="#buttons">Buttons</a><a href="#inputs">Inputs</a><a href="#motion">Motion</a><a href="#tokens">Tokens</a><Link to="/components/canvas">Canvas view</Link></nav>
     </header>
 
     <section className="gallery__section" id="buttons">
-      <div className="section-heading"><h2 className="text-title-medium">Button</h2><span className="text-label-small text-text-secondary">5 STYLES</span></div>
+      <div className="section-heading"><h2 className="text-title-medium">Button</h2><span className="text-label-small text-text-secondary">10 VARIANTS</span></div>
       <div className="sample-stack">{buttonStyles.map(style => <div key={style} className={`sample ${['Light', 'Outline', 'Drive'].includes(style) ? 'sample--dark' : ''}`}>
-        <p className="sample__caption text-label-small">{style}</p><Button style={style} label="Button" onClick={() => notify(`${style} button pressed`)} />
+        <p className="sample__caption text-label-small">{style} · Default</p><Button style={style} label="Button" onClick={() => notify(`${style} button pressed`)} />
+        <p className="sample__caption text-label-small">{style} · Pressed</p><Button style={style} state="Pressed" label="Button" onClick={() => notify(`${style} button pressed`)} />
       </div>)}</div>
     </section>
 
@@ -80,6 +82,7 @@ export function Components() {
       </div>
     </section>
 
+    <MotionSamples />
     <section className="gallery__section" id="tokens">
       <div className="section-heading"><h2 className="text-title-medium">Colours</h2><span className="text-label-small text-text-secondary">22 TOKENS</span></div>
       <div className="swatches">{source.variables.map(variable => { const name = tokenName(variable.name); const colour = variable.values['26:0']; const hex = '#' + [colour.r, colour.g, colour.b].map(value => Math.round(value * 255).toString(16).padStart(2, '0')).join(''); return <div key={name} className="swatch"><div className="swatch__colour" style={{ background: `var(--${name})` }} /><div className="swatch__label"><span className="text-label-small">{variable.name}</span><span className="text-label-small text-text-secondary">{hex.toUpperCase()}</span></div></div>; })}</div>
@@ -89,7 +92,7 @@ export function Components() {
       <div className="section-heading"><h2 className="text-title-medium">Typography</h2><span className="text-label-small text-text-secondary">INTER</span></div>
       {source.textStyles.filter(style => style.fontName.family === 'Inter').map(style => <div key={style.name} className="type-sample"><p className="type-sample__name text-label-small text-text-secondary">{style.name}</p><p className={`text-${tokenName(style.name)}`}>{style.name === 'Numeric/Large' ? '128' : 'Ready for the road'}</p></div>)}
     </section>
-    <div className="text-label-small text-text-secondary">Dormathon · Component review</div>
+    <div className="text-label-small text-text-secondary">BUCKL · Component review</div>
     <div role="status" aria-live="polite">{feedback && <div className="gallery__feedback text-body-small">{feedback}</div>}</div>
   </main></AppFrame>;
 }

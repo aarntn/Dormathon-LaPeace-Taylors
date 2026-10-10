@@ -1,7 +1,8 @@
 import { createContext, useContext, useState, type ReactNode } from 'react';
 
 export const onboardingDefaults = {
-  name: 'Aaron', email: 'aaron@example.com', password: '', search: 'Myvi',
+  name: '', email: '', password: '', search: 'Myvi',
+  contactName: '', contactPhone: '', batteryAge: '1_2y' as 'under_1y'|'1_2y'|'over_2y',
   version: '1.5 AV', plate: 'WXY 4821', year: '2021', colour: 'Granite Grey', mileage: '48,200 km',
   engine: '1.5 L', gearbox: 'Automatic', fuel: 'Petrol',
   service: 'Mar 2026', serviceMileage: '', modified: false, scratched: true,

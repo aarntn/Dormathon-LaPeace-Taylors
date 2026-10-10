@@ -5,7 +5,7 @@ import type { Features } from './engine';
 
 type Watch = {session:EyeWatchSession;video:React.RefObject<HTMLVideoElement|null>;start:()=>void;beginDrive:()=>void;remind:()=>void;mode:'test'|'drive'};
 const Context=createContext<Watch|null>(null);
-const activePaths=new Set(['line-up-your-face','quick-eye-check','driving','getting-tired','microsleep-alarm','cant-see-your-eyes','waze-open-still-watching','tired-while-waze-is-open'].map(p=>'/drive/'+p));
+const activePaths=new Set(['face-reading','line-up-your-face','quick-eye-check','driving','getting-tired','microsleep-alarm','no-response','contact-alerted','cant-see-your-eyes','waze-open-still-watching','tired-while-waze-is-open'].map(p=>'/drive/'+p).concat('/onboarding/face-scan'));
 export function EyeWatchProvider({children}:{children:ReactNode}) {
   const [session]=useState(()=>new EyeWatchSession());
   const video=useRef<HTMLVideoElement>(null);
@@ -16,7 +16,7 @@ export function EyeWatchProvider({children}:{children:ReactNode}) {
   useEffect(()=>()=>session.stop(),[session]);
   useEffect(()=>{if(location.pathname!=='/test-eyes' && !activePaths.has(location.pathname) && session.snapshot.status!=='idle')session.stop();},[location.pathname,session]);
   useEffect(()=>{
-    if(mode!=='drive'||(snapshot.status!=='running'&&!snapshot.eye.alarm)||!session.snapshot.calibrated || ['/drive/line-up-your-face','/drive/quick-eye-check'].includes(location.pathname))return;
+    if(mode!=='drive'||(snapshot.status!=='running'&&!snapshot.eye.alarm)||!session.snapshot.calibrated || ['/onboarding/face-scan','/drive/face-reading','/drive/line-up-your-face','/drive/quick-eye-check','/drive/no-response','/drive/contact-alerted'].includes(location.pathname))return;
     const state=snapshot.eye.alarm?'alarm':snapshot.eye.state;
     const target=state==='alarm'?'/drive/microsleep-alarm':state==='lost'?'/drive/cant-see-your-eyes':state==='tired' && performance.now()>=reminder.current?'/drive/getting-tired':undefined;
     if(target && location.pathname!==target){

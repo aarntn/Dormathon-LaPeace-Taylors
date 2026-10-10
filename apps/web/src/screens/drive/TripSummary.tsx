@@ -1,11 +1,16 @@
-import { Button } from '../../components';
-import { Art, Back, DriveFrame, Glyph, Heading, useDriveNavigation } from './shared';
-
-export type TripEvent = { title: string; time: string; detail: string; icon: string; severity: 'danger' | 'warning' };
-const defaultEvents: TripEvent[] = [{ title: 'Microsleep', time: '58 min', detail: 'Eyes closed 1.8 s · alarm sounded', icon: '0ad48.svg', severity: 'danger' }, { title: 'Yawning', time: '44 min', detail: '3 times in 5 minutes', icon: '616ac.svg', severity: 'warning' }, { title: 'Slow blinks', time: '39 min', detail: 'Blinks were getting longer', icon: '5ade7.svg', severity: 'warning' }];
-const defaultBars = [8, 10, 8, 11, 10, 13, 11, 14, 16, 18, 21, 24, 27, 30, 35, 38, 46, 77, 32, 24, 19, 16, 14, 13];
-export type TripSummaryProps = { title?: string; detail?: string; microsleeps?: number; bars?: number[]; events?: TripEvent[] };
-export function TripSummary({ title = 'PJ → Seremban', detail = 'Today · 1 h 12 min · 68 km', microsleeps = 1, bars = defaultBars, events = defaultEvents }: TripSummaryProps) {
-  const go = useDriveNavigation();
-  return <DriveFrame footer={<Button label="Done" onClick={() => go('/drive/home', true)} />}><main className="drive-content drive-summary"><Back close to="/drive/home" /><Heading title={title}>{detail}</Heading><section className="drive-chart" aria-label="Drowsiness on this trip"><div className="drive-chart__heading"><h2 className="text-body-strong">Drowsiness on this trip</h2><span className="drive-danger text-body-small"><Art name="6665a.svg" />{microsleeps} microsleep{microsleeps === 1 ? '' : 's'}</span></div><div className="drive-chart__bars" aria-hidden="true">{bars.map((height, i) => <span key={i} className={i === 17 ? 'danger' : i >= 13 && i <= 18 ? 'warning' : ''} style={{ height }} />)}</div><div className="drive-chart__axis text-label-small"><span>Start</span><span>36 min</span><span>72 min</span></div></section><section className="drive-events" aria-label="Trip events">{events.map((event, index) => <article key={`${event.title}-${index}`} className="drive-list-card"><div className={`drive-card-icon drive-card-icon--${event.severity}`}><Glyph name={event.icon} size={22} /></div><div className="drive-card-copy"><div className="drive-event-title"><h2 className="text-body-strong">{event.title}</h2><p className="text-body-small">{event.time}</p></div><p className="text-body-small">{event.detail}</p></div></article>)}</section></main></DriveFrame>;
+import {useSearchParams} from 'react-router';
+import {Button} from '../../components';
+import {Back,DriveFrame,Heading,useDriveNavigation} from './shared';
+import {useDrive} from './session';
+import {useAppData} from '../../integration/AppData';
+import {useResource} from '../../integration/useResource';
+import {AccountNotice} from '../../integration/AccountNotice';
+import {RouteTrace} from '../../integration/RouteTrace';
+export function TripSummary(){
+ const go=useDriveNavigation();const d=useDrive();const {api,session}=useAppData();const [params]=useSearchParams();const id=params.get('trip');const r=useResource(()=>api.summary(id!),id&&session?session.user.id+id:undefined);const summary=id?r.value:d.summary;
+ return <DriveFrame footer={<Button label="Done" onClick={()=>go('/drive/home',true)}/>}><main className="drive-content drive-summary"><Back close to="/drive/home"/><Heading title="Trip summary">{summary?new Date(summary.events[0]?.at??Date.now()).toLocaleDateString():'Your completed trip'}</Heading><AccountNotice/>
+ {r.loading&&<p role="status">Loading trip…</p>}{r.error&&<><p role="alert" className="catch-error">{r.error}</p><Button label="Try again" onClick={r.retry}/></>}
+ {summary?<><RouteTrace points={summary.route_polyline}/><section className="catch-card"><div className="catch-stats">{[[summary.distance_km.toFixed(1)+' km','Distance'],[Math.round(summary.duration_seconds/60)+' min','Duration'],[summary.avg_speed_kmh.toFixed(0)+' km/h','Average speed']].map(([v,l])=><div key={l}><strong>{v}</strong><span className="text-label-small">{l}</span></div>)}</div></section>
+ <section className="catch-card"><h2 className="text-title-medium">Safety score: {summary.safety_score}/100</h2><p className="text-body-small">{summary.score_explanation}</p><p className="text-body-small">Demo rule: 100 minus points for microsleeps, tired alerts and hard brakes.</p>{summary.trip_risk_lines.map(line=><p key={line} className="text-body-small">{line}</p>)}</section>
+ <section className="drive-events" aria-label="Trip events">{summary.events.length===0?<p className="text-body-small">No alerts recorded on this trip.</p>:summary.events.map(e=><article key={e.id} className="drive-list-card"><div className="drive-card-copy"><h2 className="text-body-strong">{e.kind.replaceAll('_',' ')}</h2><p className="text-body-small">{new Date(e.at).toLocaleTimeString()}</p></div></article>)}</section></>:!r.loading&&!r.error&&<p className="text-body-small">Complete a trip to see its summary.</p>}</main></DriveFrame>;
 }

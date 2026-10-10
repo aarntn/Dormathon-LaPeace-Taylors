@@ -9,6 +9,8 @@ import './styles/car.css';
 import './styles/trips.css';
 import './styles/profile.css';
 import './styles/eyewatch.css';
+import './styles/motion.css';
+import './styles/catch-up.css';
 
 createRoot(document.getElementById('root')!).render(<StrictMode><BrowserRouter><App /></BrowserRouter></StrictMode>);
 
