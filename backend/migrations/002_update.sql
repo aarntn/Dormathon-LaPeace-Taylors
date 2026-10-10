@@ -77,6 +77,8 @@ grant select,insert,update,delete on public.trip_points,public.emergency_locatio
 insert into storage.buckets(id,name,public,file_size_limit,allowed_mime_types)
 values ('dashboard-photos','dashboard-photos',false,10485760,array['image/jpeg','image/png','image/webp'])
 on conflict (id) do nothing;
+drop policy if exists buckl_dashboard_upload on storage.objects;
+drop policy if exists buckl_dashboard_read on storage.objects;
 create policy buckl_dashboard_upload on storage.objects for insert to authenticated
 with check (bucket_id='dashboard-photos' and (storage.foldername(name))[1]=(select auth.uid())::text);
 create policy buckl_dashboard_read on storage.objects for select to authenticated
