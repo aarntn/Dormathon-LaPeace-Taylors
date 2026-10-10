@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, TabBar } from '../../components';
+import { Button, Input, TabBar } from '../../components';
 import { Art, Frame, RowList, useProfileNavigation } from './shared';
 import { useAppData } from '../../integration/AppData';
 import { AccountNotice } from '../../integration/AccountNotice';
@@ -11,7 +11,8 @@ const MAPS = { waze: 'Waze', google: 'Google Maps', apple: 'Apple Maps' } as Rec
 const mapsApp = () => { try { const saved = localStorage.getItem('buckl.mapsApp') ?? ''; return MAPS[saved.toLowerCase()] ?? (saved || 'Waze'); } catch { return 'Waze'; } };
 
 export function Profile() {
-  const d = useAppData(); const go = useProfileNavigation(); const [notice, setNotice] = useState('');
+  const d = useAppData(); const go = useProfileNavigation(); const [notice, setNotice] = useState(''); const [editing, setEditing] = useState(false); const [draftName, setDraftName] = useState(''); const [busy, setBusy] = useState(false);
+  async function saveName() { setBusy(true); setNotice(''); try { await d.rename(draftName); setEditing(false); } catch (reason) { setNotice(reason instanceof Error ? reason.message : 'Could not save your name.'); } finally { setBusy(false); } }
   const name = d.session?.user.user_metadata?.name ?? 'Your profile';
   const now = new Date(); const month = d.trips.filter(trip => { const date = new Date(trip.started_at); return trip.ended_at && date.getMonth() === now.getMonth() && date.getFullYear() === now.getFullYear(); });
   const summaries = useTripSummaries(month, d.session?.user.id);
@@ -23,8 +24,10 @@ export function Profile() {
   const alertLine = !month.length ? 'No drives yet this month' : !tired && !microsleeps ? 'No tiredness alerts this month' : `${tired} tiredness ${tired === 1 ? 'alert' : 'alerts'} and ${microsleeps} ${microsleeps === 1 ? 'microsleep' : 'microsleeps'} this month`;
   const soon = (label: string) => () => setNotice(`${label} isn’t available in the app yet.`);
   return <Frame className="profile-overview" footer={<TabBar active="Profile" onChange={tab => go(tab === 'Home' ? '/drive/home' : '/' + tab.toLowerCase())} />}>
-    <header className="profile-person"><span className="profile-avatar text-heading-large">{name.slice(0, 1)}</span><div className="profile-person-copy"><h1 className="text-heading-large">{name}</h1><p className="text-body-small profile-secondary">{d.session?.user.email}</p></div>
-      <button type="button" className="profile-edit" aria-label="Edit profile" onClick={soon('Editing your profile')}><Art name="edit" /></button></header>
+    <header className="profile-person"><span className="profile-avatar text-heading-large">{name.slice(0, 1)}</span>{editing
+        ? <form className="profile-person-copy profile-name-form" onSubmit={event => { event.preventDefault(); void saveName(); }}><Input aria-label="Your name" value={draftName} maxLength={60} autoFocus onChange={event => setDraftName(event.target.value)} /><span className="profile-name-actions"><Button label={busy ? 'Saving…' : 'Save'} disabled={busy || !draftName.trim()} type="submit" /><Button style="Secondary" label="Cancel" onClick={() => { setEditing(false); setNotice(''); }} /></span></form>
+        : <><div className="profile-person-copy"><h1 className="text-heading-large">{name}</h1><p className="text-body-small profile-secondary">{d.session?.user.email}</p></div>
+          <button type="button" className="profile-edit" aria-label="Edit profile" onClick={() => d.session ? (setDraftName(name), setEditing(true)) : soon('Editing your profile')()}><Art name="edit" /></button></>}</header>
     <AccountNotice />
     <section className="profile-stats" aria-label="This month">
       <span className="profile-between"><strong className="text-body-strong">This month</strong><button type="button" className="profile-stat-link text-body-small-strong" onClick={() => go('/profile/driving-stats')}>See stats <Art name="chevron-white" /></button></span>
@@ -41,7 +44,7 @@ export function Profile() {
         { title: 'Emergency contact', icon: 'shield-check', value: d.contacts[0]?.name, to: '/profile/emergency-contact' },
         { title: 'Eye profile', icon: 'eye', value: 'Re-scan', to: '/onboarding/face-scan-intro' },
         { title: 'Privacy and legal', icon: 'shield', to: '/profile/privacy-and-legal' },
-        { title: 'Help and support', icon: 'help', onSelect: soon('Help and support') },
+        { title: 'Help and support', icon: 'help', to: '/profile/help-and-support' },
       ]} /></section>
     {notice && <p role="status" className="text-body-small profile-secondary profile-notice-line">{notice}</p>}
     {d.session && <Button style="Secondary" label="Sign out" onClick={() => void d.signOut().then(() => go('/onboarding/welcome')).catch(() => {})} />}

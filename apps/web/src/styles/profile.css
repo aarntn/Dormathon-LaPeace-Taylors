@@ -121,3 +121,15 @@ button.profile-row { background:transparent;border:0;color:var(--text-primary); 
 .profile-contact-edit { border:0;background:transparent;color:var(--brand-navy);padding:0; }
 .profile-frame .car-footer-stack { display:flex;flex-direction:column;gap:10px; }
 .profile-frame:has(.car-footer-stack) .app-frame__content--with-footer { padding-bottom:calc(188px + env(safe-area-inset-bottom,0px)); }
+
+/* Edit name, info pages, data download note */
+.profile-name-form { gap:10px; }
+.profile-name-actions { display:flex;gap:8px; }
+.profile-name-actions .button { height:44px;border-radius:14px;font-size:15px; }
+.profile-info-card { padding:16px;display:flex;flex-direction:column;gap:8px; }
+.profile-info-card p { color:var(--text-primary); }
+.profile-info-draft { color:var(--text-secondary);text-align:center; }
+.profile-info-line { display:flex;justify-content:space-between;gap:12px; }
+.profile-info-line span:first-child { min-width:0;overflow-wrap:anywhere; }
+.profile-info-link { color:var(--brand-navy); }
+.profile-row-note { color:var(--text-secondary); }

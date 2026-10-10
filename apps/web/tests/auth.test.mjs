@@ -39,3 +39,15 @@ test('signing out during refresh cannot resurrect the previous account', async (
   const pending=auth.getAccessToken();await auth.signOut();release();
   assert.equal(await pending,null);assert.equal(auth.getSnapshot(),null);assert.equal(disk.getItem('buckl.session.v1'),null);
 });
+
+test('renaming updates the signed-in name and is saved with the session', () => {
+  const values = new Map(); const disk = { getItem: key => values.get(key) ?? null, setItem: (key, value) => values.set(key, value), removeItem: key => values.delete(key) };
+  values.set('buckl.session.v1', JSON.stringify({ access_token: 'a', refresh_token: 'r', expires_at: 9999999999, user: { id: 'u1', email: 'x@example.test', user_metadata: { name: 'Old' } } }));
+  const auth = new AuthClient({ storage: disk, fetcher: async () => Response.json({}) }); let notified = 0; auth.subscribe(() => notified++);
+  auth.rename('Aiman');
+  assert.equal(auth.getSnapshot().user.user_metadata.name, 'Aiman');
+  assert.equal(JSON.parse(values.get('buckl.session.v1')).user.user_metadata.name, 'Aiman');
+  assert.equal(notified, 1);
+  const empty = new AuthClient({ storage: { getItem: () => null, setItem() {}, removeItem() {} }, fetcher: async () => Response.json({}) });
+  assert.doesNotThrow(() => empty.rename('Nobody'));
+});

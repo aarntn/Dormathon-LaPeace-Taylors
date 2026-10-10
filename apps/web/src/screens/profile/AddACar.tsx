@@ -19,7 +19,7 @@ export function AddACar() {
     try {
       if (!make.trim() || !model.trim()) throw new Error('Enter the make and model.');
       const car = await d.ensureSetup({ make: make.trim(), model: model.trim(), year: Number(year), plate: plate.trim().toUpperCase() || null });
-      d.selectCar(car.id); go('/profile/my-cars');
+      d.selectCar(car.id); go('/profile/my-cars', true);
     } catch (reason) { setError(reason instanceof Error ? reason.message : 'Could not save your car.'); } finally { setBusy(false); }
   }
   if (form) return <Frame back="/profile/my-cars" footer={<Button label={busy ? 'Saving…' : 'Save car'} disabled={busy || !d.session} onClick={() => void save()} />}>

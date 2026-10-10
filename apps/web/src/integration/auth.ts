@@ -46,5 +46,7 @@ export class AuthClient {
     const result=await this.request<{session:AuthSession}>('token',{grant_type:'password',email,password});
     if(!result.session)throw new ApiError(401,'Sign in again.');if(generation!==this.generation)throw new Error('Account changed.');this.save(this.normalise(result.session));return this.session!;
   }
+  /** Keeps the signed-in session’s display name in step with a saved profile change. */
+  rename(name:string){if(!this.session)return;this.save({...this.session,user:{...this.session.user,user_metadata:{...this.session.user.user_metadata,name}}});}
   async signOut(){const token=this.session?.access_token;++this.generation;this.refreshing=undefined;this.save(null);if(token)await this.request('logout',undefined,token);}
 }

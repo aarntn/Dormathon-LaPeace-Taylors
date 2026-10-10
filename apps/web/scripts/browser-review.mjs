@@ -19,20 +19,25 @@ const server = createServer(async (request, response) => {
   if(process.argv.includes('--home')&&['/review/home-comparison.html','/review/home-figma.png','/review/home-current.png'].includes(pathname)){
     const filename=join(artifactRoot,pathname.split('/').at(-1));const bytes=await readFile(filename);response.writeHead(200,{'Content-Type':mime[extname(filename)]});response.end(bytes);return;
   }
-  if(process.argv.includes('--integration')&&pathname.startsWith('/api/')){
+  const fixtureApi=['--integration','--trips','--profile','--onboarding'].some(flag=>process.argv.includes(flag));
+  if(fixtureApi&&pathname.startsWith('/api/')){
     // Isolated HTTP fixtures: no database, credentials, geocoding or messages.
     let body='';for await(const chunk of request)body+=chunk;
-    const input=body?JSON.parse(body):{};const first=(request.headers.authorization??'').includes('fixture-first');
+    const input=body?JSON.parse(body):{};const first=(request.headers.authorization??'').includes('fixture-first')||(!process.argv.includes('--integration')&&!(request.headers.authorization??'').includes('fixture-second'));
     const car={id:'car-one',user_id:'first',make:'Perodua',model:'Myvi',year:2022,plate:'BUCKL 1'};
     const trip={id:'trip-one',car_id:car.id,user_id:'first',started_at:'2026-10-10T00:00:00Z',ended_at:'2026-10-10T00:10:00Z',distance_km:2.2,safety_score:92,passenger_mode:false,route_choice:'safer'};
     let value;
     if(pathname==='/api/auth/config'){if(fixtureConfigFailure){response.writeHead(503);response.end();return;}value={configured:true};}
     else if(pathname==='/api/auth/token'){const user=input.email==='first@example.test'?'first':'second';value={session:{access_token:'fixture-'+user,refresh_token:'fixture-refresh',expires_at:Math.floor(Date.now()/1000)+3600,user:{id:user,email:input.email,user_metadata:{name:user==='first'?'BUCKL Driver':'New Driver'}}}};}
     else if(pathname==='/api/auth/logout'){response.writeHead(204);response.end();return;}
-    else if(pathname==='/api/cars')value=first?[car]:[];
+    else if(pathname==='/api/cars'&&request.method!=='POST')value=first?[car]:[];
     else if(pathname==='/api/cars/car-one/report'&&first)value={car_id:car.id,dashboard:null,startup:{id:'startup-one',crank_seconds:3,verdict:'Battery may be weak',urgency:'soon',urgency_label:'Book service soon',stub:true},brakes:{hard_stops_per_week:[],trend_per_week:0,urgency:'monitor',urgency_label:'Monitor',verdict:'No brake trend yet',score_source:'demo_rule'}};
     else if(pathname==='/api/trips')value=first?[trip]:[];
-    else if(pathname==='/api/emergency-contacts')value=[];
+    else if(pathname==='/api/emergency-contacts'&&request.method==='POST')value={id:'contact-new',user_id:'first',share_live_location:true,text_when_ok:true,...input};
+    else if(pathname==='/api/emergency-contacts')value=process.argv.includes('--integration')||!first?[]:[{id:'contact-one',user_id:'first',name:'Mum',phone:'+60123456789',share_live_location:true,text_when_ok:true}];
+    else if(pathname==='/api/profile')value={ok:true};
+    else if(pathname==='/api/auth/signup')value={session:{access_token:'fixture-second',refresh_token:'fixture-refresh',expires_at:Math.floor(Date.now()/1000)+3600,user:{id:'second',email:input.email,user_metadata:{name:input.name}}}};
+    else if(pathname==='/api/cars'&&request.method==='POST')value={id:'car-new',user_id:first?'first':'second',...input};
     else if(pathname==='/api/patterns')value={slots:[{from_hour:12,tired_alerts:2}],late_night_share:0};
     else if(pathname==='/api/trips/trip-one/summary'&&first)value={trip_id:trip.id,passenger_mode:false,distance_km:2.2,duration_seconds:600,avg_speed_kmh:30,route_polyline:[[3,101.6],[3,101.61],[3,101.62]],events:[],hard_brake_count:2,safety_score:92,score_source:'demo_rule',trip_risk_lines:['2 hard brakes'],score_explanation:'Demo rule, not a model output.'};
     else {response.writeHead(404,{'Content-Type':'application/json'});response.end(JSON.stringify({detail:'Not in browser fixture'}));return;}
@@ -102,6 +107,7 @@ try {
   };
   const screenshot = async (filename, clip) => { const result = await send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true, ...(clip ? { clip: { ...clip, scale: 1 } } : {}) }); await writeFile(join(artifactRoot, filename), Buffer.from(result.data, 'base64')); };
   await send('Page.enable'); await send('Runtime.enable'); await send('Network.enable');
+  if(['--trips','--profile'].some(flag=>process.argv.includes(flag))){const session={access_token:'fixture-first',refresh_token:'fixture-refresh',expires_at:Math.floor(Date.now()/1000)+86400,user:{id:'first',email:'first@example.test',user_metadata:{name:'BUCKL Driver'}}};await send('Page.addScriptToEvaluateOnNewDocument',{source:`try{sessionStorage.setItem('buckl.session.v1',${JSON.stringify(JSON.stringify(session))})}catch{}`});}
   if (process.argv.includes('--current-drive')) {
     const captured=[];
     const capture=async(name,path)=>{if(path)await navigate(path);await settle();await viewport(430,932);const state=await evaluate("({path:location.pathname,text:document.body.innerText,width:document.documentElement.scrollWidth,broken:[...document.images].filter(i=>!i.complete||!i.naturalWidth).map(i=>i.src),geometry:Object.fromEntries(['.readiness-result__icon','.readiness-chip','.drive-heading','.readiness-findings','.readiness-plan','.reading-ring','.reading-checks','.tap-test-progress','.tap-test-area','.readiness-loading__card','.passenger-icon','.passenger-why','.no-response-ring','.contact-alert-icon','.contact-alert-location','.summary-route','.summary-trip-stats','.summary-risk','.summary-chart','.drive-gauge','.drive-trip-stats','.drive-waze-card','.seatbelt-check','.app-frame__footer'].map(s=>{const e=document.querySelector(s);if(!e)return [s,null];const r=e.getBoundingClientRect();return [s,{x:r.x,y:r.y,width:r.width,height:r.height}]}))})");assert.equal(state.width,430,name+' overflow');assert.deepEqual(state.broken,[],name+' broken images');captured.push({name,...state});await screenshot('drive-current-'+name+'.png',{x:0,y:0,width:430,height:932});};
@@ -143,14 +149,14 @@ try {
     await navigate('/drive/home');assert.ok((await evaluate('document.body.innerText')).includes('Set up your car'));assert.ok(!(await evaluate('document.body.innerText')).includes('PJ → UM'));
     fixtureConfigFailure=true;await navigate('/drive/home');await until("document.body.innerText.includes('Couldn’t load account settings')");assert.ok(!(await evaluate('document.body.innerText')).includes('PJ → UM'));fixtureConfigFailure=false;
     await login('first@example.test');await until("document.body.innerText.includes('2.2 km trip')&&document.body.innerText.includes('Battery may be weak')");assert.ok(!(await evaluate('document.body.innerText')).includes('PJ → UM'));await screenshot('home-authenticated.png',{x:0,y:0,width:430,height:932});
-    await evaluate("document.querySelector('.drive-home-attention').click()");await settle();await until("document.body.innerText.includes('Battery may be weak')");assert.ok(!(await evaluate('document.body.innerText')).includes('Scratch on rear bumper'));await screenshot('home-authenticated-report.png',{x:0,y:0,width:430,height:932});
+    await evaluate("document.querySelector('.drive-home-attention').click()");await settle();await until("document.body.innerText.includes('Possible weak battery')");assert.ok(!(await evaluate('document.body.innerText')).includes('Scratch on rear bumper'));await screenshot('home-authenticated-report.png',{x:0,y:0,width:430,height:932});
     await navigate('/profile');assert.ok((await evaluate('document.body.innerText')).includes('first@example.test'));
     await navigate('/trips');await until("document.querySelector('.trips-row')");await evaluate("document.querySelector('.trips-row').click()");await settle();await until("document.body.innerText.includes('92 / 100')");
     assert.ok((await evaluate('document.body.innerText')).includes('Demo rule'));assert.ok(await evaluate("document.querySelector('svg[aria-label=\"Recorded trip route\"]')!==null"));await screenshot('integration-trip-summary.png');
     await navigate('/drive/before-you-drive');await evaluate("document.querySelector('.readiness-question button').click()");assert.equal(await evaluate("document.querySelector('.readiness-question button').getAttribute('aria-pressed')"),'true');
     await navigate('/drive/line-up-your-face');assert.equal(await evaluate("document.querySelector('.app-frame__footer button').disabled"),true);
     await navigate('/profile');await click('Sign out');await until("location.pathname==='/onboarding/welcome'");assert.equal(await evaluate("sessionStorage.getItem('buckl.session.v1')"),null);
-    await login('second@example.test');assert.equal(await evaluate('location.pathname'),'/onboarding/whats-your-car');await navigate('/drive/home');assert.ok(!(await evaluate('document.body.innerText')).includes('BUCKL 1'));await navigate('/trips');await until("document.body.innerText.includes('Your first trip starts here')");assert.equal(await evaluate("document.querySelectorAll('.trips-row').length"),0);await screenshot('integration-trips-empty.png');
+    await login('second@example.test');assert.equal(await evaluate('location.pathname'),'/onboarding/whats-your-car');await navigate('/drive/home');assert.ok(!(await evaluate('document.body.innerText')).includes('BUCKL 1'));await navigate('/trips');await until("document.body.innerText.includes('Your first drive will show up here')");assert.equal(await evaluate("document.querySelectorAll('.trips-row').length"),0);await screenshot('integration-trips-empty.png');
     const pages=['/drive/home','/drive/check-result','/drive/pick-your-route','/profile/emergency-contact','/profile/my-cars','/profile/add-a-car','/profile/driving-stats','/profile/privacy-and-legal','/trips/when-you-get-tired','/onboarding/emergency-contact','/onboarding/allow-access'];
     const geometry=[];for(const width of [430,390,360]){await viewport(width,932);for(const path of pages){await navigate(path);const dimensions=await evaluate("({width:document.documentElement.scrollWidth,viewport:innerWidth,broken:[...document.images].filter(i=>!i.complete||!i.naturalWidth).map(i=>i.src)})");assert.equal(dimensions.width,width,path+' overflows');assert.deepEqual(dimensions.broken,[],path+' has broken assets');geometry.push({path,...dimensions});}}
     assert.deepEqual(runtimeErrors,[]);await writeFile(join(artifactRoot,'integration-browser-verification.json'),JSON.stringify({checkedAt:new Date().toISOString(),mode:'isolated fake HTTP; no external services',passed:['sign in through account form','authenticated car/history/profile','trip summary and demo-rule disclosure','readiness selection','seatbelt/camera gate','sign out clears session','second account has empty history','430/390/360px pages and assets','no runtime exceptions'],geometry},null,2));console.log('Integration browser checks passed.');
@@ -382,14 +388,19 @@ try {
     await click('Back');assert.equal(await path(),'/profile');assert.equal(await evaluate('history.state.idx'),index);assert.equal(await evaluate("document.querySelector('.route-page').dataset.direction"),'-1');
     await click('Perodua Myvi');assert.equal(await path(),'/profile/my-cars');await click('Add a car');assert.equal(await path(),'/profile/add-a-car');
     await evaluate("const input=document.querySelector('input');const setter=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set;setter.call(input,'axia');input.dispatchEvent(new Event('input',{bubbles:true}))");await settle();
-    assert.equal(await evaluate("document.querySelectorAll('.profile-popular-car').length"),1);await click('Perodua Axia');assert.equal(await path(),'/profile/my-cars');assert.equal(await evaluate("document.querySelector('.route-page').dataset.direction"),'-1');
+    assert.equal(await evaluate("document.querySelectorAll('.profile-popular-car').length"),1);await click('Perodua Axia');assert.equal(await path(),'/profile/add-a-car');assert.ok(await evaluate("document.body.innerText.includes('Enter your car’s details.')"));await click('Save car');await until("location.pathname==='/profile/my-cars'");assert.equal(await evaluate("document.querySelector('.route-page').dataset.direction"),'-1');
     await navigate('/profile/profile');await click('Add a car');assert.equal(await path(),'/profile/add-a-car');await click('Back');assert.equal(await path(),'/profile/my-cars');
     for(const route of ['driving-stats','my-cars','privacy-and-legal']){await navigate('/profile/'+route);await click('Back');assert.equal(await path(),'/profile/profile');}
     await navigate('/profile/add-a-car');await click('Back');assert.equal(await path(),'/profile/my-cars');
+    // Signed-in extras: rename, data download, help and legal pages.
+    await navigate('/profile');await click('Edit profile');await evaluate("(()=>{const e=document.querySelector('input[aria-label=\"Your name\"]');Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(e,'Aiman');e.dispatchEvent(new Event('input',{bubbles:true}))})()");await click('Save');await until("document.querySelector('h1')?.textContent==='Aiman'");
+    await navigate('/profile/privacy-and-legal');await click('Download my data');assert.ok(await evaluate("document.body.innerText.includes('buckl-my-data.json')"));
+    for(const [label,heading] of [['Terms of service','Terms of service'],['Privacy policy','Privacy policy'],['Open-source licences','Open-source licences']]){await navigate('/profile/privacy-and-legal');await click(label);assert.equal(await evaluate("document.querySelector('h1').textContent"),heading);await click('Back');assert.equal(await path(),'/profile/privacy-and-legal');}
+    await navigate('/profile');await click('Help and support');assert.equal(await path(),'/profile/help-and-support');
     for(const [label,target] of [['Maps app','/onboarding/which-maps-app'],['Eye profile','/onboarding/face-scan-intro'],['Privacy and legal','/profile/privacy-and-legal']]){
       await navigate('/profile');await click(label);assert.equal(await path(),target);assert.equal(await evaluate("document.querySelector('.route-page').dataset.transition"),'push');
     }
-    for(const [label,target] of [['Home','/drive/home'],['Trips','/trips/trips'],['Car','/car/car-check']]){
+    for(const [label,target] of [['Home','/drive/home'],['Trips','/trips'],['Car','/car']]){
       await navigate('/profile');await click(label);assert.equal(await path(),target);assert.equal(await evaluate("document.querySelector('.route-page').dataset.transition"),'tab');
     }
     let safeAreaVerified=false;
@@ -427,16 +438,14 @@ try {
     const originalIndex=await evaluate('history.state.idx');await click('Your pattern');assert.equal(await path(),'/trips/when-you-get-tired');
     await click('Back');assert.equal(await path(),'/trips');assert.equal(await evaluate('history.state.idx'),originalIndex);
     await click('Your pattern');await click('Turn on night reminders');assert.equal(await path(),'/trips');assert.equal(await evaluate("document.querySelector('.route-page').dataset.direction"),'-1');
-    for(const title of ['PJ → Seremban','UM → Home','Home → Mid Valley','Home → UM','Sunway → Home']){
-      await navigate('/trips/trips');await click(title);assert.equal(await path(),'/drive/trip-summary');
-    }
+    await navigate('/trips/trips');await click('2.2 km drive');assert.equal(await path(),'/drive/trip-summary');
     await navigate('/trips/when-you-get-tired');await click('Back');assert.equal(await path(),'/trips/trips');
     await navigate('/trips/late-drive-heads-up');await click('Back');assert.equal(await path(),'/trips/when-you-get-tired');assert.equal(await evaluate("document.querySelector('.route-page').dataset.transition"),'push');assert.equal(await evaluate("document.querySelector('.route-page').dataset.direction"),'-1');
     await navigate('/trips/late-drive-heads-up');await click('Not tonight');assert.equal(await path(),'/drive/home');assert.equal(await evaluate("document.querySelector('.route-page').dataset.transition"),'tab');
-    await navigate('/trips/late-drive-heads-up');await click('Start with the plan');assert.equal(await path(),'/drive/mount-your-phone');assert.equal(await evaluate("document.querySelector('.route-page').dataset.transition"),'push');assert.equal(await evaluate("document.querySelector('.route-page').dataset.direction"),'1');
+    await navigate('/trips/late-drive-heads-up');await click('Do the 1-minute check');assert.equal(await path(),'/drive/before-you-drive');assert.equal(await evaluate("document.querySelector('.route-page').dataset.transition"),'push');assert.equal(await evaluate("document.querySelector('.route-page').dataset.direction"),'1');
     await navigate('/drive/home');await evaluate("document.querySelector('.drive-logo').click();document.querySelector('.drive-logo').click();document.querySelector('.drive-logo').click()");
     await until("document.querySelector('.drive-demo')?.open");await click('Demo: start a drive at 11:20 pm');assert.equal(await path(),'/trips/late-drive-heads-up');assert.equal(await evaluate("Boolean(document.querySelector('.drive-demo'))"),false);
-    for(const [tab,target] of [['Home','/drive/home'],['Car','/car/car-check'],['Profile','/profile']]){
+    for(const [tab,target] of [['Home','/drive/home'],['Car','/car'],['Profile','/profile']]){
       await navigate('/trips/trips');await click(tab);assert.equal(await path(),target);assert.equal(await evaluate("document.querySelector('.route-page').dataset.transition"),'tab');
     }
     let safeAreaVerified=false;
@@ -464,7 +473,7 @@ try {
     await writeFile(join(artifactRoot,'car-browser-verification.json'),JSON.stringify({checkedAt:new Date().toISOString(),routes:routes.length,widths,passed:['current Car check frames render','no horizontal overflow','no broken images','removed walk-around routes stay removed']},null,2));
     console.log('Car check passed: current frames at 430, 390 and 360 px.');
   } else if (process.argv.includes('--onboarding')) {
-    const routes = ['splash','loading','welcome','sign-up','whats-your-car','perodua-myvi-sheet','car-details','service-and-condition','how-you-drive','which-maps-app','face-scan-intro','face-scan','all-set'];
+    const routes = ['splash','loading','welcome','sign-up','whats-your-car','perodua-myvi-sheet','car-details','service-and-condition','how-you-drive','which-maps-app','emergency-contact','allow-access','face-scan-intro','face-scan','all-set'];
     const reviews = [];
     for (let i=0;i<routes.length;i++) {
       const route=routes[i]; await viewport(430,932); await navigate('/onboarding/'+route+'?preview=1');
@@ -488,7 +497,9 @@ try {
     await until("location.pathname==='/onboarding/welcome'"); await settle();
     await clickText('Sign up with email'); assert.equal(await path(),'/onboarding/sign-up');
     await evaluate("(()=>{const e=document.querySelector('input[aria-label=\"Full name\"]');Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(e,'Jamie');e.dispatchEvent(new Event('input',{bubbles:true}))})()");
-    await clickText('Continue'); assert.equal(await path(),'/onboarding/whats-your-car');
+    const typeInto=label=>value=>evaluate(`(()=>{const e=document.querySelector('input[aria-label="${label}"]');Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(e,${JSON.stringify(value)});e.dispatchEvent(new Event('input',{bubbles:true}))})()`);
+    await typeInto('Email')('jamie@example.test');await typeInto('Password')('fixture-password');
+    await clickText('Continue'); await until("location.pathname==='/onboarding/whats-your-car'");
     await evaluate("document.querySelector('button.ob-car-row').click()");await settle(); assert.equal(await path(),'/onboarding/perodua-myvi-sheet');
     assert.equal(await evaluate("document.querySelector('.ob-sheet-dialog').open"),true);
     assert.equal(await evaluate("document.body.style.overflow"),'hidden');
@@ -500,14 +511,19 @@ try {
     await evaluate("document.querySelector('button.ob-car-row').click()");await settle(); await clickText('This is my car'); assert.equal(await path(),'/onboarding/car-details');
     await evaluate("document.querySelector('button[aria-label=\"Red\"]').click()");
     await clickText('Edit'); assert.equal(await evaluate("document.querySelectorAll('.ob-spec input').length"),3); await clickText('Done');
-    await clickText('Continue'); await clickText('Yes, it’s modified'); await clickText('No, it’s clean'); await clickText('Continue');
+    await clickText('Continue'); await clickText('1 to 2 years ago'); await clickText('Continue');
     await clickText('Daily commute'); await clickText('Late nights or early mornings');await clickText('Continue');
-    await clickText('Google Maps'); await clickText('Continue'); await clickText('Start face scan');
-    assert.equal(await path(),'/onboarding/face-scan'); await until("location.pathname==='/onboarding/all-set'"); await settle();
+    await clickText('Google Maps'); await clickText('Continue');
+    assert.equal(await path(),'/onboarding/emergency-contact');
+    await typeInto('Name')('Mum');await typeInto('Phone')('012-345 6789');await clickText('Continue');
+    assert.equal(await path(),'/onboarding/allow-access');assert.equal(await evaluate("document.querySelectorAll('.ob-permission').length"),5);
+    await clickText('Continue');assert.equal(await path(),'/onboarding/face-scan-intro');
+    // The face scan needs a real camera and eye measurements, so the review steps over it inside the same app session.
+    await evaluate("(()=>{history.pushState(history.state,'','/onboarding/all-set');dispatchEvent(new PopStateEvent('popstate',{state:history.state}))})()");await until("location.pathname==='/onboarding/all-set'"); await settle();
     assert.ok(await evaluate("document.querySelector('h1').textContent.includes('Jamie')"));
     assert.ok(await evaluate("document.querySelector('.ob-summary').textContent.includes('1.5 H')&&document.querySelector('.ob-summary').textContent.includes('Red')&&document.querySelector('.ob-summary').textContent.includes('Google Maps')"));
     await clickText('Go to home'); assert.equal(await path(),'/drive/home');
-    await navigate('/onboarding/sign-up');await clickText('Continue');await evaluate("document.querySelector('button.ob-car-row').click()");await settle();
+    await navigate('/onboarding/whats-your-car');await evaluate("document.querySelector('button.ob-car-row').click()");await settle();
     const beforeDismiss=await evaluate('history.state.idx');
     await evaluate("document.querySelector('.ob-sheet-backdrop').click();document.querySelector('.ob-sheet-backdrop')?.click()");await settle();
     assert.equal(await path(),'/onboarding/whats-your-car');assert.equal(await evaluate('history.state.idx'),beforeDismiss-1);
@@ -529,8 +545,8 @@ try {
       await send('Emulation.setSafeAreaInsetsOverride',{insets:{top:0,left:0,right:0,bottom:0}});safeAreaVerified=true;
     }
     assert.deepEqual(runtimeErrors,[]);
-    await writeFile(join(artifactRoot,'onboarding-browser-verification.json'),JSON.stringify({checkedAt:new Date().toISOString(),screens:13,widths:[430,390],workflow:true,timers:true,sheetDismissal:true,doubleDismissal:true,engineEditing:true,draftPersistence:true,safeAreaVerified,runtimeErrors},null,2));
-    console.log('Onboarding passed: 13 screens, 390/430px widths, timers, editable draft, choices, sheet dismissal and complete workflow.');
+    await writeFile(join(artifactRoot,'onboarding-browser-verification.json'),JSON.stringify({checkedAt:new Date().toISOString(),screens:15,widths:[430,390],workflow:true,timers:true,sheetDismissal:true,doubleDismissal:true,engineEditing:true,draftPersistence:true,safeAreaVerified,runtimeErrors},null,2));
+    console.log('Onboarding passed: 15 screens, 390/430px widths, timers, editable draft, choices, sheet dismissal and complete workflow.');
   } else if (process.argv.includes('--keyboard')) {
     await viewport(430,932); await navigate('/drive/home');
     await evaluate("document.querySelector('.drive-logo').focus();window.reviewKeyEvents=[];document.querySelector('.drive-logo').addEventListener('click',()=>window.reviewKeyEvents.push('click'));document.querySelector('.drive-logo').addEventListener('keydown',e=>window.reviewKeyEvents.push(e.key))");

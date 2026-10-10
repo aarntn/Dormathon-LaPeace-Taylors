@@ -3,7 +3,7 @@ import { createApi, type BucklApi, type Car, type CarInput, type Contact, type C
 import { AuthClient, type AuthSession } from './auth';
 
 type AppData={api:BucklApi;session:AuthSession|null;configured:boolean;configState:'pending'|'configured'|'unconfigured'|'unavailable';loading:boolean;error:string;cars:Car[];contacts:Contact[];trips:Trip[];selectedCar:Car|undefined;selectCar:(id:string)=>void;
-  refresh:()=>Promise<void>;signUp:(name:string,email:string,password:string)=>Promise<AuthSession|null>;signIn:(email:string,password:string)=>Promise<AuthSession>;signOut:()=>Promise<void>;ensureSetup:(car:CarInput,contact?:ContactInput)=>Promise<Car>};
+  refresh:()=>Promise<void>;signUp:(name:string,email:string,password:string)=>Promise<AuthSession|null>;signIn:(email:string,password:string)=>Promise<AuthSession>;signOut:()=>Promise<void>;rename:(name:string)=>Promise<void>;ensureSetup:(car:CarInput,contact?:ContactInput)=>Promise<Car>};
 const Context=createContext<AppData|null>(null);
 export function AppDataProvider({children}:{children:ReactNode}){
   const [auth]=useState(()=>new AuthClient({storage:sessionStorage}));
@@ -37,6 +37,6 @@ export function AppDataProvider({children}:{children:ReactNode}){
     })();try{return await setupPending.current;}finally{setupPending.current=null;}
   }
   return <Context value={{api,session,configured,configState,loading,error,cars,contacts,trips,selectedCar:cars.find(c=>c.id===selectedId)??cars[0],selectCar:(id)=>{if(!cars.some(c=>c.id===id))return;setSelectedId(id);sessionStorage.setItem('buckl.car.'+session?.user.id,id);},refresh,ensureSetup,
-    signUp:(...args)=>auth.signUp(...args),signIn:(...args)=>auth.signIn(...args),signOut:()=>auth.signOut()}}>{children}</Context>;
+    signUp:(...args)=>auth.signUp(...args),signIn:(...args)=>auth.signIn(...args),signOut:()=>auth.signOut(),rename:async(name)=>{const clean=name.trim();if(!clean)throw new Error('Enter your name.');await api.saveProfile(clean);auth.rename(clean);}}}>{children}</Context>;
 }
 export function useAppData(){const value=useContext(Context);if(!value)throw new Error('AppDataProvider is required');return value;}
