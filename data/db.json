@@ -1,0 +1,116 @@
+{
+  "users": {
+    "usr_01ce4b74e14b": {
+      "id": "usr_01ce4b74e14b",
+      "name": "Your Name",
+      "email": "your@email.com",
+      "vehicle": null,
+      "createdAt": "2026-10-10T08:17:55.155496+00:00"
+    },
+    "usr_b6bbc1a779c5": {
+      "id": "usr_b6bbc1a779c5",
+      "name": "Your Name",
+      "email": "your@email.com",
+      "vehicle": null,
+      "createdAt": "2026-10-10T08:18:58.645623+00:00"
+    }
+  },
+  "contacts": {
+    "contact_3dcd793894a4": {
+      "id": "contact_3dcd793894a4",
+      "userId": "usr_b6bbc1a779c5",
+      "name": "Emergency Contact",
+      "phone": "+60123456789",
+      "relationship": "Parent",
+      "createdAt": "2026-10-10T08:20:11.705934+00:00"
+    }
+  },
+  "trips": {
+    "trip_f1fb665700cf": {
+      "id": "trip_f1fb665700cf",
+      "userId": "usr_b6bbc1a779c5",
+      "status": "active",
+      "startedAt": "2026-10-10T08:21:02.876491+00:00",
+      "startLocation": {
+        "latitude": 3.139,
+        "longitude": 101.6869
+      },
+      "lastSpeedKph": 35.0,
+      "harshBrakingCount": 1,
+      "events": [
+        "event_f6cfe58fd8f1",
+        "event_a2a794a482a5",
+        "event_e7d28c047132"
+      ],
+      "lastLocation": {
+        "latitude": 3.139,
+        "longitude": 101.6869
+      },
+      "screenControlsLocked": true
+    }
+  },
+  "events": {
+    "event_f6cfe58fd8f1": {
+      "id": "event_f6cfe58fd8f1",
+      "tripId": "trip_f1fb665700cf",
+      "type": "harsh_braking",
+      "severity": "medium",
+      "location": null,
+      "metadata": {
+        "speedDropKph": 25.0,
+        "accelerationMps2": 3.2
+      },
+      "createdAt": "2026-10-10T08:23:10.655531+00:00"
+    },
+    "event_a2a794a482a5": {
+      "id": "event_a2a794a482a5",
+      "tripId": "trip_f1fb665700cf",
+      "type": "possible_microsleep",
+      "severity": "high",
+      "location": {
+        "latitude": 3.139,
+        "longitude": 101.6869
+      },
+      "metadata": {
+        "durationSeconds": 3
+      },
+      "createdAt": "2026-10-10T08:23:35.056280+00:00"
+    },
+    "event_e7d28c047132": {
+      "id": "event_e7d28c047132",
+      "tripId": "trip_f1fb665700cf",
+      "type": "unresponsive",
+      "severity": "high",
+      "location": {
+        "latitude": 3.139,
+        "longitude": 101.6869
+      },
+      "metadata": {
+        "responseWindowSeconds": 20
+      },
+      "createdAt": "2026-10-10T08:23:58.062306+00:00",
+      "alertStatus": "awaiting_driver_response",
+      "contactsToNotify": [
+        {
+          "id": "contact_3dcd793894a4",
+          "userId": "usr_b6bbc1a779c5",
+          "name": "Emergency Contact",
+          "phone": "+60123456789",
+          "relationship": "Parent",
+          "createdAt": "2026-10-10T08:20:11.705934+00:00"
+        }
+      ]
+    }
+  },
+  "scans": {
+    "scan_172826cb87df": {
+      "id": "scan_172826cb87df",
+      "userId": "usr_b6bbc1a779c5",
+      "warningType": "engine_overheating",
+      "urgency": "high",
+      "message": "Possible engine overheating. Stop safely, let the engine cool, and seek professional help.",
+      "imageUrl": null,
+      "createdAt": "2026-10-10T08:25:02.267103+00:00"
+    }
+  }
+}
