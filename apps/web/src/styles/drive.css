@@ -195,3 +195,12 @@
   .drive-maps-hint { align-items: flex-start; }
   .drive-maps-hint p { text-align: center; }
 }
+
+/* Hidden demo panel: scripted car-check results */
+.demo-scenarios { display:flex;flex-direction:column;gap:10px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line-default); }
+.demo-scenarios p { color:var(--text-secondary); }
+.demo-scenario-group { display:flex;flex-direction:column;gap:6px; }
+.demo-scenario-group h2 { color:var(--text-secondary); }
+.demo-scenario { border:1px solid var(--line-default);border-radius:12px;background:var(--bg-card);color:var(--text-primary);padding:10px 12px;text-align:left; }
+.demo-scenario--on { border-color:var(--brand-navy);background:var(--bg-tint);font-weight:600; }
+.demo-scenarios { margin-bottom: 16px; }

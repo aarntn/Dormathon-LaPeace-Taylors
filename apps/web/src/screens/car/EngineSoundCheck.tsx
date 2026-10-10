@@ -5,6 +5,7 @@ import { MicrophoneMeter } from '../../components/motion/microphone';
 import { Art, Card, Frame, Heading, useCarNavigation } from './shared';
 import { LoadingCard } from './LoadingCard';
 import { useCarSession } from './session';
+import { getScenario } from './demoScenario';
 import { crankSeconds, type LevelSample } from './crank';
 
 const DURATION_SECONDS = 8;
@@ -28,7 +29,7 @@ export function EngineSoundCheck({ checkingPreview = false }: { checkingPreview?
     if (!navigator.mediaDevices?.getUserMedia || !window.MediaRecorder) { notify('Audio recording is not available in this browser.'); return; }
     try {
       discard.current = false; loudest.current = 0; levels.current = [];
-      const media = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false } }); // phone voice filters would flatten engine sound setStream(media);
+      const media = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false } }); setStream(media); // the phone's voice filters would flatten the engine sound, so they are off
       const chunks: BlobPart[] = []; const next = new MediaRecorder(media); recorder.current = next; setElapsed(0); setRecording(true);
       meter.current = new MicrophoneMeter(); void meter.current.start(media, level => { loudest.current = Math.max(loudest.current, level); levels.current.push({ t: performance.now(), level }); }).catch(() => undefined);
       next.ondataavailable = event => { if (event.data.size) chunks.push(event.data); };
@@ -38,11 +39,14 @@ export function EngineSoundCheck({ checkingPreview = false }: { checkingPreview?
     } catch { notify('Microphone access is needed to record the engine start.'); }
   };
   const finish = async (audio: Blob) => {
-    if (!audio.size || loudest.current < QUIET_LEVEL) { go('didnt-hear-the-engine'); return; }
-    const crank = crankSeconds(levels.current); levels.current = [];
-    if (crank === null) { go('didnt-hear-the-engine'); return; }
+    // A scripted demo result skips the phone's own checks, so the presenter does not need a real engine.
+    const scenario = getScenario('startup');
+    if (scenario === 'quiet') { go('didnt-hear-the-engine'); return; }
+    if (!scenario && (!audio.size || loudest.current < QUIET_LEVEL)) { go('didnt-hear-the-engine'); return; }
+    const crank = scenario ? undefined : crankSeconds(levels.current); levels.current = [];
+    if (!scenario && crank === null) { go('didnt-hear-the-engine'); return; }
     setChecking(true); const started = performance.now(); let failed = false;
-    try { await analyseStartup(audio, crank); } catch (error) { failed = true; notify(error instanceof Error ? error.message : 'Could not save the start-up recording.'); }
+    try { await analyseStartup(audio, crank ?? undefined); } catch (error) { failed = true; notify(error instanceof Error ? error.message : 'Could not save the start-up recording.'); }
     await new Promise(resolve => setTimeout(resolve, Math.max(0, MINIMUM_CHECKING_MS - (performance.now() - started))));
     if (!discard.current) { setChecking(false); if (failed) go('didnt-hear-the-engine'); }
   };

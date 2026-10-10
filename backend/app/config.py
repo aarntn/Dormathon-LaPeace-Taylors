@@ -12,6 +12,9 @@ class Settings:
     twilio_from: str = field(default_factory=lambda: os.getenv('TWILIO_FROM_NUMBER', ''))
     cors_origins: list[str] = field(default_factory=lambda: os.getenv('CORS_ORIGINS', 'https://localhost:5173,https://172.20.10.4:5173').split(','))
 
+    # Presentation mode: scripted car-check results (see demo.py). Off unless DEMO_MODE is set.
+    demo_mode: bool = field(default_factory=lambda: os.getenv('DEMO_MODE', '').strip().lower() in ('1', 'true', 'yes'))
+
     @property
     def supabase_ready(self):
         return bool(self.supabase_url and self.supabase_key)

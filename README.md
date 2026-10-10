@@ -13,7 +13,7 @@ Built for the Dormathon hackathon, **Track 1: "Predict Early, Decide Better"**. 
 | **Design system** | [Tokens, components, motion](docs/DESIGN-SYSTEM.md) |
 | **Readiness model** | [`ml/readiness`](ml/readiness/README.md) |
 | **API** | [`backend/README.md`](backend/README.md) |
-| **Deploy a demo** | [`docs/DEPLOY_DEMO.md`](docs/DEPLOY_DEMO.md) |
+| **Deploy a demo** | [`docs/DEPLOY_DEMO.md`](docs/DEPLOY_DEMO.md) and the [demo script](docs/DEMO_SCRIPT.md) |
 
 ---
 
@@ -47,7 +47,7 @@ Group or convoy features, tailgating, reading engine temperature from sensors, s
 ### Known limits
 
 - The pre-drive model is trained on **simulated** drivers (30,000, from published sleep research). It shows that combining signals beats asking alone. It is not real-world accuracy. See [`ml/readiness`](ml/readiness/README.md).
-- The **dashboard-light result is a marked demo indication** (the server returns one fixed finding) until a model is connected. The start-up check is real signal processing on the phone, but the 2-second threshold is a rule of thumb, not a tested figure. The trip safety score is a simple demo rule, not a model.
+- The **dashboard-light result is a marked demo indication** (with `DEMO_MODE` on, the server returns a scripted finding; with it off, a photo finds nothing) until a model is connected. The start-up check is real signal processing on the phone, but the 2-second threshold is a rule of thumb, not a tested figure. The trip safety score is a simple demo rule, not a model.
 - Not available yet: Google sign-in, number-plate scanning, editing a car's details, deleting your data from the app, alarm settings, kilometre reminders.
 - Camera, microphone, voice and vibration are tested in an isolated browser. They still need a pass on real phones, iOS Safari especially.
 - The Terms and Privacy pages are plain-language summaries without legal review.
@@ -128,7 +128,7 @@ Vite proxies `/api` to port 8000. Without Supabase configured, `GET /auth/config
 | Reading the light | `/car/reading-the-light?preview` |
 | Checking the start-up sound | `/car/checking-the-sound?preview` |
 
-**Hidden demo panel.** Every demo shortcut sits behind a triple tap on the logo. They never appear on the real UI.
+**Hidden demo panel.** Every demo shortcut sits behind a triple tap on the logo. They never appear on the real UI. With `DEMO_MODE=1` on the server, the panel can also choose what the next dashboard scan and start-up check return, always labelled a demo. `python -m backend.scripts.seed_demo` fills an account with six weeks of believable trips. See the [demo script](docs/DEMO_SCRIPT.md).
 
 ## Test it
 

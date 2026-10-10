@@ -10,6 +10,7 @@
 | [API guide](../backend/README.md) | Routes, database setup, emergency behaviour, verification |
 | [Readiness model](../ml/readiness/README.md) | How the pre-drive model was trained, and its honest limits |
 | [Deploy a demo](DEPLOY_DEMO.md) | Render and Supabase steps for the hackathon demo |
+| [Demo script and checklist](DEMO_SCRIPT.md) | The 4 to 5 minute run-of-show, setup, backups, likely questions, and what is real or scripted |
 | [`AGENTS.md`](../AGENTS.md) | The shared project brief for people and coding agents |
 
 ## Design evidence

@@ -10,5 +10,9 @@ services:
         sync: false
       - key: SUPABASE_PUBLISHABLE_KEY
         sync: false
+      # Presentation mode: scripted dashboard and start-up results chosen from the hidden demo panel.
+      # Every such result is labelled a demo. Remove this line (or set it to 0) for anything but a demo.
+      - key: DEMO_MODE
+        value: "1"
       - key: PYTHONUNBUFFERED
         value: "1"

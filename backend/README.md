@@ -53,6 +53,12 @@ Public account endpoints are `GET /auth/config`, `POST /auth/signup`, `/auth/tok
 
 GPS batches accept up to 500 points with timezone-aware timestamps and speeds in km/h. Duplicate point/event requests are ignored. Flush pending GPS batches before ending a trip; ended trips reject updates. Polylines use `[latitude, longitude]`, sorted by timestamp. Distance sums GPS segments; average speed divides distance by total elapsed time, including stops. GPS accuracy/filtering belongs to the phone hooks. Passenger mode ignores face features/monitoring events, rejects escalation and continues recording GPS/hard brakes.
 
+## Demo mode and seed data
+
+`DEMO_MODE=1` makes `/car-checks/dashboard` and `/car-checks/startup-audio` return **scripted, clearly labelled** results (`stub: true`). An optional `demo_scenario` form field chooses one: dashboard `overheating` (default), `battery`, `oil` or `unreadable`; start-up `slow`, `normal` or `quiet`. The scenarios live in `app/demo.py` and are ignored when demo mode is off. Without demo mode a dashboard photo returns no findings and nothing is saved, because no dashboard model is connected. `GET /health` reports `demo_mode`.
+
+`python -m backend.scripts.seed_demo --email ... --password ...` signs in as that user and fills the account with a car, a contact, twelve trips over six weeks (rising hard stops, late-night tired alerts, one microsleep) and two car checks, using the user's own token so row-level security applies. `--dry-run` writes nothing. See [docs/DEMO_SCRIPT.md](../docs/DEMO_SCRIPT.md).
+
 ## Demo rules and model stubs
 
 Pre-drive scoring follows Prompt 5's weights: reaction `.22`, face `.18`, sleep `.14`, self `.10`, awake `.10`, night `.10`, trip `.08`, history `.05`, misses `.03`. The last 20 saved median reactions provide personal pace; first-time pace is 270 ms. Same-hour history uses Malaysia time. Below `.35` is Safe to drive, `.35` through `.60` Caution, above `.60` High risk. The required disclaimer is returned.

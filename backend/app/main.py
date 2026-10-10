@@ -17,6 +17,7 @@ from . import maps
 from .auth import install_auth
 from .geocode import Geocoder
 from .config import Settings
+from .demo import DASHBOARD_SCENARIOS, STARTUP_SCENARIOS, dashboard_finding
 from .messaging import deliver
 from .models import Car, Contact, ContactUpdate, Event, Features, PointBatch, Position, PreDrive, Profile, TimedPosition, TripInput
 from .repository import SupabaseRepository
@@ -119,7 +120,7 @@ def create_app(*, settings=None, store=None, http=None, clock=None):
 
     @app.get('/health', tags=['Operations'])
     def health():
-        return {'status': 'ok', 'supabase_configured': settings.supabase_ready}
+        return {'status': 'ok', 'supabase_configured': settings.supabase_ready, 'demo_mode': settings.demo_mode}
 
     @app.put('/profile', tags=['Setup'])
     def profile(body: Profile, ctx=Depends(authenticated)):
@@ -355,11 +356,22 @@ def create_app(*, settings=None, store=None, http=None, clock=None):
         return content
 
     @app.post('/car-checks/dashboard', tags=['Car checks'])
-    def dashboard(car_id: UUID = Form(), photo: UploadFile = File(), ctx=Depends(authenticated)):
+    def dashboard(car_id: UUID = Form(), photo: UploadFile = File(), demo_scenario: str | None = Form(default=None, max_length=20),
+                  ctx=Depends(authenticated)):
         owned(ctx, 'cars', car_id)
         content = checked_upload(photo, {'image/jpeg', 'image/png', 'image/webp'}, 10*1024*1024)
         if not (content.startswith(b'\xff\xd8\xff') or content.startswith(b'\x89PNG\r\n\x1a\n') or (content[:4] == b'RIFF' and content[8:12] == b'WEBP')):
             raise HTTPException(415, 'The upload is not a supported image')
+        scripted = None
+        if settings.demo_mode:
+            scenario = demo_scenario or 'overheating'
+            if scenario not in DASHBOARD_SCENARIOS:
+                raise HTTPException(422, 'Unknown demo scenario')
+            scripted = dashboard_finding(scenario)
+        if scripted is None:
+            # No dashboard model is connected, so outside demo mode nothing can be read.
+            # Nothing is saved, and the photo is not kept.
+            return {'id': str(uuid4()), 'findings': [], 'stub': True}
         photo_path = None
         if store is None:
             photo_path = f"{ctx.user_id}/{uuid4()}.{ {'image/jpeg':'jpg','image/png':'png','image/webp':'webp'}[photo.content_type]}"
@@ -369,18 +381,25 @@ def create_app(*, settings=None, store=None, http=None, clock=None):
                 response.raise_for_status()
             except httpx.HTTPError as error:
                 raise HTTPException(503, 'Photo upload failed') from error
-        finding = {'label': 'Possible temperature warning', 'urgency': 'stop', 'urgency_label': URGENCY['stop'],
-                   'advice': 'Stop safely and let the engine cool. This is a demo finding until the model is available.', 'confidence': None, 'photo_url': photo_path}
+        finding = {'label': scripted['label'], 'urgency': scripted['urgency'], 'urgency_label': URGENCY[scripted['urgency']],
+                   'advice': scripted['advice'] + ' This is a demo finding until the model is available.', 'confidence': None, 'photo_url': photo_path}
         check = ctx.repo.insert('car_checks', {'car_id': str(car_id), 'at': clock().isoformat(), 'kind': 'dashboard', 'result': {'stub': True}})
         ctx.repo.insert('findings', {'check_id': check['id'], **{k: v for k, v in finding.items() if k != 'urgency_label'}})
         return {'id': check['id'], 'findings': [finding], 'stub': True}
 
     @app.post('/car-checks/startup-audio', tags=['Car checks'])
     def startup(car_id: UUID = Form(), audio: UploadFile = File(), crank_seconds: float | None = Form(default=None, ge=.2, le=6),
-                ctx=Depends(authenticated)):
+                demo_scenario: str | None = Form(default=None, max_length=20), ctx=Depends(authenticated)):
         owned(ctx, 'cars', car_id)
         checked_upload(audio, {'audio/wav', 'audio/x-wav', 'audio/webm', 'audio/mp4', 'audio/ogg'}, 10*1024*1024)
         # Audio is consumed only for this request; never retained or uploaded to Storage.
+        scripted = False
+        if settings.demo_mode and demo_scenario:
+            if demo_scenario not in STARTUP_SCENARIOS:
+                raise HTTPException(422, 'Unknown demo scenario')
+            if STARTUP_SCENARIOS[demo_scenario] is None:
+                raise HTTPException(422, 'We could not hear an engine in that recording.')
+            crank_seconds, scripted = STARTUP_SCENARIOS[demo_scenario], True
         if crank_seconds is None:
             # Older clients send no timing: keep the clearly marked demo result.
             result = {'crank_seconds': 2.4, 'verdict': 'A slow crank may indicate a weak battery. Demo result until the model is available.',
@@ -392,7 +411,7 @@ def create_app(*, settings=None, store=None, http=None, clock=None):
             slow = crank > 2
             result = {'crank_seconds': crank, 'urgency': 'soon' if slow else 'monitor', 'urgency_label': URGENCY['soon' if slow else 'monitor'],
                       'verdict': f'Slow start: {crank} s. This may mean a weak battery. Get it tested at your next service.' if slow
-                                 else f'Normal start: {crank} s. The battery sounds fine.', 'stub': False}
+                                 else f'Normal start: {crank} s. The battery sounds fine.', 'stub': scripted}
         check = ctx.repo.insert('car_checks', {'car_id': str(car_id), 'at': clock().isoformat(), 'kind': 'startup', 'result': result})
         return {'id': check['id'], **result}
 

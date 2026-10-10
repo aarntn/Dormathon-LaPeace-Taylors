@@ -20,6 +20,11 @@ This project deploys as one Render web service. Render builds the Vite UI and se
 
 The live app is the service URL. Sign up, add a car and emergency contact, then demonstrate the pre-drive check, drive watch and car checks.
 
+## Demo mode and demo data
+
+- `render.yaml` sets **`DEMO_MODE=1`**. With it, the hidden demo panel (triple-tap the logo) can choose what the next dashboard scan and start-up check return, and every such result is labelled a demo. Remove it, or set it to `0`, for anything that is not a presentation: a dashboard photo then finds nothing.
+- To fill a demo account with a car, a contact and six weeks of trips, run `python -m backend.scripts.seed_demo --email ... --password ...` after signing up in the app. See [DEMO_SCRIPT.md](DEMO_SCRIPT.md) for the full run-of-show and checklist.
+
 ## Demo boundaries
 
 - The dashboard result is an explicitly labelled demo indication until a trained model is connected. The start-up battery check times the engine crank on the phone and is not a demo result, though its 2-second threshold is untested on real cars.

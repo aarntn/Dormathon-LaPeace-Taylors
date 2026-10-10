@@ -52,7 +52,7 @@ def rig():
         raise AssertionError(f'Unexpected external request: {request.url}')
 
     settings = Settings(supabase_url='https://test.supabase.co', supabase_key='public-test-key',
-                        twilio_account_sid='ACtest', twilio_auth_token='test', twilio_from='+15005550006')
+                        twilio_account_sid='ACtest', twilio_auth_token='test', twilio_from='+15005550006', demo_mode=True)
     upstream_client = httpx.Client(transport=httpx.MockTransport(upstream))
     app = create_app(settings=settings, store=store, http=upstream_client, clock=clock)
     with TestClient(app) as client:
