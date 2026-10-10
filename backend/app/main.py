@@ -33,7 +33,7 @@ class Context:
 def create_app(*, settings=None, store=None, http=None, clock=None):
     settings = settings or Settings()
     owned_http = http is None
-    http = http or httpx.Client(timeout=20)
+    http = http or httpx.Client(timeout=10)
     clock = clock or (lambda: datetime.now(timezone.utc))
 
     @asynccontextmanager

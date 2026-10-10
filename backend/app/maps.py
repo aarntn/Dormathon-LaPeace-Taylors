@@ -111,17 +111,23 @@ def route_options(http, start, end):
         elements = overpass(http, f'[out:json][timeout:15];(nwr({bbox})[highway~"^(rest_area|services)$"];nwr({bbox})[amenity=fuel];nwr({bbox})[shop=car_repair];);out center tags;')
         unique = {(e['type'], e['id']): e for e in elements}
         for route in routes:
+            # Thin long polylines so matching stays fast on a small server (about 400 segments per route).
+            line = route['route_polyline']
+            route['match_line'] = line[::max(1, len(line)//400)] + [line[-1]]
+        for route in routes:
             for element in unique.values():
                 tags, p = element.get('tags', {}), position(element)
                 if not (tags.get('highway') in ('rest_area', 'services') or tags.get('amenity') == 'fuel' or tags.get('shop') == 'car_repair'):
                     continue
-                if route_distance(p, route['route_polyline']) <= 1:
+                if route_distance(p, route['match_line']) <= 1:
                     route['stops'].append({'name': tags.get('name', 'Roadside stop'), **p})
             route['support_count'] = len(route['stops'])
     except (httpx.HTTPError, ValueError, KeyError):
         for route in routes:
             route['stub'] = True
             route['message'] = 'Roadside support counts are unavailable.'
+    for route in routes:
+        route.pop('match_line', None)
     fastest = min(routes, key=lambda r: r['duration_seconds'])
     safer = max(routes, key=lambda r: (r['support_count'], -r['duration_seconds']))
     return {'fastest': fastest | {'choice': 'fastest'}, 'safer': safer | {'choice': 'safer'},
