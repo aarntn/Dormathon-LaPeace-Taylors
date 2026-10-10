@@ -42,7 +42,7 @@ Production frontend deployment needs a same-origin `/api` reverse proxy or an ex
 - Readiness: `POST /predrive` returns `level`, `label`, `reasons`, `plan`, `disclaimer` and the saved ID.
 - Trips: `POST/GET /trips`, `PATCH /trips/{id}/end`, `POST /trips/{id}/points`, `/events`, `/features`, `GET /trips/{id}/summary`, `GET /patterns`.
 - Emergency: `POST /trips/{id}/emergency`, `POST /emergency/{id}/location`, `/resolve`, `POST /emergency-contacts/{id}/test`.
-- Car: multipart `POST /car-checks/dashboard` (`car_id`, `photo`) and `/startup-audio` (`car_id`, `audio`), `GET /brakes/{car_id}`, `/cars/{id}/report`.
+- Car: multipart `POST /car-checks/dashboard` (`car_id`, `photo`) and `/startup-audio` (`car_id`, `audio`, optional `crank_seconds` between 0.2 and 6, timed on the phone; without it the result is the marked demo result), `GET /brakes/{car_id}`, `/cars/{id}/report`.
 - Maps: `GET /workshops?lat=&lng=&service=`, `/rest-stops?lat=&lng=`, `/route-options?from=LAT,LNG&to=LAT,LNG`.
 
 `api.ts` covers every route, retrieves the current token per request and preserves structured errors. Account, readiness, drive and trip screens now consume the API. Car checks, workshops and the report are wired to the API as well. Live verification against real services is still to do.

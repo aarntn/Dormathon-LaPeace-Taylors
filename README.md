@@ -24,7 +24,7 @@ Built for the Dormathon hackathon, **Track 1: "Predict Early, Decide Better"**. 
 | 1 | **Before the drive** | Four questions, a 15-second face reading and a 30-second tap test produce **Safe to drive**, **Caution** or **High risk**, with reasons and a plan. High risk offers "Get a ride instead". A safer-route option passes rest stops, fuel and workshops. |
 | 2 | **During the drive** | The phone camera watches your eyes (MediaPipe Face Landmarker, on the phone). States are *alert*, *getting tired*, *microsleep alarm* and *can't see your eyes*. Every alert says what to do. Controls lock above 10 km/h. |
 | 3 | **When you stop responding** | Alarm and vibration, then "I'm OK" by tap or voice, then a 10-second cancellable countdown, then your chosen contact gets a text with your name, the time and a live location until you are OK. |
-| 4 | **Car warning signs** | Photograph a dashboard light and get a plain-words answer with an urgency (*Monitor*, *Book service soon*, *Stop safely now*). A 5-second start-up recording can flag a possible weak battery. Brake wear trends come from your own drives. Workshops are filtered by the problem. |
+| 4 | **Car warning signs** | Photograph a dashboard light and get a plain-words answer with an urgency (*Monitor*, *Book service soon*, *Stop safely now*). The phone times your engine start from its sound and flags a possible weak battery if the crank is slow. Brake wear trends come from your own drives. Workshops are filtered by the problem. |
 
 ## What is built
 
@@ -47,7 +47,7 @@ Group or convoy features, tailgating, reading engine temperature from sensors, s
 ### Known limits
 
 - The pre-drive model is trained on **simulated** drivers (30,000, from published sleep research). It shows that combining signals beats asking alone. It is not real-world accuracy. See [`ml/readiness`](ml/readiness/README.md).
-- The dashboard-light and start-up-sound results are **marked demo indications** until trained models are connected. The trip safety score is a simple demo rule, not a model.
+- The **dashboard-light result is a marked demo indication** (the server returns one fixed finding) until a model is connected. The start-up check is real signal processing on the phone, but the 2-second threshold is a rule of thumb, not a tested figure. The trip safety score is a simple demo rule, not a model.
 - Not available yet: Google sign-in, number-plate scanning, editing a car's details, deleting your data from the app, alarm settings, kilometre reminders.
 - Camera, microphone, voice and vibration are tested in an isolated browser. They still need a pass on real phones, iOS Safari especially.
 - The Terms and Privacy pages are plain-language summaries without legal review.

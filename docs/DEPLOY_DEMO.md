@@ -22,7 +22,7 @@ The live app is the service URL. Sign up, add a car and emergency contact, then 
 
 ## Demo boundaries
 
-- The dashboard and start-up models are explicitly labelled demo indications until trained models are connected.
+- The dashboard result is an explicitly labelled demo indication until a trained model is connected. The start-up battery check times the engine crank on the phone and is not a demo result, though its 2-second threshold is untested on real cars.
 - Do not configure Twilio or send real emergency messages during the presentation unless you have an explicit test recipient.
 
 ## After deploying

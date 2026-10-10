@@ -349,5 +349,5 @@ flowchart LR
 2. Retrain the readiness model on real checks and events, and show the driver how their own pattern changes.
 3. Add Malay copy.
 4. Move the alarm and prompt choices into a settings screen that actually changes behaviour.
-5. Connect real dashboard and start-up models, and keep the demo labels until the team can defend the numbers.
+5. Connect a real dashboard model, test the start-up crank timing on real cars, and keep the demo labels until the team can defend the numbers.
 6. Run a field pass on real phones, with iOS Safari first.

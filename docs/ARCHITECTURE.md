@@ -382,10 +382,12 @@ flowchart TB
     res -->|"none, or error"| retry["Couldn't read that light + tips"]
   end
   subgraph start["Start-up battery check"]
-    mic["Microphone<br/>5 s, only on this screen"] --> level{"Loud enough?"}
+    mic["Microphone<br/>8 s, only on this screen,<br/>voice filters off"] --> level{"Loud enough?"}
     level -->|"no"| quiet["We didn't hear the engine"]
-    level -->|"yes"| aud["POST /car-checks/startup-audio"]
-    aud --> sres["Verdict: normal or slow start"]
+    level -->|"yes"| crank["crank.ts times the start<br/>from the loudness envelope"]
+    crank -->|"no start found"| quiet
+    crank -->|"crank seconds"| aud["POST /car-checks/startup-audio<br/>+ crank_seconds"]
+    aud --> sres["Verdict: normal, or slow if over 2 s"]
   end
   subgraph brake["Brake check"]
     ev["Hard-brake events<br/>from your own trips"] --> wk["Hard stops per week<br/>last 6 weeks"] --> slope["Trend + threshold"]
@@ -397,9 +399,9 @@ flowchart TB
 ```
 
 - **A minimum of one second** is enforced on both loading cards so the interface does not flicker, but the card then waits for the real result or failure.
-- **Audio** is recorded only while the recorder screen is listening, uploaded once, and discarded by the backend. The phone also measures loudness locally. A silent recording goes straight to the retry screen without an upload.
+- **Audio** is recorded only while the recorder screen is listening (8 seconds, with echo cancellation, noise suppression and auto-gain **off** so the engine sound is not flattened). The phone measures loudness locally and times the crank in `src/screens/car/crank.ts`: it finds when the sound begins, then when the pulsing of the starter turns into a smooth idle, and reports the gap. It is signal processing, not a diagnosis. The server receives the audio and that `crank_seconds`, discards the audio, and calls anything over 2 s a possible weak battery. No start found, or no clear loud sound, goes straight to the retry screen without a verdict.
 - **Dashboard photos** go to a private Storage bucket and `photo_url` is a path that needs an authenticated request to view.
-- **Dashboard and start-up results are labelled demo indications** (`stub: true`) until models are connected. Missing models return marked stubs, never made-up findings.
+- **The dashboard result is a labelled demo indication** (`stub: true`): the server currently returns one fixed finding whatever the photo shows. The start-up result is real when the phone sends a crank time (`stub: false`). An older client that sends none still gets the marked demo result. Two things to know: the server trusts the phone's `crank_seconds`, and the 2-second line is a rule of thumb that has not been tested on real cars.
 - **Brake trend:** hard stops are counted in six one-week buckets. Urgency becomes "Book service soon" when the latest week has at least 3 or the slope is above 0.5 per week.
 - **Report building** (`src/screens/car/report.ts`) is pure and tested. It merges the three sources, ranks by urgency, and attaches a typical cost range for battery (RM 200 to 350) and brakes (RM 120 to 250). These ranges are a guide, never a quote.
 - **Workshops** rank services that match the problem before distance, include phone, opening hours and Waze or Google Maps links, and come from OpenStreetMap through Overpass. **WhatsApp** opens with the report pre-filled only when the user taps it.
@@ -605,7 +607,7 @@ Nothing in the automated checks touches a live database, SMS provider or map ser
 ## 15. What is not built yet
 
 - Retraining the readiness model on real checks and in-drive events.
-- Trained models for dashboard lights and the start-up sound (today they return marked stubs).
+- A trained model for dashboard lights (the server returns one fixed, marked finding today), and a test of the start-up crank timing on real cars and phones.
 - Server endpoints for editing a car, deleting an account's data, and alarm preferences.
 - Push or scheduled reminders (for example "remind me in 1,000 km").
 - Number-plate scanning, Google sign-in, and place names for trips (needs reverse geocoding).
