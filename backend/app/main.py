@@ -376,12 +376,23 @@ def create_app(*, settings=None, store=None, http=None, clock=None):
         return {'id': check['id'], 'findings': [finding], 'stub': True}
 
     @app.post('/car-checks/startup-audio', tags=['Car checks'])
-    def startup(car_id: UUID = Form(), audio: UploadFile = File(), ctx=Depends(authenticated)):
+    def startup(car_id: UUID = Form(), audio: UploadFile = File(), crank_seconds: float | None = Form(default=None, ge=.2, le=6),
+                ctx=Depends(authenticated)):
         owned(ctx, 'cars', car_id)
         checked_upload(audio, {'audio/wav', 'audio/x-wav', 'audio/webm', 'audio/mp4', 'audio/ogg'}, 10*1024*1024)
         # Audio is consumed only for this request; never retained or uploaded to Storage.
-        result = {'crank_seconds': 2.4, 'verdict': 'A slow crank may indicate a weak battery. Demo result until the model is available.',
-                  'urgency': 'soon', 'urgency_label': URGENCY['soon'], 'stub': True}
+        if crank_seconds is None:
+            # Older clients send no timing: keep the clearly marked demo result.
+            result = {'crank_seconds': 2.4, 'verdict': 'A slow crank may indicate a weak battery. Demo result until the model is available.',
+                      'urgency': 'soon', 'urgency_label': URGENCY['soon'], 'stub': True}
+        else:
+            # The phone times the crank from the loudness pattern (apps/web/src/screens/car/crank.ts).
+            # A healthy engine usually catches within about 2 seconds.
+            crank = round(crank_seconds, 1)
+            slow = crank > 2
+            result = {'crank_seconds': crank, 'urgency': 'soon' if slow else 'monitor', 'urgency_label': URGENCY['soon' if slow else 'monitor'],
+                      'verdict': f'Slow start: {crank} s. This may mean a weak battery. Get it tested at your next service.' if slow
+                                 else f'Normal start: {crank} s. The battery sounds fine.', 'stub': False}
         check = ctx.repo.insert('car_checks', {'car_id': str(car_id), 'at': clock().isoformat(), 'kind': 'startup', 'result': result})
         return {'id': check['id'], **result}
 

@@ -333,3 +333,13 @@ def test_cancelled_unsubmitted_episode_cannot_later_send_an_alarm(rig):
     assert c.post(path, json={'lat': 3, 'lng': 101.62}).status_code == 200
     assert len(rig['messages']) == 0
     assert c.post(path+'/cancel', json={'lat': 3, 'lng': 101.62}, headers={'Authorization': 'Bearer other'}).status_code == 404
+
+
+def test_startup_uses_phone_crank_timing(rig):
+    c, car = rig['client'], rig['car']['id']
+    wav = ('start.wav', b'RIFF\x00\x00\x00\x00WAVE', 'audio/wav')
+    normal = c.post('/car-checks/startup-audio', data={'car_id': car, 'crank_seconds': '0.9'}, files={'audio': wav}).json()
+    assert normal['stub'] is False and normal['urgency'] == 'monitor' and normal['crank_seconds'] == .9
+    slow = c.post('/car-checks/startup-audio', data={'car_id': car, 'crank_seconds': '3.2'}, files={'audio': wav}).json()
+    assert slow['urgency'] == 'soon' and 'weak battery' in slow['verdict']
+    assert c.post('/car-checks/startup-audio', data={'car_id': car, 'crank_seconds': '30'}, files={'audio': wav}).status_code == 422

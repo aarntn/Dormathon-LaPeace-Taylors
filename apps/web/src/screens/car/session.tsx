@@ -7,7 +7,7 @@ type CarSession={
   scratchAlreadyPresent:boolean;markScratchExisting:()=>void;
   dashboard:DashboardResult|undefined;startup:StartupResult|undefined;brakes:BrakeResult|undefined;
   loadingReport:boolean;uploading:'dashboard'|'startup'|undefined;
-  analyseDashboard:(photo:Blob)=>Promise<DashboardResult>;analyseStartup:(audio:Blob)=>Promise<StartupResult>;
+  analyseDashboard:(photo:Blob)=>Promise<DashboardResult>;analyseStartup:(audio:Blob,crankSeconds?:number)=>Promise<StartupResult>;
   refreshReport:()=>Promise<void>;
 };
 const Context=createContext<CarSession|null>(null);
@@ -42,11 +42,11 @@ export function CarProvider({children}:{children:ReactNode}){
       return result;
     }finally{setUploading(undefined);}
   };
-  const analyseStartup=async(audio:Blob)=>{
+  const analyseStartup=async(audio:Blob,crankSeconds?:number)=>{
     if(!data.selectedCar)throw new Error('Add a car before recording a start-up check.');
     setUploading('startup');
     try{
-      const result=await data.api.startupCheck(data.selectedCar.id,audio);
+      const result=await data.api.startupCheck(data.selectedCar.id,audio,crankSeconds);
       setStartup(result);setReport(previous=>previous?{...previous,startup:result}:previous);
       setMessage(result.stub?'Start-up check saved. Model result is a demo indication.':'Start-up check complete.');
       return result;

@@ -107,7 +107,7 @@ export function createApi({ baseUrl = '/api', getAccessToken, fetcher = fetch }:
     patterns: () => request<Patterns>('/patterns'),
     brakes: (carId: string) => request<BrakeResult>(`/brakes/${id(carId)}`),
     dashboardCheck: (carId: string, photo: Blob) => request<DashboardResult>('/car-checks/dashboard', 'POST', upload(carId, 'photo', photo)),
-    startupCheck: (carId: string, audio: Blob) => request<StartupResult>('/car-checks/startup-audio', 'POST', upload(carId, 'audio', audio)),
+    startupCheck: (carId: string, audio: Blob, crankSeconds?: number) => { const form = upload(carId, 'audio', audio); if (crankSeconds !== undefined) form.append('crank_seconds', String(crankSeconds)); return request<StartupResult>('/car-checks/startup-audio', 'POST', form); },
     carReport: (carId: string) => request<CarReport>(`/cars/${id(carId)}/report`),
     workshops: (location: Position, service: Service) => request<{ workshops: Workshop[]; stub: boolean; message?: string }>('/workshops?' + query({ ...location, service })),
     restStops: (location: Position) => request<{ rest_stops: (Position & { name: string; waze_url: string; google_maps_url: string })[]; stub: boolean }>('/rest-stops?' + query(location)),

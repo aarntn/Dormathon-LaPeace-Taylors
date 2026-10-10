@@ -5,8 +5,9 @@ import { MicrophoneMeter } from '../../components/motion/microphone';
 import { Art, Card, Frame, Heading, useCarNavigation } from './shared';
 import { LoadingCard } from './LoadingCard';
 import { useCarSession } from './session';
+import { crankSeconds, type LevelSample } from './crank';
 
-const DURATION_SECONDS = 5;
+const DURATION_SECONDS = 8;
 const MINIMUM_CHECKING_MS = 1000;
 const QUIET_LEVEL = 0.04; // below this the phone heard no engine
 const RADIUS = 106.7;
@@ -18,7 +19,7 @@ export function EngineSoundCheck({ checkingPreview = false }: { checkingPreview?
   const go = useCarNavigation(); const [params] = useSearchParams(); const preview = params.has('preview');
   const { analyseStartup, startup, uploading, notify } = useCarSession();
   const [recording, setRecording] = useState(false); const [elapsed, setElapsed] = useState(0); const [checking, setChecking] = useState(false); const [stream, setStream] = useState<MediaStream | null>(null);
-  const recorder = useRef<MediaRecorder | null>(null); const timer = useRef<number | null>(null); const discard = useRef(false); const meter = useRef<MicrophoneMeter | null>(null); const loudest = useRef(0);
+  const recorder = useRef<MediaRecorder | null>(null); const timer = useRef<number | null>(null); const discard = useRef(false); const meter = useRef<MicrophoneMeter | null>(null); const loudest = useRef(0); const levels = useRef<LevelSample[]>([]);
   const stop = () => { if (timer.current !== null) window.clearInterval(timer.current); timer.current = null; if (recorder.current?.state === 'recording') recorder.current.stop(); };
   const release = (media: MediaStream | null) => { media?.getTracks().forEach(track => track.stop()); meter.current?.stop(); meter.current = null; };
   useEffect(() => () => { discard.current = true; stop(); recorder.current?.stream.getTracks().forEach(track => track.stop()); meter.current?.stop(); }, []);
@@ -26,10 +27,10 @@ export function EngineSoundCheck({ checkingPreview = false }: { checkingPreview?
     if (recording || checking || uploading) return;
     if (!navigator.mediaDevices?.getUserMedia || !window.MediaRecorder) { notify('Audio recording is not available in this browser.'); return; }
     try {
-      discard.current = false; loudest.current = 0;
-      const media = await navigator.mediaDevices.getUserMedia({ audio: true }); setStream(media);
+      discard.current = false; loudest.current = 0; levels.current = [];
+      const media = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false } }); // phone voice filters would flatten engine sound setStream(media);
       const chunks: BlobPart[] = []; const next = new MediaRecorder(media); recorder.current = next; setElapsed(0); setRecording(true);
-      meter.current = new MicrophoneMeter(); void meter.current.start(media, level => { loudest.current = Math.max(loudest.current, level); }).catch(() => undefined);
+      meter.current = new MicrophoneMeter(); void meter.current.start(media, level => { loudest.current = Math.max(loudest.current, level); levels.current.push({ t: performance.now(), level }); }).catch(() => undefined);
       next.ondataavailable = event => { if (event.data.size) chunks.push(event.data); };
       next.onstop = () => { release(media); setStream(null); setRecording(false); if (!discard.current) void finish(new Blob(chunks, { type: next.mimeType || 'audio/webm' })); };
       next.start(); let seconds = 0;
@@ -38,8 +39,10 @@ export function EngineSoundCheck({ checkingPreview = false }: { checkingPreview?
   };
   const finish = async (audio: Blob) => {
     if (!audio.size || loudest.current < QUIET_LEVEL) { go('didnt-hear-the-engine'); return; }
+    const crank = crankSeconds(levels.current); levels.current = [];
+    if (crank === null) { go('didnt-hear-the-engine'); return; }
     setChecking(true); const started = performance.now(); let failed = false;
-    try { await analyseStartup(audio); } catch (error) { failed = true; notify(error instanceof Error ? error.message : 'Could not save the start-up recording.'); }
+    try { await analyseStartup(audio, crank); } catch (error) { failed = true; notify(error instanceof Error ? error.message : 'Could not save the start-up recording.'); }
     await new Promise(resolve => setTimeout(resolve, Math.max(0, MINIMUM_CHECKING_MS - (performance.now() - started))));
     if (!discard.current) { setChecking(false); if (failed) go('didnt-hear-the-engine'); }
   };
