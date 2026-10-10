@@ -1,0 +1,655 @@
+{
+  "fileKey": "YQotwkLvWP68ht9GzTbpf0",
+  "nodeId": "27:2",
+  "collections": [
+    {
+      "id": "VariableCollectionId:26:220",
+      "name": "Dormathon",
+      "modes": [
+        {
+          "name": "Mode 1",
+          "modeId": "26:0"
+        }
+      ],
+      "defaultModeId": "26:0"
+    }
+  ],
+  "variables": [
+    {
+      "id": "VariableID:26:221",
+      "name": "bg/screen",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:26:220",
+      "values": {
+        "26:0": {
+          "r": 0.9882352948188782,
+          "g": 0.9882352948188782,
+          "b": 0.9960784316062927,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:26:222",
+      "name": "bg/card",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:26:220",
+      "values": {
+        "26:0": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:26:223",
+      "name": "bg/field",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:26:220",
+      "values": {
+        "26:0": {
+          "r": 0.9490196108818054,
+          "g": 0.9529411792755127,
+          "b": 0.9607843160629272,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:26:224",
+      "name": "bg/tint",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:26:220",
+      "values": {
+        "26:0": {
+          "r": 0.9333333373069763,
+          "g": 0.9450980424880981,
+          "b": 0.9686274528503418,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:26:225",
+      "name": "text/primary",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:26:220",
+      "values": {
+        "26:0": {
+          "r": 0.1568627506494522,
+          "g": 0.1568627506494522,
+          "b": 0.1568627506494522,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:26:226",
+      "name": "text/secondary",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:26:220",
+      "values": {
+        "26:0": {
+          "r": 0.4745098054409027,
+          "g": 0.4745098054409027,
+          "b": 0.4745098054409027,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:26:227",
+      "name": "text/tertiary",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:26:220",
+      "values": {
+        "26:0": {
+          "r": 0.6509804129600525,
+          "g": 0.6509804129600525,
+          "b": 0.6509804129600525,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:26:228",
+      "name": "text/inverse",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:26:220",
+      "values": {
+        "26:0": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:26:229",
+      "name": "brand/navy",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:26:220",
+      "values": {
+        "26:0": {
+          "r": 0.10588235408067703,
+          "g": 0.16470588743686676,
+          "b": 0.30588236451148987,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:26:230",
+      "name": "line/default",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:26:220",
+      "values": {
+        "26:0": {
+          "r": 0.9098039269447327,
+          "g": 0.9176470637321472,
+          "b": 0.929411768913269,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:26:231",
+      "name": "state/success",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:26:220",
+      "values": {
+        "26:0": {
+          "r": 0.13725490868091583,
+          "g": 0.6039215922355652,
+          "b": 0.42352941632270813,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:26:232",
+      "name": "state/success-soft",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:26:220",
+      "values": {
+        "26:0": {
+          "r": 0.8901960849761963,
+          "g": 0.9529411792755127,
+          "b": 0.9254902005195618,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:26:233",
+      "name": "state/danger",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:26:220",
+      "values": {
+        "26:0": {
+          "r": 0.9372549057006836,
+          "g": 0.30980393290519714,
+          "b": 0.2666666805744171,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:26:234",
+      "name": "state/danger-soft",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:26:220",
+      "values": {
+        "26:0": {
+          "r": 0.9921568632125854,
+          "g": 0.9058823585510254,
+          "b": 0.8980392217636108,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:26:235",
+      "name": "state/warning",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:26:220",
+      "values": {
+        "26:0": {
+          "r": 0.7215686440467834,
+          "g": 0.4313725531101227,
+          "b": 0,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:26:236",
+      "name": "state/warning-dot",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:26:220",
+      "values": {
+        "26:0": {
+          "r": 0.9098039269447327,
+          "g": 0.6392157077789307,
+          "b": 0.09019608050584793,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:26:237",
+      "name": "state/warning-soft",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:26:220",
+      "values": {
+        "26:0": {
+          "r": 0.9882352948188782,
+          "g": 0.9411764740943909,
+          "b": 0.8549019694328308,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:26:238",
+      "name": "drive/bg",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:26:220",
+      "values": {
+        "26:0": {
+          "r": 0.04313725605607033,
+          "g": 0.07058823853731155,
+          "b": 0.125490203499794,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:26:239",
+      "name": "drive/card",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:26:220",
+      "values": {
+        "26:0": {
+          "r": 0.0784313753247261,
+          "g": 0.11764705926179886,
+          "b": 0.1882352977991104,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:26:240",
+      "name": "drive/line",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:26:220",
+      "values": {
+        "26:0": {
+          "r": 0.13333334028720856,
+          "g": 0.1882352977991104,
+          "b": 0.29019609093666077,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:26:241",
+      "name": "drive/text-secondary",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:26:220",
+      "values": {
+        "26:0": {
+          "r": 0.5843137502670288,
+          "g": 0.6274510025978088,
+          "b": 0.7019608020782471,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:26:242",
+      "name": "drive/accent",
+      "type": "COLOR",
+      "collection": "VariableCollectionId:26:220",
+      "values": {
+        "26:0": {
+          "r": 0.23137255012989044,
+          "g": 0.7686274647712708,
+          "b": 0.5529412031173706,
+          "a": 1
+        }
+      }
+    }
+  ],
+  "textStyles": [
+    {
+      "name": "Heading/Display",
+      "fontName": {
+        "family": "Inter",
+        "style": "Bold",
+        "variationSettings": {
+          "wght": 700,
+          "slnt": 0
+        }
+      },
+      "fontSize": 44,
+      "lineHeight": {
+        "unit": "AUTO"
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": -2
+      }
+    },
+    {
+      "name": "Heading/Large",
+      "fontName": {
+        "family": "Inter",
+        "style": "Bold",
+        "variationSettings": {
+          "wght": 700,
+          "slnt": 0
+        }
+      },
+      "fontSize": 28,
+      "lineHeight": {
+        "unit": "AUTO"
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": -0.9399999976158142
+      }
+    },
+    {
+      "name": "Title/Medium",
+      "fontName": {
+        "family": "Inter",
+        "style": "Semi Bold",
+        "variationSettings": {
+          "wght": 600,
+          "slnt": 0
+        }
+      },
+      "fontSize": 18,
+      "lineHeight": {
+        "unit": "AUTO"
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": -0.6399999856948853
+      }
+    },
+    {
+      "name": "Body/Regular",
+      "fontName": {
+        "family": "Inter",
+        "style": "Regular",
+        "variationSettings": {
+          "wght": 400,
+          "slnt": 0
+        }
+      },
+      "fontSize": 16,
+      "lineHeight": {
+        "unit": "PERCENT",
+        "value": 139.9999976158142
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": -0.49000000953674316
+      }
+    },
+    {
+      "name": "Body/Strong",
+      "fontName": {
+        "family": "Inter",
+        "style": "Semi Bold",
+        "variationSettings": {
+          "wght": 600,
+          "slnt": 0
+        }
+      },
+      "fontSize": 16,
+      "lineHeight": {
+        "unit": "AUTO"
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": -0.49000000953674316
+      }
+    },
+    {
+      "name": "Body/Small",
+      "fontName": {
+        "family": "Inter",
+        "style": "Regular",
+        "variationSettings": {
+          "wght": 400,
+          "slnt": 0
+        }
+      },
+      "fontSize": 14,
+      "lineHeight": {
+        "unit": "PERCENT",
+        "value": 139.9999976158142
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": -0.30000001192092896
+      }
+    },
+    {
+      "name": "Body/Small Strong",
+      "fontName": {
+        "family": "Inter",
+        "style": "Semi Bold",
+        "variationSettings": {
+          "wght": 600,
+          "slnt": 0
+        }
+      },
+      "fontSize": 14,
+      "lineHeight": {
+        "unit": "AUTO"
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": -0.30000001192092896
+      }
+    },
+    {
+      "name": "Label/Small",
+      "fontName": {
+        "family": "Inter",
+        "style": "Medium",
+        "variationSettings": {
+          "wght": 500,
+          "slnt": 0
+        }
+      },
+      "fontSize": 12,
+      "lineHeight": {
+        "unit": "AUTO"
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0.019999999552965164
+      }
+    },
+    {
+      "name": "Numeric/Large",
+      "fontName": {
+        "family": "Inter",
+        "style": "Bold",
+        "variationSettings": {
+          "wght": 700,
+          "slnt": 0
+        }
+      },
+      "fontSize": 24,
+      "lineHeight": {
+        "unit": "AUTO"
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": -1
+      }
+    },
+    {
+      "name": "Button",
+      "fontName": {
+        "family": "Inter",
+        "style": "Semi Bold",
+        "variationSettings": {
+          "wght": 600,
+          "slnt": 0
+        }
+      },
+      "fontSize": 18,
+      "lineHeight": {
+        "unit": "AUTO"
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": -0.6399999856948853
+      }
+    },
+    {
+      "name": "System/Status time",
+      "fontName": {
+        "family": "SF Pro",
+        "style": "Semibold",
+        "variationSettings": {
+          "wght": 590,
+          "wdth": 100
+        }
+      },
+      "fontSize": 17,
+      "lineHeight": {
+        "unit": "AUTO"
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": -2.4000000953674316
+      }
+    },
+    {
+      "name": "Brand/Wordmark",
+      "fontName": {
+        "family": "SF Pro",
+        "style": "Expanded Heavy",
+        "variationSettings": {
+          "wght": 870,
+          "wdth": 132
+        }
+      },
+      "fontSize": 20,
+      "lineHeight": {
+        "unit": "AUTO"
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 2
+      }
+    }
+  ],
+  "frame": {
+    "width": 1600,
+    "height": 1000,
+    "children": [
+      {
+        "id": "27:13",
+        "name": "Button",
+        "type": "COMPONENT_SET",
+        "x": 24,
+        "y": 24,
+        "width": 438,
+        "height": 392
+      },
+      {
+        "id": "27:40",
+        "name": "Icon button",
+        "type": "COMPONENT_SET",
+        "x": 500,
+        "y": 24,
+        "width": 200,
+        "height": 140
+      },
+      {
+        "id": "27:133",
+        "name": "Tab bar",
+        "type": "COMPONENT_SET",
+        "x": 760,
+        "y": 24,
+        "width": 308,
+        "height": 360
+      },
+      {
+        "id": "27:156",
+        "name": "Status bar",
+        "type": "COMPONENT_SET",
+        "x": 1100,
+        "y": 24,
+        "width": 478,
+        "height": 172
+      },
+      {
+        "id": "27:157",
+        "name": "Car/Side",
+        "type": "COMPONENT",
+        "x": 24,
+        "y": 420,
+        "width": 360,
+        "height": 140
+      },
+      {
+        "id": "27:172",
+        "name": "Car/Top",
+        "type": "COMPONENT",
+        "x": 440,
+        "y": 420,
+        "width": 160,
+        "height": 300
+      },
+      {
+        "id": "27:186",
+        "name": "Eye landmarks",
+        "type": "COMPONENT",
+        "x": 660,
+        "y": 440,
+        "width": 300,
+        "height": 110
+      },
+      {
+        "id": "31:285",
+        "name": "Brand mark",
+        "type": "COMPONENT_SET",
+        "x": 24,
+        "y": 744,
+        "width": 200,
+        "height": 112
+      },
+      {
+        "id": "31:292",
+        "name": "Input",
+        "type": "COMPONENT_SET",
+        "x": 260,
+        "y": 744,
+        "width": 430,
+        "height": 232
+      },
+      {
+        "id": "31:305",
+        "name": "Option",
+        "type": "COMPONENT_SET",
+        "x": 720,
+        "y": 744,
+        "width": 430,
+        "height": 204
+      }
+    ]
+  }
+}

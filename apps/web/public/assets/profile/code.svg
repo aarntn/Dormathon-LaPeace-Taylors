@@ -1,0 +1,42 @@
+<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="18" height="18" fill="#1E1E1E"/>
+<g id="4 &#194;&#183; Profile">
+<path d="M-2086 -805.272C-2086 -806.376 -2085.1 -807.272 -2084 -807.272H462C463.104 -807.272 464 -806.376 464 -805.272V307.728C464 308.833 463.104 309.728 462 309.728H-2084C-2085.1 309.728 -2086 308.833 -2086 307.728V-805.272Z" fill="#282828"/>
+<path d="M-2084 -807.272V-806.272H462V-807.272V-808.272H-2084V-807.272ZM464 -805.272H463V307.728H464H465V-805.272H464ZM462 309.728V308.728H-2084V309.728V310.728H462V309.728ZM-2086 307.728H-2085V-805.272H-2086H-2087V307.728H-2086ZM-2084 309.728V308.728C-2084.55 308.728 -2085 308.281 -2085 307.728H-2086H-2087C-2087 309.385 -2085.66 310.728 -2084 310.728V309.728ZM464 307.728H463C463 308.281 462.552 308.728 462 308.728V309.728V310.728C463.657 310.728 465 309.385 465 307.728H464ZM462 -807.272V-806.272C462.552 -806.272 463 -805.824 463 -805.272H464H465C465 -806.928 463.657 -808.272 462 -808.272V-807.272ZM-2084 -807.272V-808.272C-2085.66 -808.272 -2087 -806.928 -2087 -805.272H-2086H-2085C-2085 -805.824 -2084.55 -806.272 -2084 -806.272V-807.272Z" fill="white" fill-opacity="0.1"/>
+<g id="P5 Privacy and legal">
+<rect width="430" height="932" transform="translate(-46 -702.272)" fill="#FCFCFE"/>
+<g id="Content">
+<g id="Group Legal" clip-path="url(#clip0_0_1)">
+<g id="List" filter="url(#filter0_d_0_1)">
+<rect x="-26" y="-138" width="390" height="180" rx="20" fill="white"/>
+<rect x="-25.5" y="-137.5" width="389" height="179" rx="19.5" stroke="#E8EAED"/>
+<g id="Row Open-source licences">
+<g id="Frame">
+<rect x="-9" y="-9" width="36" height="36" rx="11" fill="#EEF1F7"/>
+<g id="icon/code">
+<g id="Group">
+<path id="Vector" d="M6 6L3 9L6 12M12 6L15 9L12 12" stroke="#1B2A4E" stroke-width="1.425" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_0_1" x="-42" y="-148" width="422" height="212" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="6"/>
+<feGaussianBlur stdDeviation="8"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+</filter>
+<clipPath id="clip0_0_1">
+<rect width="390" height="207" fill="white" transform="translate(-26 -165)"/>
+</clipPath>
+</defs>
+</svg>

@@ -1,0 +1,6 @@
+import { Art, Frame, Heading, RowList, type RowData } from './shared';
+const dataRows: RowData[] = [{ title: 'How eye tracking works', icon: 'eye', value: 'On your phone' }, { title: 'Download my data', icon: 'download' }, { title: 'Delete my data', icon: 'trash', danger: true }];
+const legalRows: RowData[] = [{ title: 'Terms of service', icon: 'document' }, { title: 'Privacy policy', icon: 'shield' }, { title: 'Open-source licences', icon: 'code' }];
+export function PrivacyAndLegal({ version = '1.0.0' }: { version?: string }) {
+  return <Frame back="/profile/profile"><Heading title="Privacy and legal" /><aside className="profile-notice"><Art name="info" /><div><h2 className="text-body-strong">Dormathon is a driving aid</h2><p className="text-body-small profile-secondary">It helps you notice tiredness, but it can miss signs and isn’t a medical device. If you feel sleepy, stop and rest.</p></div></aside><section className="profile-group"><h2 className="text-body-small-strong profile-secondary">Your data</h2><RowList rows={dataRows} label="Your data" /></section><section className="profile-group"><h2 className="text-body-small-strong profile-secondary">Legal</h2><RowList rows={legalRows} label="Legal" /></section><p className="profile-version text-label-small profile-tertiary">Version {version}</p></Frame>;
+}

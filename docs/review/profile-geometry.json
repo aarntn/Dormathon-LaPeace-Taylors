@@ -1,0 +1,205 @@
+[
+  {
+    "path": "/profile/profile",
+    "text": "M\nMichael Jackson\n\nmj@example.com\n\nThis month\nSee stats\n18\ndrives\n14 h\ndriving\n6\nbreaks taken\n5 tiredness alerts and 1 microsleep this month\nMy cars\nAdd a car\nPerodua Myvi 1.5 AV\nWXY 4821 · 2 things to check\nSettings\nAlarm and alerts\nLoud\nMaps app\nWaze\nEye profile\nRe-scan\nPrivacy and legal\nHelp and support",
+    "width": 430,
+    "geometry": [
+      {
+        "class": "profile-person",
+        "x": 20,
+        "y": 66,
+        "width": 390,
+        "height": 60
+      },
+      {
+        "class": "profile-stats",
+        "x": 20,
+        "y": 142,
+        "width": 390,
+        "height": 177
+      },
+      {
+        "class": "profile-group",
+        "x": 20,
+        "y": 335,
+        "width": 390,
+        "height": 109
+      },
+      {
+        "class": "profile-group",
+        "x": 20,
+        "y": 460,
+        "width": 390,
+        "height": 321
+      }
+    ]
+  },
+  {
+    "path": "/profile/driving-stats",
+    "text": "Driving stats\nWeek\nMonth\nYear\nTiredness alerts\n5\ndown from 9 last month\nWhen you get tired\n6 am\n12 pm\n6 pm\n12 am\nTired about 45 minutes in\n\nOn drives over an hour. Plan a stop at 40 minutes.\n\nMost alerts after 11 pm\n\nLate drives home are your riskiest.",
+    "width": 430,
+    "geometry": [
+      {
+        "class": "profile-topbar",
+        "x": 20,
+        "y": 62,
+        "width": 390,
+        "height": 40
+      },
+      {
+        "class": "profile-heading",
+        "x": 20,
+        "y": 119.28125,
+        "width": 390,
+        "height": 70
+      },
+      {
+        "class": "profile-panel profile-alert-chart",
+        "x": 20,
+        "y": 209.28125,
+        "width": 390,
+        "height": 248
+      },
+      {
+        "class": "profile-panel profile-hours-chart",
+        "x": 20,
+        "y": 477.28125,
+        "width": 390,
+        "height": 156
+      },
+      {
+        "class": "profile-insights",
+        "x": 20,
+        "y": 653.28125,
+        "width": 390,
+        "height": 172
+      }
+    ]
+  },
+  {
+    "path": "/profile/my-cars",
+    "text": "My cars\n\nDormathon keeps checks and trips separate for each car.\n\nPerodua Myvi 1.5 AV\n\nWXY 4821 · 2021 · Granite Grey\n\n2 things to check\n\nDriving this car\nEdit details\nHonda City 1.5 V\n\nBKL 2290 · 2019 · White\n\nAll good · checked 2 weeks ago\n\nSwitch to this car\nEdit details\nAdd a car",
+    "width": 430,
+    "geometry": [
+      {
+        "class": "profile-topbar",
+        "x": 20,
+        "y": 62,
+        "width": 390,
+        "height": 40
+      },
+      {
+        "class": "profile-heading",
+        "x": 20,
+        "y": 119.28125,
+        "width": 390,
+        "height": 86
+      },
+      {
+        "class": "profile-garage-card profile-panel profile-garage-card--current",
+        "x": 20,
+        "y": 225.28125,
+        "width": 390,
+        "height": 156
+      },
+      {
+        "class": "profile-garage-card profile-panel",
+        "x": 20,
+        "y": 401.28125,
+        "width": 390,
+        "height": 154
+      }
+    ]
+  },
+  {
+    "path": "/profile/add-a-car",
+    "text": "Add a car\n\nSearch for the model, or scan its number plate.\n\nScan the number plate\n\nWe’ll fill in the make, model and year for you\n\nPopular in Malaysia\nP\nPerodua Bezza\nSedan\nP\nPerodua Axia\nHatchback\nP\nProton Saga\nSedan\nP\nProton X50\nSUV\nT\nToyota Vios\nSedan",
+    "width": 430,
+    "geometry": [
+      {
+        "class": "profile-topbar",
+        "x": 20,
+        "y": 62,
+        "width": 390,
+        "height": 40
+      },
+      {
+        "class": "profile-heading",
+        "x": 20,
+        "y": 119.28125,
+        "width": 390,
+        "height": 64
+      },
+      {
+        "class": "profile-search",
+        "x": 20,
+        "y": 203.28125,
+        "width": 390,
+        "height": 56
+      },
+      {
+        "class": "profile-scan profile-panel",
+        "x": 20,
+        "y": 279.28125,
+        "width": 390,
+        "height": 91
+      },
+      {
+        "class": "profile-popular",
+        "x": 20,
+        "y": 390.28125,
+        "width": 390,
+        "height": 349
+      }
+    ]
+  },
+  {
+    "path": "/profile/privacy-and-legal",
+    "text": "Privacy and legal\nDormathon is a driving aid\n\nIt helps you notice tiredness, but it can miss signs and isn’t a medical device. If you feel sleepy, stop and rest.\n\nYour data\nHow eye tracking works\nOn your phone\nDownload my data\nDelete my data\nLegal\nTerms of service\nPrivacy policy\nOpen-source licences\n\nVersion 1.0.0",
+    "width": 430,
+    "geometry": [
+      {
+        "class": "profile-topbar",
+        "x": 20,
+        "y": 62,
+        "width": 390,
+        "height": 40
+      },
+      {
+        "class": "profile-heading",
+        "x": 20,
+        "y": 119.28125,
+        "width": 390,
+        "height": 34
+      },
+      {
+        "class": "profile-notice",
+        "x": 20,
+        "y": 173.28125,
+        "width": 390,
+        "height": 115
+      },
+      {
+        "class": "profile-group",
+        "x": 20,
+        "y": 308.28125,
+        "width": 390,
+        "height": 209
+      },
+      {
+        "class": "profile-group",
+        "x": 20,
+        "y": 537.28125,
+        "width": 390,
+        "height": 207
+      },
+      {
+        "class": "profile-version text-label-small profile-tertiary",
+        "x": 20,
+        "y": 764.28125,
+        "width": 390,
+        "height": 15
+      }
+    ]
+  }
+]

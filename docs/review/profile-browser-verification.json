@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-10-10T07:41:49.132Z",
+  "screens": 5,
+  "widths": [
+    430,
+    390
+  ],
+  "safeAreaVerified": true,
+  "passed": [
+    "original assets and chart scaling",
+    "Figma prototype links",
+    "history Back and direct entry",
+    "search filtering",
+    "34px footer clearance",
+    "responsive scrolling",
+    "no runtime exceptions"
+  ]
+}

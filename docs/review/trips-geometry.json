@@ -1,0 +1,135 @@
+[
+  {
+    "path": "/trips/trips",
+    "text": "Trips\n\n12 drives this month · 9 h 40 min\n\nYour pattern\nYou get tired faster after 10 pm\n7 of your 9 tired alerts happened late at night.\nThis week\nPJ → Seremban\nToday · 3:40 pm · 58 min\n1 alarm\nUM → Home\nThu · 11:20 pm · 25 min\n2 tired\nHome → Mid Valley\nWed · 6:10 pm · 18 min\nAll alert\nLast week\nHome → UM\nMon · 8:05 am · 22 min\nAll alert\nSunway → Home\nSat · 12:40 am · 31 min\n3 tired",
+    "width": 430,
+    "geometry": [
+      {
+        "class": "trips-heading",
+        "x": 20,
+        "y": 66,
+        "width": 390,
+        "height": 60
+      },
+      {
+        "class": "trips-pattern trips-panel",
+        "x": 20,
+        "y": 142,
+        "width": 390,
+        "height": 176
+      },
+      {
+        "class": "trips-week text-body-small-strong",
+        "x": 20,
+        "y": 334,
+        "width": 390,
+        "height": 21
+      },
+      {
+        "class": "trips-list trips-panel",
+        "x": 20,
+        "y": 371,
+        "width": 390,
+        "height": 213
+      },
+      {
+        "class": "trips-week text-body-small-strong",
+        "x": 20,
+        "y": 600,
+        "width": 390,
+        "height": 21
+      },
+      {
+        "class": "trips-list trips-panel",
+        "x": 20,
+        "y": 637,
+        "width": 390,
+        "height": 145
+      }
+    ]
+  },
+  {
+    "path": "/trips/when-you-get-tired",
+    "text": "When you get tired\n\nBased on your last 30 days of driving\n\nTired alerts by time of day\n9 alerts\nLate-night alerts\n7 of 9\nUsually starts after\n35 min of driving\nMost often on\nThe drive home from campus\nNight reminders\n\nAfter 10 pm we’ll suggest a break every 30 min and warn you before a long drive.\n\nTurn on night reminders",
+    "width": 430,
+    "geometry": [
+      {
+        "class": "trips-topbar",
+        "x": 20,
+        "y": 62,
+        "width": 390,
+        "height": 40
+      },
+      {
+        "class": "trips-heading",
+        "x": 20,
+        "y": 115.28125,
+        "width": 390,
+        "height": 62
+      },
+      {
+        "class": "trips-panel trips-chart-panel",
+        "x": 20,
+        "y": 193.28125,
+        "width": 390,
+        "height": 196
+      },
+      {
+        "class": "trips-panel trips-facts",
+        "x": 20,
+        "y": 405.28125,
+        "width": 390,
+        "height": 128
+      },
+      {
+        "class": "trips-plan",
+        "x": 20,
+        "y": 549.28125,
+        "width": 390,
+        "height": 93
+      }
+    ]
+  },
+  {
+    "path": "/trips/late-drive-heads-up",
+    "text": "Tonight’s drive is higher risk\n\nUM → Home · about 25 min · 11:20 pm\n\nWhy we think so\n\nIt’s past 10 pm, when you usually get tired\n\n3 of your last 4 late drives had tired alerts\n\nYou’ve already driven 40 min today\n\nWe’ve made a plan\n\nThe alarm is set to be more sensitive, and we’ll check in halfway with a voice prompt.\n\nNot tonight\nStart with the plan",
+    "width": 430,
+    "geometry": [
+      {
+        "class": "trips-topbar",
+        "x": 20,
+        "y": 62,
+        "width": 390,
+        "height": 40
+      },
+      {
+        "class": "trips-icon-wrap",
+        "x": 20,
+        "y": 115.28125,
+        "width": 390,
+        "height": 72
+      },
+      {
+        "class": "trips-heading",
+        "x": 20,
+        "y": 203.28125,
+        "width": 390,
+        "height": 62
+      },
+      {
+        "class": "trips-panel trips-why",
+        "x": 20,
+        "y": 281.28125,
+        "width": 390,
+        "height": 159
+      },
+      {
+        "class": "trips-plan trips-plan--success",
+        "x": 20,
+        "y": 456.28125,
+        "width": 390,
+        "height": 93
+      }
+    ]
+  }
+]

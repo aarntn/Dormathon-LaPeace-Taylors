@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-10-10T07:28:10.560Z",
+  "screens": 7,
+  "widths": [
+    430,
+    390
+  ],
+  "safeAreaVerified": true,
+  "passed": [
+    "prototype navigation",
+    "direct entry",
+    "camera modal and Escape",
+    "34px footer clearance",
+    "narrow chart labels",
+    "local original assets",
+    "no runtime exceptions"
+  ]
+}

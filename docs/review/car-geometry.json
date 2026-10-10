@@ -1,0 +1,261 @@
+[
+  {
+    "path": "/car/car-check",
+    "text": "Car check\n\nPerodua Myvi · WXY 4821\n\nPhoto walk-around\n3 min\nFinds scratches, dents, worn tyres and warning lights\nEngine sound check\n15 sec\nListens for belt squeal, misfires and knocking\nLast report\n2 things to check\n3 days ago\nRear bumper scratch, drive belt squeal",
+    "width": 430,
+    "geometry": [
+      {
+        "class": "car-heading",
+        "x": 20,
+        "y": 78,
+        "width": 390,
+        "height": 64
+      },
+      {
+        "class": "car-overview-art",
+        "x": 20,
+        "y": 162,
+        "width": 390,
+        "height": 106.9375
+      },
+      {
+        "class": "car-checks",
+        "x": 20,
+        "y": 288.9375,
+        "width": 390,
+        "height": 194
+      },
+      {
+        "class": "car-last-report",
+        "x": 20,
+        "y": 502.9375,
+        "width": 390,
+        "height": 109
+      }
+    ]
+  },
+  {
+    "path": "/car/first-check",
+    "text": "1\n2\n3\n4\n5\n6\n7\n8\nYour first check\n\nThese photos become your Myvi’s starting point. Later checks only flag what’s new.\n\n1\nTake 8 photos around the car\n\nAbout 3 minutes. Daylight works best.\n\n2\nTap any old scratches\n\nSo we don’t flag them as new damage later.\n\n3\nRecord the engine for 15 seconds\n\nEngine warm, bonnet open.\n\nStart walk-around",
+    "width": 430,
+    "geometry": [
+      {
+        "class": "car-topbar",
+        "x": 20,
+        "y": 62,
+        "width": 390,
+        "height": 40
+      },
+      {
+        "class": "car-photo-stops",
+        "x": 20,
+        "y": 119.28125,
+        "width": 390,
+        "height": 300
+      },
+      {
+        "class": "car-heading",
+        "x": 20,
+        "y": 439.28125,
+        "width": 390,
+        "height": 86
+      },
+      {
+        "class": "car-first-steps car-panel",
+        "x": 20,
+        "y": 545.28125,
+        "width": 390,
+        "height": 193
+      }
+    ]
+  },
+  {
+    "path": "/car/photo-walk-around",
+    "text": "Car check\n\nPerodua Myvi · WXY 4821\n\nPhoto walk-around\n3 min\nFinds scratches, dents, worn tyres and warning lights\nEngine sound check\n15 sec\nListens for belt squeal, misfires and knocking\nLast report\n2 things to check\n3 days ago\nRear bumper scratch, drive belt squeal\nPossible scratch\nFront left corner\n\nPhoto 3 of 8\n\nFit the whole corner in the frame\n\nSharp\nBright enough\nGood angle\nSkip",
+    "width": 430,
+    "geometry": [
+      {
+        "class": "car-heading",
+        "x": 20,
+        "y": 78,
+        "width": 390,
+        "height": 64
+      },
+      {
+        "class": "car-overview-art",
+        "x": 20,
+        "y": 162,
+        "width": 390,
+        "height": 106.9375
+      },
+      {
+        "class": "car-checks",
+        "x": 20,
+        "y": 288.9375,
+        "width": 390,
+        "height": 194
+      },
+      {
+        "class": "car-last-report",
+        "x": 20,
+        "y": 502.9375,
+        "width": 390,
+        "height": 109
+      }
+    ]
+  },
+  {
+    "path": "/car/engine-sound-check",
+    "text": "Engine sound check\n\nEngine idling, bonnet open, phone about 30 cm from the engine.\n\nListening\n\n0:09\n\nof 15 seconds\n\nWhat we hear so far\nIdle is steady\nNormal\nHigh squeal at start-up\nCheck\nSee my report",
+    "width": 430,
+    "geometry": [
+      {
+        "class": "car-topbar",
+        "x": 20,
+        "y": 62,
+        "width": 390,
+        "height": 40
+      },
+      {
+        "class": "car-heading",
+        "x": 20,
+        "y": 119.28125,
+        "width": 390,
+        "height": 86
+      },
+      {
+        "class": "car-recorder",
+        "x": 20,
+        "y": 225.28125,
+        "width": 390,
+        "height": 300
+      },
+      {
+        "class": "car-heard",
+        "x": 20,
+        "y": 545.28125,
+        "width": 390,
+        "height": 187
+      }
+    ]
+  },
+  {
+    "path": "/car/car-report",
+    "text": "2 things to check\n\nEstimated repair RM 180 – 420 · checked today\n\nBelt squeal\nScratch\nScratch on rear bumper\nPaint only · not urgent\nRM 120–250\nDrive belt squeal\nGetting louder each check\nRM 60–170\nTyres, lights, windscreen\nNo problems found\nFind a workshop nearby",
+    "width": 430,
+    "geometry": [
+      {
+        "class": "car-topbar",
+        "x": 20,
+        "y": 62,
+        "width": 390,
+        "height": 40
+      },
+      {
+        "class": "car-heading",
+        "x": 20,
+        "y": 119.28125,
+        "width": 390,
+        "height": 64
+      },
+      {
+        "class": "car-map car-panel",
+        "x": 20,
+        "y": 203.28125,
+        "width": 390,
+        "height": 250
+      },
+      {
+        "class": "car-findings",
+        "x": 20,
+        "y": 473.28125,
+        "width": 390,
+        "height": 242
+      }
+    ]
+  },
+  {
+    "path": "/car/scratch-detail",
+    "text": "Scratch · about 12 cm\nScratch on rear bumper\n\nRear left corner · photo 6 of 8\n\nHow deep\nPaint only\nSize\nAbout 12 cm\nHow sure we are\nHigh\nUsual fix\nPolish or touch-up\nEstimated cost\nRM 120–250\nSafe to drive\n\nIt won’t get worse quickly. Fix it when it suits you.\n\nIt was already here\nBack to report",
+    "width": 430,
+    "geometry": [
+      {
+        "class": "car-topbar",
+        "x": 20,
+        "y": 62,
+        "width": 390,
+        "height": 40
+      },
+      {
+        "class": "car-scratch-photo",
+        "x": 20,
+        "y": 119.28125,
+        "width": 390,
+        "height": 220
+      },
+      {
+        "class": "car-heading",
+        "x": 20,
+        "y": 359.28125,
+        "width": 390,
+        "height": 64
+      },
+      {
+        "class": "car-details car-panel",
+        "x": 20,
+        "y": 443.28125,
+        "width": 390,
+        "height": 200
+      },
+      {
+        "class": "car-callout car-callout--success",
+        "x": 20,
+        "y": 663.28125,
+        "width": 390,
+        "height": 73
+      }
+    ]
+  },
+  {
+    "path": "/car/belt-squeal-trend",
+    "text": "Drive belt squeal\n\nGetting louder over your last 4 checks\n\nSqueal at start-up\n\n+40% since Aug\n\nNeeds a fix\n29 Aug\n12 Sep\n26 Sep\nToday\nLikely to need a fix in 3 to 6 weeks\n\nAt this rate it reaches the fix line by mid-November. Fixing it early is cheaper.\n\nA worn or loose drive belt. It turns the alternator and air-con, so a slipping belt can drain your battery.\n\nUsual fix\nAdjust or replace belt\nEstimated cost\nRM 60–170\nRemind me in 2 weeks\nFind a workshop nearby",
+    "width": 430,
+    "geometry": [
+      {
+        "class": "car-topbar",
+        "x": 20,
+        "y": 62,
+        "width": 390,
+        "height": 40
+      },
+      {
+        "class": "car-heading",
+        "x": 20,
+        "y": 119.28125,
+        "width": 390,
+        "height": 64
+      },
+      {
+        "class": "car-trend car-panel",
+        "x": 20,
+        "y": 203.28125,
+        "width": 390,
+        "height": 231
+      },
+      {
+        "class": "car-callout car-callout--warning",
+        "x": 20,
+        "y": 454.28125,
+        "width": 390,
+        "height": 95
+      },
+      {
+        "class": "car-details car-panel",
+        "x": 20,
+        "y": 569.28125,
+        "width": 390,
+        "height": 146
+      }
+    ]
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-10-10T07:44:39.197Z",
+  "screens": 3,
+  "widths": [
+    430,
+    390
+  ],
+  "safeAreaVerified": true,
+  "passed": [
+    "prototype destinations",
+    "history Back and direct-entry fallback",
+    "hidden late-drive demo",
+    "original SVGs and chart scaling",
+    "34px footer clearance",
+    "responsive scrolling",
+    "tab transitions",
+    "no runtime exceptions"
+  ]
+}

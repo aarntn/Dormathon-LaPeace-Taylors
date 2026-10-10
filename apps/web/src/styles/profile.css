@@ -1,0 +1,84 @@
+:root { /* Unbound highlight read from P1 Stats card. */ --profile-stat-highlight:rgb(255 255 255 / .1); }
+.profile-frame { font-optical-sizing:none; }
+.profile-frame .text-body-regular { font-optical-sizing:auto;line-height:22px; }
+.profile-frame .text-body-small { line-height:20px; }
+.profile-frame .text-body-strong { line-height:19px; }
+.profile-frame .text-body-small-strong { line-height:17px; }
+.profile-frame .app-frame__content { padding-top:0; }
+.profile-content { padding:max(62px,calc(env(safe-area-inset-top,0px) + 8px)) 20px 24px;display:flex;flex-direction:column;gap:20px; }
+.profile-content>* { flex-shrink:0; }
+.profile-topbar { display:flex;margin-bottom:-2.728px; }
+.profile-heading { display:flex;flex-direction:column;gap:8px;text-align:center; }
+.profile-secondary { color:var(--text-secondary); }
+.profile-tertiary { color:var(--text-tertiary); }
+.profile-success { color:var(--state-success); }
+.profile-warning { color:var(--state-warning); }
+.profile-danger { color:var(--state-danger); }
+.profile-art { display:block;max-width:none;flex-shrink:0; }
+.profile-panel { background:var(--bg-card);border:1px solid var(--line-default);box-shadow:var(--car-card-shadow);border-radius:20px; }
+.profile-between { display:flex;align-items:center;justify-content:space-between;gap:12px; }
+.profile-overview .profile-content { padding-top:max(66px,calc(env(safe-area-inset-top,0px) + 12px));gap:16px; }
+.profile-overview .app-frame__footer { display:flex;justify-content:center; }
+.profile-person { display:flex;gap:14px;align-items:center; }
+.profile-avatar { width:60px;height:60px;display:grid;place-items:center;border-radius:30px;background:var(--brand-navy);color:var(--text-inverse);flex-shrink:0; }
+.profile-person-copy { min-width:0;flex:1;display:flex;flex-direction:column;gap:2px; }
+.profile-person-copy h1 { overflow-wrap:anywhere; }
+.profile-edit { width:40px;height:40px;display:grid;place-items:center;border:1px solid var(--line-default);border-radius:20px;background:var(--bg-card);flex-shrink:0; }
+.profile-stats { width:100%;border:0;border-radius:24px;padding:20px;background:var(--brand-navy);color:var(--text-inverse);display:flex;flex-direction:column;gap:16px;text-align:left; }
+.profile-stats>span { width:100%; }
+.profile-stat-link { display:flex;align-items:center;gap:2px; }
+.profile-numbers { display:flex; }
+.profile-numbers>span { flex:1;min-width:0;display:flex;flex-direction:column;gap:2px; }
+.profile-alert-line { display:flex;gap:8px;align-items:center;border-radius:14px;padding:10px 12px;background:var(--profile-stat-highlight); }
+.profile-dot { width:8px;height:8px;flex-shrink:0;border-radius:50%;background:var(--state-warning-dot); }
+.profile-dot--success { background:var(--state-success); }
+.profile-group { display:flex;flex-direction:column;gap:10px; }
+.profile-text-action { border:0;padding:0;background:transparent;color:var(--brand-navy);display:flex;align-items:center;gap:4px; }
+.profile-current-car { display:flex;width:100%;gap:14px;align-items:center;padding:12px 16px 12px 12px;text-align:left;color:var(--text-primary); }
+.profile-brand { width:56px;height:56px;border-radius:16px;background:var(--bg-tint);display:grid;place-items:center;flex-shrink:0; }
+.profile-car-copy { flex:1;min-width:0;display:flex;flex-direction:column;gap:2px; }
+.profile-inline-status { display:flex;align-items:center;gap:6px; }
+.profile-list { padding:4px 16px; }
+.profile-row { display:flex;width:100%;align-items:center;gap:14px;padding:10px 0;text-align:left; }
+button.profile-row { background:transparent;border:0;color:var(--text-primary); }
+.profile-row:not(:last-child) { border-bottom:1px solid var(--line-default); }
+.profile-row-icon { display:grid;place-items:center;width:36px;height:36px;flex-shrink:0;border-radius:11px;background:var(--bg-tint); }
+.profile-row-icon--danger { background:var(--state-danger-soft); }
+.profile-row-title { flex:1;min-width:0; }
+.profile-row>.text-body-small { flex-shrink:0; }
+.profile-period { display:flex;gap:24px;justify-content:center;color:var(--text-tertiary); }
+.profile-period>span { display:flex;flex-direction:column;align-items:center;gap:6px; }
+.profile-period>span:after { content:'';display:block;width:28px;height:3px;border-radius:2px;background:transparent; }
+.profile-period-active { color:var(--text-primary); }
+.profile-period-active:after { background:var(--brand-navy)!important; }
+.profile-alert-chart { padding:20px;border-radius:24px;display:flex;flex-direction:column;gap:14px; }
+.profile-alert-count { display:flex;flex-direction:column;gap:2px; }
+.profile-alert-count>div { display:flex;gap:8px;align-items:baseline; }
+.profile-alert-count .text-heading-display { line-height:53px; }
+.profile-chart { position:relative;width:100%;overflow:hidden; }
+.profile-chart>div { position:absolute;top:0;left:0; }
+.profile-hours-chart { padding:20px;border-radius:24px;display:flex;flex-direction:column;gap:12px; }
+.profile-insights { display:flex;flex-direction:column;gap:10px; }
+.profile-insight { display:flex;align-items:center;gap:14px;padding:14px 16px 14px 14px;border-radius:18px; }
+.profile-insight-icon { width:40px;height:40px;border-radius:12px;background:var(--state-warning-soft);display:grid;place-items:center;flex-shrink:0; }
+.profile-garage-card { padding:18px;border-radius:24px;display:flex;flex-direction:column;gap:14px; }
+.profile-garage-card--current { border:2px solid var(--brand-navy); }
+.profile-garage-top { display:flex;align-items:center;gap:14px; }
+.profile-car-picture { width:110px;height:72px;background:var(--bg-tint);border-radius:16px;display:grid;place-items:center;flex-shrink:0; }
+.profile-garage-copy { display:flex;flex-direction:column;gap:3px;flex:1;min-width:0; }
+.profile-garage-actions { display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line-default);padding-top:12px;color:var(--brand-navy); }
+.profile-garage-actions .profile-inline-status { gap:6px; }
+.profile-search { position:relative; }
+.profile-search .input { padding-left:46px; }
+.profile-search>.profile-art { position:absolute;left:16px;top:18px;pointer-events:none; }
+.profile-scan { display:flex;align-items:center;gap:14px;padding:14px 16px 14px 14px;border-radius:18px; }
+.profile-scan-icon { width:44px;height:44px;background:var(--bg-tint);border-radius:14px;display:grid;place-items:center;flex-shrink:0; }
+.profile-popular { display:flex;flex-direction:column;gap:8px; }
+.profile-popular-list { padding:6px; }
+.profile-popular-car { display:flex;align-items:center;width:100%;gap:14px;padding:11px 14px 11px 12px;background:transparent;border:0;color:var(--text-primary);text-align:left; }
+.profile-make { width:40px;height:40px;background:var(--bg-field);border-radius:12px;display:grid;place-items:center;flex-shrink:0;color:var(--brand-navy); }
+.profile-popular-copy { display:flex;flex-direction:column;gap:1px;flex:1;min-width:0; }
+.profile-no-results { padding:16px; }
+.profile-notice { display:flex;gap:14px;align-items:flex-start;padding:16px;border-radius:18px;background:var(--state-warning-soft); }
+.profile-notice>div { display:flex;flex-direction:column;gap:4px;min-width:0;flex:1; }
+.profile-version { text-align:center; }

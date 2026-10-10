@@ -1,0 +1,10 @@
+import { Button, CarSide, TabBar } from '../../components';
+import { Art, DriveFrame, Glyph, Heading, useDriveNavigation } from './shared';
+import { useDemoLogo } from './DemoPanel';
+
+export type HomeProps = { carName?: string; initials?: string; recentTrip?: string; recentDetail?: string };
+export function Home({ carName = 'Perodua Myvi', initials = 'M', recentTrip = 'PJ → UM', recentDetail = '24 min · alert the whole way' }: HomeProps) {
+  const go = useDriveNavigation();
+  const logoTap = useDemoLogo();
+  return <DriveFrame className="drive-home" footer={<TabBar active="Home" onChange={tab => go(tab === 'Home' ? '/drive/home' : `/${tab.toLowerCase()}`)} />}><main className="drive-content drive-home__content"><div className="drive-home__top"><button className="drive-logo" aria-label="Dormathon logo" onClick={logoTap}><Art name="logo-lockup.svg" /></button><button className="drive-avatar text-body-strong" aria-label="Profile" onClick={() => go('/profile')}>{initials}</button></div><button className="drive-car-hero" onClick={() => go('/car')}><CarSide /><p className="text-title-medium">{carName}</p><div className="drive-car-status text-body-small-strong"><span><Art name="4b216.svg" />Ready to drive</span><span><Art name="6cb7a.svg" />1 thing to check</span></div></button><section className="drive-home__pitch"><Heading title="Stay awake on the road">Put your phone on the dash. If your eyes start to close, Dormathon wakes you up.</Heading><Button className="drive-start-button" label="Start drive watch" onClick={() => go('/drive/mount-your-phone')} /></section><section className="drive-recent"><h2 className="text-body-strong">Recent trips</h2><button className="drive-list-card drive-recent__card" onClick={() => go('/drive/trip-summary')}><div className="drive-card-icon drive-card-icon--success"><Glyph name="90ace.svg" /></div><div className="drive-card-copy"><p className="text-body-strong">{recentTrip}</p><p className="text-body-small">{recentDetail}</p></div><div className="drive-card-arrow"><Glyph name="24169.svg" size={18} /></div></button></section></main></DriveFrame>;
+}

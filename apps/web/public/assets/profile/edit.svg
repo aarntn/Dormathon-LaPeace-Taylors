@@ -1,0 +1,23 @@
+<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="18" height="18" fill="#1E1E1E"/>
+<g id="4 &#194;&#183; Profile">
+<path d="M-461 -190C-461 -191.105 -460.105 -192 -459 -192H2087C2088.1 -192 2089 -191.105 2089 -190V923C2089 924.105 2088.1 925 2087 925H-459C-460.105 925 -461 924.105 -461 923V-190Z" fill="#282828"/>
+<path d="M-459 -192V-191H2087V-192V-193H-459V-192ZM2089 -190H2088V923H2089H2090V-190H2089ZM2087 925V924H-459V925V926H2087V925ZM-461 923H-460V-190H-461H-462V923H-461ZM-459 925V924C-459.552 924 -460 923.552 -460 923H-461H-462C-462 924.657 -460.657 926 -459 926V925ZM2089 923H2088C2088 923.552 2087.55 924 2087 924V925V926C2088.66 926 2090 924.657 2090 923H2089ZM2087 -192V-191C2087.55 -191 2088 -190.552 2088 -190H2089H2090C2090 -191.657 2088.66 -193 2087 -193V-192ZM-459 -192V-193C-460.657 -193 -462 -191.657 -462 -190H-461H-460C-460 -190.552 -459.552 -191 -459 -191V-192Z" fill="white" fill-opacity="0.1"/>
+<g id="P1 Profile">
+<rect width="430" height="932" transform="translate(-381 -87)" fill="#FCFCFE"/>
+<g id="Content">
+<g id="Header">
+<g id="Edit profile">
+<rect x="-10.5" y="-10.5" width="39" height="39" rx="19.5" fill="white"/>
+<rect x="-10.5" y="-10.5" width="39" height="39" rx="19.5" stroke="#E8EAED"/>
+<g id="icon/edit">
+<g id="Group">
+<path id="Vector" d="M3 15H6L14.25 6.75L11.25 3.75L3 12V15Z" stroke="#282828" stroke-width="1.425" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>

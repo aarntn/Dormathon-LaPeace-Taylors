@@ -1,0 +1,182 @@
+/* Unbound values from Drive watch frames, kept as shared design tokens. */
+:root {
+  --map-turn-bg: #2b3446;
+  --map-turn-icon-bg: #3a4660;
+  --map-eta-bg: #121925;
+  --lost-icon-bg: rgb(240 178 62 / 0.16);
+  --alarm-icon-bg: rgb(255 255 255 / 0.2);
+  --map-callout-bg: rgb(11 18 32 / 0.92);
+  --drive-card-shadow: 0 6px 16px rgb(0 0 0 / 0.04);
+  --map-bubble-shadow: 0 6px 16px rgb(0 0 0 / 0.4);
+  --map-warning-shadow: 0 8px 24px rgb(0 0 0 / 0.35);
+}
+.drive-frame { min-height: 100dvh; font-optical-sizing: none; }
+.drive-frame .text-body-regular { font-optical-sizing: auto; }
+.drive-frame .app-frame__content { padding-top: 0; }
+.drive-frame h1, .drive-frame h2, .drive-frame p, .drive-demo p, .drive-demo h1 { margin: 0; }
+.drive-content { padding: max(62px, calc(env(safe-area-inset-top, 0px) + 8px)) 20px 24px; display: flex; flex-direction: column; align-items: stretch; }
+.drive-art { display: block; max-width: none; flex-shrink: 0; }
+.drive-glyph { display: inline-grid; place-items: center; flex-shrink: 0; }
+.drive-secondary { color: var(--drive-text-secondary); }
+.drive-warning { color: var(--state-warning); }
+.drive-danger { color: var(--state-danger); }
+.drive-heading { text-align: center; display: flex; flex-direction: column; gap: 8px; }
+.drive-heading p { color: var(--text-secondary); }
+.drive-heading--dark p { color: var(--drive-text-secondary); }
+.drive-setup { gap: 18px; }
+.drive-setup > .icon-button, .drive-summary > .icon-button { align-self: flex-start; }
+.drive-setup--dark { gap: 20px; }
+.drive-steps { display: flex; flex-direction: column; align-items: center; gap: 8px; color: var(--text-tertiary); }
+.drive-steps__bars { display: flex; width: 160px; gap: 6px; }
+.drive-steps__bars span { flex: 1; height: 4px; border-radius: 2px; background: var(--line-default); }
+.drive-steps__bars .complete { background: var(--brand-navy); }
+.drive-steps--dark { color: var(--drive-text-secondary); }
+.drive-steps--dark .complete { background: var(--drive-accent); }
+.drive-dashboard { height: 280px; position: relative; border-radius: 24px; overflow: hidden; background: var(--bg-tint); }
+.drive-tag { position: absolute; padding: 4px 9px; border-radius: 8px; }
+.drive-tag--best { left: 220px; top: 140px; background: var(--state-success); color: var(--text-inverse); }
+.drive-tag--vent { left: 120px; top: 168px; background: var(--state-warning-dot); }
+.drive-tag--low { left: 60px; top: 248px; background: var(--state-danger); color: var(--text-inverse); }
+.drive-mount-tips { display: flex; flex-direction: column; gap: 14px; padding: 2px 6px 0; }
+.drive-mount-tips > div { display: flex; gap: 14px; align-items: center; }
+.drive-tip-icon { width: 36px; height: 36px; border-radius: 11px; display: grid; place-items: center; background: var(--bg-tint); flex-shrink: 0; }
+.drive-face-camera { height: 330px; background: var(--drive-bg); border-radius: 24px; position: relative; overflow: hidden; }
+.drive-face-camera__guide { position: absolute; width: 150px; height: 196px; left: calc(50% - 75px); top: 86px; }
+.drive-face-camera__face { position: absolute; left: calc(50% + 91px); top: 96px; }
+.drive-face-camera__eyes { position: absolute; left: calc(50% + 103px); top: 156px; }
+.drive-face-camera__direction { position: absolute; left: calc(50% + 15px); top: 172px; }
+.drive-live-hint { position: absolute; top: 20px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 14px; background: var(--bg-card); color: var(--brand-navy); white-space: nowrap; }
+.drive-voice-chip { position: absolute; left: 16px; top: 287px; display: flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 10px; background: var(--drive-card); color: var(--drive-text-secondary); }
+.drive-live-checks { display: flex; flex-direction: column; gap: 8px; }
+.drive-live-check { display: flex; align-items: center; gap: 14px; padding: 12px 16px 12px 12px; border: 1px solid var(--line-default); border-radius: 16px; background: var(--bg-card); box-shadow: var(--drive-card-shadow); }
+.drive-live-check > div:last-child { display: flex; flex-direction: column; gap: 1px; }
+.drive-check-icon { width: 32px; height: 32px; border-radius: 10px; display: grid; place-items: center; flex-shrink: 0; }
+.drive-check-icon--success { background: var(--state-success-soft); }
+.drive-check-icon--warning { background: var(--state-warning-soft); }
+.button--waiting { background: var(--bg-field); color: var(--text-tertiary); }
+.drive-gauge { position: relative; height: 280px; overflow: hidden; }
+.drive-gauge__track { position: absolute; left: calc(50% - 130px); top: 10px; }
+.drive-gauge__level { position: absolute; top: 10px; left: calc(50% - 109.763px); }
+.drive-gauge__eyes { position: absolute; left: calc(50% - 75px); top: 70px; }
+.drive-gauge__title { position: absolute; top: 138px; left: 50%; transform: translateX(-50%); white-space: nowrap; }
+.drive-gauge__detail { position: absolute; top: 180px; left: 50%; transform: translateX(-50%); white-space: nowrap; color: var(--drive-text-secondary); }
+.drive-gauge--alert { height: 320px; }
+.drive-gauge--alert .drive-gauge__track, .drive-gauge--alert .drive-gauge__level { top: 20px; left: calc(50% - 140px); }
+.drive-gauge--alert .drive-gauge__eyes { top: 78px; left: calc(50% - 82.5px); }
+.drive-gauge--alert .drive-gauge__title { top: 148px; }
+.drive-gauge--alert .drive-gauge__detail { top: 206px; }
+.drive-gauge--tired { height: 272px; }
+.drive-gauge--tired .drive-gauge__level { left: 50%; }
+.drive-gauge--tired .drive-gauge__eyes { top: 66px; }
+.drive-gauge--tired .drive-gauge__title { top: 128px; }
+.drive-gauge--tired .drive-gauge__detail { top: 186px; }
+.drive-check-steps { display: flex; flex-direction: column; gap: 12px; padding: 18px; background: var(--drive-card); border-radius: 20px; }
+.drive-check-steps > div { display: flex; align-items: center; gap: 12px; }
+.drive-check-step { width: 24px; height: 24px; border-radius: 12px; background: var(--drive-line); flex-shrink: 0; display: grid; place-items: center; }
+.drive-check-step--done { background: var(--drive-accent); }
+.drive-check-step--current { background: transparent; border: 2px solid var(--drive-accent); }
+.drive-trip-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 20px; }
+.drive-trip-status { display: flex; align-items: center; gap: 8px; }
+.drive-alarm-status { display: flex; align-items: center; gap: 6px; color: var(--drive-text-secondary); }
+.drive-driving { padding-top: max(66px, calc(env(safe-area-inset-top, 0px) + 12px)); gap: 24px; }
+.drive-trip-stats { display: flex; align-items: center; padding: 20px; background: var(--drive-card); border-radius: 20px; }
+.drive-trip-stats > div { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.drive-trip-stats > div:last-child { padding-left: 20px; }
+.drive-trip-stats .text-label-small { color: var(--drive-text-secondary); }
+.drive-trip-stats__divider { width: 1px; height: 44px; background: var(--drive-line); }
+.drive-waze-card { display: flex; align-items: center; gap: 14px; padding: 14px 16px 14px 14px; border: 1px solid var(--drive-line); border-radius: 18px; color: var(--text-inverse); background: var(--drive-card); text-align: left; }
+.drive-waze-icon { width: 44px; height: 44px; flex-shrink: 0; border-radius: 14px; background: var(--drive-line); display: grid; place-items: center; }
+.drive-card-copy { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.drive-lost { padding-top: max(66px, calc(env(safe-area-inset-top, 0px) + 12px)); gap: 20px; }
+.drive-lost-icon { width: 88px; height: 88px; border-radius: 44px; align-self: center; background: var(--lost-icon-bg); display: grid; place-items: center; margin-top: 16px; }
+.drive-lost-camera { height: 190px; background: var(--drive-card); border-radius: 24px; position: relative; overflow: hidden; }
+.drive-lost-camera__guide { position: absolute; width: 110px; height: 144px; left: calc(50% - 55px); top: 30px; }
+.drive-lost-camera__face { position: absolute; left: calc(50% - 55px); top: -78px; }
+.drive-lost-camera .drive-live-hint { top: 141px; padding: 8px 12px; border-radius: 12px; }
+.drive-spoken { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: var(--drive-card); border-radius: 18px; }
+.drive-footer-note { text-align: center; margin-bottom: 14px !important; }
+.drive-lost .drive-heading { margin-top: 0; }
+.drive-tired { padding-top: max(66px, calc(env(safe-area-inset-top, 0px) + 12px)); gap: 18px; }
+.drive-rest-card { background: var(--bg-card); color: var(--text-primary); padding: 18px; border-radius: 24px; display: flex; flex-direction: column; gap: 14px; }
+.drive-rest-card__heading { display: flex; gap: 14px; align-items: center; }
+.drive-rest-card__heading > div:last-child { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.drive-rest-card__heading p { color: var(--text-secondary); }
+.drive-rest-card__icon { width: 46px; height: 46px; flex-shrink: 0; border-radius: 14px; background: var(--state-warning-soft); display: grid; place-items: center; }
+.drive-maps-hint { display: flex; align-items: center; justify-content: center; gap: 6px; color: var(--text-secondary); }
+.drive-alarm { background: var(--state-danger); }
+.drive-alarm__content { padding-top: max(126px, calc(env(safe-area-inset-top, 0px) + 72px)); gap: 20px; }
+.drive-alarm-icon { width: 96px; height: 96px; flex-shrink: 0; border-radius: 48px; background: var(--alarm-icon-bg); align-self: center; display: grid; place-items: center; }
+.drive-alarm-heading { display: flex; flex-direction: column; gap: 8px; text-align: center; }
+.drive-rest-card--alarm { padding: 20px; gap: 16px; }
+.drive-rest-card--alarm .drive-rest-card__icon { width: 48px; height: 48px; background: var(--state-danger-soft); }
+.drive-home__content { padding-top: max(66px, calc(env(safe-area-inset-top, 0px) + 12px)); gap: 20px; }
+.drive-home__top { display: flex; justify-content: space-between; align-items: center; height: 40.8px; }
+.drive-logo { border: 0; padding: 0; background: transparent; }
+.drive-avatar { width: 40px; height: 40px; border: 0; padding: 0; border-radius: 20px; background: var(--brand-navy); color: var(--text-inverse); display: grid; place-items: center; }
+.drive-car-hero { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 8px 0 0; background: transparent; border: 0; color: var(--text-primary); }
+.drive-car-hero .illustration { max-width: 100%; height: auto; }
+.drive-car-status { display: flex; gap: 14px; color: var(--text-secondary); }
+.drive-car-status > span { display: flex; align-items: center; gap: 6px; }
+.drive-car-status > span:last-child { color: var(--state-warning); }
+.drive-home__pitch { padding-top: 12px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.drive-start-button { width: 232px; height: 52px; }
+.drive-home .app-frame__footer { display: flex; justify-content: center; }
+.drive-recent { padding-top: 8px; display: flex; flex-direction: column; gap: 12px; }
+.drive-recent h2 { color: var(--text-secondary); }
+.drive-list-card { display: flex; align-items: center; gap: 14px; padding: 14px; border: 1px solid var(--line-default); border-radius: 18px; background: var(--bg-card); color: var(--text-primary); box-shadow: var(--drive-card-shadow); text-align: left; width: 100%; }
+.drive-recent__card { padding-right: 16px; }
+.drive-list-card .drive-card-copy > .text-body-small { color: var(--text-secondary); }
+.drive-card-icon { width: 44px; height: 44px; flex-shrink: 0; border-radius: 14px; display: grid; place-items: center; }
+.drive-card-icon--success { background: var(--state-success-soft); }
+.drive-card-icon--warning { background: var(--state-warning-soft); }
+.drive-card-icon--danger { background: var(--state-danger-soft); }
+.drive-card-arrow { width: 32px; height: 32px; flex-shrink: 0; border-radius: 16px; background: var(--bg-field); display: grid; place-items: center; }
+.drive-summary { gap: 20px; }
+.drive-chart { border: 1px solid var(--line-default); padding: 20px; border-radius: 20px; background: var(--bg-card); box-shadow: var(--drive-card-shadow); display: flex; flex-direction: column; gap: 14px; }
+.drive-chart__heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.drive-chart__heading > span { display: flex; gap: 6px; align-items: center; white-space: nowrap; }
+.drive-chart__bars { height: 80px; display: flex; align-items: flex-end; gap: 4px; }
+.drive-chart__bars > span { flex: 1; min-width: 0; border-radius: 3px; background: var(--state-success); }
+.drive-chart__bars > .warning { background: var(--state-warning-dot); }
+.drive-chart__bars > .danger { background: var(--state-danger); }
+.drive-chart__axis { display: flex; justify-content: space-between; color: var(--text-tertiary); }
+.drive-events { display: flex; flex-direction: column; gap: 10px; }
+.drive-event-title { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.drive-event-title p { color: var(--text-tertiary); }
+.drive-map .app-frame__content { padding: 0; }
+.drive-map__canvas { position: relative; height: max(650px, 100dvh); overflow: hidden; }
+.drive-map__art { position: absolute; left: calc(50% - 215px); top: 0; }
+.drive-map-turn { position: absolute; top: max(62px, calc(env(safe-area-inset-top, 0px) + 8px)); left: 16px; right: 16px; padding: 14px; display: flex; align-items: center; gap: 14px; border-radius: 20px; background: var(--map-turn-bg); }
+.drive-map-turn > div { display: flex; flex-direction: column; gap: 2px; }
+.drive-map-turn__icon { width: 48px; height: 48px; flex-shrink: 0; border-radius: 16px; display: grid; place-items: center; background: var(--map-turn-icon-bg); }
+.drive-map-eta { position: absolute; left: 0; right: 0; bottom: max(13px, env(safe-area-inset-bottom, 0px)); border-radius: 24px 24px 0 0; padding: 18px 24px 30px; display: flex; align-items: center; justify-content: space-between; gap: 12px; background: var(--map-eta-bg); }
+.drive-map-eta > div { display: flex; flex-direction: column; gap: 2px; }
+.drive-map-eta .text-numeric-large { color: var(--drive-accent); }
+.drive-map-close { width: 44px; height: 44px; border: 0; padding: 0; border-radius: 22px; display: grid; place-items: center; background: var(--drive-line); }
+.drive-map-bubble { position: absolute; top: 360px; right: 16px; width: 64px; height: 64px; border-radius: 32px; border: 3px solid var(--drive-accent); padding: 0; background: var(--drive-card); box-shadow: var(--map-bubble-shadow); display: grid; place-items: center; }
+.drive-map-bubble--warning { border-color: var(--state-warning-dot); }
+.drive-map-callout { position: absolute; right: 92px; top: 365px; padding: 10px 14px; border-radius: 14px; background: var(--map-callout-bg); display: flex; flex-direction: column; gap: 2px; }
+.drive-map-callout .text-label-small { color: var(--drive-text-secondary); }
+.drive-map-warning { position: absolute; top: max(62px, calc(env(safe-area-inset-top, 0px) + 8px)); left: 16px; right: 16px; padding: 16px; border-radius: 22px; background: var(--state-warning-soft); color: var(--text-primary); box-shadow: var(--map-warning-shadow); display: flex; flex-direction: column; gap: 14px; }
+.drive-map-warning__heading { display: flex; gap: 12px; align-items: center; }
+.drive-map-warning__heading > div { display: flex; flex: 1; min-width: 0; flex-direction: column; gap: 2px; }
+.drive-map-warning__heading p { color: var(--text-secondary); }
+.drive-map-warning__icon { width: 40px; height: 40px; border-radius: 20px; background: var(--bg-card); display: grid; place-items: center; flex-shrink: 0; }
+.drive-map-warning__actions { display: flex; gap: 8px; }
+.button--compact { height: 48px; border-radius: 14px; font-size: var(--body-strong-font-size); font-weight: var(--body-strong-font-weight); letter-spacing: var(--body-strong-letter-spacing); }
+.drive-map-warning__actions > .button:first-child { flex: 1; min-width: 0; }
+.button--transparent { background: transparent; border: 0; width: auto; }
+.drive-demo { width: min(390px, calc(100% - 40px)); max-height: calc(100dvh - 68px); border: 1px solid var(--line-default); border-radius: 24px; padding: 20px; color: var(--text-primary); background: var(--bg-screen); }
+.drive-demo::backdrop { background: var(--sheet-backdrop); }
+.drive-demo header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.drive-demo > p { color: var(--text-secondary); margin-bottom: 18px; }
+.drive-demo > div { display: flex; flex-direction: column; gap: 10px; }
+.drive-demo .button { white-space: normal; }
+.drive-pending { gap: 24px; }
+@media (max-width: 400px) {
+  .drive-content { padding-inline: 20px; }
+  .drive-chart__heading { align-items: flex-start; }
+  .drive-chart__heading h2 { max-width: 180px; }
+  .drive-maps-hint { align-items: flex-start; }
+  .drive-maps-hint p { text-align: center; }
+}

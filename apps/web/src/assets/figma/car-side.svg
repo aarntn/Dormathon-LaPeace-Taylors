@@ -1,0 +1,29 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="360" height="140" viewBox="0 0 360 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Art">
+<path id="Vector" d="M182 136C274.784 136 350 131.523 350 126C350 120.477 274.784 116 182 116C89.2162 116 14 120.477 14 126C14 131.523 89.2162 136 182 136Z" fill="#1B2A4E" fill-opacity="0.1"/>
+<path id="Vector_2" d="M20 92C20 79 29 71 45 69L103 60L145 30C154 23 165 20 178 20H236C252 20 265 24 276 33L310 61L335 65C346 67 351 74 351 85V98C351 104 348 107 342 107H27C23 107 20 104 20 100V92Z" fill="#1F2738"/>
+<path id="Vector_3" d="M152 38C159 33 167 31 177 31H235C247 31 258 34 267 41L290 60H131L152 38Z" fill="#C3CCD8"/>
+<g id="Vector_4">
+<path d="M211 31V60Z" fill="black"/>
+<path d="M211 31V60" stroke="#1F2738" stroke-width="6"/>
+</g>
+<g id="Vector_5">
+<path d="M134 84H272Z" fill="black"/>
+<path d="M134 84H272" stroke="#2E384B" stroke-width="2"/>
+</g>
+<g id="Vector_6">
+<path d="M318 77H336Z" fill="black"/>
+<path d="M318 77H336" stroke="#F4F6F9" stroke-width="5" stroke-linecap="round"/>
+</g>
+<g id="Vector_7">
+<path d="M24 80H35Z" fill="black"/>
+<path d="M24 80H35" stroke="#EF4F44" stroke-width="5" stroke-linecap="round"/>
+</g>
+<path id="Vector_8" d="M92 133C105.807 133 117 121.807 117 108C117 94.1929 105.807 83 92 83C78.1929 83 67 94.1929 67 108C67 121.807 78.1929 133 92 133Z" fill="#0E1117"/>
+<path id="Vector_9" d="M92 121C99.1797 121 105 115.18 105 108C105 100.82 99.1797 95 92 95C84.8203 95 79 100.82 79 108C79 115.18 84.8203 121 92 121Z" fill="#A7B0BA"/>
+<path id="Vector_10" d="M92 112C94.2091 112 96 110.209 96 108C96 105.791 94.2091 104 92 104C89.7909 104 88 105.791 88 108C88 110.209 89.7909 112 92 112Z" fill="#0E1117"/>
+<path id="Vector_11" d="M276 133C289.807 133 301 121.807 301 108C301 94.1929 289.807 83 276 83C262.193 83 251 94.1929 251 108C251 121.807 262.193 133 276 133Z" fill="#0E1117"/>
+<path id="Vector_12" d="M276 121C283.18 121 289 115.18 289 108C289 100.82 283.18 95 276 95C268.82 95 263 100.82 263 108C263 115.18 268.82 121 276 121Z" fill="#A7B0BA"/>
+<path id="Vector_13" d="M276 112C278.209 112 280 110.209 280 108C280 105.791 278.209 104 276 104C273.791 104 272 105.791 272 108C272 110.209 273.791 112 276 112Z" fill="#0E1117"/>
+</g>
+</svg>

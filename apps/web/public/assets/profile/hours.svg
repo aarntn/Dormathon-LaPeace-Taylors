@@ -1,0 +1,51 @@
+<svg width="348" height="56" viewBox="0 0 348 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="348" height="56" fill="#1E1E1E"/>
+<g id="4 &#194;&#183; Profile">
+<path d="M-611 -632.272C-611 -633.376 -610.105 -634.272 -609 -634.272H1937C1938.1 -634.272 1939 -633.376 1939 -632.272V480.728C1939 481.833 1938.1 482.728 1937 482.728H-609C-610.105 482.728 -611 481.833 -611 480.728V-632.272Z" fill="#282828"/>
+<path d="M-609 -634.272V-633.272H1937V-634.272V-635.272H-609V-634.272ZM1939 -632.272H1938V480.728H1939H1940V-632.272H1939ZM1937 482.728V481.728H-609V482.728V483.728H1937V482.728ZM-611 480.728H-610V-632.272H-611H-612V480.728H-611ZM-609 482.728V481.728C-609.552 481.728 -610 481.281 -610 480.728H-611H-612C-612 482.385 -610.657 483.728 -609 483.728V482.728ZM1939 480.728H1938C1938 481.281 1937.55 481.728 1937 481.728V482.728V483.728C1938.66 483.728 1940 482.385 1940 480.728H1939ZM1937 -634.272V-633.272C1937.55 -633.272 1938 -632.824 1938 -632.272H1939H1940C1940 -633.928 1938.66 -635.272 1937 -635.272V-634.272ZM-609 -634.272V-635.272C-610.657 -635.272 -612 -633.928 -612 -632.272H-611H-610C-610 -632.824 -609.552 -633.272 -609 -633.272V-634.272Z" fill="white" fill-opacity="0.1"/>
+<g id="P2 Driving stats">
+<rect width="430" height="932" transform="translate(-41 -529.272)" fill="#FCFCFE"/>
+<g id="Content">
+<g id="When you get tired" filter="url(#filter0_d_0_1)">
+<rect x="-21" y="-52" width="390" height="156" rx="24" fill="white"/>
+<rect x="-20.5" y="-51.5" width="389" height="155" rx="23.5" stroke="#E8EAED"/>
+<g id="Hours" clip-path="url(#clip0_0_1)">
+<rect id="Rectangle" y="40" width="14.5263" height="16" rx="3" fill="#DCE1EA"/>
+<rect id="Rectangle_2" x="18.5263" y="50" width="14.5263" height="6" rx="3" fill="#DCE1EA"/>
+<rect id="Rectangle_3" x="37.0526" y="50" width="14.5263" height="6" rx="3" fill="#DCE1EA"/>
+<rect id="Rectangle_4" x="55.5789" y="50" width="14.5263" height="6" rx="3" fill="#DCE1EA"/>
+<rect id="Rectangle_5" x="74.1053" y="40" width="14.5263" height="16" rx="3" fill="#DCE1EA"/>
+<rect id="Rectangle_6" x="92.6316" y="30" width="14.5263" height="26" rx="3" fill="#DCE1EA"/>
+<rect id="Rectangle_7" x="111.158" y="40" width="14.5263" height="16" rx="3" fill="#DCE1EA"/>
+<rect id="Rectangle_8" x="129.684" y="40" width="14.5263" height="16" rx="3" fill="#DCE1EA"/>
+<rect id="Rectangle_9" x="148.211" y="30" width="14.5263" height="26" rx="3" fill="#DCE1EA"/>
+<rect id="Rectangle_10" x="166.737" y="10" width="14.5263" height="46" rx="3" fill="#E8A317"/>
+<rect id="Rectangle_11" x="185.263" width="14.5263" height="56" rx="3" fill="#E8A317"/>
+<rect id="Rectangle_12" x="203.789" y="20" width="14.5263" height="36" rx="3" fill="#DCE1EA"/>
+<rect id="Rectangle_13" x="222.316" y="40" width="14.5263" height="16" rx="3" fill="#DCE1EA"/>
+<rect id="Rectangle_14" x="240.842" y="40" width="14.5263" height="16" rx="3" fill="#DCE1EA"/>
+<rect id="Rectangle_15" x="259.368" y="40" width="14.5263" height="16" rx="3" fill="#DCE1EA"/>
+<rect id="Rectangle_16" x="277.895" y="30" width="14.5263" height="26" rx="3" fill="#DCE1EA"/>
+<rect id="Rectangle_17" x="296.421" y="20" width="14.5263" height="36" rx="3" fill="#DCE1EA"/>
+<rect id="Rectangle_18" x="314.947" width="14.5263" height="56" rx="3" fill="#E8A317"/>
+<rect id="Rectangle_19" x="333.474" y="10" width="14.5263" height="46" rx="3" fill="#E8A317"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_0_1" x="-37" y="-62" width="422" height="188" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="6"/>
+<feGaussianBlur stdDeviation="8"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+</filter>
+<clipPath id="clip0_0_1">
+<rect width="348" height="56" fill="white"/>
+</clipPath>
+</defs>
+</svg>

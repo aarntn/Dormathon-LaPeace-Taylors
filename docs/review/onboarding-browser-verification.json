@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-10-10T07:00:07.941Z",
+  "screens": 13,
+  "widths": [
+    430,
+    390
+  ],
+  "workflow": true,
+  "timers": true,
+  "sheetDismissal": true,
+  "doubleDismissal": true,
+  "engineEditing": true,
+  "draftPersistence": true,
+  "safeAreaVerified": true,
+  "runtimeErrors": []
+}

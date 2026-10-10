@@ -1,0 +1,80 @@
+<svg width="356" height="44" viewBox="0 0 356 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="356" height="44" fill="#1E1E1E"/>
+<g id="5 &#194;&#183; Trips">
+<path d="M-117 -328C-117 -329.105 -116.105 -330 -115 -330H1451C1452.1 -330 1453 -329.105 1453 -328V785C1453 786.105 1452.1 787 1451 787H-115C-116.105 787 -117 786.105 -117 785V-328Z" fill="#444444"/>
+<path d="M-115 -330V-329H1451V-330V-331H-115V-330ZM1453 -328H1452V785H1453H1454V-328H1453ZM1451 787V786H-115V787V788H1451V787ZM-117 785H-116V-328H-117H-118V785H-117ZM-115 787V786C-115.552 786 -116 785.552 -116 785H-117H-118C-118 786.657 -116.657 788 -115 788V787ZM1453 785H1452C1452 785.552 1451.55 786 1451 786V787V788C1452.66 788 1454 786.657 1454 785H1453ZM1451 -330V-329C1451.55 -329 1452 -328.552 1452 -328H1453H1454C1454 -329.657 1452.66 -331 1451 -331V-330ZM-115 -330V-331C-116.657 -331 -118 -329.657 -118 -328H-117H-116C-116 -328.552 -115.552 -329 -115 -329V-330Z" fill="white" fill-opacity="0.1"/>
+<g id="T1 Trips">
+<rect width="430" height="932" transform="translate(-37 -225)" fill="#FCFCFE"/>
+<g id="Content">
+<g id="Your pattern" filter="url(#filter0_d_0_1)">
+<rect x="-17" y="-83" width="390" height="176" rx="18" fill="white"/>
+<rect x="-16.5" y="-82.5" width="389" height="175" rx="17.5" stroke="#E8EAED"/>
+<g id="Bars" clip-path="url(#clip0_0_1)">
+<g id="Col" clip-path="url(#clip1_0_1)">
+<rect id="Rectangle" y="40" width="26" height="4" rx="2" fill="#C9D0DD"/>
+</g>
+<g id="Col_2" clip-path="url(#clip2_0_1)">
+<rect id="Rectangle_2" x="47.1429" y="40" width="26" height="4" rx="2" fill="#C9D0DD"/>
+</g>
+<g id="Col_3" clip-path="url(#clip3_0_1)">
+<rect id="Rectangle_3" x="94.2857" y="35" width="26" height="9" rx="4.5" fill="#C9D0DD"/>
+</g>
+<g id="Col_4" clip-path="url(#clip4_0_1)">
+<rect id="Rectangle_4" x="141.429" y="40" width="26" height="4" rx="2" fill="#C9D0DD"/>
+</g>
+<g id="Col_5" clip-path="url(#clip5_0_1)">
+<rect id="Rectangle_5" x="188.571" y="35" width="26" height="9" rx="4.5" fill="#C9D0DD"/>
+</g>
+<g id="Col_6" clip-path="url(#clip6_0_1)">
+<rect id="Rectangle_6" x="235.714" y="35" width="26" height="9" rx="4.5" fill="#E8A317"/>
+</g>
+<g id="Col_7" clip-path="url(#clip7_0_1)">
+<rect id="Rectangle_7" x="282.857" width="26" height="44" rx="6" fill="#E8A317"/>
+</g>
+<g id="Col_8" clip-path="url(#clip8_0_1)">
+<rect id="Rectangle_8" x="330" y="35" width="26" height="9" rx="4.5" fill="#E8A317"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_0_1" x="-33" y="-93" width="422" height="208" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="6"/>
+<feGaussianBlur stdDeviation="8"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+</filter>
+<clipPath id="clip0_0_1">
+<rect width="356" height="44" fill="white"/>
+</clipPath>
+<clipPath id="clip1_0_1">
+<rect width="26" height="4" fill="white" transform="translate(0 40)"/>
+</clipPath>
+<clipPath id="clip2_0_1">
+<rect width="26" height="4" fill="white" transform="translate(47.1429 40)"/>
+</clipPath>
+<clipPath id="clip3_0_1">
+<rect width="26" height="9" fill="white" transform="translate(94.2857 35)"/>
+</clipPath>
+<clipPath id="clip4_0_1">
+<rect width="26" height="4" fill="white" transform="translate(141.429 40)"/>
+</clipPath>
+<clipPath id="clip5_0_1">
+<rect width="26" height="9" fill="white" transform="translate(188.571 35)"/>
+</clipPath>
+<clipPath id="clip6_0_1">
+<rect width="26" height="9" fill="white" transform="translate(235.714 35)"/>
+</clipPath>
+<clipPath id="clip7_0_1">
+<rect width="26" height="44" fill="white" transform="translate(282.857)"/>
+</clipPath>
+<clipPath id="clip8_0_1">
+<rect width="26" height="9" fill="white" transform="translate(330 35)"/>
+</clipPath>
+</defs>
+</svg>
