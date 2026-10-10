@@ -59,16 +59,16 @@ create index on public.sms_deliveries(contact_id);
 create index on public.sms_deliveries(alert_id);
 alter table public.trip_points enable row level security;
 create policy owner on public.trip_points for all to authenticated using (
-  exists (select 1 from public.trips t where t.id=trip_id and t.user_id=(select auth.uid()))
-) with check (exists (select 1 from public.trips t where t.id=trip_id and t.user_id=(select auth.uid())));
+  exists (select 1 from public.trips t where t.id=trip_points.trip_id and t.user_id=(select auth.uid()))
+) with check (exists (select 1 from public.trips t where t.id=trip_points.trip_id and t.user_id=(select auth.uid())));
 alter table public.emergency_locations enable row level security;
 create policy owner on public.emergency_locations for all to authenticated using (
-  exists (select 1 from public.emergency_alerts a join public.trips t on t.id=a.trip_id where a.id=alert_id and t.user_id=(select auth.uid()))
-) with check (exists (select 1 from public.emergency_alerts a join public.trips t on t.id=a.trip_id where a.id=alert_id and t.user_id=(select auth.uid())));
+  exists (select 1 from public.emergency_alerts a join public.trips t on t.id=a.trip_id where a.id=emergency_locations.alert_id and t.user_id=(select auth.uid()))
+) with check (exists (select 1 from public.emergency_alerts a join public.trips t on t.id=a.trip_id where a.id=emergency_locations.alert_id and t.user_id=(select auth.uid())));
 alter table public.sms_deliveries enable row level security;
-create policy owner on public.sms_deliveries for all to authenticated using (user_id=(select auth.uid())) with check (
-  user_id=(select auth.uid()) and exists (select 1 from public.emergency_contacts c where c.id=contact_id and c.user_id=(select auth.uid()))
-  and (alert_id is null or exists (select 1 from public.emergency_alerts a join public.trips t on t.id=a.trip_id where a.id=alert_id and t.user_id=(select auth.uid())))
+create policy owner on public.sms_deliveries for all to authenticated using (sms_deliveries.user_id=(select auth.uid())) with check (
+  sms_deliveries.user_id=(select auth.uid()) and exists (select 1 from public.emergency_contacts c where c.id=sms_deliveries.contact_id and c.user_id=(select auth.uid()))
+  and (sms_deliveries.alert_id is null or exists (select 1 from public.emergency_alerts a join public.trips t on t.id=a.trip_id where a.id=sms_deliveries.alert_id and t.user_id=(select auth.uid())))
 );
 revoke all on public.trip_points,public.emergency_locations,public.sms_deliveries from anon;
 grant select,insert,update,delete on public.trip_points,public.emergency_locations,public.sms_deliveries to authenticated;

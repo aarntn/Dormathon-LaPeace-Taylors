@@ -73,25 +73,25 @@ with check (
 );
 alter table public.trip_events enable row level security;
 create policy owner on public.trip_events for all to authenticated using (
-  exists (select 1 from public.trips t where t.id=trip_id and t.user_id=(select auth.uid()))
-) with check (exists (select 1 from public.trips t where t.id=trip_id and t.user_id=(select auth.uid())));
+  exists (select 1 from public.trips t where t.id=trip_events.trip_id and t.user_id=(select auth.uid()))
+) with check (exists (select 1 from public.trips t where t.id=trip_events.trip_id and t.user_id=(select auth.uid())));
 alter table public.trip_features enable row level security;
 create policy owner on public.trip_features for all to authenticated using (
-  exists (select 1 from public.trips t where t.id=trip_id and t.user_id=(select auth.uid()))
-) with check (exists (select 1 from public.trips t where t.id=trip_id and t.user_id=(select auth.uid())));
+  exists (select 1 from public.trips t where t.id=trip_features.trip_id and t.user_id=(select auth.uid()))
+) with check (exists (select 1 from public.trips t where t.id=trip_features.trip_id and t.user_id=(select auth.uid())));
 alter table public.emergency_alerts enable row level security;
 create policy owner on public.emergency_alerts for all to authenticated using (
-  exists (select 1 from public.trips t where t.id=trip_id and t.user_id=(select auth.uid()))
-) with check (exists (select 1 from public.trips t where t.id=trip_id and t.user_id=(select auth.uid()))
-  and exists (select 1 from public.emergency_contacts c where c.id=contact_id and c.user_id=(select auth.uid())));
+  exists (select 1 from public.trips t where t.id=emergency_alerts.trip_id and t.user_id=(select auth.uid()))
+) with check (exists (select 1 from public.trips t where t.id=emergency_alerts.trip_id and t.user_id=(select auth.uid()))
+  and exists (select 1 from public.emergency_contacts c where c.id=emergency_alerts.contact_id and c.user_id=(select auth.uid())));
 alter table public.car_checks enable row level security;
 create policy owner on public.car_checks for all to authenticated using (
-  exists (select 1 from public.cars c where c.id=car_id and c.user_id=(select auth.uid()))
-) with check (exists (select 1 from public.cars c where c.id=car_id and c.user_id=(select auth.uid())));
+  exists (select 1 from public.cars c where c.id=car_checks.car_id and c.user_id=(select auth.uid()))
+) with check (exists (select 1 from public.cars c where c.id=car_checks.car_id and c.user_id=(select auth.uid())));
 alter table public.findings enable row level security;
 create policy owner on public.findings for all to authenticated using (
-  exists (select 1 from public.car_checks k join public.cars c on c.id=k.car_id where k.id=check_id and c.user_id=(select auth.uid()))
-) with check (exists (select 1 from public.car_checks k join public.cars c on c.id=k.car_id where k.id=check_id and c.user_id=(select auth.uid())));
+  exists (select 1 from public.car_checks k join public.cars c on c.id=k.car_id where k.id=findings.check_id and c.user_id=(select auth.uid()))
+) with check (exists (select 1 from public.car_checks k join public.cars c on c.id=k.car_id where k.id=findings.check_id and c.user_id=(select auth.uid())));
 
 create index on public.emergency_contacts(user_id);
 create index on public.cars(user_id);
