@@ -6,6 +6,7 @@ export type ReportItem = {
   target: 'car-report' | 'brake-check' | 'warning-light-result' | 'engine-sound-check';
 };
 const rank: Record<Urgency, number> = { monitor: 0, soon: 1, stop: 2 };
+const urgencyWords: Record<Urgency, string> = { monitor: 'Monitor', soon: 'Book service soon', stop: 'Stop safely now' };
 // Typical Malaysian workshop ranges. They are a guide only, never a quote.
 const costs = { battery: [200, 350], brakes: [120, 250] } as const;
 const money = (low: number, high: number) => `RM ${low}–${high}`;
@@ -33,7 +34,7 @@ export function buildReport(dashboard?: DashboardResult, startup?: StartupResult
     if (!findings.length) items.push({ key: 'dashboard', title: 'Dashboard lights', description: 'Monitor · no lights at your last scan',
       urgency: 'monitor', label: '', tone: 'success', icon: '90ace.svg', target: 'warning-light-result' });
     findings.forEach((finding, index) => items.push({ key: `dashboard-${finding.id ?? index}`, title: finding.label,
-      description: `${finding.urgency_label ?? (finding.urgency === 'monitor' ? 'Monitor' : 'Check')} · ${firstSentence(finding.advice)}`,
+      description: `${finding.urgency_label ?? urgencyWords[finding.urgency]} · ${firstSentence(finding.advice)}`,
       urgency: finding.urgency, label: '', tone: finding.urgency === 'monitor' ? 'success' : 'warning',
       icon: finding.urgency === 'monitor' ? '90ace.svg' : 'de6af.svg', target: 'warning-light-result' }));
   }

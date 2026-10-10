@@ -53,6 +53,10 @@ Public account endpoints are `GET /auth/config`, `POST /auth/signup`, `/auth/tok
 
 GPS batches accept up to 500 points with timezone-aware timestamps and speeds in km/h. Duplicate point/event requests are ignored. Flush pending GPS batches before ending a trip; ended trips reject updates. Polylines use `[latitude, longitude]`, sorted by timestamp. Distance sums GPS segments; average speed divides distance by total elapsed time, including stops. GPS accuracy/filtering belongs to the phone hooks. Passenger mode ignores face features/monitoring events, rejects escalation and continues recording GPS/hard brakes.
 
+## Standalone demo server
+
+`uvicorn backend.app.standalone:app --port 8000` runs the whole API with **no Supabase and no Twilio**, for demonstrations. Sign-up, sign-in, refresh and sign-out are answered in-process, data is in memory, and a ready account `demo@buckl.test` / `buckl-demo` is rebuilt at every start with the seed data below. Emergency and test texts are simulated (printed, never sent), and car checks use the scripted demo results. It is implemented by handing `create_app` an in-process stand-in for Supabase Auth and Twilio (`app/standalone.py`), so the real API code paths are the ones exercised. It must not be used for real drivers. In Docker, set `BUCKL_ASGI_APP=backend.app.standalone:app`.
+
 ## Demo mode and seed data
 
 `DEMO_MODE=1` makes `/car-checks/dashboard` and `/car-checks/startup-audio` return **scripted, clearly labelled** results (`stub: true`). An optional `demo_scenario` form field chooses one: dashboard `overheating` (default), `battery`, `oil` or `unreadable`; start-up `slow`, `normal` or `quiet`. The scenarios live in `app/demo.py` and are ignored when demo mode is off. Without demo mode a dashboard photo returns no findings and nothing is saved, because no dashboard model is connected. `GET /health` reports `demo_mode`.

@@ -16,4 +16,4 @@ COPY --from=web-build /build/dist /app/web
 RUN useradd --create-home buckl && chown -R buckl:buckl /app
 USER buckl
 EXPOSE 8080
-CMD ["sh", "-c", "exec uvicorn backend.app.main:app --host 0.0.0.0 --port ${PORT:-8080}"]
+CMD ["sh", "-c", "exec uvicorn ${BUCKL_ASGI_APP:-backend.app.main:app} --host 0.0.0.0 --port ${PORT:-8080}"]

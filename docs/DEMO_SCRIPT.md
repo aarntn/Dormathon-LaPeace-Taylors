@@ -1,16 +1,47 @@
 # BUCKL demo script and checklist
 
-A 4 to 5 minute run-of-show for the four moments, the setup it needs, and a backup for every step that depends on a camera, a microphone or a signal. For what is real and what is scripted, see [What is real](#what-is-real-and-what-is-scripted).
+A 4 to 5 minute run-of-show for the four moments, the setup it needs, and a backup for every step that depends on a camera, a microphone or a signal. For what is real and what is scripted, see [What is real](#7-what-is-real-and-what-is-scripted).
 
 ## 1. Set up once, the day before
 
-### 1.1 Turn demo mode on
+**Pick one path.**
+
+| Path | Needs | Good for |
+|---|---|---|
+| **A. Standalone (recommended for a stage demo)** | Nothing: no Supabase, no Twilio, no email confirmation | A full, repeatable user flow on one laptop or one Render service. Data is in memory and resets when the server restarts. |
+| **B. Real accounts** | Supabase project and a confirmed account | Showing that accounts and saved data are real. |
+
+### 1.0 Path A: standalone
+
+```powershell
+# terminal 1, from the repository root (Python 3.11 or newer, requirements installed)
+python -m uvicorn backend.app.standalone:app --port 8000
+# terminal 2
+cd apps/web; npm ci; npm run build; npm run preview
+```
+
+Open the printed `https://...:4173` address. **Sign in as `demo@buckl.test` with password `buckl-demo`**: the account is already filled with a car, a contact and six weeks of trips. Or sign up as anyone to show the full onboarding from empty.
+
+What standalone does and does not do:
+
+- Accounts, sign-in and sign-out work inside the server. No email is sent or needed.
+- Car checks always use the scripted, labelled demo results chosen in the hidden panel.
+- **Emergency and test texts are simulated.** They print in the server terminal as `[simulated SMS to ...]` and the app reports them as submitted. Nothing leaves the machine.
+- Workshops, rest stops and routes still use the real OpenStreetMap services when you are online.
+- Everything resets when the server restarts, and the demo account is rebuilt.
+- It is for demonstrations only. Do not use it for real drivers: the normal server still refuses to run without Supabase.
+
+**On Render:** set the environment variable `BUCKL_ASGI_APP=backend.app.standalone:app` and you can leave the Supabase and Twilio variables empty. A free service sleeps, so open it once a few minutes before you present.
+
+Then skip to [1.3](#13-rehearse-on-the-demo-phone). The rest of this section is path B.
+
+### 1.1 Path B: turn demo mode on
 
 On the deployed service, set the environment variable **`DEMO_MODE=1`** (it is already in `render.yaml`). Open `<service url>/health` and check it says `"demo_mode": true`.
 
 Demo mode lets the hidden panel choose what the next dashboard scan and start-up check return. Every such result is labelled a demo in the app. With demo mode **off**, a dashboard photo finds nothing and shows "Couldn't read that light", because no dashboard model is connected. Turn demo mode off for anything that is not a presentation.
 
-### 1.2 Create and fill the demo account
+### 1.2 Path B: create and fill the demo account
 
 1. In the app, sign up with a real email address you control, confirm it, and finish onboarding (any car, any contact). Do not add a real emergency number you do not want texted.
 2. Fill the account with believable history. From the repository root:

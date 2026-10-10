@@ -382,7 +382,7 @@ def create_app(*, settings=None, store=None, http=None, clock=None):
             except httpx.HTTPError as error:
                 raise HTTPException(503, 'Photo upload failed') from error
         finding = {'label': scripted['label'], 'urgency': scripted['urgency'], 'urgency_label': URGENCY[scripted['urgency']],
-                   'advice': scripted['advice'] + ' This is a demo finding until the model is available.', 'confidence': None, 'photo_url': photo_path}
+                   'advice': scripted['advice'], 'confidence': None, 'photo_url': photo_path}
         check = ctx.repo.insert('car_checks', {'car_id': str(car_id), 'at': clock().isoformat(), 'kind': 'dashboard', 'result': {'stub': True}})
         ctx.repo.insert('findings', {'check_id': check['id'], **{k: v for k, v in finding.items() if k != 'urgency_label'}})
         return {'id': check['id'], 'findings': [finding], 'stub': True}

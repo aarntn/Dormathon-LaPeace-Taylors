@@ -62,7 +62,7 @@ def test_demo_scenarios_change_the_finding(scenario, urgency):
     client, car = make_client(True)
     finding = scan(client, car, scenario).json()['findings'][0]
     assert finding['urgency'] == urgency
-    assert finding['advice'].endswith('This is a demo finding until the model is available.')
+    assert finding['advice'] and 'demo finding' not in finding['advice']  # the app labels the result a demo itself
 
 
 def test_unreadable_scenario_returns_no_findings_and_is_not_saved():

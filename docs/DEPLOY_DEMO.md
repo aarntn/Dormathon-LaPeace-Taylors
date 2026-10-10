@@ -20,6 +20,10 @@ This project deploys as one Render web service. Render builds the Vite UI and se
 
 The live app is the service URL. Sign up, add a car and emergency contact, then demonstrate the pre-drive check, drive watch and car checks.
 
+## No accounts needed: standalone demo
+
+For a stage demo you do not need Supabase or Twilio at all. Set the environment variable `BUCKL_ASGI_APP=backend.app.standalone:app` on the Render service. The server then answers sign-in itself, keeps data in memory, rebuilds a ready-made account (`demo@buckl.test`, password `buckl-demo`) on every start, and **simulates** emergency texts (printed in the log, never sent). It is for demonstrations only. See [DEMO_SCRIPT.md](DEMO_SCRIPT.md).
+
 ## Demo mode and demo data
 
 - `render.yaml` sets **`DEMO_MODE=1`**. With it, the hidden demo panel (triple-tap the logo) can choose what the next dashboard scan and start-up check return, and every such result is labelled a demo. Remove it, or set it to `0`, for anything that is not a presentation: a dashboard photo then finds nothing.

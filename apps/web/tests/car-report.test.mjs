@@ -19,6 +19,10 @@ test('a healthy report has no estimate and no attention items', () => {
   assert.equal(report.estimate, undefined);
   assert.ok(report.items.every(item => item.tone === 'success'));
 });
+test('a saved finding without a label still says what to do', () => {
+  const item = buildReport({ id: 'd', findings: [{ label: 'Oil', urgency: 'stop', advice: 'Pull over. Wait.', confidence: null, photo_url: null }], stub: false }).items[0];
+  assert.equal(item.description, 'Stop safely now · Pull over.');
+});
 test('an empty dashboard scan reads as no lights, and no data gives an empty report', () => {
   assert.equal(buildReport({ id: 'd', findings: [], stub: false }).items[0].description, 'Monitor · no lights at your last scan');
   assert.equal(buildReport().items.length, 0);
