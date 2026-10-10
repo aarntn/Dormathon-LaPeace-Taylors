@@ -1,8 +1,10 @@
-# BUCKL API — Prompt 4c
+# BUCKL API
 
-FastAPI readiness, trips, emergency texts, maps and car reports, with typed functions in `apps/web/src/api.ts`.
+FastAPI service for readiness scoring, trips, emergency texts, maps and car reports. The web app calls it through typed functions in `apps/web/src/api.ts`. For how it fits with the rest of the system, see [docs/ARCHITECTURE.md](../docs/ARCHITECTURE.md).
 
-The repository had no Prompt 4 backend/schema. [schema.sql](schema.sql) supplies the original baseline with `low/raised/high` and `severity`. [002_update.sql](migrations/002_update.sql) applies the catch-up in place. The SQL has **not been applied to a live Supabase project**.
+**Readiness model.** `POST /predrive` scores the check with a logistic regression whose weights are in `app/readiness_model.json`. It was trained in [`ml/readiness`](../ml/readiness/README.md) on simulated drivers, and training and serving share the feature builder in `app/readiness.py`.
+
+[schema.sql](schema.sql) is the baseline schema (readiness `low/raised/high` and finding `severity`). [002_update.sql](migrations/002_update.sql) brings it to the current model. The SQL has **not been applied to a live Supabase project** by the build scripts here, so run [verify_002.sql](migrations/verify_002.sql) after you apply it.
 
 ## Database setup
 
@@ -26,7 +28,7 @@ Copy-Item backend/.env.example backend/.env
 backend/.venv/Scripts/python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000 --env-file backend/.env
 ```
 
-Docs: http://127.0.0.1:8000/docs. With Vite running: https://172.20.10.4:5173/api/docs on the same Wi-Fi. Vite proxies `/api` to the loopback backend; phone requests remain HTTPS. The Wi-Fi IP may change. Relative Swagger URLs support either location.
+Docs: http://127.0.0.1:8000/docs. With Vite running, the same docs are at `https://<your-LAN-address>:5173/api/docs`. Vite proxies `/api` to the loopback backend, and phone requests remain HTTPS. Relative Swagger URLs support either location.
 
 Business endpoints require `Authorization: Bearer <Supabase access token>`. `/docs`, `/openapi.json`, `/redoc` and `/health` are public. Tokens are verified through Supabase `/auth/v1/user`; locally decoded JWT claims are never trusted. See [Supabase token validation](https://supabase.com/docs/reference/python/auth-getuser).
 
@@ -43,7 +45,7 @@ Production frontend deployment needs a same-origin `/api` reverse proxy or an ex
 - Car: multipart `POST /car-checks/dashboard` (`car_id`, `photo`) and `/startup-audio` (`car_id`, `audio`), `GET /brakes/{car_id}`, `/cars/{id}/report`.
 - Maps: `GET /workshops?lat=&lng=&service=`, `/rest-stops?lat=&lng=`, `/route-options?from=LAT,LNG&to=LAT,LNG`.
 
-`api.ts` covers every route, retrieves the current token per request and preserves structured errors. Account, readiness, drive and trip screens now consume the API. Remaining car/prototype wiring and live verification are tracked in [integration progress](../docs/review/live-integration-progress.md).
+`api.ts` covers every route, retrieves the current token per request and preserves structured errors. Account, readiness, drive and trip screens now consume the API. Car checks, workshops and the report are wired to the API as well. Live verification against real services is still to do.
 
 Public account endpoints are `GET /auth/config`, `POST /auth/signup`, `/auth/token` (password or refresh grant) and `/auth/logout` (requires Bearer). They proxy Supabase Auth using the publishable key and return no-store responses. Email confirmation never invents a session; accounts without a saved car return to onboarding after sign-in.
 

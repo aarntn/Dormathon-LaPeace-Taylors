@@ -1,71 +1,124 @@
-# Dormathon web
+# BUCKL web app
 
-React + Vite + TypeScript mobile-first app. See [AGENTS.md](../../AGENTS.md) for the shared brief.
+The mobile-first React app that drivers open in their phone browser. React 19, Vite 7, TypeScript, Tailwind CSS 4, React Router 7, Framer Motion.
 
-From this folder:
+Start with the [root README](../../README.md) for the product, and [docs/ARCHITECTURE.md](../../docs/ARCHITECTURE.md) for how the pieces fit. This page is the working guide for this folder.
+
+## Run it
+
+You need Node 22.
 
 ```powershell
+cd apps/web
 npm ci
 npm run dev
 ```
 
-Vite serves HTTPS on port 5173 and listens on the LAN. Open the printed network URL followed by `/components` on a phone connected to the same Wi-Fi or hotspot. The development certificate is self-signed; accept the development certificate in your browser. Camera testing in later prompts requires the phone browser to treat this connection as a secure context; some phones require explicitly trusting the certificate. Camera features are not part of Prompt 1.
+Vite serves **HTTPS** on port 5173 and listens on the LAN, because browsers only give a page camera, microphone and motion access on a secure origin. Open the printed network address on a phone on the same Wi-Fi and accept the self-signed certificate. `/api` is proxied to `http://127.0.0.1:8000`, so start the API too (see [`backend/README.md`](../../backend/README.md)) for sign-in and saved data.
 
-- `/components`: interactive, phone-width component gallery, all colours and Inter text styles.
-- `/components/canvas`: source Components frame at its original 1600 × 1000 dimensions, for desktop comparison. The fake status bars are intentionally omitted.
-- `/components/preview/push`, `/fade`, `/tab`, `/sheet`: transition and pinned-footer checks. Open the sheet from the gallery to test its retained background.
+| Script | Does |
+|---|---|
+| `npm run dev` | Dev server with hot reload (HTTPS, port 5173) |
+| `npm run build` | Type check (`tsc -b`), production build, then the **offline cache manifest** (`postbuild`) |
+| `npm run preview` | Serve the built `dist` (HTTPS) |
+| `npm run tokens` | Regenerate `src/styles/tokens.css` from `design/figma-tokens.json` |
+| `npm test` | 50 unit tests with `node --test` (no browser, no extra dependency) |
 
-```powershell
-npm run tokens
-npm test
-npm run build
-node scripts/browser-review.mjs
+## Folder map
+
+```text
+src/
+  main.tsx, App.tsx       providers, route table, page transitions, service worker
+  api.ts                  typed client: one function per backend route
+  routing/                route metadata (transition kind) and transition variants
+  components/             Figma components (Button, IconButton, TabBar, Input, Option, BrandMark, AppFrame)
+    motion/               animated pieces (dots, rings, scan line, tap dot, waveform) and microphone meter
+  eyewatch/               the drowsiness engine, MediaPipe worker, alarm and voice, the session that ties them to the camera
+  integration/            account and data layer: auth.ts, AppData, useResource, useTripSummaries, RouteTrace
+  screens/
+    onboarding/           15 screens, /onboarding/*
+    drive/                Home, readiness check, route, mounting, driving states, emergency, trip summary
+    car/                  Car check, scan a warning light, battery check, brake check, report, workshops
+    trips/                Trips, When you get tired, Late-drive heads-up
+    profile/              Profile, stats, cars, add a car, privacy, emergency contact, help and legal pages
+  styles/                 tokens.css (generated), app.css, and one stylesheet per section
+design/                   Figma exports: tokens, prototype links, frame source text
+public/                   fonts, eye-watch model and WASM, section assets (original Figma SVGs)
+scripts/                  token generator, offline cache builder, browser checks, comparison pages
+tests/                    unit tests
 ```
 
-The browser review uses installed Chrome or Edge, a temporary profile and a loopback preview of `dist`. It adds no package dependency. Set `DORMATHON_CHROME` to a Chromium executable if it is installed elsewhere. Screenshots and verification results go to `docs/review`.
+## How a screen is built
 
-Tailwind 4 uses the Vite integration and `tailwind.config.mjs` to expose all Dormathon colour names (`bg-bg-screen`, `text-brand-navy`) and text styles (`text-heading-large`, `text-body-small-strong`). `design/figma-tokens.json` is the checked-in Figma MCP export; `npm run tokens` regenerates `src/styles/tokens.css` from it. Refresh the source metadata through Figma MCP before regenerating when the design changes.
+1. **Read the Figma frame** with the Figma MCP (design context and screenshot). The frame name is the screen name (`C3 Warning light result`).
+2. **Reuse** a Figma component or an existing section helper before writing markup. Use token classes (`text-body-small`, `bg-bg-card`) and CSS variables, never raw colours or sizes.
+3. **Use exported SVGs** from `public/assets/<section>` in the same slot and at the same size. Do not redraw them.
+4. **Keep screens thin.** Read from a provider, render, and call a function. Timers, fetches and sensor handling live in services or providers.
+5. **Check it** at 430, 390 and 360 px for horizontal overflow, then run the section's browser check.
 
-The Figma component props are preserved: Button `style`/`label`, IconButton `icon`/`theme`, TabBar `active`, Input `state`/`text`, Option `state`/`title`/`description`, BrandMark `theme` or `version`. Option works uncontrolled by default; supply `state` plus `onChange` to control it. TabBar delegates navigation through `onChange`.
+### Rules that apply everywhere
 
-SVGs are original local Figma exports. Inter is served locally under the included SIL Open Font Licence.
+- Face video stays on the phone. Audio is recorded only during the start-up check. A dashboard photo is uploaded only when the user takes it.
+- Location goes to the emergency contact only after the countdown ends.
+- The emergency countdown can always be cancelled. Never claim a medical or vehicle diagnosis. Say "possible" or "may".
+- Demo shortcuts live in the hidden panel (**triple-tap the logo**), never on the real UI.
+- Sample values from Figma appear only in a `?preview` URL or the hidden demo. A real account shows real data or an honest empty state.
+- Ask before adding a dependency.
 
-Drive watch is the first implemented section of Prompt 2. Open `/drive/home` (also the default `/`) and follow setup to Driving. Triple-tap the Home logo, or activate it three times with Enter, to open the hidden demo panel. The maps logo also supports this gesture. Camera, spoken prompts and alarm audio are now live through the eye-watch session. Real maps hand-off is a subsequent build step; idle design previews still use typed props with Figma sample values.
+## Routes
 
-All eleven routes are declared in `src/screens/drive/routes.ts`. Maps views 05c and 05d are intentionally skipped. Trips and Profile destinations are implemented. The user approved showing the existing hidden warning content in Getting tired (Figma node 39:973).
+| Section | Entry | Notes |
+|---|---|---|
+| Onboarding | `/onboarding/splash` | `?preview` pauses the timers and shows sample content |
+| Drive | `/drive/home` (also `/`) | Start from Home. The readiness check comes before the route and mount screens |
+| Car | `/car` or `/car/car-check` | `scan-a-warning-light` and `reading-the-light` open as a camera sheet |
+| Trips | `/trips` or `/trips/trips` | `late-drive-heads-up` is reached from a late start, or from the demo panel |
+| Profile | `/profile` or `/profile/profile` | |
+| Gallery | `/components`, `/components/canvas`, `/components/preview/{push,fade,tab,sheet}` | Components and transitions, for design review |
 
-To regenerate section review artifacts:
+Removed on purpose: `first-check`, `photo-walk-around`, `scratch-detail` and `belt-squeal-trend` (not in the MVP). Opening them goes to the gallery.
+
+## Eye watch
+
+`src/eyewatch` is the heart of the drive. It runs in the browser with no network.
+
+- `model.worker.ts` loads the MediaPipe Face Landmarker (GPU, with a CPU fallback) and returns eye-closed and jaw-open blendshapes at about 15 fps.
+- `engine.ts` turns frames into `alert`, `tired`, `microsleep` or `lost`, from PERCLOS, blink length, yawns and closure time. All thresholds are in `eyeConfig`.
+- `session.ts` joins camera, GPS, the engine and the alarm, and latches the alarm until it is acknowledged.
+- `alarm.ts` makes the tone, vibration and spoken prompts. Audio must be unlocked by a tap, so the Start button does that.
+- `/test-eyes` is a developer page for watching the engine's values live.
+
+The numbers and the reasoning are in [ARCHITECTURE.md, section 5](../../docs/ARCHITECTURE.md#5-eye-watch-pipeline).
+
+## Offline
+
+`npm run build` writes `dist/sw.js` with every built file (including the face model) and names the cache after a hash of the build. The service worker registers only in production builds. To test offline, run `npm run build` and `npm run preview`, open it once online, then turn the network off.
+
+## Tests
 
 ```powershell
-npm run build
-node scripts/browser-review.mjs --drive
-node scripts/drive-comparison.mjs
+npm test                                       # unit tests
+node scripts/browser-review.mjs --car          # Car check, 11 screens at 430, 390 and 360 px
+node scripts/browser-review.mjs --trips        # Trips, signed in
+node scripts/browser-review.mjs --profile      # Profile, signed in, including rename and downloads
+node scripts/browser-review.mjs --onboarding   # 15 screens and the sign-up to all-set flow
+node scripts/browser-review.mjs --integration  # sign-in, account isolation, failure and empty states
+node scripts/browser-review.mjs --home         # Home against the Figma frame
+node scripts/browser-review.mjs --current-drive  # captures the current Drive states
 ```
 
-The side-by-side review is at `/review/drive-watch.html`, with a live iframe toggle, and at `docs/review/drive-comparison.html` for local screenshot review. `design/drive-prototype-links.json` preserves the inspected prototype reactions. Shared unbound frame values are documented as CSS tokens in `src/styles/drive.css`; the screens otherwise reuse the Dormathon variable collection and text utilities.
+Run `npm run build` first, because the checks serve `dist`. The browser checks use installed Chrome or Edge with a temporary profile and a **fake API on loopback**, so no database, SMS or map service is touched. Set `DORMATHON_CHROME` if the browser is somewhere unusual. Evidence is written to `docs/review`, so discard those file changes unless you mean to update them.
 
-Onboarding has 13 routes in `src/screens/onboarding/routes.ts`, starting at `/onboarding/splash`. Form choices last for the current session. Its source/app comparison is at `/review/onboarding.html`; `?preview=1` pauses prototype timers.
+`--drive` is an older script written before the readiness check was added to the flow, and it currently fails at the first step. Use `--current-drive`.
 
-Car check has seven screens in `src/screens/car/routes.tsx`, starting at `/car/car-check` or the Car tab's `/car` shortcut. The first-check guide opens C3 as a full-screen sheet. Normal entry requests the rear camera; captured JPEGs remain in browser memory and streams stop on exit. `?preview=1` shows original Figma camera artwork without requesting the camera. Engine readings and reports use typed props with Figma defaults; recording and analysis come later. Scratch marking lasts for the current session. Reminder downloads a calendar event, Share uses native sharing or clipboard, and workshop lookup opens Google Maps.
+What the unit tests cover: the typed client and token refresh, the eye engine and calibration, the microphone meter, the drive runtime (hard-brake detection, countdown and retries), spoken prompts, design tokens, page transitions, the car report and the trip-pattern chart logic.
 
-```powershell
-npm run build
-node scripts/browser-review.mjs --car
-node scripts/browser-review.mjs --car-camera
-node scripts/car-comparison.mjs
-node scripts/browser-review.mjs --car-comparison
-```
+## Troubleshooting
 
-`--car-camera` uses generated canvas video in an isolated browser, with native permission gating and fake-device input; it never accesses a physical camera. `/review/car-check.html` contains all seven Figma/app pairs and a live preview toggle. Review notes and camera limitations are in `docs/review/car-visual-review.md`. Trips and Profile have also been built.
-
-
-Prompt 3 is implemented. Open `/test-eyes` on the phone HTTPS URL, tap Start eye watch, allow the front camera and location, then run Calibrate eyes (five seconds looking ahead and two completed blinks). Use Drive screens after calibration, or start through Home ? Start drive watch. Triple-tap the logo to open the hidden moving override, detector debug and threshold controls. A parked eye closure never sounds the moving alarm.
-
-```powershell
-npm test
-npm run build
-node scripts/browser-review.mjs --eyes
-node scripts/browser-review.mjs --eyes --eyes-cpu
-```
-
-The eye-watch browser review uses generated video and controlled worker signals, plus actual local GPU model inference. It verifies offline reload, calibration, moving gate, warning navigation, alarm acknowledgement and cleanup without accessing a physical camera. Source, asset provenance and device limitations are in `docs/review/eye-watch-review.md` and `public/eyewatch/NOTICE.md`. Production builds cache the app and model for subsequent offline launches; finish an initial online load first. Keep the page visible because mobile browsers may suspend background camera/audio. Low-light car testing remains a physical-phone checkpoint.
+| Problem | Fix |
+|---|---|
+| "Couldn't load account settings" on Home | The API is not running. Start it, then reload. |
+| Camera or microphone prompt never appears | You are on `http`, or the certificate was not accepted. Use the HTTPS address. |
+| Alarm is silent | Browsers keep audio suspended until a tap. Use the Start or Enable sound button. |
+| Face scan never completes | Light the face from the front, and take off sunglasses. The scan advances only on valid eye measurements. |
+| The browser check cannot find a browser | Set `DORMATHON_CHROME` to your Chrome or Edge executable. |
