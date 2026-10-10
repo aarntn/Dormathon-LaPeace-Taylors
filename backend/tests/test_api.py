@@ -109,7 +109,7 @@ def test_full_fake_trip(rig):
 
 
 @pytest.mark.parametrize('fields,level', [({}, 'safe'),
-    ({'slept': 4, 'awake': 17, 'alert_self': 'bit_tired', 'trip_length': 'over_2h'}, 'caution'),
+    ({'slept': 5.5, 'awake': 14, 'alert_self': 'bit_tired', 'trip_length': 'over_2h'}, 'caution'),
     ({'slept': 3, 'awake': 20, 'alert_self': 'very_tired', 'trip_length': 'over_2h', 'hour': 23,
       'taps_ms': [450, 460, 470], 'misses': 3, 'face_perclos': .4, 'face_mean_blink_ms': 600, 'face_yawns': 2}, 'high')])
 def test_predrive_levels(rig, fields, level):
@@ -343,3 +343,11 @@ def test_startup_uses_phone_crank_timing(rig):
     slow = c.post('/car-checks/startup-audio', data={'car_id': car, 'crank_seconds': '3.2'}, files={'audio': wav}).json()
     assert slow['urgency'] == 'soon' and 'weak battery' in slow['verdict']
     assert c.post('/car-checks/startup-audio', data={'car_id': car, 'crank_seconds': '30'}, files={'audio': wav}).status_code == 422
+
+
+def test_predrive_safety_floors_and_missing_face(rig):
+    # Late night after 16+ hours awake is never "Safe", even with quick taps and no face reading.
+    late = predrive(rig['client'], slept=5.5, awake=18, hour=2, alert_self='bit_tired', trip_length='1_2h',
+                    taps_ms=[250], face_perclos=0, face_mean_blink_ms=0).json()
+    assert late['level'] in ('caution', 'high')
+    assert predrive(rig['client'], slept=4, awake=18).json()['level'] == 'high'

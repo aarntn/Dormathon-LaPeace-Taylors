@@ -33,9 +33,20 @@ def predrive_score(data, history=0, personal_median=270):
     alert = {'very_alert': 0, 'ok': .2, 'bit_tired': .6, 'very_tired': 1}[data.alert_self]
     trip = {'under_30': 0, '30_60': .3, '1_2h': .6, 'over_2h': 1}[data.trip_length]
     night = int(data.hour >= 22 or data.hour < 5)
-    score, _ = readiness.predict(MODEL, readiness.features(data, history, personal_median))
+    row = readiness.features(data, history, personal_median)
+    if data.face_mean_blink_ms == 0 and data.face_perclos == 0:
+        # No face reading came through (camera blocked or skipped). Treat it as missing,
+        # not as "perfectly alert": use the typical value the model was trained on.
+        for name in ('face_perclos', 'face_mean_blink_ms', 'face_yawns'):
+            row[name] = MODEL['mean'][name]
+    score, _ = readiness.predict(MODEL, row)
     cuts = MODEL['thresholds']
     level = 'high' if score >= cuts['high'] else 'caution' if score >= cuts['caution'] else 'safe'
+    # Safety floors: the model can raise a level but never talk a clearly tired driver down to Safe.
+    floor = 'high' if data.slept < 5 and data.awake >= 16 else 'caution' if (
+        (night and data.awake >= 16) or data.alert_self == 'very_tired' or data.slept < 5) else 'safe'
+    order = ['safe', 'caution', 'high']
+    level = max(level, floor, key=order.index)
     reasons = []
     for condition, reason in [(reaction > .3, 'Your taps were slower than your usual pace.'),
         (face > 0, 'Your face reading showed possible tiredness.'), (sleep > 0, 'You reported less than seven hours of sleep.'),
