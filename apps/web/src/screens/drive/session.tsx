@@ -42,7 +42,7 @@ export function DriveProvider({children}:{children:ReactNode}){
   async function startTrip(passenger=false){
     if(!session)throw new Error('Sign in before starting a trip.');if(!selectedCar)throw new Error('Save your car first.');
     if(snapshot.trip)return snapshot.trip;
-    const p=await currentPosition().catch(()=>null);const trip=await api.startTrip({car_id:selectedCar.id,predrive_id:passenger?null:result?.id,origin:p,destination,route_choice:routeChoice,passenger_mode:passenger});runtime.attach(trip);return trip;
+    const p=await currentPosition().catch(()=>null);const trip=await api.startTrip({car_id:selectedCar.id,predrive_id:passenger?null:result?.id,origin:p,destination:destination?{lat:destination.lat,lng:destination.lng}:null,route_choice:routeChoice,passenger_mode:passenger});runtime.attach(trip);return trip;
   }
   async function finish(){try{await runtime.end();watch.session.stop();await refresh();navigate('/drive/trip-summary');}catch(e){setError(e instanceof Error?e.message:'Could not finish your trip.');}}
   async function acknowledge(){watch.session.acknowledge();runtime.cancelCountdown();void runtime.resolve().catch(e=>setError(e.message));navigate('/drive/driving',{replace:true});}
