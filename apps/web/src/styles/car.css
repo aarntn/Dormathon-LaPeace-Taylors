@@ -36,19 +36,10 @@
 .car-checks { display:flex;flex-direction:column;gap:12px; }
 .car-last-report { display:flex;flex-direction:column;gap:12px;padding-top:4px; }
 .car-last-report h2,.car-heard h2 { color:var(--text-secondary); }
-.car-photo-stops { height:300px;position:relative;overflow:hidden; }
-.car-photo-stops-scene { width:390px;height:300px;position:absolute;left:50%;transform:translateX(-50%); }
 .car-photo-stops .car-art { position:absolute;left:137.4px;top:42px; }
-.car-stop { position:absolute;display:grid;place-items:center;width:28px;height:28px;border-radius:14px;border:1px solid var(--line-default);background:var(--bg-card); }
-.car-stop--active { background:var(--brand-navy);color:var(--text-inverse);border:0; }
-.car-first-steps { display:flex;flex-direction:column;gap:18px;padding:16px;list-style:none; }
-.car-first-steps li { display:flex;gap:14px;align-items:flex-start; }
-.car-first-steps li>div { flex:1;min-width:0;display:flex;flex-direction:column;gap:2px; }
-.car-first-steps p { color:var(--text-secondary); }
 .car-step-number { display:grid;place-items:center;width:28px;height:28px;border-radius:14px;background:var(--bg-tint);color:var(--brand-navy);flex-shrink:0; }
 .car-recorder { width:100%;height:300px;position:relative;overflow:hidden; }
 .car-recorder-track { position:absolute;top:0;left:calc(50% - 110px); }
-.car-recorder-progress { position:absolute;top:0;left:calc(50% - 64.656px); }
 .car-listening { position:absolute;top:62px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:6px;color:var(--state-danger); }
 .car-recorded-time { position:absolute;top:86px;left:50%;transform:translateX(-50%); }
 .car-recording-duration { position:absolute;top:142px;left:50%;transform:translateX(-50%);color:var(--text-secondary); }
@@ -58,70 +49,27 @@
 .car-warning { color:var(--state-warning); }
 .car-map { width:100%;height:250px;position:relative;overflow:hidden;border-radius:24px; }
 .car-map-scene { width:390px;height:250px;position:absolute;left:50%;top:0;transform:translateX(-50%); }
-.car-map-vehicle { position:absolute;left:137.4px;top:17px; }
 .car-map-spot { position:absolute;width:28px;height:28px; }
 .car-map-core { position:absolute;left:9px;top:9px; }
 .car-map-label { position:absolute;left:262px;padding:5px 10px;border-radius:8px;background:var(--brand-navy);color:var(--text-inverse); }
 .car-footer-stack { display:flex;flex-direction:column;gap:12px; }
-.car-double-footer .app-frame__content--with-footer { padding-bottom:calc(190px + env(safe-area-inset-bottom,0px)); }
-.car-scratch-photo { height:220px;position:relative;overflow:hidden;border-radius:20px;background:var(--car-scratch-bg); }
-.car-scratch-ground { position:absolute;inset:140px 0 0;background:var(--car-scratch-ground); }
 .car-scratch-photo>.car-art { position:absolute;left:-20px;top:-10px; }
-.car-scratch-box { position:absolute;left:40px;top:100px;width:70px;height:46px;border:2.5px solid var(--state-warning-dot);border-radius:6px; }
-.car-scratch-tag { position:absolute;left:40px;top:68px;padding:5px 10px;border-radius:8px;background:var(--state-warning-dot); }
-.car-scratch-image { width:100%;height:100%;object-fit:cover; }
 .car-details { display:flex;flex-direction:column;gap:14px; }
 .car-details.car-panel { padding:16px; }
 .car-detail-row { display:flex;justify-content:space-between;align-items:center;gap:10px; }
 .car-detail-row dd { text-align:right; }
-.car-callout { padding:16px;border-radius:18px;display:flex;flex-direction:column;gap:4px; }
-.car-callout--success { background:var(--state-success-soft); }
-.car-callout--success h2 { color:var(--state-success); }
-.car-callout--warning { background:var(--state-warning-soft); }
-.car-callout--warning h2 { color:var(--state-warning); }
-.car-trend { padding:16px;display:flex;flex-direction:column;gap:12px;overflow:hidden; }
-.car-trend-head { display:flex;justify-content:space-between;gap:8px; }
-.car-trend-head h2 { color:var(--text-secondary); }
-.car-trend-head p { color:var(--state-warning); }
 .car-chart { height:168px;position:relative;overflow:hidden; }
 .car-chart-scene { width:358px;height:168px;position:absolute;left:50%;transform:translateX(-50%); }
 .car-chart .car-art,.car-chart span { position:absolute; }
-.car-chart-fix { left:-.75px;top:25.85px; }
-.car-chart-label { left:0;top:6.6px;color:var(--state-danger); }
-.car-chart-trend { left:22.75px;top:46.43px; }
-.car-chart-forecast { left:281px;top:25.6px; }
-.car-chart-date { top:148px;color:var(--text-tertiary); }
 .car-feedback { position:fixed;bottom:170px;left:50%;transform:translateX(-50%);z-index:50;max-width:calc(100% - 40px);padding:12px 18px;border-radius:16px;background:var(--brand-navy);color:var(--text-inverse);pointer-events:none; }
 .car-camera-dialog:focus-visible { outline:none; }
 .car-camera { --camera-top:max(62px,calc(env(safe-area-inset-top,0px) + 8px));position:absolute;top:0;bottom:0;left:50%;width:min(430px,100%);margin-left:calc(min(430px,100%) / -2);height:100dvh;overflow:hidden;background:var(--car-camera-bg);color:var(--text-inverse);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px); }
-.car-camera-fallback { position:absolute;inset:0; }
-.car-camera-ground { position:absolute;inset:calc(50% + 46px) 0 0;background:var(--car-camera-ground); }
 .car-camera-fallback>.car-art { position:absolute;left:calc(50% - 198px);top:calc(50% - 66px); }
-.car-camera-detection { position:absolute;left:29px;top:calc(50% + 2px);width:70px;height:50px;border:2.5px solid var(--state-warning-dot);border-radius:10px; }
-.car-camera-detection-label { position:absolute;left:29px;top:calc(50% - 28px);padding:5px 9px;border-radius:8px;background:var(--state-warning-dot);color:var(--text-primary); }
-.car-camera-video { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0; }
-.car-camera-video--ready { opacity:1; }
-.car-camera-top { position:absolute;top:var(--camera-top);left:calc(20px + env(safe-area-inset-left,0px));right:calc(20px + env(safe-area-inset-right,0px)); }
-.car-camera-top header { position:absolute;left:50%;top:0;transform:translateX(-50%);text-align:center;white-space:nowrap;display:flex;flex-direction:column;gap:4px; }
-.car-camera-progress { position:absolute;left:calc(20px + env(safe-area-inset-left,0px));right:calc(20px + env(safe-area-inset-right,0px));top:calc(var(--camera-top) + 62px);display:flex;gap:4px;height:4px; }
-.car-camera-progress span { flex:1;border-radius:2px;background:var(--car-progress-track); }
-.car-camera-progress .complete { background:var(--text-inverse); }
-.car-camera-hint { position:absolute;top:calc(var(--camera-top) + 98px);left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--sheet-backdrop);border-radius:12px;padding:9px 14px; }
-.car-camera-corners { position:absolute;left:calc(28px + env(safe-area-inset-left,0px));right:calc(28px + env(safe-area-inset-right,0px));top:calc(var(--camera-top) + 168px);bottom:calc(208px + max(34px,env(safe-area-inset-bottom,0px))); }
 .car-camera-corners .car-art { position:absolute; }
 .car-camera-corners .car-art:nth-child(1) { top:0;left:0; }
 .car-camera-corners .car-art:nth-child(2) { top:0;right:0;transform:rotate(90deg); }
 .car-camera-corners .car-art:nth-child(3) { bottom:0;right:0;transform:rotate(180deg); }
 .car-camera-corners .car-art:nth-child(4) { bottom:0;left:0;transform:rotate(-90deg); }
-.car-capture-panel { position:absolute;bottom:0;left:0;right:0;height:calc(178px + max(34px,env(safe-area-inset-bottom,0px)));background:var(--drive-bg);border-radius:28px 28px 0 0; }
-.car-photo-quality { display:flex;justify-content:center;align-items:center;gap:20px;padding-top:22px; }
-.car-photo-quality>span { display:flex;align-items:center;gap:6px; }
-.car-camera-status { padding-top:22px;text-align:center; }
-.car-captured { display:flex;gap:6px;position:absolute;left:calc(28px + env(safe-area-inset-left,0px));top:86px; }
-.car-captured span,.car-captured img { width:44px;height:44px;border-radius:10px;background:var(--drive-card);object-fit:cover; }
-.car-shutter { position:absolute;left:50%;transform:translateX(-50%);top:70px;border:0;background:transparent;padding:0;border-radius:50%; }
-.car-skip { position:absolute;right:calc(28px + env(safe-area-inset-right,0px));top:98px;background:transparent;border:0;padding:0;color:var(--drive-text-secondary); }
-.car-camera-error { position:absolute;top:calc(var(--camera-top) + 168px);left:calc(40px + env(safe-area-inset-left,0px));right:calc(40px + env(safe-area-inset-right,0px));padding:20px;border-radius:18px;background:var(--drive-card);display:flex;flex-direction:column;gap:16px; }
 @media(max-width:400px) { .car-photo-quality { gap:12px; } .car-captured { left:calc(20px + env(safe-area-inset-left,0px)); } }
 
 .dashboard-sample { position:relative; width:360px; height:250px; overflow:hidden; }

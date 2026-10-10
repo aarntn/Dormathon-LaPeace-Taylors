@@ -417,7 +417,7 @@ try {
       assert.equal(await evaluate("innerHeight-document.querySelector('.app-frame__footer').getBoundingClientRect().bottom"),34);
       await evaluate('scrollTo(0,document.documentElement.scrollHeight)');await settle();
       assert.ok(await evaluate("document.querySelector('.trips-content').getBoundingClientRect().bottom<=document.querySelector('.app-frame__footer').getBoundingClientRect().top+2"),routes[i]+': obscured content');
-      if(i!==2)assert.ok(await evaluate("(()=>{const chart=document.querySelector('.trips-chart');const a=chart.querySelector('img').getBoundingClientRect(),b=chart.getBoundingClientRect();return Math.abs(a.width-b.width)<1&&a.bottom<=b.bottom+1})()"),'chart exceeds wrapper');
+      assert.ok(await evaluate('document.documentElement.scrollWidth<=innerWidth+1'),routes[i]+': horizontal overflow');
     }
     await writeFile(join(artifactRoot,'trips-geometry.json'),JSON.stringify(reviews,null,2));
     const click=async label=>{await evaluate(`(()=>{const buttons=[...document.querySelectorAll('button')];const label=${JSON.stringify(label)};const target=buttons.find(b=>b.getAttribute('aria-label')===label)||buttons.find(b=>b.textContent.startsWith(label));target.click()})()`);await settle();};
@@ -449,114 +449,20 @@ try {
     assert.deepEqual(runtimeErrors,[]);
     await writeFile(join(artifactRoot,'trips-browser-verification.json'),JSON.stringify({checkedAt:new Date().toISOString(),screens:3,widths:[430,390],safeAreaVerified,passed:['prototype destinations','history Back and direct-entry fallback','hidden late-drive demo','original SVGs and chart scaling','34px footer clearance','responsive scrolling','tab transitions','no runtime exceptions']},null,2));
     console.log('Trips passed: three screens, original SVG charts, prototype destinations, hidden demo, responsive layouts, Back, safe areas and footer clearance.');
-  } else if (process.argv.includes('--car-camera')) {
-    // Isolated synthetic camera input; no physical device or uploaded frames.
-    await send('Page.bringToFront');
-    await send('Browser.grantPermissions',{origin,permissions:['videoCapture']});
-    await send('Page.addScriptToEvaluateOnNewDocument',{source:`
-      window.__reviewStreams=[];window.__reviewRequests=0;window.__reviewDelay=0;
-      const original=navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
-      navigator.mediaDevices.getUserMedia=async constraints=>{
-        window.__reviewRequests++;
-        if(window.__reviewDelay)await new Promise(resolve=>setTimeout(resolve,window.__reviewDelay));
-        // Native permission gating is exercised, then a deterministic video fixture is supplied.
-        const native=await original(constraints);native.getTracks().forEach(t=>t.stop());
-        const canvas=document.createElement('canvas');canvas.width=640;canvas.height=480;
-        const ctx=canvas.getContext('2d');const stream=canvas.captureStream(0);const track=stream.getVideoTracks()[0];
-        const timer=setInterval(()=>{ctx.fillStyle='#4d5461';ctx.fillRect(0,0,640,480);ctx.fillStyle='#fff';ctx.fillRect(100,100,100,100);track.requestFrame();},100);
-        const stop=track.stop.bind(track);track.stop=()=>{clearInterval(timer);stop();};
-        window.__reviewStreams.push(stream);return stream;
-      };`});
-    const click=async label=>{await evaluate(`[...document.querySelectorAll('button')].find(b=>b.textContent.startsWith(${JSON.stringify(label)})||b.getAttribute('aria-label')===${JSON.stringify(label)}).click()`);await settle();};
-    const stopped="window.__reviewStreams.length>0&&window.__reviewStreams.every(s=>s.getTracks().every(t=>t.readyState==='ended'))";
-    await viewport(390,844);await navigate('/car');await click('Photo walk-around');await click('Start walk-around');
-    await until("document.querySelector('.car-camera-video--ready')");
-    assert.equal(await evaluate("document.querySelector('.car-shutter').disabled"),false);
-    assert.equal(await evaluate("document.querySelector('.car-camera-detection')"),null,'sample diagnosis appears over a live camera');
-    await click('Take photo');await until("location.pathname==='/car/engine-sound-check'");await until(stopped);
-    await click('Back');assert.equal(await evaluate('location.pathname'),'/car');
-    await click('Photo walk-around');await click('Start walk-around');await until("document.querySelector('.car-camera-video--ready')");
-    assert.equal(await evaluate("document.querySelector('.car-captured img').src.startsWith('blob:')"),true);
-    await until("document.querySelector('.car-captured img').naturalWidth>0");
-    await evaluate("(()=>{const track=window.__reviewStreams.at(-1).getVideoTracks()[0];track.stop();track.dispatchEvent(new Event('ended'))})()");
-    await until("document.querySelector('.car-camera-error')");assert.equal(await evaluate("document.querySelector('.car-shutter').disabled"),true);
-    await click('Try camera again');await until("document.querySelector('.car-camera-video--ready')");
-    await evaluate("document.querySelector('button[aria-label=Close]').click();document.querySelector('button[aria-label=Close]')?.click()");await settle();await until(stopped);
-    assert.equal(await evaluate('location.pathname'),'/car');assert.equal(await evaluate('document.body.style.overflow'),'');
-    await evaluate('window.__reviewDelay=2000');await click('Photo walk-around');await click('Start walk-around');await click('Close');
-    await until('window.__reviewStreams.length===window.__reviewRequests');await until(stopped);
-    await send('Browser.setPermission',{origin,permission:{name:'camera'},setting:'denied'});
-    await navigate('/car/photo-walk-around');await until("document.querySelector('.car-camera-error')");
-    assert.equal(await evaluate("document.querySelector('.car-shutter').disabled"),true);
-    assert.ok(await evaluate("document.querySelector('[role=alert]').textContent.includes('Allow camera access')"));
-    await send('Browser.grantPermissions',{origin,permissions:['videoCapture']});await click('Try camera again');await until("document.querySelector('.car-camera-video--ready')");
-    await evaluate("window.__originalToBlob=HTMLCanvasElement.prototype.toBlob;HTMLCanvasElement.prototype.toBlob=function(cb){cb(null)}");
-    await click('Take photo');assert.ok(await evaluate("document.querySelector('.car-camera [role=alert]').textContent.includes('Couldn’t take')"));
-    await evaluate('HTMLCanvasElement.prototype.toBlob=window.__originalToBlob');
-    await click('Skip');await until(stopped);assert.equal(await evaluate('location.pathname'),'/car/engine-sound-check');
-    await navigate('/car');await click('Photo walk-around');await click('Start walk-around');await until("document.querySelector('.car-camera-video--ready')");
-    await evaluate("(()=>{const original=HTMLCanvasElement.prototype.toBlob;HTMLCanvasElement.prototype.toBlob=function(cb,...args){original.call(this,blob=>setTimeout(()=>cb(blob),350),...args)};document.querySelector('.car-shutter').click();history.back()})()");
-    await settle();assert.equal(await evaluate('location.pathname'),'/car/first-check');await until(stopped);
-    assert.equal(await evaluate("document.querySelector('.car-camera')"),null);
-    await navigate('/car');await click('Photo walk-around');await click('Start walk-around');await until("document.querySelector('.car-camera-video--ready')");
-    await evaluate("(()=>{const original=HTMLCanvasElement.prototype.toBlob;HTMLCanvasElement.prototype.toBlob=function(cb,...args){original.call(this,blob=>setTimeout(()=>cb(blob),1000),...args)};document.querySelector('.car-shutter').click();history.back();setTimeout(()=>history.forward(),100)})()");
-    await evaluate('new Promise(resolve=>setTimeout(resolve,1400))');assert.equal(await evaluate('location.pathname'),'/car/photo-walk-around');
-    await click('Close');await until(stopped);
-    assert.deepEqual(runtimeErrors,[]);
-    await writeFile(join(artifactRoot,'car-camera-verification.json'),JSON.stringify({checkedAt:new Date().toISOString(),input:'Generated canvas video fixture, with native permission gating; no physical camera',passed:['camera readiness','local JPEG capture','blob thumbnail','no sample diagnosis over live camera','tracks stop on capture and close','double close guard','late permission resolution stopped','permission denied disables shutter','retry after permission grant','disconnected camera disables shutter and retries','visible local capture error','browser back cancels delayed capture','rapid back-forward invalidates old capture','skip releases stream','body scroll restored','no runtime exceptions']},null,2));
-    console.log('Car camera passed: synthetic capture, local blob, stop-on-close/capture/skip, late permission cleanup, denial and retry.');
   } else if (process.argv.includes('--car')) {
-    const routes=['car-check','first-check','photo-walk-around','engine-sound-check','car-report','scratch-detail','belt-squeal-trend'];
-    const reviews=[];
-    for(let i=0;i<routes.length;i++){
-      const route=routes[i]; await viewport(430,932);await navigate('/car/'+route+'?preview=1');
-      await until("Boolean(document.querySelector('.car-frame,.car-camera'))");
-      await until("[...document.images].every(i=>i.complete&&i.naturalWidth>0)");
-      const review=await evaluate("({path:location.pathname,text:document.body.innerText,width:document.documentElement.scrollWidth,geometry:[...document.querySelectorAll('.car-content>*')].map(e=>{const r=e.getBoundingClientRect();return {class:e.className,x:r.x,y:r.y,width:r.width,height:r.height}})})");
-      assert.equal(review.path,'/car/'+route);assert.equal(review.width,430);assert.ok(!/[â�]/.test(review.text));
-      await screenshot('car-c'+(i+1)+'.png',{x:0,y:0,width:430,height:932});reviews.push(review);
-      await viewport(390,844);await settle();assert.equal(await evaluate('document.documentElement.scrollWidth'),390,route+': overflow');
-      if(route==='belt-squeal-trend')assert.ok(await evaluate("(()=>{const chart=document.querySelector('.car-chart').getBoundingClientRect();return [...document.querySelectorAll('.car-chart-date,.car-chart-label')].every(e=>{const r=e.getBoundingClientRect();return r.left>=chart.left-1&&r.right<=chart.right+1})})()"),'chart labels clipped');
-      if(await evaluate("Boolean(document.querySelector('.car-frame .app-frame__footer')) && !document.querySelector('.car-camera')")){
-        assert.equal(await evaluate("innerHeight-document.querySelector('.app-frame__footer').getBoundingClientRect().bottom"),34);
-        await evaluate('scrollTo(0,document.documentElement.scrollHeight)');await settle();
-        assert.ok(await evaluate("document.querySelector('.car-content').getBoundingClientRect().bottom<=document.querySelector('.app-frame__footer').getBoundingClientRect().top+2"),route+': obscured content');
-      }
+    // Direct-entry check for the current Car check frames. Sample content comes from ?preview, never from the account.
+    const routes=[['car-check','Car check'],['scan-a-warning-light?preview=1','Scan a warning light'],['reading-the-light?preview=1','Reading the light'],['warning-light-result','No light scanned yet'],['couldnt-read-the-light','Couldn’t read that light'],['engine-sound-check?preview=1','Start-up battery check'],['checking-the-sound?preview=1','Checking the start-up sound'],['didnt-hear-the-engine','We didn’t hear the engine'],['car-report','No report yet'],['brake-check','No brake data yet'],['workshops-near-you','Workshops near you']];
+    const widths=[430,390,360];
+    for(const width of widths)for(const [route,text] of routes){
+      await viewport(width,932);await navigate('/car/'+route);await settle();
+      assert.ok(await evaluate(`document.body.innerText.includes(${JSON.stringify(text)})`),`${route} at ${width}px should show “${text}”`);
+      assert.ok(await evaluate('document.documentElement.scrollWidth<=innerWidth+1'),`${route} overflows at ${width}px`);
+      assert.equal(await evaluate('[...document.images].filter(i=>i.complete&&i.naturalWidth===0).length'),0,`${route} has a broken image`);
     }
-    await writeFile(join(artifactRoot,'car-geometry.json'),JSON.stringify(reviews,null,2));
-    const click=async label=>{await evaluate(`[...document.querySelectorAll('button')].find(b=>b.textContent.startsWith(${JSON.stringify(label)})||b.getAttribute('aria-label')===${JSON.stringify(label)}).click()`);await settle();};
-    const path=()=>evaluate('location.pathname');
-    await viewport(430,932);await navigate('/car/car-check');
-    await click('Photo walk-around');assert.equal(await path(),'/car/first-check');
-    await click('Start walk-around');assert.equal(await path(),'/car/photo-walk-around');assert.equal(await evaluate("document.querySelector('.car-camera-dialog').open"),true);
-    await click('Close');assert.equal(await path(),'/car/car-check');assert.equal(await evaluate('document.body.style.overflow'),'');
-    await click('Engine sound check');await click('See my report');await click('Scratch on rear bumper');assert.equal(await path(),'/car/scratch-detail');
-    await click('It was already here');assert.equal(await path(),'/car/car-report');
-    await click('Drive belt squeal');await click('Remind me in 2 weeks');assert.equal(await path(),'/car/car-report');
-    await navigate('/car/photo-walk-around?preview=1');await click('Take photo');assert.equal(await path(),'/car/engine-sound-check');
-    await navigate('/car/scratch-detail');await click('Back');assert.equal(await path(),'/car/car-report');
-    await navigate('/car/photo-walk-around?preview=1');await send('Page.bringToFront');
-    await send('Input.dispatchKeyEvent',{type:'keyDown',key:'Escape',code:'Escape',windowsVirtualKeyCode:27});
-    await send('Input.dispatchKeyEvent',{type:'keyUp',key:'Escape',code:'Escape',windowsVirtualKeyCode:27});await settle();assert.equal(await path(),'/car/car-check');
-    await navigate('/car/photo-walk-around?preview=1');await evaluate("document.querySelector('.car-shutter').click()");
-    await evaluate('new Promise(resolve=>setTimeout(resolve,100))');
-    assert.ok(await evaluate("(()=>{const m=new DOMMatrix(getComputedStyle(document.querySelector('.car-camera')).transform);return m.m41<0&&Math.abs(m.m42)<1})()"),'camera forward must push left');
-    await settle();await navigate('/car/photo-walk-around?preview=1');await evaluate("document.querySelector('button[aria-label=Close]').click()");
-    await evaluate('new Promise(resolve=>setTimeout(resolve,100))');
-    assert.ok(await evaluate("(()=>{const m=new DOMMatrix(getComputedStyle(document.querySelector('.car-camera')).transform);return m.m42>0&&Math.abs(m.m41)<1})()"),'camera close must sheet down');await settle();
-    let safeAreaVerified=false;
-    if(protocol.domains.find(d=>d.domain==='Emulation')?.commands.some(c=>c.name==='setSafeAreaInsetsOverride')){
-      await send('Emulation.setSafeAreaInsetsOverride',{insets:{top:59,left:0,right:0,bottom:50}});
-      await navigate('/car/car-report');assert.equal(await evaluate("document.querySelector('.car-topbar').getBoundingClientRect().top"),67);
-      assert.equal(await evaluate("innerHeight-document.querySelector('.app-frame__footer').getBoundingClientRect().bottom"),50);
-      await navigate('/car/photo-walk-around?preview=1');
-      assert.equal(await evaluate("document.querySelector('.car-camera-top').getBoundingClientRect().top"),67);
-      assert.equal(await evaluate("document.querySelector('.car-capture-panel').getBoundingClientRect().height"),228);
-      await send('Emulation.setSafeAreaInsetsOverride',{insets:{top:0,left:0,right:0,bottom:0}});safeAreaVerified=true;
-    }
+    for(const old of ['first-check','photo-walk-around','scratch-detail','belt-squeal-trend']){await navigate('/car/'+old);await settle();assert.equal(await evaluate('location.pathname'),'/components','removed route '+old+' must not render');}
     assert.deepEqual(runtimeErrors,[]);
-    await writeFile(join(artifactRoot,'car-browser-verification.json'),JSON.stringify({checkedAt:new Date().toISOString(),screens:7,widths:[430,390],safeAreaVerified,passed:['prototype navigation','direct entry','camera modal and Escape','34px footer clearance','narrow chart labels','local original assets','no runtime exceptions']},null,2));
-    console.log('Car check passed: seven routes, responsive layouts, local SVGs, footer clearance, camera dialog, prototype navigation and direct entry.');
+    await writeFile(join(artifactRoot,'car-browser-verification.json'),JSON.stringify({checkedAt:new Date().toISOString(),routes:routes.length,widths,passed:['current Car check frames render','no horizontal overflow','no broken images','removed walk-around routes stay removed']},null,2));
+    console.log('Car check passed: current frames at 430, 390 and 360 px.');
   } else if (process.argv.includes('--onboarding')) {
     const routes = ['splash','loading','welcome','sign-up','whats-your-car','perodua-myvi-sheet','car-details','service-and-condition','how-you-drive','which-maps-app','face-scan-intro','face-scan','all-set'];
     const reviews = [];

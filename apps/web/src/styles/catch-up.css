@@ -50,3 +50,4 @@
 .seatbelt-check { display:flex;align-items:center;gap:12px;padding:16px;border-radius:18px;background:var(--bg-tint); }
 .speed-stat { text-align:center;padding:16px;border-radius:18px;background:var(--drive-card); }
 @media(max-width:390px){.readiness-question button{font-size:var(--body-small-font-size)}.readiness-question.small>div{flex-wrap:wrap}.readiness-question.small button{flex-basis:calc(50% - 8px)} }
+.live-summary-map--empty { display:grid;place-items:center;text-align:center;padding:0 24px;color:var(--text-secondary);height:190px; }
