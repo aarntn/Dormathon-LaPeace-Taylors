@@ -63,9 +63,13 @@ create policy owner on public.cars for all to authenticated using (user_id=(sele
 alter table public.predrive_checks enable row level security;
 create policy owner on public.predrive_checks for all to authenticated using (user_id=(select auth.uid())) with check (user_id=(select auth.uid()));
 alter table public.trips enable row level security;
-create policy owner on public.trips for all to authenticated using (user_id=(select auth.uid())) with check (
-  user_id=(select auth.uid()) and exists (select 1 from public.cars c where c.id=car_id and c.user_id=(select auth.uid()))
-  and (predrive_id is null or exists (select 1 from public.predrive_checks p where p.id=predrive_id and p.user_id=(select auth.uid())))
+create policy trip_owner_access on public.trips
+for all to authenticated
+using (user_id = auth.uid())
+with check (
+  user_id = auth.uid()
+  and exists (select 1 from public.cars c where c.id = car_id and c.user_id = auth.uid())
+  and (predrive_id is null or exists (select 1 from public.predrive_checks p where p.id = predrive_id and p.user_id = auth.uid()))
 );
 alter table public.trip_events enable row level security;
 create policy owner on public.trip_events for all to authenticated using (
