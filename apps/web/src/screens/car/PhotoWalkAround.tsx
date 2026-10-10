@@ -8,9 +8,9 @@ import { useRearCamera } from './useRearCamera';
 import { useCarSession } from './session';
 
 export type PhotoWalkAroundProps={title?:string;photoNumber?:number;photoTotal?:number};
-export function PhotoWalkAround({title='Front left corner',photoNumber=3,photoTotal=8}:PhotoWalkAroundProps){
+export function PhotoWalkAround({title='Warning light or temperature gauge',photoNumber=1,photoTotal=1}:PhotoWalkAroundProps){
   const [params]=useSearchParams();const preview=params.has('preview');const present=useIsPresent();const reducedMotion=Boolean(useReducedMotion());
-  const go=useCarNavigation();const {savePhoto,photoUrl}=useCarSession();const camera=useRearCamera(present&&!preview);
+  const go=useCarNavigation();const {savePhoto,photoUrl,analyseDashboard,notify}=useCarSession();const camera=useRearCamera(present&&!preview);
   const dialog=useRef<HTMLDialogElement>(null);const closing=useRef(false);const alive=useRef(true);const active=useRef(present);
   const captureGeneration=useRef(0);
   const [capturing,setCapturing]=useState(false);const [captureError,setCaptureError]=useState('');
@@ -22,7 +22,12 @@ export function PhotoWalkAround({title='Front left corner',photoNumber=3,photoTo
     if(preview){next();return;}
     const request=captureGeneration.current;
     setCapturing(true);setCaptureError('');
-    try{const blob=await camera.capture();if(!closing.current&&alive.current&&active.current&&request===captureGeneration.current){savePhoto(blob);next();}}
+    try{const blob=await camera.capture();if(!closing.current&&alive.current&&active.current&&request===captureGeneration.current){
+      savePhoto(blob);
+      // The photo stays on the device until this explicit, user-initiated upload.
+      void analyseDashboard(blob).catch(error=>notify(error instanceof Error?error.message:'Could not analyse the dashboard photo.'));
+      next();
+    }}
     catch{if(!closing.current&&alive.current&&active.current&&request===captureGeneration.current)setCaptureError('Couldn’t take the photo. Try again.');}
     finally{if(alive.current)setCapturing(false);}
   };
@@ -42,7 +47,7 @@ export function PhotoWalkAround({title='Front left corner',photoNumber=3,photoTo
       <video ref={camera.video} autoPlay muted playsInline className={'car-camera-video'+(camera.status==='ready'?' car-camera-video--ready':'')} aria-label="Rear camera view"/>
       <div className="car-camera-top"><IconButton icon="Close" theme="Dark" onClick={close}/><header><h1 id="car-camera-title" className="text-title-medium">{title}</h1><p className="text-body-small">Photo {photoNumber} of {photoTotal}</p></header></div>
       <div className="car-camera-progress" aria-label={`Photo ${photoNumber} of ${photoTotal}`}>{Array.from({length:photoTotal},(_,i)=><span key={i} className={i<photoNumber?'complete':''}/>)}</div>
-      <p className="car-camera-hint text-body-small-strong">Fit the whole corner in the frame</p>
+      <p className="car-camera-hint text-body-small-strong">Fit the full warning in the frame</p>
       <div className="car-camera-corners"><Art name="718fe.svg"/><Art name="fe8b7.svg"/><Art name="b1862.svg"/><Art name="94eec.svg"/></div>
       {!preview&&camera.status==='error'&&<section className="car-camera-error"><p role="alert" className="text-body-small">{camera.error}</p><Button style="Light" label="Try camera again" onClick={camera.retry}/></section>}
       <div className="car-capture-panel">{preview?<div className="car-photo-quality text-body-small">{['Sharp','Bright enough','Good angle'].map(label=><span key={label}><Glyph name="bf7f3.svg" size={16}/>{label}</span>)}</div>:captureError?<p className="car-camera-status text-body-small" role="alert">{captureError}</p>:<p className="car-camera-status text-body-small" role="status">{camera.status==='loading'?'Opening camera…':camera.status==='ready'?'Ready to take a photo':'Camera unavailable'}</p>}
