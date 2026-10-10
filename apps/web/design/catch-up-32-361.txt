@@ -1,0 +1,136 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/f00a2987-4e12-4db0-9fe3-148713cf6d41";
+const imgGroup = `${assetPathPrefix}/027af.svg`;
+const imgIndicators = `${assetPathPrefix}/a391f.svg`;
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default";
+  style?: "Primary";
+};
+
+function Button({ className, label = "Button", state = "Default", style = "Primary" }: ButtonProps) {
+  return (
+    <div className={className || "bg-[var(--brand\\/navy,#1b2a4e)] content-stretch cursor-pointer flex h-[56px] items-center justify-center relative rounded-[18px] w-[390px]"} data-node-id="27:3">
+      <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[18px] text-[color:var(--text\/inverse,white)] tracking-[-0.1152px] whitespace-nowrap" data-node-id="27:4">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+type InputProps = {
+  className?: string;
+  state?: "Placeholder" | "Filled" | "Focused";
+  text?: string;
+};
+
+function Input({ className, state = "Placeholder", text = "Value" }: InputProps) {
+  const isFocused = state === "Focused";
+  return (
+    <div className={className || `content-stretch flex h-[56px] items-center px-[18px] relative rounded-[16px] w-[390px] ${isFocused ? String.raw`bg-[var(--bg\/card,white)] border-[1.5px] border-[var(--brand\/navy,#1b2a4e)] border-solid` : String.raw`bg-[var(--bg\/field,#f2f3f5)]`}`} id={isFocused ? "node-31_290" : state === "Filled" ? "node-31_288" : "node-31_286"}>
+      {["Filled", "Focused"].includes(state) && (
+        <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[1.4] min-w-px not-italic relative text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="31:289">
+          {text}
+        </p>
+      )}
+      {state === "Placeholder" && (
+        <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[1.4] min-w-px not-italic relative text-[16px] text-[color:var(--text\/tertiary,#a6a6a6)] tracking-[-0.0784px]" data-node-id="31:287">
+          {text}
+        </p>
+      )}
+    </div>
+  );
+}
+
+type IconButtonProps = {
+  className?: string;
+  icon?: "Back";
+  theme?: "Light";
+};
+
+function IconButton({ className, icon = "Back", theme = "Light" }: IconButtonProps) {
+  return (
+    <div className={className || "bg-[var(--bg\\/card,white)] border border-[var(--line\\/default,#e8eaed)] border-solid content-stretch drop-shadow-[0px_6px_8px_rgba(0,0,0,0.06)] flex items-center justify-center relative rounded-[20px] size-[40px]"} data-node-id="27:14">
+      <div className="overflow-clip relative shrink-0 size-[20px]" data-node-id="27:15" data-name="icon/back">
+        <div className="absolute bottom-1/4 left-[20.83%] right-[20.83%] top-1/4" data-node-id="27:16" data-name="Group">
+          <div className="absolute inset-[-7.92%_-6.79%]">
+            <img alt="" className="block max-w-none size-full" src={imgGroup} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+type StatusBarProps = {
+  className?: string;
+  theme?: "Light";
+};
+
+function StatusBar({ className, theme = "Light" }: StatusBarProps) {
+  return (
+    <div className={className || "h-[54px] relative w-[430px]"} data-node-id="27:134">
+      <p className="[word-break:break-word] absolute font-['SF_Pro:Semibold'] font-[590] leading-[normal] left-[52px] text-[17px] text-[color:var(--text\/primary,#282828)] top-[18px] tracking-[-0.408px] whitespace-nowrap" data-node-id="27:135" style={{ fontVariationSettings: '"wdth" 100' }}>
+        9:41
+      </p>
+      <div className="absolute bg-black h-[36px] left-[153px] rounded-[18px] top-[11px] w-[123.999px]" data-node-id="27:136" data-name="Dynamic Island" />
+      <div className="absolute h-[13px] left-[308px] top-[21px] w-[70px]" data-node-id="27:137" data-name="Indicators">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIndicators} />
+      </div>
+    </div>
+  );
+}
+
+export default function O4SignUp() {
+  return (
+    <div className="bg-[var(--bg\/screen,#fcfcfe)] relative size-full" data-node-id="32:361" data-name="O4 Sign up">
+      <StatusBar className="absolute h-[54px] left-0 top-0 w-[430px]" />
+      <div className="absolute content-stretch flex flex-col gap-[20px] items-start left-0 overflow-clip pb-[24px] pt-[8px] px-[20px] top-[54px] w-[430px]" data-node-id="32:373" data-name="Content">
+        <IconButton className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch cursor-pointer drop-shadow-[0px_6px_8px_rgba(0,0,0,0.06)] flex items-center justify-center relative rounded-[20px] shrink-0 size-[40px]" />
+        <div className="[word-break:break-word] content-stretch flex flex-col gap-[8px] items-center not-italic overflow-clip relative shrink-0 text-center w-full" data-node-id="32:378" data-name="Heading">
+          <p className="font-['Inter:Bold'] font-bold leading-[normal] relative shrink-0 text-[28px] text-[color:var(--text\/primary,#282828)] tracking-[-0.2632px] w-full" data-node-id="32:379">
+            Create your account
+          </p>
+          <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[16px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.0784px] w-full" data-node-id="32:380">
+            We’ll use it to save your car and your trips.
+          </p>
+        </div>
+        <div className="content-stretch flex flex-col gap-[16px] items-start overflow-clip relative shrink-0 w-full" data-node-id="32:381" data-name="Form">
+          <div className="content-stretch flex flex-col gap-[8px] items-start overflow-clip relative shrink-0 w-full" data-node-id="32:382" data-name="Field Full name">
+            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] whitespace-nowrap" data-node-id="32:383">
+              Full name
+            </p>
+            <Input className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex h-[53.655px] items-center px-[18px] relative rounded-[16px] shrink-0 w-full" state="Filled" text="Aaron" />
+          </div>
+          <div className="content-stretch flex flex-col gap-[8px] items-start overflow-clip relative shrink-0 w-full" data-node-id="32:386" data-name="Field Email">
+            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] whitespace-nowrap" data-node-id="32:387">
+              Email
+            </p>
+            <Input className="bg-[var(--bg\/card,white)] border-[1.5px] border-[var(--brand\/navy,#1b2a4e)] border-solid content-stretch flex h-[53.655px] items-center px-[18px] relative rounded-[16px] shrink-0 w-full" state="Focused" text="aaron@example.com" />
+          </div>
+          <div className="content-stretch flex flex-col gap-[8px] items-start overflow-clip relative shrink-0 w-full" data-node-id="32:390" data-name="Field Password">
+            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] whitespace-nowrap" data-node-id="32:391">
+              Password
+            </p>
+            <Input className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex h-[53.655px] items-center px-[18px] relative rounded-[16px] shrink-0 w-full" text="At least 8 characters" />
+          </div>
+        </div>
+      </div>
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[1.4] left-[215px] not-italic text-[14px] text-[color:var(--text\/tertiary,#a6a6a6)] text-center top-[806px] tracking-[-0.042px] w-[390px]" data-node-id="32:394">
+        By continuing you agree to our Terms and Privacy Policy.
+      </p>
+      <Button className="absolute bg-[var(--brand\/navy,#1b2a4e)] content-stretch cursor-pointer flex h-[56px] items-center justify-center left-[20px] rounded-[18px] top-[842px] w-[390px]" label="Continue" />
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Heading/Large: Font(family: "Inter", style: Bold, size: 28, weight: 700, lineHeight: 100, letterSpacing: -0.9399999976158142), Body/Regular: Font(family: "Inter", style: Regular, size: 16, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.49000000953674316), Body/Small Strong: Font(family: "Inter", style: Semi Bold, size: 14, weight: 600, lineHeight: 100, letterSpacing: -0.30000001192092896), Body/Small: Font(family: "Inter", style: Regular, size: 14, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.30000001192092896).
+Images and SVGs will be stored as constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

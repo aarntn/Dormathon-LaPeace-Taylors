@@ -1,0 +1,198 @@
+{
+  "checkedAt": "2026-10-10T09:13:31.229Z",
+  "initial": {
+    "title": "Components",
+    "secure": true,
+    "width": 430,
+    "viewport": 430,
+    "fonts": true,
+    "brokenImages": 0
+  },
+  "phoneWidths": [
+    390,
+    430
+  ],
+  "passed": [
+    "gallery section anchor navigation",
+    "option toggling",
+    "tab selection",
+    "input focus and editing",
+    "button feedback",
+    "push/fade/tab route navigation and browser back",
+    "animated tab content changes",
+    "34px pinned footer",
+    "modal sheet with retained background and scroll",
+    "local font and image loads",
+    "no runtime exceptions"
+  ],
+  "geometry": [
+    {
+      "class": "button text-button button--primary  ",
+      "width": 390,
+      "height": 56,
+      "x": 48,
+      "y": 48
+    },
+    {
+      "class": "button text-button button--secondary  ",
+      "width": 390,
+      "height": 56,
+      "x": 48,
+      "y": 120
+    },
+    {
+      "class": "button text-button button--light  ",
+      "width": 390,
+      "height": 56,
+      "x": 48,
+      "y": 192
+    },
+    {
+      "class": "button text-button button--outline  ",
+      "width": 390,
+      "height": 56,
+      "x": 48,
+      "y": 264
+    },
+    {
+      "class": "button text-button button--drive  ",
+      "width": 390,
+      "height": 56,
+      "x": 48,
+      "y": 336
+    },
+    {
+      "class": "button text-button button--primary button--pressed ",
+      "width": 390,
+      "height": 56,
+      "x": 48,
+      "y": 408
+    },
+    {
+      "class": "button text-button button--secondary button--pressed ",
+      "width": 390,
+      "height": 56,
+      "x": 48,
+      "y": 480
+    },
+    {
+      "class": "button text-button button--light button--pressed ",
+      "width": 390,
+      "height": 56,
+      "x": 48,
+      "y": 552
+    },
+    {
+      "class": "button text-button button--outline button--pressed ",
+      "width": 390,
+      "height": 56,
+      "x": 48,
+      "y": 624
+    },
+    {
+      "class": "button text-button button--drive button--pressed ",
+      "width": 390,
+      "height": 56,
+      "x": 48,
+      "y": 696
+    },
+    {
+      "class": "tab-bar ",
+      "width": 260,
+      "height": 66,
+      "x": 784,
+      "y": 48
+    },
+    {
+      "class": "tab-bar ",
+      "width": 260,
+      "height": 66,
+      "x": 784,
+      "y": 130
+    },
+    {
+      "class": "tab-bar ",
+      "width": 260,
+      "height": 66,
+      "x": 784,
+      "y": 212
+    },
+    {
+      "class": "tab-bar ",
+      "width": 260,
+      "height": 66,
+      "x": 784,
+      "y": 294
+    },
+    {
+      "class": "illustration canvas-car-side",
+      "width": 360,
+      "height": 140,
+      "x": 727,
+      "y": 540
+    },
+    {
+      "class": "illustration canvas-car-top",
+      "width": 160,
+      "height": 300,
+      "x": 511,
+      "y": 219
+    },
+    {
+      "class": "illustration canvas-eyes",
+      "width": 300,
+      "height": 110,
+      "x": 660,
+      "y": 440
+    },
+    {
+      "class": "brand-mark ",
+      "width": 72,
+      "height": 72,
+      "x": 44,
+      "y": 764
+    },
+    {
+      "class": "brand-mark ",
+      "width": 72,
+      "height": 72,
+      "x": 132,
+      "y": 764
+    },
+    {
+      "class": "input text-body-regular  ",
+      "width": 390,
+      "height": 56,
+      "x": 280,
+      "y": 764
+    },
+    {
+      "class": "input text-body-regular  ",
+      "width": 390,
+      "height": 56,
+      "x": 280,
+      "y": 832
+    },
+    {
+      "class": "input text-body-regular input--focused ",
+      "width": 390,
+      "height": 56,
+      "x": 280,
+      "y": 900
+    },
+    {
+      "class": "option  ",
+      "width": 390,
+      "height": 75.59375,
+      "x": 740,
+      "y": 764
+    },
+    {
+      "class": "option option--selected ",
+      "width": 390,
+      "height": 77.59375,
+      "x": 740,
+      "y": 851.59375
+    }
+  ]
+}

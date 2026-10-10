@@ -1,0 +1,1054 @@
+[
+  {
+    "name": "01-home",
+    "path": "/drive/home",
+    "text": "M\n\nPerodua Myvi\n\nReady to drive\n1 thing to check\nStay awake on the road\n\nPut your phone on the dash. If your eyes start to close, Dormathon wakes you up.\n\nStart drive watch\nRecent trips\n\nPJ → UM\n\n24 min · alert the whole way",
+    "width": 430,
+    "fonts": true,
+    "images": [
+      {
+        "file": "/assets/drive/logo-lockup.svg",
+        "loaded": true,
+        "naturalWidth": 176,
+        "naturalHeight": 41,
+        "width": 176,
+        "height": 41,
+        "x": 20,
+        "y": 65.90625
+      },
+      {
+        "file": "data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20overflow='visible'%20style='display:%20block;'%20width='360'%20height='140'%20viewBox='0%200%20360%20140'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Art'%3e%3cpath%20id='Vector'%20d='M182%20136C274.784%20136%20350%20131.523%20350%20126C350%20120.477%20274.784%20116%20182%20116C89.2162%20116%2014%20120.477%2014%20126C14%20131.523%2089.2162%20136%20182%20136Z'%20fill='%231B2A4E'%20fill-opacity='0.1'/%3e%3cpath%20id='Vector_2'%20d='M20%2092C20%2079%2029%2071%2045%2069L103%2060L145%2030C154%2023%20165%2020%20178%2020H236C252%2020%20265%2024%20276%2033L310%2061L335%2065C346%2067%20351%2074%20351%2085V98C351%20104%20348%20107%20342%20107H27C23%20107%2020%20104%2020%20100V92Z'%20fill='%231F2738'/%3e%3cpath%20id='Vector_3'%20d='M152%2038C159%2033%20167%2031%20177%2031H235C247%2031%20258%2034%20267%2041L290%2060H131L152%2038Z'%20fill='%23C3CCD8'/%3e%3cg%20id='Vector_4'%3e%3cpath%20d='M211%2031V60Z'%20fill='black'/%3e%3cpath%20d='M211%2031V60'%20stroke='%231F2738'%20stroke-width='6'/%3e%3c/g%3e%3cg%20id='Vector_5'%3e%3cpath%20d='M134%2084H272Z'%20fill='black'/%3e%3cpath%20d='M134%2084H272'%20stroke='%232E384B'%20stroke-width='2'/%3e%3c/g%3e%3cg%20id='Vector_6'%3e%3cpath%20d='M318%2077H336Z'%20fill='black'/%3e%3cpath%20d='M318%2077H336'%20stroke='%23F4F6F9'%20stroke-width='5'%20stroke-linecap='round'/%3e%3c/g%3e%3cg%20id='Vector_7'%3e%3cpath%20d='M24%2080H35Z'%20fill='black'/%3e%3cpath%20d='M24%2080H35'%20stroke='%23EF4F44'%20stroke-width='5'%20stroke-linecap='round'/%3e%3c/g%3e%3cpath%20id='Vector_8'%20d='M92%20133C105.807%20133%20117%20121.807%20117%20108C117%2094.1929%20105.807%2083%2092%2083C78.1929%2083%2067%2094.1929%2067%20108C67%20121.807%2078.1929%20133%2092%20133Z'%20fill='%230E1117'/%3e%3cpath%20id='Vector_9'%20d='M92%20121C99.1797%20121%20105%20115.18%20105%20108C105%20100.82%2099.1797%2095%2092%2095C84.8203%2095%2079%20100.82%2079%20108C79%20115.18%2084.8203%20121%2092%20121Z'%20fill='%23A7B0BA'/%3e%3cpath%20id='Vector_10'%20d='M92%20112C94.2091%20112%2096%20110.209%2096%20108C96%20105.791%2094.2091%20104%2092%20104C89.7909%20104%2088%20105.791%2088%20108C88%20110.209%2089.7909%20112%2092%20112Z'%20fill='%230E1117'/%3e%3cpath%20id='Vector_11'%20d='M276%20133C289.807%20133%20301%20121.807%20301%20108C301%2094.1929%20289.807%2083%20276%2083C262.193%2083%20251%2094.1929%20251%20108C251%20121.807%20262.193%20133%20276%20133Z'%20fill='%230E1117'/%3e%3cpath%20id='Vector_12'%20d='M276%20121C283.18%20121%20289%20115.18%20289%20108C289%20100.82%20283.18%2095%20276%2095C268.82%2095%20263%20100.82%20263%20108C263%20115.18%20268.82%20121%20276%20121Z'%20fill='%23A7B0BA'/%3e%3cpath%20id='Vector_13'%20d='M276%20112C278.209%20112%20280%20110.209%20280%20108C280%20105.791%20278.209%20104%20276%20104C273.791%20104%20272%20105.791%20272%20108C272%20110.209%20273.791%20112%20276%20112Z'%20fill='%230E1117'/%3e%3c/g%3e%3c/svg%3e",
+        "loaded": true,
+        "naturalWidth": 360,
+        "naturalHeight": 140,
+        "width": 360,
+        "height": 140,
+        "x": 35,
+        "y": 134.796875
+      },
+      {
+        "file": "/assets/drive/4b216.svg",
+        "loaded": true,
+        "naturalWidth": 8,
+        "naturalHeight": 8,
+        "width": 8,
+        "height": 8,
+        "x": 93.296875,
+        "y": 312.296875
+      },
+      {
+        "file": "/assets/drive/6cb7a.svg",
+        "loaded": true,
+        "naturalWidth": 8,
+        "naturalHeight": 8,
+        "width": 8,
+        "height": 8,
+        "x": 217.875,
+        "y": 312.296875
+      },
+      {
+        "file": "/assets/drive/90ace.svg",
+        "loaded": true,
+        "naturalWidth": 14,
+        "naturalHeight": 10,
+        "width": 13.5,
+        "height": 9.75,
+        "x": 50.25,
+        "y": 607.703125
+      },
+      {
+        "file": "/assets/drive/24169.svg",
+        "loaded": true,
+        "naturalWidth": 12,
+        "naturalHeight": 10,
+        "width": 11.90625,
+        "height": 10.421875,
+        "x": 371.046875,
+        "y": 607.359375
+      },
+      {
+        "file": "data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20overflow='visible'%20style='display:%20block;'%20width='18.2417'%20height='18.2417'%20viewBox='0%200%2018.2417%2018.2417'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Group'%3e%3cpath%20id='Vector'%20d='M0.870833%207.74583L9.12083%200.870833L17.3708%207.74583V16.4542C17.3708%2016.6973%2017.2743%2016.9304%2017.1023%2017.1023C16.9304%2017.2743%2016.6973%2017.3708%2016.4542%2017.3708H11.8708V11.8708H6.37083V17.3708H1.7875C1.54438%2017.3708%201.31123%2017.2743%201.13932%2017.1023C0.96741%2016.9304%200.870833%2016.6973%200.870833%2016.4542V7.74583Z'%20stroke='white'%20stroke-width='1.74167'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e",
+        "loaded": true,
+        "naturalWidth": 18,
+        "naturalHeight": 18,
+        "width": 18.234375,
+        "height": 18.234375,
+        "x": 112.875,
+        "y": 855.875
+      },
+      {
+        "file": "data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20overflow='visible'%20style='display:%20block;'%20width='18.2414'%20height='18.2417'%20viewBox='0%200%2018.2414%2018.2417'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Group'%3e%3cpath%20id='Vector'%20d='M0.870838%209.18684C0.886099%2011.0946%201.5621%2012.9381%202.78374%2014.4036C4.00539%2015.869%205.69717%2016.8657%207.57106%2017.224C9.44495%2017.5824%2011.3851%2017.2802%2013.0612%2016.3689C14.7374%2015.4576%2016.0459%2013.9935%2016.7639%2012.226C17.482%2010.4584%2017.5653%208.49661%2016.9995%206.67457C16.4338%204.85253%2015.2541%203.28287%2013.6612%202.23283C12.0684%201.18278%2010.1608%200.717258%208.26327%200.915513C6.36575%201.11377%204.5956%201.96355%203.25417%203.32017L0.870838%205.52017'%20stroke='%23A6A6A6'%20stroke-width='1.74167'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_2'%20d='M0.870838%200.936841V5.52017H5.45417'%20stroke='%23A6A6A6'%20stroke-width='1.74167'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_3'%20d='M9.12084%205.06184V9.18684L11.8708%2011.0202'%20stroke='%23A6A6A6'%20stroke-width='1.74167'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e",
+        "loaded": true,
+        "naturalWidth": 18,
+        "naturalHeight": 18,
+        "width": 18.21875,
+        "height": 18.234375,
+        "x": 174.890625,
+        "y": 855.875
+      },
+      {
+        "file": "data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20overflow='visible'%20style='display:%20block;'%20width='18.2417'%20height='14.025'%20viewBox='0%200%2018.2417%2014.025'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Group'%3e%3cpath%20id='Vector'%20d='M0.870833%207.65417L2.70417%202.15417C2.82083%201.78319%203.05245%201.45892%203.36553%201.22822C3.67861%200.997531%204.05694%200.872373%204.44583%200.87084H13.7958C14.1847%200.872373%2014.5631%200.997531%2014.8761%201.22822C15.1892%201.45892%2015.4208%201.78319%2015.5375%202.15417L17.3708%207.65417V11.3208H0.870833V7.65417Z'%20stroke='%23A6A6A6'%20stroke-width='1.74167'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_2'%20d='M2.70417%2011.3208V13.1542M15.5375%2011.3208V13.1542'%20stroke='%23A6A6A6'%20stroke-width='1.74167'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_3'%20d='M4.99583%209.02917C5.50209%209.02917%205.9125%208.61877%205.9125%208.11251C5.9125%207.60625%205.50209%207.19584%204.99583%207.19584C4.48957%207.19584%204.07917%207.60625%204.07917%208.11251C4.07917%208.61877%204.48957%209.02917%204.99583%209.02917Z'%20stroke='%23A6A6A6'%20stroke-width='1.74167'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_4'%20d='M13.2458%209.02917C13.7521%209.02917%2014.1625%208.61877%2014.1625%208.11251C14.1625%207.60625%2013.7521%207.19584%2013.2458%207.19584C12.7396%207.19584%2012.3292%207.60625%2012.3292%208.11251C12.3292%208.61877%2012.7396%209.02917%2013.2458%209.02917Z'%20stroke='%23A6A6A6'%20stroke-width='1.74167'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e",
+        "loaded": true,
+        "naturalWidth": 18,
+        "naturalHeight": 14,
+        "width": 18.21875,
+        "height": 14.015625,
+        "x": 236.890625,
+        "y": 857.984375
+      },
+      {
+        "file": "data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20overflow='visible'%20style='display:%20block;'%20width='16.4088'%20height='16.4086'%20viewBox='0%200%2016.4088%2016.4086'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Group'%3e%3cpath%20id='Vector'%20d='M8.2044%208.20417C10.2294%208.20417%2011.8711%206.56254%2011.8711%204.5375C11.8711%202.51246%2010.2294%200.870833%208.2044%200.870833C6.17936%200.870833%204.53774%202.51246%204.53774%204.5375C4.53774%206.56254%206.17936%208.20417%208.2044%208.20417Z'%20stroke='%23A6A6A6'%20stroke-width='1.74167'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20id='Vector_2'%20d='M0.871069%2015.5375C2.24607%2011.8708%204.99607%2010.0375%208.2044%2010.0375C11.4127%2010.0375%2014.1627%2011.8708%2015.5377%2015.5375'%20stroke='%23A6A6A6'%20stroke-width='1.74167'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e",
+        "loaded": true,
+        "naturalWidth": 16,
+        "naturalHeight": 16,
+        "width": 16.390625,
+        "height": 16.390625,
+        "x": 299.796875,
+        "y": 856.796875
+      }
+    ],
+    "geometry": [
+      {
+        "class": "drive-home__top",
+        "x": 20,
+        "y": 66,
+        "width": 390,
+        "height": 40.796875
+      },
+      {
+        "class": "drive-car-hero",
+        "x": 20,
+        "y": 126.796875,
+        "width": 390,
+        "height": 198
+      },
+      {
+        "class": "drive-home__pitch",
+        "x": 20,
+        "y": 344.796875,
+        "width": 390,
+        "height": 170.78125
+      },
+      {
+        "class": "drive-recent",
+        "x": 20,
+        "y": 535.578125,
+        "width": 390,
+        "height": 114
+      }
+    ]
+  },
+  {
+    "name": "02-mount",
+    "path": "/drive/mount-your-phone",
+    "text": "Before you drive · 1 of 3\n\nMount your phone\n\nDo this while parked. The front camera needs a clear view of your eyes.\n\nBest\nOK on a vent\nToo low\n\nAt eye level, just left of the wheel\n\nAbout an arm’s length from your face\n\nNot blocking your view of the road\n\nMy phone is mounted",
+    "width": 430,
+    "fonts": true,
+    "images": [
+      {
+        "file": "data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20overflow='visible'%20style='display:%20block;'%20width='13.25'%20height='11.5833'%20viewBox='0%200%2013.25%2011.5833'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Group'%3e%3cpath%20id='Vector'%20d='M12.4583%205.79167H0.791667M5.79167%200.791667L0.791667%205.79167L5.79167%2010.7917'%20stroke='%23282828'%20stroke-width='1.58333'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e",
+        "loaded": true,
+        "naturalWidth": 13,
+        "naturalHeight": 12,
+        "width": 13.234375,
+        "height": 11.578125,
+        "x": 33.375,
+        "y": 76.203125
+      },
+      {
+        "file": "/assets/drive/742ca.svg",
+        "loaded": true,
+        "naturalWidth": 390,
+        "naturalHeight": 280,
+        "width": 390,
+        "height": 280,
+        "x": 20,
+        "y": 269.78125
+      },
+      {
+        "file": "/assets/drive/d8df5.svg",
+        "loaded": true,
+        "naturalWidth": 16,
+        "naturalHeight": 12,
+        "width": 16.40625,
+        "height": 11.921875,
+        "x": 35.796875,
+        "y": 581.8125
+      },
+      {
+        "file": "/assets/drive/30181.svg",
+        "loaded": true,
+        "naturalWidth": 15,
+        "naturalHeight": 6,
+        "width": 14.90625,
+        "height": 5.921875,
+        "x": 36.546875,
+        "y": 634.8125
+      },
+      {
+        "file": "/assets/drive/d6288.svg",
+        "loaded": true,
+        "naturalWidth": 12,
+        "naturalHeight": 15,
+        "width": 11.90625,
+        "height": 14.90625,
+        "x": 38.046875,
+        "y": 680.328125
+      }
+    ],
+    "geometry": [
+      {
+        "class": "icon-button icon-button--light ",
+        "x": 20,
+        "y": 62,
+        "width": 40,
+        "height": 40
+      },
+      {
+        "class": "drive-steps ",
+        "x": 20,
+        "y": 120,
+        "width": 390,
+        "height": 27
+      },
+      {
+        "class": "drive-heading ",
+        "x": 20,
+        "y": 165,
+        "width": 390,
+        "height": 86.78125
+      },
+      {
+        "class": "drive-dashboard",
+        "x": 20,
+        "y": 269.78125,
+        "width": 390,
+        "height": 280
+      },
+      {
+        "class": "drive-mount-tips",
+        "x": 20,
+        "y": 567.78125,
+        "width": 390,
+        "height": 138
+      }
+    ]
+  },
+  {
+    "name": "03-lineup",
+    "path": "/drive/line-up-your-face",
+    "text": "Before you drive · 2 of 3\n\nLine up your face\n\nSit the way you normally drive. We’ll guide you.\n\nTurn your phone a little to the right\n\nSpoken aloud too\n\nFace in view\n\nBoth eyes visible\n\nYour right eye is cut off\n\nGood distance\n\nWaiting for both eyes",
+    "width": 430,
+    "fonts": true,
+    "images": [
+      {
+        "file": "data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20overflow='visible'%20style='display:%20block;'%20width='13.25'%20height='11.5833'%20viewBox='0%200%2013.25%2011.5833'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Group'%3e%3cpath%20id='Vector'%20d='M12.4583%205.79167H0.791667M5.79167%200.791667L0.791667%205.79167L5.79167%2010.7917'%20stroke='%23282828'%20stroke-width='1.58333'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e",
+        "loaded": true,
+        "naturalWidth": 13,
+        "naturalHeight": 12,
+        "width": 13.234375,
+        "height": 11.578125,
+        "x": 33.375,
+        "y": 76.203125
+      },
+      {
+        "file": "/assets/drive/e4d73.png",
+        "loaded": true,
+        "naturalWidth": 300,
+        "naturalHeight": 392,
+        "width": 150,
+        "height": 196,
+        "x": 140,
+        "y": 333.390625
+      },
+      {
+        "file": "/assets/drive/58926.svg",
+        "loaded": true,
+        "naturalWidth": 150,
+        "naturalHeight": 196,
+        "width": 150,
+        "height": 196,
+        "x": 306,
+        "y": 343.390625
+      },
+      {
+        "file": "/assets/drive/dbb49.svg",
+        "loaded": true,
+        "naturalWidth": 126,
+        "naturalHeight": 46,
+        "width": 125.953125,
+        "height": 46.1875,
+        "x": 318,
+        "y": 403.390625
+      },
+      {
+        "file": "/assets/drive/b9f9d.svg",
+        "loaded": true,
+        "naturalWidth": 56,
+        "naturalHeight": 28,
+        "width": 56,
+        "height": 28,
+        "x": 230,
+        "y": 419.390625
+      },
+      {
+        "file": "/assets/drive/a3f58.svg",
+        "loaded": true,
+        "naturalWidth": 12,
+        "naturalHeight": 11,
+        "width": 12.125,
+        "height": 10.640625,
+        "x": 89.265625,
+        "y": 281.0625
+      },
+      {
+        "file": "/assets/drive/ab88d.svg",
+        "loaded": true,
+        "naturalWidth": 11,
+        "naturalHeight": 9,
+        "width": 11.28125,
+        "height": 9.265625,
+        "x": 47.359375,
+        "y": 543.25
+      },
+      {
+        "file": "/assets/drive/2b849.svg",
+        "loaded": true,
+        "naturalWidth": 12,
+        "naturalHeight": 9,
+        "width": 12.125,
+        "height": 8.765625,
+        "x": 42.9375,
+        "y": 620
+      },
+      {
+        "file": "/assets/drive/abb7d.svg",
+        "loaded": true,
+        "naturalWidth": 16,
+        "naturalHeight": 14,
+        "width": 15.875,
+        "height": 14.015625,
+        "x": 41.0625,
+        "y": 687.671875
+      },
+      {
+        "file": "/assets/drive/2b849.svg",
+        "loaded": true,
+        "naturalWidth": 12,
+        "naturalHeight": 9,
+        "width": 12.125,
+        "height": 8.765625,
+        "x": 42.9375,
+        "y": 760.59375
+      }
+    ],
+    "geometry": [
+      {
+        "class": "icon-button icon-button--light ",
+        "x": 20,
+        "y": 62,
+        "width": 40,
+        "height": 40
+      },
+      {
+        "class": "drive-steps ",
+        "x": 20,
+        "y": 120,
+        "width": 390,
+        "height": 27
+      },
+      {
+        "class": "drive-heading ",
+        "x": 20,
+        "y": 165,
+        "width": 390,
+        "height": 64.390625
+      },
+      {
+        "class": "drive-face-camera",
+        "x": 20,
+        "y": 247.390625,
+        "width": 390,
+        "height": 330
+      },
+      {
+        "class": "drive-live-checks",
+        "x": 20,
+        "y": 595.390625,
+        "width": 390,
+        "height": 198.59375
+      }
+    ]
+  },
+  {
+    "name": "04-check",
+    "path": "/drive/quick-eye-check",
+    "text": "Before you drive · 3 of 3\n\nQuick eye check\n\nLook ahead, then blink twice. This adjusts to the light in your car today.\n\nBlink twice\n\n1 of 2\n\nLooked ahead for 3 seconds\n\nBlink twice\n\nReady to drive\n\nStart driving",
+    "width": 430,
+    "fonts": true,
+    "images": [
+      {
+        "file": "data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20overflow='visible'%20style='display:%20block;'%20width='13.25'%20height='11.5833'%20viewBox='0%200%2013.25%2011.5833'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Group'%3e%3cpath%20id='Vector'%20d='M12.4583%205.79167H0.791667M5.79167%200.791667L0.791667%205.79167L5.79167%2010.7917'%20stroke='white'%20stroke-width='1.58333'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e",
+        "loaded": true,
+        "naturalWidth": 13,
+        "naturalHeight": 12,
+        "width": 13.234375,
+        "height": 11.578125,
+        "x": 33.375,
+        "y": 76.203125
+      },
+      {
+        "file": "/assets/drive/d663f.svg",
+        "loaded": true,
+        "naturalWidth": 260,
+        "naturalHeight": 260,
+        "width": 260,
+        "height": 260,
+        "x": 85,
+        "y": 285.78125
+      },
+      {
+        "file": "/assets/drive/a4bc7.svg",
+        "loaded": true,
+        "naturalWidth": 240,
+        "naturalHeight": 260,
+        "width": 239.75,
+        "height": 260,
+        "x": 105.234375,
+        "y": 285.78125
+      },
+      {
+        "file": "/assets/drive/b7757.svg",
+        "loaded": true,
+        "naturalWidth": 150,
+        "naturalHeight": 55,
+        "width": 150,
+        "height": 55,
+        "x": 140,
+        "y": 345.78125
+      },
+      {
+        "file": "/assets/drive/d86f4.svg",
+        "loaded": true,
+        "naturalWidth": 10,
+        "naturalHeight": 7,
+        "width": 9.890625,
+        "height": 7.28125,
+        "x": 45.046875,
+        "y": 602.140625
+      }
+    ],
+    "geometry": [
+      {
+        "class": "icon-button icon-button--dark ",
+        "x": 20,
+        "y": 62,
+        "width": 40,
+        "height": 40
+      },
+      {
+        "class": "drive-steps drive-steps--dark",
+        "x": 20,
+        "y": 122,
+        "width": 390,
+        "height": 27
+      },
+      {
+        "class": "drive-heading drive-heading--dark",
+        "x": 20,
+        "y": 169,
+        "width": 390,
+        "height": 86.78125
+      },
+      {
+        "class": "drive-gauge drive-gauge--check",
+        "x": 20,
+        "y": 275.78125,
+        "width": 390,
+        "height": 280
+      },
+      {
+        "class": "drive-check-steps",
+        "x": 20,
+        "y": 575.78125,
+        "width": 390,
+        "height": 132
+      }
+    ]
+  },
+  {
+    "name": "05-driving",
+    "path": "/drive/driving",
+    "text": "Eyes tracked\n\nAlarm on\n\nAlert\n\nEyes open, blinking normally\n\nDriving for\n\n42 min\n\nNext break\n\nin 18 min\n\nOpen Waze\nWe keep watching while it’s open\nEnd drive",
+    "width": 430,
+    "fonts": true,
+    "images": [
+      {
+        "file": "/assets/drive/d0a0b.svg",
+        "loaded": true,
+        "naturalWidth": 8,
+        "naturalHeight": 8,
+        "width": 8,
+        "height": 8,
+        "x": 20,
+        "y": 72
+      },
+      {
+        "file": "/assets/drive/b3b52.svg",
+        "loaded": true,
+        "naturalWidth": 15,
+        "naturalHeight": 12,
+        "width": 14.515625,
+        "height": 11.921875,
+        "x": 328.796875,
+        "y": 70.03125
+      },
+      {
+        "file": "/assets/drive/fe148.svg",
+        "loaded": true,
+        "naturalWidth": 280,
+        "naturalHeight": 280,
+        "width": 280,
+        "height": 280,
+        "x": 75,
+        "y": 130
+      },
+      {
+        "file": "/assets/drive/46c58.svg",
+        "loaded": true,
+        "naturalWidth": 280,
+        "naturalHeight": 280,
+        "width": 280,
+        "height": 280,
+        "x": 75,
+        "y": 130
+      },
+      {
+        "file": "/assets/drive/5c642.svg",
+        "loaded": true,
+        "naturalWidth": 165,
+        "naturalHeight": 61,
+        "width": 165,
+        "height": 60.5,
+        "x": 132.5,
+        "y": 188
+      },
+      {
+        "file": "/assets/drive/6c013.svg",
+        "loaded": true,
+        "naturalWidth": 22,
+        "naturalHeight": 22,
+        "width": 22,
+        "height": 22,
+        "x": 46,
+        "y": 592
+      },
+      {
+        "file": "/assets/drive/aa4e0.svg",
+        "loaded": true,
+        "naturalWidth": 20,
+        "naturalHeight": 20,
+        "width": 20,
+        "height": 20,
+        "x": 373,
+        "y": 593
+      }
+    ],
+    "geometry": [
+      {
+        "class": "drive-trip-bar",
+        "x": 20,
+        "y": 66,
+        "width": 390,
+        "height": 20
+      },
+      {
+        "class": "drive-gauge drive-gauge--alert",
+        "x": 20,
+        "y": 110,
+        "width": 390,
+        "height": 320
+      },
+      {
+        "class": "drive-trip-stats",
+        "x": 20,
+        "y": 454,
+        "width": 390,
+        "height": 88
+      },
+      {
+        "class": "drive-waze-card",
+        "x": 20,
+        "y": 566,
+        "width": 390,
+        "height": 74
+      }
+    ]
+  },
+  {
+    "name": "06-lost",
+    "path": "/drive/cant-see-your-eyes",
+    "text": "Eyes not found\n\nDriving 46 min\n\nCan’t see your eyes\n\nYour phone may have moved, or your head is turned away. Adjust it when it’s safe.\n\nTilt the phone up a little\n\nSpoken: “I can’t see your eyes. Adjust your phone when it’s safe.”\n\nWatching starts again on its own once your eyes are back in view.\n\nOK",
+    "width": 430,
+    "fonts": true,
+    "images": [
+      {
+        "file": "/assets/drive/6cb7a.svg",
+        "loaded": true,
+        "naturalWidth": 8,
+        "naturalHeight": 8,
+        "width": 8,
+        "height": 8,
+        "x": 20,
+        "y": 72
+      },
+      {
+        "file": "/assets/drive/9bdb9.svg",
+        "loaded": true,
+        "naturalWidth": 37,
+        "naturalHeight": 34,
+        "width": 36.984375,
+        "height": 33.65625,
+        "x": 196.5,
+        "y": 149.171875
+      },
+      {
+        "file": "/assets/drive/40771.png",
+        "loaded": true,
+        "naturalWidth": 220,
+        "naturalHeight": 288,
+        "width": 110,
+        "height": 144,
+        "x": 160,
+        "y": 366.78125
+      },
+      {
+        "file": "/assets/drive/2501d.svg",
+        "loaded": true,
+        "naturalWidth": 110,
+        "naturalHeight": 144,
+        "width": 110,
+        "height": 144,
+        "x": 160,
+        "y": 258.78125
+      },
+      {
+        "file": "/assets/drive/dd919.svg",
+        "loaded": true,
+        "naturalWidth": 9,
+        "naturalHeight": 11,
+        "width": 9.453125,
+        "height": 10.796875,
+        "x": 127.671875,
+        "y": 488.875
+      },
+      {
+        "file": "/assets/drive/8342e.svg",
+        "loaded": true,
+        "naturalWidth": 16,
+        "naturalHeight": 13,
+        "width": 16.140625,
+        "height": 13.25,
+        "x": 37.921875,
+        "y": 573.75
+      }
+    ],
+    "geometry": [
+      {
+        "class": "drive-trip-bar",
+        "x": 20,
+        "y": 66,
+        "width": 390,
+        "height": 20
+      },
+      {
+        "class": "drive-lost-icon",
+        "x": 171,
+        "y": 122,
+        "width": 88,
+        "height": 88
+      },
+      {
+        "class": "drive-heading drive-heading--dark",
+        "x": 20,
+        "y": 230,
+        "width": 390,
+        "height": 86.78125
+      },
+      {
+        "class": "drive-lost-camera",
+        "x": 20,
+        "y": 336.78125,
+        "width": 390,
+        "height": 190
+      },
+      {
+        "class": "drive-spoken",
+        "x": 20,
+        "y": 546.78125,
+        "width": 390,
+        "height": 67.1875
+      }
+    ]
+  },
+  {
+    "name": "07-tired",
+    "path": "/drive/getting-tired",
+    "text": "Signs of tiredness\n\nDriving 1 h 05 min\n\nTired\n\nSlow blinks · 3 yawns in 10 min\n\nTake a break soon\n\nR&R Seremban · 12 km · about 9 min\n\nGo to rest stop\n\nOpens in Waze · your saved places stay there\n\nSpoken: “You’re getting tired. There’s a rest stop in 12 km.”\n\nRemind me in 10 min",
+    "width": 430,
+    "fonts": true,
+    "images": [
+      {
+        "file": "/assets/drive/6cb7a.svg",
+        "loaded": true,
+        "naturalWidth": 8,
+        "naturalHeight": 8,
+        "width": 8,
+        "height": 8,
+        "x": 20,
+        "y": 72
+      },
+      {
+        "file": "/assets/drive/d663f.svg",
+        "loaded": true,
+        "naturalWidth": 260,
+        "naturalHeight": 260,
+        "width": 260,
+        "height": 260,
+        "x": 85,
+        "y": 114
+      },
+      {
+        "file": "/assets/drive/24551.svg",
+        "loaded": true,
+        "naturalWidth": 130,
+        "naturalHeight": 244,
+        "width": 129.984375,
+        "height": 243.90625,
+        "x": 215,
+        "y": 114
+      },
+      {
+        "file": "/assets/drive/b7757.svg",
+        "loaded": true,
+        "naturalWidth": 150,
+        "naturalHeight": 55,
+        "width": 150,
+        "height": 55,
+        "x": 140,
+        "y": 170
+      },
+      {
+        "file": "/assets/drive/f04f3.svg",
+        "loaded": true,
+        "naturalWidth": 19,
+        "naturalHeight": 18,
+        "width": 18.875,
+        "height": 17.890625,
+        "x": 51.5625,
+        "y": 426.046875
+      },
+      {
+        "file": "/assets/drive/43460.svg",
+        "loaded": true,
+        "naturalWidth": 11,
+        "naturalHeight": 11,
+        "width": 10.5,
+        "height": 10.5,
+        "x": 76.5625,
+        "y": 544.25
+      },
+      {
+        "file": "/assets/drive/8342e.svg",
+        "loaded": true,
+        "naturalWidth": 16,
+        "naturalHeight": 13,
+        "width": 16.140625,
+        "height": 13.25,
+        "x": 37.921875,
+        "y": 619.96875
+      }
+    ],
+    "geometry": [
+      {
+        "class": "drive-trip-bar",
+        "x": 20,
+        "y": 66,
+        "width": 390,
+        "height": 20
+      },
+      {
+        "class": "drive-gauge drive-gauge--tired",
+        "x": 20,
+        "y": 104,
+        "width": 390,
+        "height": 272
+      },
+      {
+        "class": "drive-rest-card ",
+        "x": 20,
+        "y": 394,
+        "width": 390,
+        "height": 181
+      },
+      {
+        "class": "drive-spoken",
+        "x": 20,
+        "y": 593,
+        "width": 390,
+        "height": 67.1875
+      }
+    ]
+  },
+  {
+    "name": "08-alarm",
+    "path": "/drive/microsleep-alarm",
+    "text": "Wake up\n\nYour eyes closed for 1.8 seconds while driving.\n\nPull over and rest\n\nR&R Seremban · 4 km · about 3 min\n\nGo to rest stop\n\nOpens in Waze · your saved places stay there\n\nThe alarm keeps sounding until you tap below.\n\nI'm awake",
+    "width": 430,
+    "fonts": true,
+    "images": [
+      {
+        "file": "/assets/drive/7792c.svg",
+        "loaded": true,
+        "naturalWidth": 39,
+        "naturalHeight": 34,
+        "width": 38.484375,
+        "height": 33.90625,
+        "x": 195.75,
+        "y": 157.046875
+      },
+      {
+        "file": "/assets/drive/dad67.svg",
+        "loaded": true,
+        "naturalWidth": 19,
+        "naturalHeight": 18,
+        "width": 18.875,
+        "height": 17.890625,
+        "x": 54.5625,
+        "y": 381.4375
+      },
+      {
+        "file": "/assets/drive/43460.svg",
+        "loaded": true,
+        "naturalWidth": 11,
+        "naturalHeight": 11,
+        "width": 10.5,
+        "height": 10.5,
+        "x": 76.5625,
+        "y": 504.640625
+      }
+    ],
+    "geometry": [
+      {
+        "class": "drive-alarm-icon",
+        "x": 167,
+        "y": 126,
+        "width": 96,
+        "height": 96
+      },
+      {
+        "class": "drive-alarm-heading",
+        "x": 20,
+        "y": 242,
+        "width": 390,
+        "height": 84.390625
+      },
+      {
+        "class": "drive-rest-card drive-rest-card--alarm",
+        "x": 20,
+        "y": 346.390625,
+        "width": 390,
+        "height": 191
+      }
+    ]
+  },
+  {
+    "name": "09-summary",
+    "path": "/drive/trip-summary",
+    "text": "PJ → Seremban\n\nToday · 1 h 12 min · 68 km\n\nDrowsiness on this trip\n1 microsleep\nStart\n36 min\n72 min\nMicrosleep\n\n58 min\n\nEyes closed 1.8 s · alarm sounded\n\nYawning\n\n44 min\n\n3 times in 5 minutes\n\nSlow blinks\n\n39 min\n\nBlinks were getting longer\n\nDone",
+    "width": 430,
+    "fonts": true,
+    "images": [
+      {
+        "file": "data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20overflow='visible'%20style='display:%20block;'%20width='11.5833'%20height='11.5833'%20viewBox='0%200%2011.5833%2011.5833'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Group'%3e%3cpath%20id='Vector'%20d='M0.791667%200.791667L10.7917%2010.7917M10.7917%200.791667L0.791667%2010.7917'%20stroke='%23282828'%20stroke-width='1.58333'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e",
+        "loaded": true,
+        "naturalWidth": 12,
+        "naturalHeight": 12,
+        "width": 11.578125,
+        "height": 11.578125,
+        "x": 34.203125,
+        "y": 76.203125
+      },
+      {
+        "file": "/assets/drive/6665a.svg",
+        "loaded": true,
+        "naturalWidth": 8,
+        "naturalHeight": 8,
+        "width": 8,
+        "height": 8,
+        "x": 293.09375,
+        "y": 233.390625
+      },
+      {
+        "file": "/assets/drive/0ad48.svg",
+        "loaded": true,
+        "naturalWidth": 20,
+        "naturalHeight": 18,
+        "width": 20.0625,
+        "height": 18.234375,
+        "x": 46.96875,
+        "y": 439.265625
+      },
+      {
+        "file": "/assets/drive/616ac.svg",
+        "loaded": true,
+        "naturalWidth": 18,
+        "naturalHeight": 18,
+        "width": 18.234375,
+        "height": 18.234375,
+        "x": 47.875,
+        "y": 523.265625
+      },
+      {
+        "file": "/assets/drive/5ade7.svg",
+        "loaded": true,
+        "naturalWidth": 20,
+        "naturalHeight": 8,
+        "width": 20.03125,
+        "height": 7.6875,
+        "x": 46.984375,
+        "y": 612.546875
+      }
+    ],
+    "geometry": [
+      {
+        "class": "icon-button icon-button--light ",
+        "x": 20,
+        "y": 62,
+        "width": 40,
+        "height": 40
+      },
+      {
+        "class": "drive-heading ",
+        "x": 20,
+        "y": 122,
+        "width": 390,
+        "height": 64.390625
+      },
+      {
+        "class": "drive-chart",
+        "x": 20,
+        "y": 206.390625,
+        "width": 390,
+        "height": 185
+      },
+      {
+        "class": "drive-events",
+        "x": 20,
+        "y": 411.390625,
+        "width": 390,
+        "height": 242
+      }
+    ]
+  },
+  {
+    "name": "05a-waze",
+    "path": "/drive/waze-open-still-watching",
+    "text": "300 m\n\nTurn right onto Jalan Universiti\n\nStill watching your eyes\n\nTap to go back to Dormathon\n\n18 min\n\n14 km · arrive 4:22 pm",
+    "width": 430,
+    "fonts": true,
+    "images": [
+      {
+        "file": "/assets/drive/1f7f4.svg",
+        "loaded": true,
+        "naturalWidth": 430,
+        "naturalHeight": 932,
+        "width": 430,
+        "height": 932,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "file": "/assets/drive/973a1.svg",
+        "loaded": true,
+        "naturalWidth": 28,
+        "naturalHeight": 28,
+        "width": 28,
+        "height": 28,
+        "x": 40,
+        "y": 87.296875
+      },
+      {
+        "file": "/assets/drive/1bd76.svg",
+        "loaded": true,
+        "naturalWidth": 36,
+        "naturalHeight": 36,
+        "width": 36,
+        "height": 36,
+        "x": 364,
+        "y": 374
+      },
+      {
+        "file": "/assets/drive/b40a5.svg",
+        "loaded": true,
+        "naturalWidth": 18,
+        "naturalHeight": 18,
+        "width": 18,
+        "height": 18,
+        "x": 375,
+        "y": 854.703125
+      }
+    ],
+    "geometry": []
+  },
+  {
+    "name": "05b-waze-tired",
+    "path": "/drive/tired-while-waze-is-open",
+    "text": "You look tired\n\nLong blinks for 2 minutes. Rest stop in 6 km.\n\nGo to rest stop\nI’m OK\n\n18 min\n\n14 km · arrive 4:22 pm",
+    "width": 430,
+    "fonts": true,
+    "images": [
+      {
+        "file": "/assets/drive/1f7f4.svg",
+        "loaded": true,
+        "naturalWidth": 430,
+        "naturalHeight": 932,
+        "width": 430,
+        "height": 932,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "file": "/assets/drive/5e275.svg",
+        "loaded": true,
+        "naturalWidth": 22,
+        "naturalHeight": 22,
+        "width": 22,
+        "height": 22,
+        "x": 41,
+        "y": 87.796875
+      },
+      {
+        "file": "/assets/drive/1bd76.svg",
+        "loaded": true,
+        "naturalWidth": 36,
+        "naturalHeight": 36,
+        "width": 36,
+        "height": 36,
+        "x": 364,
+        "y": 374
+      },
+      {
+        "file": "/assets/drive/b40a5.svg",
+        "loaded": true,
+        "naturalWidth": 18,
+        "naturalHeight": 18,
+        "width": 18,
+        "height": 18,
+        "x": 375,
+        "y": 854.703125
+      }
+    ],
+    "geometry": []
+  }
+]

@@ -1,0 +1,203 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/0191a6f5-b646-4933-8c37-2bc4a3a7ed2c";
+const imgGroup = `${assetPathPrefix}/027af.svg`;
+const imgIndicators = `${assetPathPrefix}/a391f.svg`;
+const imgFaceGuide = `${assetPathPrefix}/e4d73.png`;
+const imgYourFace = `${assetPathPrefix}/58926.svg`;
+const imgArt = `${assetPathPrefix}/84a47.svg`;
+const imgDirection = `${assetPathPrefix}/b9f9d.svg`;
+const imgGroup1 = `${assetPathPrefix}/a3f58.svg`;
+const imgGroup2 = `${assetPathPrefix}/ab88d.svg`;
+const imgGroup3 = `${assetPathPrefix}/2b849.svg`;
+const imgGroup4 = `${assetPathPrefix}/abb7d.svg`;
+
+type IconButtonProps = {
+  className?: string;
+  icon?: "Back";
+  theme?: "Light";
+};
+
+function IconButton({ className, icon = "Back", theme = "Light" }: IconButtonProps) {
+  return (
+    <div className={className || "bg-[var(--bg\\/card,white)] border border-[var(--line\\/default,#e8eaed)] border-solid content-stretch drop-shadow-[0px_6px_8px_rgba(0,0,0,0.06)] flex items-center justify-center relative rounded-[20px] size-[40px]"} data-node-id="27:14">
+      <div className="overflow-clip relative shrink-0 size-[20px]" data-node-id="27:15" data-name="icon/back">
+        <div className="absolute bottom-1/4 left-[20.83%] right-[20.83%] top-1/4" data-node-id="27:16" data-name="Group">
+          <div className="absolute inset-[-7.92%_-6.79%]">
+            <img alt="" className="block max-w-none size-full" src={imgGroup} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+type StatusBarProps = {
+  className?: string;
+  theme?: "Light";
+};
+
+function StatusBar({ className, theme = "Light" }: StatusBarProps) {
+  return (
+    <div className={className || "h-[54px] relative w-[430px]"} data-node-id="27:134">
+      <p className="[word-break:break-word] absolute font-['SF_Pro:Semibold'] font-[590] leading-[normal] left-[52px] text-[17px] text-[color:var(--text\/primary,#282828)] top-[18px] tracking-[-0.408px] whitespace-nowrap" data-node-id="27:135" style={{ fontVariationSettings: '"wdth" 100' }}>
+        9:41
+      </p>
+      <div className="absolute bg-black h-[36px] left-[153px] rounded-[18px] top-[11px] w-[123.999px]" data-node-id="27:136" data-name="Dynamic Island" />
+      <div className="absolute h-[13px] left-[308px] top-[21px] w-[70px]" data-node-id="27:137" data-name="Indicators">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIndicators} />
+      </div>
+    </div>
+  );
+}
+
+export default function Component03LineUpYourFace() {
+  return (
+    <div className="bg-[var(--bg\/screen,#fcfcfe)] relative size-full" data-node-id="38:906" data-name="03 Line up your face">
+      <StatusBar className="absolute h-[54px] left-0 top-0 w-[430px]" />
+      <div className="absolute content-stretch flex flex-col gap-[18px] items-start left-0 overflow-clip pb-[24px] pt-[8px] px-[20px] top-[54px] w-[430px]" data-node-id="38:918" data-name="Content">
+        <IconButton className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch cursor-pointer drop-shadow-[0px_6px_8px_rgba(0,0,0,0.06)] flex items-center justify-center relative rounded-[20px] shrink-0 size-[40px]" />
+        <div className="content-stretch flex flex-col gap-[8px] items-center overflow-clip relative shrink-0 w-full" data-node-id="38:923" data-name="Steps">
+          <div className="content-stretch flex gap-[6px] h-[4px] items-start overflow-clip relative shrink-0 w-[160px]" data-node-id="38:924" data-name="Frame">
+            <div className="bg-[var(--brand\/navy,#1b2a4e)] flex-[1_0_0] h-[4px] min-w-px relative rounded-[2px]" data-node-id="38:925" data-name="Rectangle" />
+            <div className="bg-[var(--brand\/navy,#1b2a4e)] flex-[1_0_0] h-[4px] min-w-px relative rounded-[2px]" data-node-id="38:926" data-name="Rectangle" />
+            <div className="bg-[var(--line\/default,#e8eaed)] flex-[1_0_0] h-[4px] min-w-px relative rounded-[2px]" data-node-id="38:927" data-name="Rectangle" />
+          </div>
+          <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[normal] not-italic relative shrink-0 text-[12px] text-[color:var(--text\/tertiary,#a6a6a6)] tracking-[0.0024px] whitespace-nowrap" data-node-id="38:928">
+            Before you drive · 2 of 3
+          </p>
+        </div>
+        <div className="[word-break:break-word] content-stretch flex flex-col gap-[8px] items-center not-italic overflow-clip relative shrink-0 text-center w-full" data-node-id="38:929" data-name="Heading">
+          <p className="font-['Inter:Bold'] font-bold leading-[normal] relative shrink-0 text-[28px] text-[color:var(--text\/primary,#282828)] tracking-[-0.2632px] w-full" data-node-id="38:930">
+            Line up your face
+          </p>
+          <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[16px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.0784px] w-full" data-node-id="38:931">
+            Sit the way you normally drive. We’ll guide you.
+          </p>
+        </div>
+        <div className="bg-[var(--drive\/bg,#0b1220)] h-[275px] overflow-clip relative rounded-[24px] shrink-0 w-[390px]" data-node-id="38:932" data-name="Live camera">
+          <div className="absolute h-[196px] left-[120px] top-[86px] w-[150px]" data-node-id="38:933" data-name="Face guide">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" height="196" src={imgFaceGuide} width="150" />
+          </div>
+          <div className="absolute h-[196px] left-[286px] top-[96px] w-[150px]" data-node-id="38:934" data-name="Your face">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgYourFace} />
+          </div>
+          <div className="absolute h-[46.2px] left-[298px] top-[156px] w-[126px]" data-node-id="38:935" data-name="Eye landmarks">
+            <div className="absolute h-[46.2px] left-0 top-0 w-[125.999px]" data-node-id="I38:935;27:187" data-name="Art">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgArt} />
+            </div>
+          </div>
+          <div className="absolute h-[28px] left-[210px] top-[172px] w-[56px]" data-node-id="38:957" data-name="Direction">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDirection} />
+          </div>
+          <div className="absolute bg-white content-stretch flex gap-[8px] items-center left-[51.5px] overflow-clip px-[14px] py-[10px] rounded-[14px] top-[20px]" data-node-id="38:959" data-name="Live hint">
+            <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="38:960" data-name="icon/arrowR">
+              <div className="absolute bottom-1/4 left-[20.83%] right-[20.83%] top-1/4" data-node-id="38:961" data-name="Group">
+                <div className="absolute inset-[-9.17%_-7.86%]">
+                  <img alt="" className="block max-w-none size-full" src={imgGroup1} />
+                </div>
+              </div>
+            </div>
+            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--brand\/navy,#1b2a4e)] tracking-[-0.042px] whitespace-nowrap" data-node-id="38:963">
+              Turn your phone a little to the right
+            </p>
+          </div>
+          <div className="absolute bg-[var(--drive\/card,#141e30)] content-stretch flex gap-[6px] items-center left-[16px] overflow-clip px-[10px] py-[6px] rounded-[10px] top-[232px]" data-node-id="38:964" data-name="Voice">
+            <div className="overflow-clip relative shrink-0 size-[14px]" data-node-id="38:965" data-name="icon/volume">
+              <div className="absolute inset-[20.83%_10.5%_20.83%_16.67%]" data-node-id="38:966" data-name="Group">
+                <div className="absolute inset-[-6.79%_-5.44%]">
+                  <img alt="" className="block max-w-none size-full" src={imgGroup2} />
+                </div>
+              </div>
+            </div>
+            <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[normal] not-italic relative shrink-0 text-[12px] text-[color:var(--drive\/text-secondary,#95a0b3)] tracking-[0.0024px] whitespace-nowrap" data-node-id="38:969">
+              Spoken aloud too
+            </p>
+          </div>
+        </div>
+        <div className="content-stretch flex flex-col gap-[8px] items-start overflow-clip relative shrink-0 w-full" data-node-id="38:970" data-name="Live checks">
+          <div className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch flex gap-[14px] items-center overflow-clip pl-[12px] pr-[16px] py-[12px] relative rounded-[16px] shadow-[0px_6px_16px_0px_rgba(0,0,0,0.04)] shrink-0 w-full" data-node-id="38:971" data-name="Check Face in view">
+            <div className="bg-[var(--state\/success-soft,#e3f3ec)] content-stretch flex items-center justify-center overflow-clip relative rounded-[10px] shrink-0 size-[32px]" data-node-id="38:972" data-name="Frame">
+              <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="38:973" data-name="icon/check">
+                <div className="absolute inset-[31.25%_20.83%_29.17%_20.83%]" data-node-id="38:974" data-name="Group">
+                  <div className="absolute inset-[-11.58%_-7.86%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup3} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-w-px overflow-clip relative" data-node-id="38:976" data-name="Frame">
+              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px] whitespace-nowrap" data-node-id="38:977">
+                Face in view
+              </p>
+            </div>
+          </div>
+          <div className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch flex gap-[14px] items-center overflow-clip pl-[12px] pr-[16px] py-[12px] relative rounded-[16px] shadow-[0px_6px_16px_0px_rgba(0,0,0,0.04)] shrink-0 w-full" data-node-id="38:978" data-name="Check Both eyes visible">
+            <div className="bg-[var(--state\/warning-soft,#fcf0da)] content-stretch flex items-center justify-center overflow-clip relative rounded-[10px] shrink-0 size-[32px]" data-node-id="38:979" data-name="Frame">
+              <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="38:980" data-name="icon/alert">
+                <div className="absolute inset-[14.58%_10.42%_16.67%_10.42%]" data-node-id="38:981" data-name="Group">
+                  <div className="absolute inset-[-6.67%_-5.79%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup4} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-px items-start min-w-px not-italic overflow-clip relative" data-node-id="38:984" data-name="Frame">
+              <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px] whitespace-nowrap" data-node-id="38:985">
+                Both eyes visible
+              </p>
+              <p className="font-['Inter:Regular'] font-normal leading-[1.4] min-w-full relative shrink-0 text-[14px] text-[color:var(--state\/warning,#b86e00)] tracking-[-0.042px] w-[min-content]" data-node-id="38:986">
+                Your right eye is cut off
+              </p>
+            </div>
+          </div>
+          <div className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch flex gap-[14px] items-center overflow-clip pl-[12px] pr-[16px] py-[12px] relative rounded-[16px] shadow-[0px_6px_16px_0px_rgba(0,0,0,0.04)] shrink-0 w-full" data-node-id="38:987" data-name="Check Good distance">
+            <div className="bg-[var(--state\/success-soft,#e3f3ec)] content-stretch flex items-center justify-center overflow-clip relative rounded-[10px] shrink-0 size-[32px]" data-node-id="38:988" data-name="Frame">
+              <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="38:989" data-name="icon/check">
+                <div className="absolute inset-[31.25%_20.83%_29.17%_20.83%]" data-node-id="38:990" data-name="Group">
+                  <div className="absolute inset-[-11.58%_-7.86%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup3} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-w-px overflow-clip relative" data-node-id="38:992" data-name="Frame">
+              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px] whitespace-nowrap" data-node-id="38:993">
+                Good distance
+              </p>
+            </div>
+          </div>
+          <div className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch flex gap-[14px] items-center overflow-clip pl-[12px] pr-[16px] py-[12px] relative rounded-[16px] shadow-[0px_6px_16px_0px_rgba(0,0,0,0.04)] shrink-0 w-full" data-node-id="162:1620" data-name="Check Seatbelt on">
+            <div className="bg-[var(--state\/success-soft,#e3f3ec)] content-stretch flex items-center justify-center overflow-clip relative rounded-[10px] shrink-0 size-[32px]" data-node-id="162:1621" data-name="Frame">
+              <div className="overflow-clip relative shrink-0 size-[18px]" data-node-id="162:1622" data-name="icon/check">
+                <div className="absolute inset-[31.25%_20.83%_29.17%_20.83%]" data-node-id="162:1623" data-name="Group">
+                  <div className="absolute inset-[-11.58%_-7.86%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup3} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-w-px overflow-clip relative" data-node-id="162:1625" data-name="Frame">
+              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px] whitespace-nowrap" data-node-id="162:1626">
+                Seatbelt across your chest
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a className="absolute bg-[var(--bg\/field,#f2f3f5)] content-stretch cursor-pointer flex h-[56px] items-center justify-center left-[20px] overflow-clip rounded-[18px] top-[842px] w-[390px]" data-node-id="38:994" data-name="Button Waiting">
+        <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[18px] text-[color:var(--text\/tertiary,#a6a6a6)] text-left tracking-[-0.1152px] whitespace-nowrap" data-node-id="38:995">
+          Waiting for both eyes
+        </p>
+      </a>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Label/Small: Font(family: "Inter", style: Medium, size: 12, weight: 500, lineHeight: 100, letterSpacing: 0.019999999552965164), Heading/Large: Font(family: "Inter", style: Bold, size: 28, weight: 700, lineHeight: 100, letterSpacing: -0.9399999976158142), Body/Regular: Font(family: "Inter", style: Regular, size: 16, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.49000000953674316), Body/Small Strong: Font(family: "Inter", style: Semi Bold, size: 14, weight: 600, lineHeight: 100, letterSpacing: -0.30000001192092896), Body/Strong: Font(family: "Inter", style: Semi Bold, size: 16, weight: 600, lineHeight: 100, letterSpacing: -0.49000000953674316), Body/Small: Font(family: "Inter", style: Regular, size: 14, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.30000001192092896), Button: Font(family: "Inter", style: Semi Bold, size: 18, weight: 600, lineHeight: 100, letterSpacing: -0.6399999856948853).
+Images and SVGs will be stored as constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

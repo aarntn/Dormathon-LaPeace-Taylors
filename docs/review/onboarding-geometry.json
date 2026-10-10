@@ -1,0 +1,1122 @@
+[
+  {
+    "screen": 1,
+    "path": "/onboarding/splash",
+    "text": "Eyes on you. Eyes on your car.",
+    "width": 430,
+    "images": [
+      {
+        "file": "/assets/onboarding/1cd24.svg",
+        "loaded": true,
+        "x": 167.1171875,
+        "y": 340,
+        "width": 95.765625,
+        "height": 95.765625,
+        "naturalWidth": 96,
+        "naturalHeight": 96
+      },
+      {
+        "file": "/assets/onboarding/wordmark-splash.svg",
+        "loaded": true,
+        "x": 159.5,
+        "y": 472,
+        "width": 111,
+        "height": 20,
+        "naturalWidth": 111,
+        "naturalHeight": 20
+      }
+    ],
+    "geometry": [
+      {
+        "class": "ob-splash-mark",
+        "x": 167.1171875,
+        "y": 340,
+        "width": 95.765625,
+        "height": 95.765625
+      },
+      {
+        "class": "ob-art ob-wordmark",
+        "x": 159.5,
+        "y": 472,
+        "width": 111,
+        "height": 20
+      },
+      {
+        "class": "text-body-regular ob-tagline",
+        "x": 0,
+        "y": 506,
+        "width": 430,
+        "height": 22
+      }
+    ]
+  },
+  {
+    "screen": 2,
+    "path": "/onboarding/loading",
+    "text": "Getting your co-driver ready",
+    "width": 430,
+    "images": [
+      {
+        "file": "/assets/onboarding/wordmark-loading.svg",
+        "loaded": true,
+        "x": 170.5,
+        "y": 394,
+        "width": 89,
+        "height": 15,
+        "naturalWidth": 89,
+        "naturalHeight": 15
+      }
+    ],
+    "geometry": [
+      {
+        "class": "ob-loading-mark",
+        "x": 179,
+        "y": 300,
+        "width": 72,
+        "height": 72
+      },
+      {
+        "class": "ob-art ob-wordmark",
+        "x": 170.5,
+        "y": 394,
+        "width": 89,
+        "height": 15
+      },
+      {
+        "class": "ob-loading-progress",
+        "x": 115,
+        "y": 520,
+        "width": 200,
+        "height": 6
+      },
+      {
+        "class": "text-body-small ob-loading-caption",
+        "x": 0,
+        "y": 544,
+        "width": 430,
+        "height": 20
+      }
+    ]
+  },
+  {
+    "screen": 3,
+    "path": "/onboarding/welcome",
+    "text": "Drive awake, arrive safe\n\nDormathon watches for drowsiness while you drive and keeps an eye on your car’s health.\n\nSign up with email\nContinue with Google\n\nAlready have an account? Log in",
+    "width": 430,
+    "images": [
+      {
+        "file": "/assets/onboarding/d8350.svg",
+        "loaded": true,
+        "x": 65,
+        "y": 80,
+        "width": 300,
+        "height": 271,
+        "naturalWidth": 300,
+        "naturalHeight": 271
+      },
+      {
+        "file": "/assets/onboarding/4e2f1.svg",
+        "loaded": true,
+        "x": 186.921875,
+        "y": 126,
+        "width": 56.15625,
+        "height": 56.15625,
+        "naturalWidth": 56,
+        "naturalHeight": 56
+      },
+      {
+        "file": "/assets/onboarding/a89d2.svg",
+        "loaded": true,
+        "x": 44,
+        "y": 240,
+        "width": 342,
+        "height": 133,
+        "naturalWidth": 342,
+        "naturalHeight": 133
+      }
+    ],
+    "geometry": [
+      {
+        "class": "ob-welcome-hero",
+        "x": 20,
+        "y": 70,
+        "width": 390,
+        "height": 340
+      },
+      {
+        "class": "ob-heading",
+        "x": 20,
+        "y": 434,
+        "width": 390,
+        "height": 86
+      }
+    ]
+  },
+  {
+    "screen": 4,
+    "path": "/onboarding/sign-up",
+    "text": "Create your account\n\nWe’ll use it to save your car and your trips.\n\nFull name\nEmail\nPassword\n\nBy continuing you agree to our Terms and Privacy Policy.\n\nContinue",
+    "width": 430,
+    "images": [
+      {
+        "file": "data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20overflow='visible'%20style='display:%20block;'%20width='13.25'%20height='11.5833'%20viewBox='0%200%2013.25%2011.5833'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Group'%3e%3cpath%20id='Vector'%20d='M12.4583%205.79167H0.791667M5.79167%200.791667L0.791667%205.79167L5.79167%2010.7917'%20stroke='%23282828'%20stroke-width='1.58333'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e",
+        "loaded": true,
+        "x": 33.375,
+        "y": 76.203125,
+        "width": 13.234375,
+        "height": 11.578125,
+        "naturalWidth": 13,
+        "naturalHeight": 12
+      }
+    ],
+    "geometry": [
+      {
+        "class": "icon-button icon-button--light ",
+        "x": 20,
+        "y": 62,
+        "width": 40,
+        "height": 40
+      },
+      {
+        "class": "ob-heading",
+        "x": 20,
+        "y": 122,
+        "width": 390,
+        "height": 64
+      },
+      {
+        "class": "ob-form",
+        "x": 20,
+        "y": 206,
+        "width": 390,
+        "height": 275
+      }
+    ]
+  },
+  {
+    "screen": 5,
+    "path": "/onboarding/whats-your-car",
+    "text": "Step 1 of 4\n\nWhat’s your car?\n\nWe use it to tailor your car checks and alerts.\n\nBest match\nP\nPerodua Myvi\nHatchback · 2005 – today\nPopular in Malaysia\nP\nPerodua Axia\nHatchback\nP\nPerodua Bezza\nSedan\nP\nProton Saga\nSedan\nH\nHonda City\nSedan\nCan’t find it? Add your car manually",
+    "width": 430,
+    "images": [
+      {
+        "file": "data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20overflow='visible'%20style='display:%20block;'%20width='13.25'%20height='11.5833'%20viewBox='0%200%2013.25%2011.5833'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Group'%3e%3cpath%20id='Vector'%20d='M12.4583%205.79167H0.791667M5.79167%200.791667L0.791667%205.79167L5.79167%2010.7917'%20stroke='%23282828'%20stroke-width='1.58333'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e",
+        "loaded": true,
+        "x": 33.375,
+        "y": 76.203125,
+        "width": 13.234375,
+        "height": 11.578125,
+        "naturalWidth": 13,
+        "naturalHeight": 12
+      },
+      {
+        "file": "/assets/onboarding/34f42.svg",
+        "loaded": true,
+        "x": 40.03125,
+        "y": 273.53125,
+        "width": 14.921875,
+        "height": 14.921875,
+        "naturalWidth": 15,
+        "naturalHeight": 15
+      },
+      {
+        "file": "/assets/onboarding/ecf2b.svg",
+        "loaded": true,
+        "x": 377.890625,
+        "y": 277.390625,
+        "width": 7.203125,
+        "height": 7.203125,
+        "naturalWidth": 7,
+        "naturalHeight": 7
+      },
+      {
+        "file": "/assets/onboarding/24cc9.svg",
+        "loaded": true,
+        "x": 375.71875,
+        "y": 387.21875,
+        "width": 6.5625,
+        "height": 11.5625,
+        "naturalWidth": 7,
+        "naturalHeight": 12
+      },
+      {
+        "file": "/assets/onboarding/24cc9.svg",
+        "loaded": true,
+        "x": 375.71875,
+        "y": 510.21875,
+        "width": 6.5625,
+        "height": 11.5625,
+        "naturalWidth": 7,
+        "naturalHeight": 12
+      },
+      {
+        "file": "/assets/onboarding/24cc9.svg",
+        "loaded": true,
+        "x": 375.71875,
+        "y": 574.21875,
+        "width": 6.5625,
+        "height": 11.5625,
+        "naturalWidth": 7,
+        "naturalHeight": 12
+      },
+      {
+        "file": "/assets/onboarding/24cc9.svg",
+        "loaded": true,
+        "x": 375.71875,
+        "y": 638.21875,
+        "width": 6.5625,
+        "height": 11.5625,
+        "naturalWidth": 7,
+        "naturalHeight": 12
+      },
+      {
+        "file": "/assets/onboarding/24cc9.svg",
+        "loaded": true,
+        "x": 375.71875,
+        "y": 702.21875,
+        "width": 6.5625,
+        "height": 11.5625,
+        "naturalWidth": 7,
+        "naturalHeight": 12
+      },
+      {
+        "file": "/assets/onboarding/0e61d.svg",
+        "loaded": true,
+        "x": 85.21875,
+        "y": 770.03125,
+        "width": 11.921875,
+        "height": 11.921875,
+        "naturalWidth": 12,
+        "naturalHeight": 12
+      }
+    ],
+    "geometry": [
+      {
+        "class": "icon-button icon-button--light ",
+        "x": 20,
+        "y": 62,
+        "width": 40,
+        "height": 40
+      },
+      {
+        "class": "ob-steps",
+        "x": 20,
+        "y": 122,
+        "width": 390,
+        "height": 27
+      },
+      {
+        "class": "ob-heading",
+        "x": 20,
+        "y": 169,
+        "width": 390,
+        "height": 64
+      },
+      {
+        "class": "ob-search",
+        "x": 20,
+        "y": 253,
+        "width": 390,
+        "height": 56
+      },
+      {
+        "class": "ob-car-results",
+        "x": 20,
+        "y": 329,
+        "width": 390,
+        "height": 103
+      },
+      {
+        "class": "ob-car-results",
+        "x": 20,
+        "y": 452,
+        "width": 390,
+        "height": 295
+      },
+      {
+        "class": "ob-manual text-body-small-strong",
+        "x": 20,
+        "y": 767,
+        "width": 390,
+        "height": 18
+      }
+    ]
+  },
+  {
+    "screen": 6,
+    "path": "/onboarding/perodua-myvi-sheet",
+    "text": "Step 1 of 4\n\nWhat’s your car?\n\nWe use it to tailor your car checks and alerts.\n\nBest match\nP\nPerodua Myvi\nHatchback · 2005 – today\nPopular in Malaysia\nP\nPerodua Axia\nHatchback\nP\nPerodua Bezza\nSedan\nP\nProton Saga\nSedan\nH\nHonda City\nSedan\nCan’t find it? Add your car manually\nPerodua Myvi\n\nHatchback · 5 seats · petrol\n\nWhich version is yours?\n1.5 AV\nTop version · 2018 – today\n1.5 H\n2018 – today\n1.3 G\n2018 – today\nThis is my car",
+    "width": 430,
+    "images": [
+      {
+        "file": "data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20overflow='visible'%20style='display:%20block;'%20width='13.25'%20height='11.5833'%20viewBox='0%200%2013.25%2011.5833'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Group'%3e%3cpath%20id='Vector'%20d='M12.4583%205.79167H0.791667M5.79167%200.791667L0.791667%205.79167L5.79167%2010.7917'%20stroke='%23282828'%20stroke-width='1.58333'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e",
+        "loaded": true,
+        "x": 33.375,
+        "y": 76.203125,
+        "width": 13.234375,
+        "height": 11.578125,
+        "naturalWidth": 13,
+        "naturalHeight": 12
+      },
+      {
+        "file": "/assets/onboarding/34f42.svg",
+        "loaded": true,
+        "x": 40.03125,
+        "y": 273.53125,
+        "width": 14.921875,
+        "height": 14.921875,
+        "naturalWidth": 15,
+        "naturalHeight": 15
+      },
+      {
+        "file": "/assets/onboarding/ecf2b.svg",
+        "loaded": true,
+        "x": 377.890625,
+        "y": 277.390625,
+        "width": 7.203125,
+        "height": 7.203125,
+        "naturalWidth": 7,
+        "naturalHeight": 7
+      },
+      {
+        "file": "/assets/onboarding/24cc9.svg",
+        "loaded": true,
+        "x": 375.71875,
+        "y": 387.21875,
+        "width": 6.5625,
+        "height": 11.5625,
+        "naturalWidth": 7,
+        "naturalHeight": 12
+      },
+      {
+        "file": "/assets/onboarding/24cc9.svg",
+        "loaded": true,
+        "x": 375.71875,
+        "y": 510.21875,
+        "width": 6.5625,
+        "height": 11.5625,
+        "naturalWidth": 7,
+        "naturalHeight": 12
+      },
+      {
+        "file": "/assets/onboarding/24cc9.svg",
+        "loaded": true,
+        "x": 375.71875,
+        "y": 574.21875,
+        "width": 6.5625,
+        "height": 11.5625,
+        "naturalWidth": 7,
+        "naturalHeight": 12
+      },
+      {
+        "file": "/assets/onboarding/24cc9.svg",
+        "loaded": true,
+        "x": 375.71875,
+        "y": 638.21875,
+        "width": 6.5625,
+        "height": 11.5625,
+        "naturalWidth": 7,
+        "naturalHeight": 12
+      },
+      {
+        "file": "/assets/onboarding/24cc9.svg",
+        "loaded": true,
+        "x": 375.71875,
+        "y": 702.21875,
+        "width": 6.5625,
+        "height": 11.5625,
+        "naturalWidth": 7,
+        "naturalHeight": 12
+      },
+      {
+        "file": "/assets/onboarding/0e61d.svg",
+        "loaded": true,
+        "x": 85.21875,
+        "y": 770.03125,
+        "width": 11.921875,
+        "height": 11.921875,
+        "naturalWidth": 12,
+        "naturalHeight": 12
+      },
+      {
+        "file": "/assets/onboarding/0b9c1.svg",
+        "loaded": true,
+        "x": 71,
+        "y": 320,
+        "width": 288,
+        "height": 112,
+        "naturalWidth": 288,
+        "naturalHeight": 112
+      },
+      {
+        "file": "data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20overflow='visible'%20style='display:%20block;'%20width='14'%20height='14'%20viewBox='0%200%2014%2014'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Frame'%3e%3cpath%20id='Vector'%20d='M2.91667%207.29167L5.54167%209.91667L11.0833%204.375'%20stroke='white'%20stroke-width='1.75'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e",
+        "loaded": true,
+        "x": 373,
+        "y": 582.5,
+        "width": 14,
+        "height": 14,
+        "naturalWidth": 14,
+        "naturalHeight": 14
+      }
+    ],
+    "geometry": [
+      {
+        "class": "icon-button icon-button--light ",
+        "x": 20,
+        "y": 62,
+        "width": 40,
+        "height": 40
+      },
+      {
+        "class": "ob-steps",
+        "x": 20,
+        "y": 122,
+        "width": 390,
+        "height": 27
+      },
+      {
+        "class": "ob-heading",
+        "x": 20,
+        "y": 169,
+        "width": 390,
+        "height": 64
+      },
+      {
+        "class": "ob-search",
+        "x": 20,
+        "y": 253,
+        "width": 390,
+        "height": 56
+      },
+      {
+        "class": "ob-car-results",
+        "x": 20,
+        "y": 329,
+        "width": 390,
+        "height": 103
+      },
+      {
+        "class": "ob-car-results",
+        "x": 20,
+        "y": 452,
+        "width": 390,
+        "height": 295
+      },
+      {
+        "class": "ob-manual text-body-small-strong",
+        "x": 20,
+        "y": 767,
+        "width": 390,
+        "height": 18
+      },
+      {
+        "class": "ob-sheet-handle",
+        "x": 195,
+        "y": 299,
+        "width": 40,
+        "height": 5
+      },
+      {
+        "class": "ob-art ",
+        "x": 71,
+        "y": 320,
+        "width": 288,
+        "height": 112
+      },
+      {
+        "class": "ob-sheet-heading",
+        "x": 112.765625,
+        "y": 448,
+        "width": 204.46875,
+        "height": 60
+      },
+      {
+        "class": "ob-versions",
+        "x": 20,
+        "y": 524,
+        "width": 390,
+        "height": 274
+      },
+      {
+        "class": "button text-button button--primary ",
+        "x": 20,
+        "y": 814,
+        "width": 390,
+        "height": 56
+      }
+    ]
+  },
+  {
+    "screen": 7,
+    "path": "/onboarding/car-details",
+    "text": "Step 2 of 4\n\nAbout your Myvi\n\nAdd what you know. You can change it later.\n\nPlate number\nYear\nColour\nGranite Grey\nMileage now\nFilled in from your model\nEdit\nEngine\n1.5 L\nGearbox\nAutomatic\nFuel\nPetrol\n\nCheck the gearbox is right. It changes how a healthy engine sounds.\n\nContinue",
+    "width": 430,
+    "images": [
+      {
+        "file": "data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20overflow='visible'%20style='display:%20block;'%20width='13.25'%20height='11.5833'%20viewBox='0%200%2013.25%2011.5833'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Group'%3e%3cpath%20id='Vector'%20d='M12.4583%205.79167H0.791667M5.79167%200.791667L0.791667%205.79167L5.79167%2010.7917'%20stroke='%23282828'%20stroke-width='1.58333'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e",
+        "loaded": true,
+        "x": 33.375,
+        "y": 76.203125,
+        "width": 13.234375,
+        "height": 11.578125,
+        "naturalWidth": 13,
+        "naturalHeight": 12
+      },
+      {
+        "file": "/assets/onboarding/6be5a.svg",
+        "loaded": true,
+        "x": 20,
+        "y": 377,
+        "width": 320,
+        "height": 43,
+        "naturalWidth": 320,
+        "naturalHeight": 43
+      }
+    ],
+    "geometry": [
+      {
+        "class": "icon-button icon-button--light ",
+        "x": 20,
+        "y": 62,
+        "width": 40,
+        "height": 40
+      },
+      {
+        "class": "ob-steps",
+        "x": 20,
+        "y": 122,
+        "width": 390,
+        "height": 27
+      },
+      {
+        "class": "ob-heading",
+        "x": 20,
+        "y": 169,
+        "width": 390,
+        "height": 64
+      },
+      {
+        "class": "ob-form",
+        "x": 20,
+        "y": 253,
+        "width": 390,
+        "height": 475
+      }
+    ]
+  },
+  {
+    "screen": 8,
+    "path": "/onboarding/service-and-condition",
+    "text": "Step 2 of 4\n\nService and condition\n\nThis is the starting point for your car checks.\n\nLast service\nMileage then\nAny modifications?\n\nExhaust, intake or bodykit changes how your car sounds.\n\nNo, it’s stock\nAs it left the factory\nYes, it’s modified\nWe’ll learn its sound on the first check\nAny scratches or dents now?\n\nSo we don’t flag old marks as new damage.\n\nNo, it’s clean\nNothing to note\nYes, a few\nMark them on your first walk-around\nContinue",
+    "width": 430,
+    "images": [
+      {
+        "file": "data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20overflow='visible'%20style='display:%20block;'%20width='13.25'%20height='11.5833'%20viewBox='0%200%2013.25%2011.5833'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Group'%3e%3cpath%20id='Vector'%20d='M12.4583%205.79167H0.791667M5.79167%200.791667L0.791667%205.79167L5.79167%2010.7917'%20stroke='%23282828'%20stroke-width='1.58333'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e",
+        "loaded": true,
+        "x": 33.375,
+        "y": 76.203125,
+        "width": 13.234375,
+        "height": 11.578125,
+        "naturalWidth": 13,
+        "naturalHeight": 12
+      },
+      {
+        "file": "data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20overflow='visible'%20style='display:%20block;'%20width='14'%20height='14'%20viewBox='0%200%2014%2014'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Frame'%3e%3cpath%20id='Vector'%20d='M2.91667%207.29167L5.54167%209.91667L11.0833%204.375'%20stroke='white'%20stroke-width='1.75'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e",
+        "loaded": true,
+        "x": 373,
+        "y": 440.5,
+        "width": 14,
+        "height": 14,
+        "naturalWidth": 14,
+        "naturalHeight": 14
+      },
+      {
+        "file": "data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20overflow='visible'%20style='display:%20block;'%20width='14'%20height='14'%20viewBox='0%200%2014%2014'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Frame'%3e%3cpath%20id='Vector'%20d='M2.91667%207.29167L5.54167%209.91667L11.0833%204.375'%20stroke='white'%20stroke-width='1.75'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e",
+        "loaded": true,
+        "x": 373,
+        "y": 758.5,
+        "width": 14,
+        "height": 14,
+        "naturalWidth": 14,
+        "naturalHeight": 14
+      }
+    ],
+    "geometry": [
+      {
+        "class": "icon-button icon-button--light ",
+        "x": 20,
+        "y": 62,
+        "width": 40,
+        "height": 40
+      },
+      {
+        "class": "ob-steps",
+        "x": 20,
+        "y": 122,
+        "width": 390,
+        "height": 27
+      },
+      {
+        "class": "ob-heading",
+        "x": 20,
+        "y": 169,
+        "width": 390,
+        "height": 64
+      },
+      {
+        "class": "ob-service-form",
+        "x": 20,
+        "y": 253,
+        "width": 390,
+        "height": 551
+      }
+    ]
+  },
+  {
+    "screen": 9,
+    "path": "/onboarding/how-you-drive",
+    "text": "Step 3 of 4\n\nHow do you usually drive?\n\nPick all that apply. It helps us time your break reminders.\n\nDaily commute\nShort drives, often in traffic\nLong highway trips\nBalik kampung and outstation drives\nLate nights or early mornings\nDriving when you’d normally be asleep\nRide-hailing or delivery\nMany hours on the road for work\nContinue",
+    "width": 430,
+    "images": [
+      {
+        "file": "data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20overflow='visible'%20style='display:%20block;'%20width='13.25'%20height='11.5833'%20viewBox='0%200%2013.25%2011.5833'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Group'%3e%3cpath%20id='Vector'%20d='M12.4583%205.79167H0.791667M5.79167%200.791667L0.791667%205.79167L5.79167%2010.7917'%20stroke='%23282828'%20stroke-width='1.58333'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e",
+        "loaded": true,
+        "x": 33.375,
+        "y": 76.203125,
+        "width": 13.234375,
+        "height": 11.578125,
+        "naturalWidth": 13,
+        "naturalHeight": 12
+      },
+      {
+        "file": "data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20overflow='visible'%20style='display:%20block;'%20width='14'%20height='14'%20viewBox='0%200%2014%2014'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Frame'%3e%3cpath%20id='Vector'%20d='M2.91667%207.29167L5.54167%209.91667L11.0833%204.375'%20stroke='white'%20stroke-width='1.75'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e",
+        "loaded": true,
+        "x": 373,
+        "y": 306.5,
+        "width": 14,
+        "height": 14,
+        "naturalWidth": 14,
+        "naturalHeight": 14
+      },
+      {
+        "file": "data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20overflow='visible'%20style='display:%20block;'%20width='14'%20height='14'%20viewBox='0%200%2014%2014'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Frame'%3e%3cpath%20id='Vector'%20d='M2.91667%207.29167L5.54167%209.91667L11.0833%204.375'%20stroke='white'%20stroke-width='1.75'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e",
+        "loaded": true,
+        "x": 373,
+        "y": 395.5,
+        "width": 14,
+        "height": 14,
+        "naturalWidth": 14,
+        "naturalHeight": 14
+      }
+    ],
+    "geometry": [
+      {
+        "class": "icon-button icon-button--light ",
+        "x": 20,
+        "y": 62,
+        "width": 40,
+        "height": 40
+      },
+      {
+        "class": "ob-steps",
+        "x": 20,
+        "y": 122,
+        "width": 390,
+        "height": 27
+      },
+      {
+        "class": "ob-heading",
+        "x": 20,
+        "y": 169,
+        "width": 390,
+        "height": 86
+      },
+      {
+        "class": "ob-options",
+        "x": 20,
+        "y": 275,
+        "width": 390,
+        "height": 340
+      }
+    ]
+  },
+  {
+    "screen": 10,
+    "path": "/onboarding/which-maps-app",
+    "text": "Step 4 of 4\n\nWhich maps app do you use?\n\nWe’ll open it when it’s time for a break. Your saved places stay where they are.\n\nWaze\nOpens Waze with the rest stop as your destination\nGoogle Maps\nOpens Google Maps with the rest stop as your destination\nApple Maps\niPhone only\nHave CarPlay or Android Auto?\n\nPut directions on your car screen and keep Dormathon on your phone, so it never stops watching.\n\nContinue",
+    "width": 430,
+    "images": [
+      {
+        "file": "data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20overflow='visible'%20style='display:%20block;'%20width='13.25'%20height='11.5833'%20viewBox='0%200%2013.25%2011.5833'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Group'%3e%3cpath%20id='Vector'%20d='M12.4583%205.79167H0.791667M5.79167%200.791667L0.791667%205.79167L5.79167%2010.7917'%20stroke='%23282828'%20stroke-width='1.58333'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e",
+        "loaded": true,
+        "x": 33.375,
+        "y": 76.203125,
+        "width": 13.234375,
+        "height": 11.578125,
+        "naturalWidth": 13,
+        "naturalHeight": 12
+      },
+      {
+        "file": "/assets/onboarding/maps-steps.svg",
+        "loaded": true,
+        "x": 115,
+        "y": 122,
+        "width": 200,
+        "height": 4,
+        "naturalWidth": 200,
+        "naturalHeight": 4
+      },
+      {
+        "file": "data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20overflow='visible'%20style='display:%20block;'%20width='14'%20height='14'%20viewBox='0%200%2014%2014'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Frame'%3e%3cpath%20id='Vector'%20d='M2.91667%207.29167L5.54167%209.91667L11.0833%204.375'%20stroke='white'%20stroke-width='1.75'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e",
+        "loaded": true,
+        "x": 373,
+        "y": 350.5,
+        "width": 14,
+        "height": 14,
+        "naturalWidth": 14,
+        "naturalHeight": 14
+      },
+      {
+        "file": "/assets/onboarding/ebe3a.svg",
+        "loaded": true,
+        "x": 47.71875,
+        "y": 649.625,
+        "width": 16.5625,
+        "height": 12.734375,
+        "naturalWidth": 17,
+        "naturalHeight": 13
+      }
+    ],
+    "geometry": [
+      {
+        "class": "icon-button icon-button--light ",
+        "x": 20,
+        "y": 62,
+        "width": 40,
+        "height": 40
+      },
+      {
+        "class": "ob-steps",
+        "x": 20,
+        "y": 122,
+        "width": 390,
+        "height": 27
+      },
+      {
+        "class": "ob-heading",
+        "x": 20,
+        "y": 169,
+        "width": 390,
+        "height": 120
+      },
+      {
+        "class": "ob-options",
+        "x": 20,
+        "y": 309,
+        "width": 390,
+        "height": 291
+      },
+      {
+        "class": "ob-maps-tip",
+        "x": 20,
+        "y": 620,
+        "width": 390,
+        "height": 113
+      }
+    ]
+  },
+  {
+    "screen": 11,
+    "path": "/onboarding/face-scan-intro",
+    "text": "Now, let’s learn your eyes\n\nA 20-second scan learns what your normal blinks look like, so Dormathon can tell when you’re getting sleepy.\n\nThe scan stays on your phone\n\nFace a light, not a window behind you\n\nGlasses are fine, sunglasses are not\n\nStart face scan",
+    "width": 430,
+    "images": [
+      {
+        "file": "data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20overflow='visible'%20style='display:%20block;'%20width='13.25'%20height='11.5833'%20viewBox='0%200%2013.25%2011.5833'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Group'%3e%3cpath%20id='Vector'%20d='M12.4583%205.79167H0.791667M5.79167%200.791667L0.791667%205.79167L5.79167%2010.7917'%20stroke='%23282828'%20stroke-width='1.58333'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e",
+        "loaded": true,
+        "x": 33.375,
+        "y": 76.203125,
+        "width": 13.234375,
+        "height": 11.578125,
+        "naturalWidth": 13,
+        "naturalHeight": 12
+      },
+      {
+        "file": "/assets/onboarding/4cfc0.svg",
+        "loaded": true,
+        "x": 100,
+        "y": 136,
+        "width": 230,
+        "height": 230,
+        "naturalWidth": 230,
+        "naturalHeight": 230
+      },
+      {
+        "file": "/assets/onboarding/0cd68.png",
+        "loaded": true,
+        "x": 150,
+        "y": 168,
+        "width": 130,
+        "height": 166,
+        "naturalWidth": 260,
+        "naturalHeight": 332
+      },
+      {
+        "file": "/assets/onboarding/bad90.svg",
+        "loaded": true,
+        "x": 155,
+        "y": 222,
+        "width": 120,
+        "height": 44,
+        "naturalWidth": 120,
+        "naturalHeight": 44
+      },
+      {
+        "file": "/assets/onboarding/09366.svg",
+        "loaded": true,
+        "x": 41.375,
+        "y": 548.125,
+        "width": 13.25,
+        "height": 15.75,
+        "naturalWidth": 13,
+        "naturalHeight": 16
+      },
+      {
+        "file": "/assets/onboarding/ebea4.svg",
+        "loaded": true,
+        "x": 38.875,
+        "y": 602.875,
+        "width": 18.25,
+        "height": 18.25,
+        "naturalWidth": 18,
+        "naturalHeight": 18
+      },
+      {
+        "file": "/assets/onboarding/5f49b.svg",
+        "loaded": true,
+        "x": 39.71875,
+        "y": 663.25,
+        "width": 16.546875,
+        "height": 9.484375,
+        "naturalWidth": 17,
+        "naturalHeight": 10
+      }
+    ],
+    "geometry": [
+      {
+        "class": "icon-button icon-button--light ",
+        "x": 20,
+        "y": 62,
+        "width": 40,
+        "height": 40
+      },
+      {
+        "class": "ob-face-art",
+        "x": 20,
+        "y": 126,
+        "width": 390,
+        "height": 250
+      },
+      {
+        "class": "ob-heading",
+        "x": 20,
+        "y": 400,
+        "width": 390,
+        "height": 108
+      },
+      {
+        "class": "ob-face-tips",
+        "x": 20,
+        "y": 532,
+        "width": 390,
+        "height": 156
+      }
+    ]
+  },
+  {
+    "screen": 12,
+    "path": "/onboarding/face-scan",
+    "text": "Look at the screen\n\nBlink normally and keep still\n\n70%\n\nFace found\n\nBoth eyes tracked\n\nLearning your normal blink\n\nHold your phone at arm’s length",
+    "width": 430,
+    "images": [
+      {
+        "file": "data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20overflow='visible'%20style='display:%20block;'%20width='11.5833'%20height='11.5833'%20viewBox='0%200%2011.5833%2011.5833'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Group'%3e%3cpath%20id='Vector'%20d='M0.791667%200.791667L10.7917%2010.7917M10.7917%200.791667L0.791667%2010.7917'%20stroke='white'%20stroke-width='1.58333'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e",
+        "loaded": true,
+        "x": 34.203125,
+        "y": 76.203125,
+        "width": 11.578125,
+        "height": 11.578125,
+        "naturalWidth": 12,
+        "naturalHeight": 12
+      },
+      {
+        "file": "/assets/onboarding/f8f27.svg",
+        "loaded": true,
+        "x": 65,
+        "y": 220,
+        "width": 300,
+        "height": 300,
+        "naturalWidth": 300,
+        "naturalHeight": 300
+      },
+      {
+        "file": "/assets/onboarding/76867.png",
+        "loaded": true,
+        "x": 130,
+        "y": 263,
+        "width": 170,
+        "height": 214,
+        "naturalWidth": 340,
+        "naturalHeight": 428
+      },
+      {
+        "file": "/assets/onboarding/b7757.svg",
+        "loaded": true,
+        "x": 140,
+        "y": 325,
+        "width": 150,
+        "height": 55,
+        "naturalWidth": 150,
+        "naturalHeight": 55
+      },
+      {
+        "file": "/assets/onboarding/d86f4.svg",
+        "loaded": true,
+        "x": 47.046875,
+        "y": 628.359375,
+        "width": 9.890625,
+        "height": 7.28125,
+        "naturalWidth": 10,
+        "naturalHeight": 7
+      },
+      {
+        "file": "/assets/onboarding/d86f4.svg",
+        "loaded": true,
+        "x": 47.046875,
+        "y": 664.359375,
+        "width": 9.890625,
+        "height": 7.28125,
+        "naturalWidth": 10,
+        "naturalHeight": 7
+      }
+    ],
+    "geometry": [
+      {
+        "class": "icon-button icon-button--dark ",
+        "x": 20,
+        "y": 62,
+        "width": 40,
+        "height": 40
+      },
+      {
+        "class": "ob-heading",
+        "x": 20,
+        "y": 120,
+        "width": 390,
+        "height": 64
+      },
+      {
+        "class": "ob-scan-art",
+        "x": 65,
+        "y": 220,
+        "width": 300,
+        "height": 300
+      },
+      {
+        "class": "ob-scan-percent text-numeric-large",
+        "x": 20,
+        "y": 540,
+        "width": 390,
+        "height": 29
+      },
+      {
+        "class": "ob-scan-checks",
+        "x": 20,
+        "y": 600,
+        "width": 390,
+        "height": 136
+      }
+    ]
+  },
+  {
+    "screen": 13,
+    "path": "/onboarding/all-set",
+    "text": "You’re all set, Aaron\n\nDormathon knows your car and your eyes. Start a drive whenever you’re ready.\n\nPerodua Myvi 1.5 AV\nWXY 4821 · 2021 · Granite Grey\nEye profile saved\nYour normal blink is about 0.2 s\nAlarm\nLoud sound and vibration\nMaps app\nWaze · opens for rest stops\nGo to home",
+    "width": 430,
+    "images": [
+      {
+        "file": "/assets/onboarding/f5e9d.svg",
+        "loaded": true,
+        "x": 201.171875,
+        "y": 159.921875,
+        "width": 27.640625,
+        "height": 20.15625,
+        "naturalWidth": 28,
+        "naturalHeight": 20
+      },
+      {
+        "file": "/assets/onboarding/50ffb.svg",
+        "loaded": true,
+        "x": 48.609375,
+        "y": 369.5,
+        "width": 20.78125,
+        "height": 38.984375,
+        "naturalWidth": 21,
+        "naturalHeight": 39
+      },
+      {
+        "file": "/assets/onboarding/0c82e.svg",
+        "loaded": true,
+        "x": 48.96875,
+        "y": 454.71875,
+        "width": 20.046875,
+        "height": 14.5625,
+        "naturalWidth": 20,
+        "naturalHeight": 15
+      },
+      {
+        "file": "/assets/onboarding/1d7ce.svg",
+        "loaded": true,
+        "x": 50.125,
+        "y": 527.71875,
+        "width": 17.734375,
+        "height": 14.5625,
+        "naturalWidth": 18,
+        "naturalHeight": 15
+      },
+      {
+        "file": "/assets/onboarding/74e1c.svg",
+        "loaded": true,
+        "x": 49.890625,
+        "y": 599.796875,
+        "width": 18.21875,
+        "height": 16.390625,
+        "naturalWidth": 18,
+        "naturalHeight": 16
+      }
+    ],
+    "geometry": [
+      {
+        "class": "ob-success",
+        "x": 171,
+        "y": 126,
+        "width": 88,
+        "height": 88
+      },
+      {
+        "class": "ob-heading",
+        "x": 20,
+        "y": 238,
+        "width": 390,
+        "height": 86
+      },
+      {
+        "class": "ob-summary",
+        "x": 20,
+        "y": 348,
+        "width": 390,
+        "height": 301
+      }
+    ]
+  }
+]

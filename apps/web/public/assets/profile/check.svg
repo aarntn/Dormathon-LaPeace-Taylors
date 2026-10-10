@@ -1,0 +1,48 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="16" height="16" fill="#1E1E1E"/>
+<g id="4 &#194;&#183; Profile">
+<path d="M-1100 -447.772C-1100 -448.876 -1099.1 -449.772 -1098 -449.772H1448C1449.1 -449.772 1450 -448.876 1450 -447.772V665.228C1450 666.333 1449.1 667.228 1448 667.228H-1098C-1099.1 667.228 -1100 666.333 -1100 665.228V-447.772Z" fill="#282828"/>
+<path d="M-1098 -449.772V-448.772H1448V-449.772V-450.772H-1098V-449.772ZM1450 -447.772H1449V665.228H1450H1451V-447.772H1450ZM1448 667.228V666.228H-1098V667.228V668.228H1448V667.228ZM-1100 665.228H-1099V-447.772H-1100H-1101V665.228H-1100ZM-1098 667.228V666.228C-1098.55 666.228 -1099 665.781 -1099 665.228H-1100H-1101C-1101 666.885 -1099.66 668.228 -1098 668.228V667.228ZM1450 665.228H1449C1449 665.781 1448.55 666.228 1448 666.228V667.228V668.228C1449.66 668.228 1451 666.885 1451 665.228H1450ZM1448 -449.772V-448.772C1448.55 -448.772 1449 -448.324 1449 -447.772H1450H1451C1451 -449.428 1449.66 -450.772 1448 -450.772V-449.772ZM-1098 -449.772V-450.772C-1099.66 -450.772 -1101 -449.428 -1101 -447.772H-1100H-1099C-1099 -448.324 -1098.55 -448.772 -1098 -448.772V-449.772Z" fill="white" fill-opacity="0.1"/>
+<g id="P3 My cars">
+<rect width="430" height="932" transform="translate(-40 -344.772)" fill="#FCFCFE"/>
+<g id="Content">
+<g id="Car Perodua Myvi 1.5 AV" filter="url(#filter0_d_0_1)">
+<rect x="-20" y="-119.5" width="390" height="156" rx="24" fill="white"/>
+<rect x="-19" y="-118.5" width="388" height="154" rx="23" stroke="#1B2A4E" stroke-width="2"/>
+<g id="Frame">
+<g clip-path="url(#clip0_0_1)">
+<mask id="path-5-inside-1_0_1" fill="white">
+<path d="M0 -13.5H350V16.5H0V-13.5Z"/>
+</mask>
+<g id="Frame_2" clip-path="url(#clip1_0_1)">
+<g id="icon/check">
+<g id="Group">
+<path id="Vector" d="M3.33334 8.33333L6.33334 11.3333L12.6667 5" stroke="#1B2A4E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+</g>
+<path d="M0 -13.5V-12.5H350V-13.5V-14.5H0V-13.5Z" fill="#E8EAED" mask="url(#path-5-inside-1_0_1)"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_0_1" x="-36" y="-129.5" width="422" height="188" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="6"/>
+<feGaussianBlur stdDeviation="8"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+</filter>
+<clipPath id="clip0_0_1">
+<path d="M0 -13.5H350V16.5H0V-13.5Z" fill="white"/>
+</clipPath>
+<clipPath id="clip1_0_1">
+<rect width="124" height="17" fill="white" transform="translate(0 -0.5)"/>
+</clipPath>
+</defs>
+</svg>

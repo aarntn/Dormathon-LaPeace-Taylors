@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en-GB">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dormathon component comparison</title>
+<style>
+  body { margin: 24px; font-family: system-ui, sans-serif; color: #282828; background: #fcfcfe; }
+  h1 { font-size: 24px; }
+  p { max-width: 850px; line-height: 1.5; }
+  .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  figure { margin: 0; min-width: 0; }
+  figcaption { font-size: 16px; font-weight: 600; margin-bottom: 12px; }
+  img { width: 100%; height: auto; display: block; border: 1px solid #e8eaed; border-radius: 16px; }
+  @media (max-width: 900px) { .comparison { grid-template-columns: 1fr; } }
+</style>
+<h1>Dormathon · Component comparison</h1>
+<p>The original Figma Components frame and the running app at the same 1600 × 1000 size. The top-right status bars are intentionally absent in the app, as requested. Component dimensions, spacing, colours, vector geometry and shadow radii were checked against Figma. Option height differs by less than 1 px because browser text metrics differ from Figma.</p>
+<div class="comparison">
+  <figure><figcaption>Figma · frame 27:2</figcaption><img src="../../apps/web/design/components-reference.png" alt="Figma Components frame"></figure>
+  <figure><figcaption>Running app · /components/canvas</figcaption><img src="components-canvas.png" alt="Implemented component canvas"></figure>
+</div>
+</html>

@@ -1,0 +1,226 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/6a3ae7fc-f240-4ca0-8d5a-c5dd8f38949c";
+const imgColorRedPhaseA = `${assetPathPrefix}/d1016.svg`;
+const imgGroup = `${assetPathPrefix}/027af.svg`;
+const imgIndicators = `${assetPathPrefix}/a391f.svg`;
+const imgTrack = `${assetPathPrefix}/93915.svg`;
+const imgProgress = `${assetPathPrefix}/b2d0c.svg`;
+const imgGroup1 = `${assetPathPrefix}/90ace.svg`;
+const imgGroup2 = `${assetPathPrefix}/de6af.svg`;
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default";
+  style?: "Primary";
+};
+
+function Button({ className, label = "Button", state = "Default", style = "Primary" }: ButtonProps) {
+  return (
+    <div className={className || "bg-[var(--brand\\/navy,#1b2a4e)] content-stretch cursor-pointer flex h-[56px] items-center justify-center relative rounded-[18px] w-[390px]"} data-node-id="27:3">
+      <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[18px] text-[color:var(--text\/inverse,white)] tracking-[-0.1152px] whitespace-nowrap" data-node-id="27:4">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+type WaveformProps = {
+  className?: string;
+  phase?: "A";
+};
+
+function Waveform({ className, phase = "A" }: WaveformProps) {
+  return (
+    <div className={className || "h-[48px] relative w-[330px]"} data-node-id="185:1827">
+      <div className="absolute bg-[var(--brand\/navy,#1b2a4e)] h-[14px] left-0 rounded-[3px] top-[17px] w-[6px]" data-node-id="185:1828" data-name="Bar 1" />
+      <div className="absolute bg-[var(--brand\/navy,#1b2a4e)] h-[24px] left-[9.25px] rounded-[3px] top-[12px] w-[6px]" data-node-id="185:1829" data-name="Bar 2" />
+      <div className="absolute bg-[var(--brand\/navy,#1b2a4e)] h-[18px] left-[18.5px] rounded-[3px] top-[15px] w-[6px]" data-node-id="185:1830" data-name="Bar 3" />
+      <div className="absolute bg-[var(--brand\/navy,#1b2a4e)] h-[32px] left-[27.75px] rounded-[3px] top-[8px] w-[6px]" data-node-id="185:1831" data-name="Bar 4" />
+      <div className="absolute bg-[var(--brand\/navy,#1b2a4e)] h-[22px] left-[37px] rounded-[3px] top-[13px] w-[6px]" data-node-id="185:1832" data-name="Bar 5" />
+      <div className="absolute bg-[var(--brand\/navy,#1b2a4e)] h-[40px] left-[46.25px] rounded-[3px] top-[4px] w-[6px]" data-node-id="185:1833" data-name="Bar 6" />
+      <div className="absolute bg-[var(--brand\/navy,#1b2a4e)] h-[28px] left-[55.5px] rounded-[3px] top-[10px] w-[6px]" data-node-id="185:1834" data-name="Bar 7" />
+      <div className="absolute bg-[var(--brand\/navy,#1b2a4e)] h-[36px] left-[64.75px] rounded-[3px] top-[6px] w-[6px]" data-node-id="185:1835" data-name="Bar 8" />
+      <div className="absolute bg-[var(--brand\/navy,#1b2a4e)] h-[20px] left-[74px] rounded-[3px] top-[14px] w-[6px]" data-node-id="185:1836" data-name="Bar 9" />
+      <div className="absolute bg-[var(--brand\/navy,#1b2a4e)] h-[30px] left-[83.25px] rounded-[3px] top-[9px] w-[6px]" data-node-id="185:1837" data-name="Bar 10" />
+      <div className="absolute bg-[var(--brand\/navy,#1b2a4e)] h-[44px] left-[92.5px] rounded-[3px] top-[2px] w-[6px]" data-node-id="185:1838" data-name="Bar 11" />
+      <div className="absolute bg-[var(--brand\/navy,#1b2a4e)] h-[24px] left-[101.75px] rounded-[3px] top-[12px] w-[6px]" data-node-id="185:1839" data-name="Bar 12" />
+      <div className="absolute bg-[var(--brand\/navy,#1b2a4e)] h-[16px] left-[111px] rounded-[3px] top-[16px] w-[6px]" data-node-id="185:1840" data-name="Bar 13" />
+      <div className="absolute bg-[var(--brand\/navy,#1b2a4e)] h-[34px] left-[120.25px] rounded-[3px] top-[7px] w-[6px]" data-node-id="185:1841" data-name="Bar 14" />
+      <div className="absolute bg-[var(--brand\/navy,#1b2a4e)] h-[28px] left-[129.5px] rounded-[3px] top-[10px] w-[6px]" data-node-id="185:1842" data-name="Bar 15" />
+      <div className="absolute bg-[var(--brand\/navy,#1b2a4e)] h-[20px] left-[138.75px] rounded-[3px] top-[14px] w-[6px]" data-node-id="185:1843" data-name="Bar 16" />
+      <div className="absolute bg-[var(--brand\/navy,#1b2a4e)] h-[38px] left-[148px] rounded-[3px] top-[5px] w-[6px]" data-node-id="185:1844" data-name="Bar 17" />
+      <div className="absolute bg-[var(--brand\/navy,#1b2a4e)] h-[26px] left-[157.25px] rounded-[3px] top-[11px] w-[6px]" data-node-id="185:1845" data-name="Bar 18" />
+      <div className="absolute bg-[var(--brand\/navy,#1b2a4e)] h-[18px] left-[166.5px] rounded-[3px] top-[15px] w-[6px]" data-node-id="185:1846" data-name="Bar 19" />
+      <div className="absolute bg-[var(--brand\/navy,#1b2a4e)] h-[32px] left-[175.75px] rounded-[3px] top-[8px] w-[6px]" data-node-id="185:1847" data-name="Bar 20" />
+      <div className="absolute bg-[var(--brand\/navy,#1b2a4e)] h-[24px] left-[185px] rounded-[3px] top-[12px] w-[6px]" data-node-id="185:1848" data-name="Bar 21" />
+      <div className="absolute bg-[var(--brand\/navy,#1b2a4e)] h-[14px] left-[194.25px] rounded-[3px] top-[17px] w-[6px]" data-node-id="185:1849" data-name="Bar 22" />
+      <div className="absolute bg-[var(--line\/default,#e8eaed)] h-[20px] left-[203.5px] rounded-[3px] top-[14px] w-[6px]" data-node-id="185:1850" data-name="Bar 23" />
+      <div className="absolute bg-[var(--line\/default,#e8eaed)] h-[26px] left-[212.75px] rounded-[3px] top-[11px] w-[6px]" data-node-id="185:1851" data-name="Bar 24" />
+      <div className="absolute bg-[var(--line\/default,#e8eaed)] h-[18px] left-[222px] rounded-[3px] top-[15px] w-[6px]" data-node-id="185:1852" data-name="Bar 25" />
+      <div className="absolute bg-[var(--line\/default,#e8eaed)] h-[22px] left-[231.25px] rounded-[3px] top-[13px] w-[6px]" data-node-id="185:1853" data-name="Bar 26" />
+      <div className="absolute bg-[var(--line\/default,#e8eaed)] h-[10px] left-[240.5px] rounded-[3px] top-[19px] w-[6px]" data-node-id="185:1854" data-name="Bar 27" />
+      <div className="absolute bg-[var(--line\/default,#e8eaed)] h-[8px] left-[249.75px] rounded-[3px] top-[20px] w-[6px]" data-node-id="185:1855" data-name="Bar 28" />
+      <div className="absolute bg-[var(--line\/default,#e8eaed)] h-[10px] left-[259px] rounded-[3px] top-[19px] w-[6px]" data-node-id="185:1856" data-name="Bar 29" />
+      <div className="absolute bg-[var(--line\/default,#e8eaed)] left-[268.25px] rounded-[3px] size-[6px] top-[21px]" data-node-id="185:1857" data-name="Bar 30" />
+      <div className="absolute bg-[var(--line\/default,#e8eaed)] h-[8px] left-[277.5px] rounded-[3px] top-[20px] w-[6px]" data-node-id="185:1858" data-name="Bar 31" />
+      <div className="absolute bg-[var(--line\/default,#e8eaed)] left-[286.75px] rounded-[3px] size-[6px] top-[21px]" data-node-id="185:1859" data-name="Bar 32" />
+      <div className="absolute bg-[var(--line\/default,#e8eaed)] h-[10px] left-[296px] rounded-[3px] top-[19px] w-[6px]" data-node-id="185:1860" data-name="Bar 33" />
+      <div className="absolute bg-[var(--line\/default,#e8eaed)] h-[8px] left-[305.25px] rounded-[3px] top-[20px] w-[6px]" data-node-id="185:1861" data-name="Bar 34" />
+      <div className="absolute bg-[var(--line\/default,#e8eaed)] left-[314.5px] rounded-[3px] size-[6px] top-[21px]" data-node-id="185:1862" data-name="Bar 35" />
+      <div className="absolute bg-[var(--line\/default,#e8eaed)] h-[8px] left-[323.75px] rounded-[3px] top-[20px] w-[6px]" data-node-id="185:1863" data-name="Bar 36" />
+    </div>
+  );
+}
+
+type LiveDotProps = {
+  className?: string;
+  color?: "Red";
+  phase?: "A";
+};
+
+function LiveDot({ className, color = "Red", phase = "A" }: LiveDotProps) {
+  return (
+    <div className={className || "relative size-[16px]"} data-node-id="185:1761">
+      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgColorRedPhaseA} />
+    </div>
+  );
+}
+
+type IconButtonProps = {
+  className?: string;
+  icon?: "Back";
+  theme?: "Light";
+};
+
+function IconButton({ className, icon = "Back", theme = "Light" }: IconButtonProps) {
+  return (
+    <div className={className || "bg-[var(--bg\\/card,white)] border border-[var(--line\\/default,#e8eaed)] border-solid content-stretch drop-shadow-[0px_6px_8px_rgba(0,0,0,0.06)] flex items-center justify-center relative rounded-[20px] size-[40px]"} data-node-id="27:14">
+      <div className="overflow-clip relative shrink-0 size-[20px]" data-node-id="27:15" data-name="icon/back">
+        <div className="absolute bottom-1/4 left-[20.83%] right-[20.83%] top-1/4" data-node-id="27:16" data-name="Group">
+          <div className="absolute inset-[-7.92%_-6.79%]">
+            <img alt="" className="block max-w-none size-full" src={imgGroup} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+type StatusBarProps = {
+  className?: string;
+  theme?: "Light";
+};
+
+function StatusBar({ className, theme = "Light" }: StatusBarProps) {
+  return (
+    <div className={className || "h-[54px] relative w-[430px]"} data-node-id="27:134">
+      <p className="[word-break:break-word] absolute font-['SF_Pro:Semibold'] font-[590] leading-[normal] left-[52px] text-[17px] text-[color:var(--text\/primary,#282828)] top-[18px] tracking-[-0.408px] whitespace-nowrap" data-node-id="27:135" style={{ fontVariationSettings: '"wdth" 100' }}>
+        9:41
+      </p>
+      <div className="absolute bg-black h-[36px] left-[153px] rounded-[18px] top-[11px] w-[123.999px]" data-node-id="27:136" data-name="Dynamic Island" />
+      <div className="absolute h-[13px] left-[308px] top-[21px] w-[70px]" data-node-id="27:137" data-name="Indicators">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIndicators} />
+      </div>
+    </div>
+  );
+}
+
+export default function C4StartUpBatteryCheck() {
+  return (
+    <div className="bg-[var(--bg\/screen,#fcfcfe)] relative size-full" data-node-id="30:280" data-name="C4 Start-up battery check">
+      <StatusBar className="absolute h-[54px] left-0 top-0 w-[430px]" />
+      <div className="absolute content-stretch flex flex-col gap-[20px] items-start left-0 overflow-clip pb-[24px] pt-[8px] px-[20px] top-[54px] w-[430px]" data-node-id="30:292" data-name="Content">
+        <IconButton className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch cursor-pointer drop-shadow-[0px_6px_8px_rgba(0,0,0,0.06)] flex items-center justify-center relative rounded-[20px] shrink-0 size-[40px]" />
+        <div className="[word-break:break-word] content-stretch flex flex-col gap-[8px] items-center not-italic overflow-clip relative shrink-0 text-center w-full" data-node-id="30:297" data-name="Heading">
+          <p className="font-['Inter:Bold'] font-bold leading-[normal] relative shrink-0 text-[28px] text-[color:var(--text\/primary,#282828)] tracking-[-0.2632px] w-full" data-node-id="30:298">
+            Start-up battery check
+          </p>
+          <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[16px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.0784px] w-full" data-node-id="30:299">
+            We only listen while you start the engine. It can flag a possible weak battery, not every engine fault.
+          </p>
+        </div>
+        <div className="h-[300px] overflow-clip relative shrink-0 w-[390px]" data-node-id="30:300" data-name="Recorder">
+          <div className="absolute left-[85px] size-[220px] top-0" data-node-id="30:301" data-name="Track">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgTrack} />
+          </div>
+          <div className="absolute left-[85px] size-[220px] top-0" data-node-id="30:302" data-name="Progress">
+            <div className="absolute inset-[0_0_0_20.61%]">
+              <img alt="" className="block max-w-none size-full" src={imgProgress} />
+            </div>
+          </div>
+          <div className="absolute content-stretch flex gap-[2px] items-center left-[157px] overflow-clip top-[62px]" data-node-id="30:303" data-name="Listening">
+            <LiveDot className="relative shrink-0 size-[16px]" />
+            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--state\/danger,#ef4f44)] tracking-[-0.042px] whitespace-nowrap" data-node-id="30:305">
+              Listening
+            </p>
+          </div>
+          <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Inter:Bold'] font-bold leading-[normal] left-[195px] not-italic text-[44px] text-[color:var(--text\/primary,#282828)] text-center top-[86px] tracking-[-0.88px] whitespace-nowrap" data-node-id="30:306">
+            0:03
+          </p>
+          <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[1.4] left-[195px] not-italic text-[14px] text-[color:var(--text\/secondary,#797979)] text-center top-[142px] tracking-[-0.042px] whitespace-nowrap" data-node-id="30:307">
+            Start your engine now
+          </p>
+          <Waveform className="absolute h-[48px] left-[30px] top-[246px] w-[330px]" />
+        </div>
+        <div className="content-stretch flex flex-col gap-[10px] items-start overflow-clip relative shrink-0 w-full" data-node-id="30:345" data-name="What we hear">
+          <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.0784px] whitespace-nowrap" data-node-id="30:346">
+            What we heard
+          </p>
+          <div className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch flex gap-[14px] items-center overflow-clip pl-[14px] pr-[16px] py-[14px] relative rounded-[18px] shadow-[0px_6px_16px_0px_rgba(0,0,0,0.04)] shrink-0 w-full" data-node-id="30:350" data-name="Heard idle">
+            <div className="bg-[var(--state\/success-soft,#e3f3ec)] content-stretch flex items-center justify-center overflow-clip relative rounded-[14px] shrink-0 size-[44px]" data-node-id="30:351" data-name="Frame">
+              <div className="overflow-clip relative shrink-0 size-[20px]" data-node-id="30:347" data-name="icon/check">
+                <div className="absolute inset-[31.25%_20.83%_29.17%_20.83%]" data-node-id="30:348" data-name="Group">
+                  <div className="absolute inset-[-11.58%_-7.86%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup1} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-w-px overflow-clip relative" data-node-id="30:352" data-name="Frame">
+              <div className="content-stretch flex items-center overflow-clip relative shrink-0 w-full" data-node-id="30:353" data-name="Frame">
+                <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold leading-[normal] min-w-px not-italic relative text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="30:354">
+                  Engine is idling smoothly
+                </p>
+              </div>
+            </div>
+            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--state\/success,#239a6c)] tracking-[-0.042px] whitespace-nowrap" data-node-id="30:355">
+              Normal
+            </p>
+          </div>
+          <div className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch flex gap-[14px] items-center overflow-clip pl-[14px] pr-[16px] py-[14px] relative rounded-[18px] shadow-[0px_6px_16px_0px_rgba(0,0,0,0.04)] shrink-0 w-full" data-node-id="30:360" data-name="Heard squeal">
+            <div className="bg-[var(--state\/warning-soft,#fcf0da)] content-stretch flex items-center justify-center overflow-clip relative rounded-[14px] shrink-0 size-[44px]" data-node-id="30:361" data-name="Frame">
+              <div className="overflow-clip relative shrink-0 size-[20px]" data-node-id="30:356" data-name="icon/alert">
+                <div className="absolute inset-[14.58%_10.42%_16.67%_10.42%]" data-node-id="30:357" data-name="Group">
+                  <div className="absolute inset-[-5.76%_-5%]">
+                    <img alt="" className="block max-w-none size-full" src={imgGroup2} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-w-px overflow-clip relative" data-node-id="30:362" data-name="Frame">
+              <div className="content-stretch flex items-center overflow-clip relative shrink-0 w-full" data-node-id="30:363" data-name="Frame">
+                <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold leading-[normal] min-w-px not-italic relative text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="30:364">
+                  Slow start: 2.8 s, usually 1.2 s
+                </p>
+              </div>
+            </div>
+            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--state\/warning,#b86e00)] tracking-[-0.042px] whitespace-nowrap" data-node-id="30:365">
+              Check
+            </p>
+          </div>
+        </div>
+      </div>
+      <Button className="absolute bg-[var(--brand\/navy,#1b2a4e)] content-stretch cursor-pointer flex h-[56px] items-center justify-center left-[20px] rounded-[18px] top-[842px] w-[390px]" label="See my report" />
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Heading/Large: Font(family: "Inter", style: Bold, size: 28, weight: 700, lineHeight: 100, letterSpacing: -0.9399999976158142), Body/Regular: Font(family: "Inter", style: Regular, size: 16, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.49000000953674316), Body/Small Strong: Font(family: "Inter", style: Semi Bold, size: 14, weight: 600, lineHeight: 100, letterSpacing: -0.30000001192092896), Heading/Display: Font(family: "Inter", style: Bold, size: 44, weight: 700, lineHeight: 100, letterSpacing: -2), Body/Small: Font(family: "Inter", style: Regular, size: 14, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.30000001192092896), Body/Strong: Font(family: "Inter", style: Semi Bold, size: 16, weight: 600, lineHeight: 100, letterSpacing: -0.49000000953674316).
+Images and SVGs will be stored as constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

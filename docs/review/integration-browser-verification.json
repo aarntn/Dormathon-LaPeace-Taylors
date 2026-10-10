@@ -1,0 +1,215 @@
+{
+  "checkedAt": "2026-10-10T10:54:49.406Z",
+  "mode": "isolated fake HTTP; no external services",
+  "passed": [
+    "sign in through account form",
+    "authenticated car/history/profile",
+    "trip summary and demo-rule disclosure",
+    "readiness selection",
+    "seatbelt/camera gate",
+    "sign out clears session",
+    "second account has empty history",
+    "430/390/360px pages and assets",
+    "no runtime exceptions"
+  ],
+  "geometry": [
+    {
+      "path": "/drive/home",
+      "width": 430,
+      "viewport": 430,
+      "broken": []
+    },
+    {
+      "path": "/drive/check-result",
+      "width": 430,
+      "viewport": 430,
+      "broken": []
+    },
+    {
+      "path": "/drive/pick-your-route",
+      "width": 430,
+      "viewport": 430,
+      "broken": []
+    },
+    {
+      "path": "/profile/emergency-contact",
+      "width": 430,
+      "viewport": 430,
+      "broken": []
+    },
+    {
+      "path": "/profile/my-cars",
+      "width": 430,
+      "viewport": 430,
+      "broken": []
+    },
+    {
+      "path": "/profile/add-a-car",
+      "width": 430,
+      "viewport": 430,
+      "broken": []
+    },
+    {
+      "path": "/profile/driving-stats",
+      "width": 430,
+      "viewport": 430,
+      "broken": []
+    },
+    {
+      "path": "/profile/privacy-and-legal",
+      "width": 430,
+      "viewport": 430,
+      "broken": []
+    },
+    {
+      "path": "/trips/when-you-get-tired",
+      "width": 430,
+      "viewport": 430,
+      "broken": []
+    },
+    {
+      "path": "/onboarding/emergency-contact",
+      "width": 430,
+      "viewport": 430,
+      "broken": []
+    },
+    {
+      "path": "/onboarding/allow-access",
+      "width": 430,
+      "viewport": 430,
+      "broken": []
+    },
+    {
+      "path": "/drive/home",
+      "width": 390,
+      "viewport": 390,
+      "broken": []
+    },
+    {
+      "path": "/drive/check-result",
+      "width": 390,
+      "viewport": 390,
+      "broken": []
+    },
+    {
+      "path": "/drive/pick-your-route",
+      "width": 390,
+      "viewport": 390,
+      "broken": []
+    },
+    {
+      "path": "/profile/emergency-contact",
+      "width": 390,
+      "viewport": 390,
+      "broken": []
+    },
+    {
+      "path": "/profile/my-cars",
+      "width": 390,
+      "viewport": 390,
+      "broken": []
+    },
+    {
+      "path": "/profile/add-a-car",
+      "width": 390,
+      "viewport": 390,
+      "broken": []
+    },
+    {
+      "path": "/profile/driving-stats",
+      "width": 390,
+      "viewport": 390,
+      "broken": []
+    },
+    {
+      "path": "/profile/privacy-and-legal",
+      "width": 390,
+      "viewport": 390,
+      "broken": []
+    },
+    {
+      "path": "/trips/when-you-get-tired",
+      "width": 390,
+      "viewport": 390,
+      "broken": []
+    },
+    {
+      "path": "/onboarding/emergency-contact",
+      "width": 390,
+      "viewport": 390,
+      "broken": []
+    },
+    {
+      "path": "/onboarding/allow-access",
+      "width": 390,
+      "viewport": 390,
+      "broken": []
+    },
+    {
+      "path": "/drive/home",
+      "width": 360,
+      "viewport": 360,
+      "broken": []
+    },
+    {
+      "path": "/drive/check-result",
+      "width": 360,
+      "viewport": 360,
+      "broken": []
+    },
+    {
+      "path": "/drive/pick-your-route",
+      "width": 360,
+      "viewport": 360,
+      "broken": []
+    },
+    {
+      "path": "/profile/emergency-contact",
+      "width": 360,
+      "viewport": 360,
+      "broken": []
+    },
+    {
+      "path": "/profile/my-cars",
+      "width": 360,
+      "viewport": 360,
+      "broken": []
+    },
+    {
+      "path": "/profile/add-a-car",
+      "width": 360,
+      "viewport": 360,
+      "broken": []
+    },
+    {
+      "path": "/profile/driving-stats",
+      "width": 360,
+      "viewport": 360,
+      "broken": []
+    },
+    {
+      "path": "/profile/privacy-and-legal",
+      "width": 360,
+      "viewport": 360,
+      "broken": []
+    },
+    {
+      "path": "/trips/when-you-get-tired",
+      "width": 360,
+      "viewport": 360,
+      "broken": []
+    },
+    {
+      "path": "/onboarding/emergency-contact",
+      "width": 360,
+      "viewport": 360,
+      "broken": []
+    },
+    {
+      "path": "/onboarding/allow-access",
+      "width": 360,
+      "viewport": 360,
+      "broken": []
+    }
+  ]
+}

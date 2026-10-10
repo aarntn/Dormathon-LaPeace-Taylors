@@ -1,0 +1,52 @@
+<svg width="330" height="48" viewBox="0 0 330 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="330" height="48" fill="#1E1E1E"/>
+<g id="3 &#194;&#183; Car check">
+<path d="M-1600 -622.271C-1600 -623.376 -1599.1 -624.271 -1598 -624.271H1928C1929.1 -624.271 1930 -623.376 1930 -622.271V538.729C1930 539.833 1929.1 540.729 1928 540.729H-1598C-1599.1 540.729 -1600 539.833 -1600 538.729V-622.271Z" fill="#282828"/>
+<path d="M-1598 -624.271V-623.271H1928V-624.271V-625.271H-1598V-624.271ZM1930 -622.271H1929V538.729H1930H1931V-622.271H1930ZM1928 540.729V539.729H-1598V540.729V541.729H1928V540.729ZM-1600 538.729H-1599V-622.271H-1600H-1601V538.729H-1600ZM-1598 540.729V539.729C-1598.55 539.729 -1599 539.281 -1599 538.729H-1600H-1601C-1601 540.385 -1599.66 541.729 -1598 541.729V540.729ZM1930 538.729H1929C1929 539.281 1928.55 539.729 1928 539.729V540.729V541.729C1929.66 541.729 1931 540.385 1931 538.729H1930ZM1928 -624.271V-623.271C1928.55 -623.271 1929 -622.824 1929 -622.271H1930H1931C1931 -623.928 1929.66 -625.271 1928 -625.271V-624.271ZM-1598 -624.271V-625.271C-1599.66 -625.271 -1601 -623.928 -1601 -622.271H-1600H-1599C-1599 -622.824 -1598.55 -623.271 -1598 -623.271V-624.271Z" fill="white" fill-opacity="0.1"/>
+<g id="C4 Engine sound check">
+<rect width="430" height="932" transform="translate(-50 -471.271)" fill="#FCFCFE"/>
+<g id="Content">
+<g id="Recorder">
+<g id="Waveform">
+<rect id="Rectangle" y="17" width="6.25" height="14" rx="2" fill="#1B2A4E"/>
+<rect id="Rectangle_2" x="9.25" y="12" width="6.25" height="24" rx="2" fill="#1B2A4E"/>
+<rect id="Rectangle_3" x="18.5" y="15" width="6.25" height="18" rx="2" fill="#1B2A4E"/>
+<rect id="Rectangle_4" x="27.75" y="8" width="6.25" height="32" rx="2" fill="#1B2A4E"/>
+<rect id="Rectangle_5" x="37" y="13" width="6.25" height="22" rx="2" fill="#1B2A4E"/>
+<rect id="Rectangle_6" x="46.25" y="4" width="6.25" height="40" rx="2" fill="#1B2A4E"/>
+<rect id="Rectangle_7" x="55.5" y="10" width="6.25" height="28" rx="2" fill="#1B2A4E"/>
+<rect id="Rectangle_8" x="64.75" y="6" width="6.25" height="36" rx="2" fill="#1B2A4E"/>
+<rect id="Rectangle_9" x="74" y="14" width="6.25" height="20" rx="2" fill="#1B2A4E"/>
+<rect id="Rectangle_10" x="83.25" y="9" width="6.25" height="30" rx="2" fill="#1B2A4E"/>
+<rect id="Rectangle_11" x="92.5" y="2" width="6.25" height="44" rx="2" fill="#1B2A4E"/>
+<rect id="Rectangle_12" x="101.75" y="12" width="6.25" height="24" rx="2" fill="#1B2A4E"/>
+<rect id="Rectangle_13" x="111" y="16" width="6.25" height="16" rx="2" fill="#1B2A4E"/>
+<rect id="Rectangle_14" x="120.25" y="7" width="6.25" height="34" rx="2" fill="#1B2A4E"/>
+<rect id="Rectangle_15" x="129.5" y="10" width="6.25" height="28" rx="2" fill="#1B2A4E"/>
+<rect id="Rectangle_16" x="138.75" y="14" width="6.25" height="20" rx="2" fill="#1B2A4E"/>
+<rect id="Rectangle_17" x="148" y="5" width="6.25" height="38" rx="2" fill="#1B2A4E"/>
+<rect id="Rectangle_18" x="157.25" y="11" width="6.25" height="26" rx="2" fill="#1B2A4E"/>
+<rect id="Rectangle_19" x="166.5" y="15" width="6.25" height="18" rx="2" fill="#1B2A4E"/>
+<rect id="Rectangle_20" x="175.75" y="8" width="6.25" height="32" rx="2" fill="#1B2A4E"/>
+<rect id="Rectangle_21" x="185" y="12" width="6.25" height="24" rx="2" fill="#1B2A4E"/>
+<rect id="Rectangle_22" x="194.25" y="17" width="6.25" height="14" rx="2" fill="#1B2A4E"/>
+<rect id="Rectangle_23" x="203.5" y="14" width="6.25" height="20" rx="2" fill="#E8EAED"/>
+<rect id="Rectangle_24" x="212.75" y="11" width="6.25" height="26" rx="2" fill="#E8EAED"/>
+<rect id="Rectangle_25" x="222" y="15" width="6.25" height="18" rx="2" fill="#E8EAED"/>
+<rect id="Rectangle_26" x="231.25" y="13" width="6.25" height="22" rx="2" fill="#E8EAED"/>
+<rect id="Rectangle_27" x="240.5" y="19" width="6.25" height="10" rx="2" fill="#E8EAED"/>
+<rect id="Rectangle_28" x="249.75" y="20" width="6.25" height="8" rx="2" fill="#E8EAED"/>
+<rect id="Rectangle_29" x="259" y="19" width="6.25" height="10" rx="2" fill="#E8EAED"/>
+<rect id="Rectangle_30" x="268.25" y="21" width="6.25" height="6" rx="2" fill="#E8EAED"/>
+<rect id="Rectangle_31" x="277.5" y="20" width="6.25" height="8" rx="2" fill="#E8EAED"/>
+<rect id="Rectangle_32" x="286.75" y="21" width="6.25" height="6" rx="2" fill="#E8EAED"/>
+<rect id="Rectangle_33" x="296" y="19" width="6.25" height="10" rx="2" fill="#E8EAED"/>
+<rect id="Rectangle_34" x="305.25" y="20" width="6.25" height="8" rx="2" fill="#E8EAED"/>
+<rect id="Rectangle_35" x="314.5" y="21" width="6.25" height="6" rx="2" fill="#E8EAED"/>
+<rect id="Rectangle_36" x="323.75" y="20" width="6.25" height="8" rx="2" fill="#E8EAED"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>

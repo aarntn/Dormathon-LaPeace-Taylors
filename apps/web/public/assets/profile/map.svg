@@ -1,0 +1,47 @@
+<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="18" height="18" fill="#1E1E1E"/>
+<g id="4 &#194;&#183; Profile">
+<path d="M-126 -671C-126 -672.105 -125.105 -673 -124 -673H2422C2423.1 -673 2424 -672.105 2424 -671V442C2424 443.105 2423.1 444 2422 444H-124C-125.105 444 -126 443.105 -126 442V-671Z" fill="#282828"/>
+<path d="M-124 -673V-672H2422V-673V-674H-124V-673ZM2424 -671H2423V442H2424H2425V-671H2424ZM2422 444V443H-124V444V445H2422V444ZM-126 442H-125V-671H-126H-127V442H-126ZM-124 444V443C-124.552 443 -125 442.552 -125 442H-126H-127C-127 443.657 -125.657 445 -124 445V444ZM2424 442H2423C2423 442.552 2422.55 443 2422 443V444V445C2423.66 445 2425 443.657 2425 442H2424ZM2422 -673V-672C2422.55 -672 2423 -671.552 2423 -671H2424H2425C2425 -672.657 2423.66 -674 2422 -674V-673ZM-124 -673V-674C-125.657 -674 -127 -672.657 -127 -671H-126H-125C-125 -671.552 -124.552 -672 -124 -672V-673Z" fill="white" fill-opacity="0.1"/>
+<g id="P1 Profile">
+<rect width="430" height="932" transform="translate(-46 -568)" fill="#FCFCFE"/>
+<g id="Content">
+<g id="Group Settings" clip-path="url(#clip0_0_1)">
+<g id="List" filter="url(#filter0_d_0_1)">
+<rect x="-26" y="-81" width="390" height="294" rx="20" fill="white"/>
+<rect x="-25.5" y="-80.5" width="389" height="293" rx="19.5" stroke="#E8EAED"/>
+<g id="Row Maps app">
+<mask id="path-5-inside-1_0_1" fill="white">
+<path d="M-9 -19H347V38H-9V-19Z"/>
+</mask>
+<path d="M347 38V37H-9V38V39H347V38Z" fill="#E8EAED" mask="url(#path-5-inside-1_0_1)"/>
+<g id="Frame">
+<rect x="-9" y="-9" width="36" height="36" rx="11" fill="#EEF1F7"/>
+<g id="icon/map">
+<g id="Group">
+<path id="Vector" d="M6.75 3L2.25 4.875V15L6.75 13.125L11.25 15L15.75 13.125V3L11.25 4.875L6.75 3Z" stroke="#1B2A4E" stroke-width="1.425" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M6.75 3V13.125M11.25 4.875V15" stroke="#1B2A4E" stroke-width="1.425" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_0_1" x="-42" y="-91" width="422" height="326" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="6"/>
+<feGaussianBlur stdDeviation="8"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+</filter>
+<clipPath id="clip0_0_1">
+<rect width="390" height="321" fill="white" transform="translate(-26 -108)"/>
+</clipPath>
+</defs>
+</svg>

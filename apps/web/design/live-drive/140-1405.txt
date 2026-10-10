@@ -1,0 +1,188 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/6858ba3d-b492-4892-8336-b9f25b6e88df";
+const imgGroup = `${assetPathPrefix}/027af.svg`;
+const imgIndicators = `${assetPathPrefix}/a391f.svg`;
+const imgFrame = `${assetPathPrefix}/3e754.svg`;
+const imgEllipse = `${assetPathPrefix}/6cb7a.svg`;
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default";
+  style?: "Primary" | "Secondary";
+};
+
+function Button({ className, label = "Button", state = "Default", style = "Primary" }: ButtonProps) {
+  const isSecondaryAndDefault = style === "Secondary" && state === "Default";
+  return (
+    <div className={className || `content-stretch cursor-pointer flex h-[56px] items-center justify-center relative rounded-[18px] w-[390px] ${isSecondaryAndDefault ? String.raw`bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid` : String.raw`bg-[var(--brand\/navy,#1b2a4e)]`}`} id={isSecondaryAndDefault ? "node-27_5" : "node-27_3"}>
+      {style === "Primary" && state === "Default" && (
+        <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[18px] text-[color:var(--text\/inverse,white)] tracking-[-0.1152px] whitespace-nowrap" data-node-id="27:4">
+          {label}
+        </p>
+      )}
+      {isSecondaryAndDefault && (
+        <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[18px] text-[color:var(--text\/primary,#282828)] tracking-[-0.1152px] whitespace-nowrap" data-node-id="27:6">
+          {label}
+        </p>
+      )}
+    </div>
+  );
+}
+
+type IconButtonProps = {
+  className?: string;
+  icon?: "Back";
+  theme?: "Light";
+};
+
+function IconButton({ className, icon = "Back", theme = "Light" }: IconButtonProps) {
+  return (
+    <div className={className || "bg-[var(--bg\\/card,white)] border border-[var(--line\\/default,#e8eaed)] border-solid content-stretch drop-shadow-[0px_6px_8px_rgba(0,0,0,0.06)] flex items-center justify-center relative rounded-[20px] size-[40px]"} data-node-id="27:14">
+      <div className="overflow-clip relative shrink-0 size-[20px]" data-node-id="27:15" data-name="icon/back">
+        <div className="absolute bottom-1/4 left-[20.83%] right-[20.83%] top-1/4" data-node-id="27:16" data-name="Group">
+          <div className="absolute inset-[-7.92%_-6.79%]">
+            <img alt="" className="block max-w-none size-full" src={imgGroup} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+type StatusBarProps = {
+  className?: string;
+  theme?: "Light";
+};
+
+function StatusBar({ className, theme = "Light" }: StatusBarProps) {
+  return (
+    <div className={className || "h-[54px] relative w-[430px]"} data-node-id="27:134">
+      <p className="[word-break:break-word] absolute font-['SF_Pro:Semibold'] font-[590] leading-[normal] left-[52px] text-[17px] text-[color:var(--text\/primary,#282828)] top-[18px] tracking-[-0.408px] whitespace-nowrap" data-node-id="27:135" style={{ fontVariationSettings: '"wdth" 100' }}>
+        9:41
+      </p>
+      <div className="absolute bg-black h-[36px] left-[153px] rounded-[18px] top-[11px] w-[123.999px]" data-node-id="27:136" data-name="Dynamic Island" />
+      <div className="absolute h-[13px] left-[308px] top-[21px] w-[70px]" data-node-id="27:137" data-name="Indicators">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIndicators} />
+      </div>
+    </div>
+  );
+}
+
+export default function Component01CCheckResult() {
+  return (
+    <div className="bg-[var(--bg\/screen,#fcfcfe)] relative size-full" data-node-id="140:1405" data-name="01c Check result">
+      <StatusBar className="absolute h-[54px] left-0 top-0 w-[430px]" />
+      <div className="absolute content-stretch flex flex-col gap-[12px] items-start left-0 overflow-clip pb-[24px] pt-[8px] px-[20px] top-[54px] w-[430px]" data-node-id="140:1417" data-name="Content">
+        <div className="content-stretch flex items-start overflow-clip relative shrink-0 w-full" data-node-id="140:1418" data-name="Top bar">
+          <IconButton className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch cursor-pointer drop-shadow-[0px_6px_8px_rgba(0,0,0,0.06)] flex items-center justify-center relative rounded-[20px] shrink-0 size-[40px]" />
+        </div>
+        <div className="content-stretch flex items-start justify-center overflow-clip relative shrink-0 w-full" data-node-id="140:1424" data-name="Icon wrap">
+          <div className="bg-[var(--state\/warning-soft,#fcf0da)] content-stretch flex items-center justify-center overflow-clip relative rounded-[36px] shrink-0 size-[72px]" data-node-id="140:1425" data-name="Frame">
+            <div className="relative shrink-0 size-[32px]" data-node-id="140:1426" data-name="Frame">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame} />
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex items-start justify-center overflow-clip relative shrink-0 w-full" data-node-id="175:1768" data-name="Readiness">
+          <div className="bg-[var(--state\/warning-soft,#fcf0da)] content-stretch flex gap-[6px] items-center overflow-clip px-[12px] py-[6px] relative rounded-[10px] shrink-0" data-node-id="175:1769" data-name="Frame">
+            <div className="relative shrink-0 size-[8px]" data-node-id="175:1770" data-name="Ellipse">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse} />
+            </div>
+            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--state\/warning,#b86e00)] tracking-[-0.042px] whitespace-nowrap" data-node-id="175:1771">
+              Caution
+            </p>
+          </div>
+        </div>
+        <div className="[word-break:break-word] content-stretch flex flex-col gap-[8px] items-start not-italic overflow-clip relative shrink-0 text-center w-full" data-node-id="140:1429" data-name="Heading">
+          <p className="font-['Inter:Bold'] font-bold leading-[normal] relative shrink-0 text-[28px] text-[color:var(--text\/primary,#282828)] tracking-[-0.2632px] w-full" data-node-id="140:1430">
+            More tired than usual
+          </p>
+          <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[16px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.0784px] w-full" data-node-id="140:1431">
+            You can drive, but plan a break.
+          </p>
+        </div>
+        <div className="[word-break:break-word] bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch flex flex-col gap-[10px] items-start not-italic overflow-clip p-[16px] relative rounded-[18px] shadow-[0px_6px_16px_0px_rgba(0,0,0,0.04)] shrink-0 text-[16px] tracking-[-0.0784px] w-full whitespace-nowrap" data-node-id="140:1432" data-name="What we found">
+          <div className="content-stretch flex items-center justify-between overflow-clip relative shrink-0 w-full" data-node-id="140:1433" data-name="Row Reaction time">
+            <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[color:var(--text\/secondary,#797979)]" data-node-id="140:1434">
+              Reaction time
+            </p>
+            <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] relative shrink-0 text-[color:var(--state\/warning,#b86e00)]" data-node-id="140:1435">
+              312 ms
+            </p>
+          </div>
+          <div className="content-stretch flex items-center justify-between overflow-clip relative shrink-0 w-full" data-node-id="140:1436" data-name="Row Your usual">
+            <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[color:var(--text\/secondary,#797979)]" data-node-id="140:1437">
+              Your usual
+            </p>
+            <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] relative shrink-0 text-[color:var(--text\/primary,#282828)]" data-node-id="140:1438">
+              268 ms
+            </p>
+          </div>
+          <div className="content-stretch flex items-center justify-between overflow-clip relative shrink-0 w-full" data-node-id="140:1439" data-name="Row Sleep last night">
+            <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[color:var(--text\/secondary,#797979)]" data-node-id="140:1440">
+              Sleep last night
+            </p>
+            <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] relative shrink-0 text-[color:var(--text\/primary,#282828)]" data-node-id="140:1441">
+              6–7 h
+            </p>
+          </div>
+          <div className="content-stretch flex items-center justify-between overflow-clip relative shrink-0 w-full" data-node-id="140:1442" data-name="Row Awake for">
+            <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[color:var(--text\/secondary,#797979)]" data-node-id="140:1443">
+              Awake for
+            </p>
+            <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] relative shrink-0 text-[color:var(--text\/primary,#282828)]" data-node-id="140:1444">
+              12–16 h
+            </p>
+          </div>
+          <div className="content-stretch flex items-center justify-between overflow-clip relative shrink-0 w-full" data-node-id="175:1772" data-name="Row Eyes">
+            <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[color:var(--text\/secondary,#797979)]" data-node-id="175:1773">
+              Eyes
+            </p>
+            <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] relative shrink-0 text-[color:var(--state\/warning,#b86e00)]" data-node-id="175:1774">
+              Slower blinks
+            </p>
+          </div>
+          <div className="content-stretch flex items-center justify-between overflow-clip relative shrink-0 w-full" data-node-id="175:1775" data-name="Row You said">
+            <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[color:var(--text\/secondary,#797979)]" data-node-id="175:1776">
+              You said
+            </p>
+            <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] relative shrink-0 text-[color:var(--text\/primary,#282828)]" data-node-id="175:1777">
+              A bit tired
+            </p>
+          </div>
+          <div className="content-stretch flex items-center justify-between overflow-clip relative shrink-0 w-full" data-node-id="175:1778" data-name="Row Trip length">
+            <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[color:var(--text\/secondary,#797979)]" data-node-id="175:1779">
+              Trip length
+            </p>
+            <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] relative shrink-0 text-[color:var(--text\/primary,#282828)]" data-node-id="175:1780">
+              1–2 h
+            </p>
+          </div>
+        </div>
+        <div className="[word-break:break-word] bg-[var(--state\/success-soft,#e3f3ec)] content-stretch flex flex-col gap-[4px] items-start not-italic overflow-clip p-[16px] relative rounded-[18px] shrink-0 text-[14px] tracking-[-0.042px] w-full" data-node-id="140:1445" data-name="Plan">
+          <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] relative shrink-0 text-[color:var(--state\/success,#239a6c)] w-full" data-node-id="140:1446">
+            We’ve adjusted tonight’s drive
+          </p>
+          <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[color:var(--text\/primary,#282828)] w-full" data-node-id="140:1447">
+            The alarm reacts sooner, and we’ll suggest a break after 30 minutes.
+          </p>
+        </div>
+        <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[normal] not-italic relative shrink-0 text-[12px] text-[color:var(--text\/tertiary,#a6a6a6)] text-center tracking-[0.0024px] w-full" data-node-id="175:1781">
+          A safety indication, not a medical diagnosis.
+        </p>
+      </div>
+      <Button className="absolute bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch cursor-pointer flex h-[56px] items-center justify-center left-[20px] rounded-[18px] top-[776px] w-[390px]" label="Not driving now" style="Secondary" />
+      <Button className="absolute bg-[var(--brand\/navy,#1b2a4e)] content-stretch cursor-pointer flex h-[56px] items-center justify-center left-[20px] rounded-[18px] top-[842px] w-[390px]" label="Mount my phone" />
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Body/Small Strong: Font(family: "Inter", style: Semi Bold, size: 14, weight: 600, lineHeight: 100, letterSpacing: -0.30000001192092896), Heading/Large: Font(family: "Inter", style: Bold, size: 28, weight: 700, lineHeight: 100, letterSpacing: -0.9399999976158142), Body/Regular: Font(family: "Inter", style: Regular, size: 16, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.49000000953674316), Body/Strong: Font(family: "Inter", style: Semi Bold, size: 16, weight: 600, lineHeight: 100, letterSpacing: -0.49000000953674316), Body/Small: Font(family: "Inter", style: Regular, size: 14, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.30000001192092896), Label/Small: Font(family: "Inter", style: Medium, size: 12, weight: 500, lineHeight: 100, letterSpacing: 0.019999999552965164).
+Images and SVGs will be stored as constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

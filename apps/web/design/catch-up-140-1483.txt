@@ -1,0 +1,104 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/3e46a5b8-b93f-40cd-a287-8b97aa03e56f";
+const imgIndicators = `${assetPathPrefix}/4c1f7.svg`;
+const imgFrame = `${assetPathPrefix}/ca266.svg`;
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default";
+  style?: "Light" | "Drive";
+};
+
+function Button({ className, label = "Button", state = "Default", style = "Light" }: ButtonProps) {
+  const isDriveAndDefault = style === "Drive" && state === "Default";
+  return (
+    <div className={className || `content-stretch cursor-pointer flex h-[56px] items-center justify-center relative rounded-[18px] w-[390px] ${isDriveAndDefault ? String.raw`bg-[var(--drive\/card,#141e30)]` : String.raw`bg-[var(--bg\/card,white)]`}`} id={isDriveAndDefault ? "node-27_11" : "node-27_7"}>
+      {style === "Light" && state === "Default" && (
+        <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[18px] text-[color:var(--brand\/navy,#1b2a4e)] tracking-[-0.1152px] whitespace-nowrap" data-node-id="27:8">
+          {label}
+        </p>
+      )}
+      {isDriveAndDefault && (
+        <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[18px] text-white tracking-[-0.1152px] whitespace-nowrap" data-node-id="27:12">
+          {label}
+        </p>
+      )}
+    </div>
+  );
+}
+
+type StatusBarProps = {
+  className?: string;
+  theme?: "Dark";
+};
+
+function StatusBar({ className, theme = "Dark" }: StatusBarProps) {
+  return (
+    <div className={className || "h-[54px] relative w-[430px]"} data-node-id="27:145">
+      <p className="[word-break:break-word] absolute font-['SF_Pro:Semibold'] font-[590] leading-[normal] left-[52px] text-[17px] text-white top-[18px] tracking-[-0.408px] whitespace-nowrap" data-node-id="27:146" style={{ fontVariationSettings: '"wdth" 100' }}>
+        9:41
+      </p>
+      <div className="absolute bg-black h-[36px] left-[153px] rounded-[18px] top-[11px] w-[123.999px]" data-node-id="27:147" data-name="Dynamic Island" />
+      <div className="absolute h-[13px] left-[308px] top-[21px] w-[70px]" data-node-id="27:148" data-name="Indicators">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIndicators} />
+      </div>
+    </div>
+  );
+}
+
+export default function Component08CContactAlerted() {
+  return (
+    <div className="bg-[var(--drive\/bg,#0b1220)] relative size-full" data-node-id="140:1483" data-name="08c Contact alerted">
+      <StatusBar className="absolute h-[54px] left-0 top-0 w-[430px]" />
+      <div className="absolute content-stretch flex flex-col gap-[20px] items-start left-0 overflow-clip pb-[24px] pt-[8px] px-[20px] top-[54px] w-[430px]" data-node-id="140:1495" data-name="Content">
+        <div className="content-stretch flex h-[100px] items-start pt-[40px] relative shrink-0 w-full" data-node-id="140:1496" data-name="Spacer" />
+        <div className="content-stretch flex items-start justify-center overflow-clip relative shrink-0 w-full" data-node-id="140:1497" data-name="Icon wrap">
+          <div className="bg-[#3a1a1f] content-stretch flex items-center justify-center overflow-clip relative rounded-[36px] shrink-0 size-[72px]" data-node-id="140:1498" data-name="Frame">
+            <div className="relative shrink-0 size-[34px]" data-node-id="140:1499" data-name="Frame">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame} />
+            </div>
+          </div>
+        </div>
+        <div className="[word-break:break-word] content-stretch flex flex-col gap-[8px] items-start not-italic overflow-clip relative shrink-0 text-center w-full" data-node-id="140:1502" data-name="Heading">
+          <p className="font-['Inter:Bold'] font-bold leading-[normal] relative shrink-0 text-[28px] text-[color:var(--text\/inverse,white)] tracking-[-0.2632px] w-full" data-node-id="140:1503">
+            We’ve alerted Mum
+          </p>
+          <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[16px] text-[color:var(--drive\/text-secondary,#95a0b3)] tracking-[-0.0784px] w-full" data-node-id="140:1504">
+            She has your live location. Sent at 11:24 pm.
+          </p>
+        </div>
+        <div className="[word-break:break-word] bg-[var(--drive\/card,#141e30)] border border-[var(--drive\/line,#22304a)] border-solid content-stretch flex flex-col gap-[6px] items-start not-italic overflow-clip p-[16px] relative rounded-[18px] shrink-0 w-full" data-node-id="140:1505" data-name="Location">
+          <p className="font-['Inter:Medium'] font-medium leading-[normal] relative shrink-0 text-[12px] text-[color:var(--drive\/text-secondary,#95a0b3)] tracking-[0.0024px] whitespace-nowrap" data-node-id="140:1506">
+            Your location
+          </p>
+          <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] min-w-full relative shrink-0 text-[16px] text-[color:var(--text\/inverse,white)] tracking-[-0.0784px] w-[min-content]" data-node-id="140:1507">
+            PLUS highway near Nilai, northbound
+          </p>
+          <p className="font-['Inter:Regular'] font-normal leading-[1.4] min-w-full relative shrink-0 text-[14px] text-[color:var(--drive\/text-secondary,#95a0b3)] tracking-[-0.042px] w-[min-content]" data-node-id="140:1508">
+            Shared until you tell her you’re OK
+          </p>
+        </div>
+        <div className="bg-[var(--drive\/card,#141e30)] border border-[var(--drive\/line,#22304a)] border-solid content-stretch flex flex-col items-start overflow-clip p-[16px] relative rounded-[18px] shrink-0 w-full" data-node-id="140:1509" data-name="Note">
+          <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.4] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/inverse,white)] tracking-[-0.042px] w-full" data-node-id="140:1510">
+            If you’re hurt or can’t talk, call 999. Your location is ready to read out.
+          </p>
+        </div>
+        <a className="[word-break:break-word] block cursor-pointer font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-[14px] text-[color:var(--drive\/text-secondary,#95a0b3)] text-center tracking-[-0.042px] w-full" data-node-id="153:1602">
+          <p className="leading-[1.4]">Demo: see what Mum gets</p>
+        </a>
+      </div>
+      <Button className="absolute bg-[var(--drive\/card,#141e30)] content-stretch cursor-pointer flex h-[56px] items-center justify-center left-[20px] rounded-[18px] top-[776px] w-[390px]" label="Call 999" style="Drive" />
+      <Button className="absolute bg-[var(--bg\/card,white)] content-stretch cursor-pointer flex h-[56px] items-center justify-center left-[20px] rounded-[18px] top-[842px] w-[390px]" label="I’m OK, tell Mum" />
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Heading/Large: Font(family: "Inter", style: Bold, size: 28, weight: 700, lineHeight: 100, letterSpacing: -0.9399999976158142), Body/Regular: Font(family: "Inter", style: Regular, size: 16, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.49000000953674316), Label/Small: Font(family: "Inter", style: Medium, size: 12, weight: 500, lineHeight: 100, letterSpacing: 0.019999999552965164), Body/Strong: Font(family: "Inter", style: Semi Bold, size: 16, weight: 600, lineHeight: 100, letterSpacing: -0.49000000953674316), Body/Small: Font(family: "Inter", style: Regular, size: 14, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.30000001192092896).
+Images and SVGs will be stored as constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

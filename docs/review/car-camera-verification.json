@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-10-10T06:59:31.323Z",
+  "input": "Generated canvas video fixture, with native permission gating; no physical camera",
+  "passed": [
+    "camera readiness",
+    "local JPEG capture",
+    "blob thumbnail",
+    "no sample diagnosis over live camera",
+    "tracks stop on capture and close",
+    "double close guard",
+    "late permission resolution stopped",
+    "permission denied disables shutter",
+    "retry after permission grant",
+    "disconnected camera disables shutter and retries",
+    "visible local capture error",
+    "browser back cancels delayed capture",
+    "rapid back-forward invalidates old capture",
+    "skip releases stream",
+    "body scroll restored",
+    "no runtime exceptions"
+  ]
+}

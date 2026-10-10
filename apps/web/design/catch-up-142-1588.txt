@@ -1,0 +1,231 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/78f6ace1-b9db-449f-892b-9300dbbac0c9";
+const imgGroup = `${assetPathPrefix}/027af.svg`;
+const imgIndicators = `${assetPathPrefix}/a391f.svg`;
+const imgFrame = `${assetPathPrefix}/fe5a9.svg`;
+const imgFrame1 = `${assetPathPrefix}/578eb.svg`;
+
+type ButtonProps = {
+  className?: string;
+  label?: string;
+  state?: "Default";
+  style?: "Primary";
+};
+
+function Button({ className, label = "Button", state = "Default", style = "Primary" }: ButtonProps) {
+  return (
+    <div className={className || "bg-[var(--brand\\/navy,#1b2a4e)] content-stretch cursor-pointer flex h-[56px] items-center justify-center relative rounded-[18px] w-[390px]"} data-node-id="27:3">
+      <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[18px] text-[color:var(--text\/inverse,white)] tracking-[-0.1152px] whitespace-nowrap" data-node-id="27:4">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+type IconButtonProps = {
+  className?: string;
+  icon?: "Back";
+  theme?: "Light";
+};
+
+function IconButton({ className, icon = "Back", theme = "Light" }: IconButtonProps) {
+  return (
+    <div className={className || "bg-[var(--bg\\/card,white)] border border-[var(--line\\/default,#e8eaed)] border-solid content-stretch drop-shadow-[0px_6px_8px_rgba(0,0,0,0.06)] flex items-center justify-center relative rounded-[20px] size-[40px]"} data-node-id="27:14">
+      <div className="overflow-clip relative shrink-0 size-[20px]" data-node-id="27:15" data-name="icon/back">
+        <div className="absolute bottom-1/4 left-[20.83%] right-[20.83%] top-1/4" data-node-id="27:16" data-name="Group">
+          <div className="absolute inset-[-7.92%_-6.79%]">
+            <img alt="" className="block max-w-none size-full" src={imgGroup} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+type StatusBarProps = {
+  className?: string;
+  theme?: "Light";
+};
+
+function StatusBar({ className, theme = "Light" }: StatusBarProps) {
+  return (
+    <div className={className || "h-[54px] relative w-[430px]"} data-node-id="27:134">
+      <p className="[word-break:break-word] absolute font-['SF_Pro:Semibold'] font-[590] leading-[normal] left-[52px] text-[17px] text-[color:var(--text\/primary,#282828)] top-[18px] tracking-[-0.408px] whitespace-nowrap" data-node-id="27:135" style={{ fontVariationSettings: '"wdth" 100' }}>
+        9:41
+      </p>
+      <div className="absolute bg-black h-[36px] left-[153px] rounded-[18px] top-[11px] w-[123.999px]" data-node-id="27:136" data-name="Dynamic Island" />
+      <div className="absolute h-[13px] left-[308px] top-[21px] w-[70px]" data-node-id="27:137" data-name="Indicators">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIndicators} />
+      </div>
+    </div>
+  );
+}
+
+export default function C7WorkshopsNearYou() {
+  return (
+    <div className="bg-[var(--bg\/screen,#fcfcfe)] relative size-full" data-node-id="142:1588" data-name="C7 Workshops near you">
+      <StatusBar className="absolute h-[54px] left-0 top-0 w-[430px]" />
+      <div className="absolute content-stretch flex flex-col gap-[16px] items-start left-0 overflow-clip pb-[24px] pt-[8px] px-[20px] top-[54px] w-[430px]" data-node-id="142:1600" data-name="Content">
+        <div className="content-stretch flex items-start overflow-clip relative shrink-0 w-full" data-node-id="142:1601" data-name="Top bar">
+          <IconButton className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch cursor-pointer drop-shadow-[0px_6px_8px_rgba(0,0,0,0.06)] flex items-center justify-center relative rounded-[20px] shrink-0 size-[40px]" />
+        </div>
+        <div className="[word-break:break-word] content-stretch flex flex-col gap-[8px] items-start not-italic overflow-clip relative shrink-0 text-center w-full" data-node-id="142:1606" data-name="Heading">
+          <p className="font-['Inter:Bold'] font-bold leading-[normal] relative shrink-0 text-[28px] text-[color:var(--text\/primary,#282828)] tracking-[-0.2632px] w-full" data-node-id="142:1607">
+            Workshops near you
+          </p>
+          <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[16px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.0784px] w-full" data-node-id="142:1608">
+            For engine overheating · open now · closest first
+          </p>
+        </div>
+        <div className="content-stretch flex gap-[6px] items-start overflow-clip relative shrink-0 w-full" data-node-id="176:1715" data-name="Service filter">
+          <div className="bg-[var(--brand\/navy,#1b2a4e)] content-stretch flex flex-[1_0_0] h-[40px] items-center justify-center min-w-px overflow-clip relative rounded-[12px]" data-node-id="176:1716" data-name="Filter Cooling">
+            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/inverse,white)] tracking-[-0.042px] whitespace-nowrap" data-node-id="176:1717">
+              Cooling
+            </p>
+          </div>
+          <div className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex flex-[1_0_0] h-[40px] items-center justify-center min-w-px overflow-clip relative rounded-[12px]" data-node-id="176:1718" data-name="Filter Battery">
+            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/primary,#282828)] tracking-[-0.042px] whitespace-nowrap" data-node-id="176:1719">
+              Battery
+            </p>
+          </div>
+          <div className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex flex-[1_0_0] h-[40px] items-center justify-center min-w-px overflow-clip relative rounded-[12px]" data-node-id="176:1720" data-name="Filter Brakes">
+            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/primary,#282828)] tracking-[-0.042px] whitespace-nowrap" data-node-id="176:1721">
+              Brakes
+            </p>
+          </div>
+          <div className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex flex-[1_0_0] h-[40px] items-center justify-center min-w-px overflow-clip relative rounded-[12px]" data-node-id="176:1722" data-name="Filter Tyres">
+            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/primary,#282828)] tracking-[-0.042px] whitespace-nowrap" data-node-id="176:1723">
+              Tyres
+            </p>
+          </div>
+          <div className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex flex-[1_0_0] h-[40px] items-center justify-center min-w-px overflow-clip relative rounded-[12px]" data-node-id="176:1724" data-name="Filter Fuel">
+            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/primary,#282828)] tracking-[-0.042px] whitespace-nowrap" data-node-id="176:1725">
+              Fuel
+            </p>
+          </div>
+        </div>
+        <div className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch flex flex-col items-start overflow-clip px-[16px] py-[4px] relative rounded-[18px] shadow-[0px_6px_16px_0px_rgba(0,0,0,0.04)] shrink-0 w-full" data-node-id="176:1726" data-name="List">
+          <div className="content-stretch flex flex-col gap-[10px] items-start overflow-clip py-[14px] relative shrink-0 w-full" data-node-id="176:1727" data-name="Shop Bengkel Jaya Auto">
+            <div className="[word-break:break-word] content-stretch flex gap-[12px] items-start not-italic overflow-clip relative shrink-0 w-full" data-node-id="176:1728" data-name="Frame">
+              <div className="content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start min-w-px overflow-clip relative" data-node-id="176:1729" data-name="Frame">
+                <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px] whitespace-nowrap" data-node-id="176:1730">
+                  Bengkel Jaya Auto
+                </p>
+                <p className="font-['Inter:Regular'] font-normal leading-[1.4] min-w-full relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] w-[min-content]" data-node-id="176:1731">
+                  Cooling system, radiators · open until 7 pm
+                </p>
+              </div>
+              <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] relative shrink-0 text-[14px] text-[color:var(--brand\/navy,#1b2a4e)] tracking-[-0.042px] whitespace-nowrap" data-node-id="176:1732">
+                1.2 km
+              </p>
+            </div>
+            <div className="content-stretch flex gap-[8px] items-start overflow-clip relative shrink-0 w-full" data-node-id="176:1733" data-name="Frame">
+              <div className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex gap-[6px] items-center overflow-clip px-[12px] py-[8px] relative rounded-[12px] shrink-0" data-node-id="176:1734" data-name="Action Call">
+                <div className="relative shrink-0 size-[16px]" data-node-id="176:1735" data-name="Frame">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame} />
+                </div>
+                <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--brand\/navy,#1b2a4e)] tracking-[-0.042px] whitespace-nowrap" data-node-id="176:1737">
+                  Call
+                </p>
+              </div>
+              <div className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex gap-[6px] items-center overflow-clip px-[12px] py-[8px] relative rounded-[12px] shrink-0" data-node-id="176:1738" data-name="Action Directions">
+                <div className="relative shrink-0 size-[16px]" data-node-id="176:1739" data-name="Frame">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame1} />
+                </div>
+                <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--brand\/navy,#1b2a4e)] tracking-[-0.042px] whitespace-nowrap" data-node-id="176:1741">
+                  Directions
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="bg-[var(--bg\/field,#f2f3f5)] h-px relative shrink-0 w-full" data-node-id="176:1742" data-name="Rectangle" />
+          <div className="content-stretch flex flex-col gap-[10px] items-start overflow-clip py-[14px] relative shrink-0 w-full" data-node-id="176:1743" data-name="Shop SS2 Car Care Centre">
+            <div className="[word-break:break-word] content-stretch flex gap-[12px] items-start not-italic overflow-clip relative shrink-0 w-full" data-node-id="176:1744" data-name="Frame">
+              <div className="content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start min-w-px overflow-clip relative" data-node-id="176:1745" data-name="Frame">
+                <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px] whitespace-nowrap" data-node-id="176:1746">
+                  SS2 Car Care Centre
+                </p>
+                <p className="font-['Inter:Regular'] font-normal leading-[1.4] min-w-full relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] w-[min-content]" data-node-id="176:1747">
+                  Cooling, general servicing · open until 8 pm
+                </p>
+              </div>
+              <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] relative shrink-0 text-[14px] text-[color:var(--brand\/navy,#1b2a4e)] tracking-[-0.042px] whitespace-nowrap" data-node-id="176:1748">
+                2.0 km
+              </p>
+            </div>
+            <div className="content-stretch flex gap-[8px] items-start overflow-clip relative shrink-0 w-full" data-node-id="176:1749" data-name="Frame">
+              <div className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex gap-[6px] items-center overflow-clip px-[12px] py-[8px] relative rounded-[12px] shrink-0" data-node-id="176:1750" data-name="Action Call">
+                <div className="relative shrink-0 size-[16px]" data-node-id="176:1751" data-name="Frame">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame} />
+                </div>
+                <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--brand\/navy,#1b2a4e)] tracking-[-0.042px] whitespace-nowrap" data-node-id="176:1753">
+                  Call
+                </p>
+              </div>
+              <div className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex gap-[6px] items-center overflow-clip px-[12px] py-[8px] relative rounded-[12px] shrink-0" data-node-id="176:1754" data-name="Action Directions">
+                <div className="relative shrink-0 size-[16px]" data-node-id="176:1755" data-name="Frame">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame1} />
+                </div>
+                <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--brand\/navy,#1b2a4e)] tracking-[-0.042px] whitespace-nowrap" data-node-id="176:1757">
+                  Directions
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="bg-[var(--bg\/field,#f2f3f5)] h-px relative shrink-0 w-full" data-node-id="176:1758" data-name="Rectangle" />
+          <div className="content-stretch flex flex-col gap-[10px] items-start overflow-clip py-[14px] relative shrink-0 w-full" data-node-id="176:1759" data-name="Shop Seksyen 14 Radiator Service">
+            <div className="[word-break:break-word] content-stretch flex gap-[12px] items-start not-italic overflow-clip relative shrink-0 w-full" data-node-id="176:1760" data-name="Frame">
+              <div className="content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start min-w-px overflow-clip relative" data-node-id="176:1761" data-name="Frame">
+                <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] relative shrink-0 text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px] whitespace-nowrap" data-node-id="176:1762">
+                  Seksyen 14 Radiator Service
+                </p>
+                <p className="font-['Inter:Regular'] font-normal leading-[1.4] min-w-full relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] w-[min-content]" data-node-id="176:1763">
+                  Radiator specialist · open until 6 pm
+                </p>
+              </div>
+              <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] relative shrink-0 text-[14px] text-[color:var(--brand\/navy,#1b2a4e)] tracking-[-0.042px] whitespace-nowrap" data-node-id="176:1764">
+                3.4 km
+              </p>
+            </div>
+            <div className="content-stretch flex gap-[8px] items-start overflow-clip relative shrink-0 w-full" data-node-id="176:1765" data-name="Frame">
+              <div className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex gap-[6px] items-center overflow-clip px-[12px] py-[8px] relative rounded-[12px] shrink-0" data-node-id="176:1766" data-name="Action Call">
+                <div className="relative shrink-0 size-[16px]" data-node-id="176:1767" data-name="Frame">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame} />
+                </div>
+                <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--brand\/navy,#1b2a4e)] tracking-[-0.042px] whitespace-nowrap" data-node-id="176:1769">
+                  Call
+                </p>
+              </div>
+              <div className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex gap-[6px] items-center overflow-clip px-[12px] py-[8px] relative rounded-[12px] shrink-0" data-node-id="176:1770" data-name="Action Directions">
+                <div className="relative shrink-0 size-[16px]" data-node-id="176:1771" data-name="Frame">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame1} />
+                </div>
+                <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--brand\/navy,#1b2a4e)] tracking-[-0.042px] whitespace-nowrap" data-node-id="176:1773">
+                  Directions
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="[word-break:break-word] bg-[var(--bg\/tint,#eef1f7)] content-stretch flex flex-col gap-[4px] items-start not-italic overflow-clip p-[16px] relative rounded-[18px] shrink-0 text-[14px] tracking-[-0.042px] w-full" data-node-id="142:1627" data-name="Send">
+          <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] relative shrink-0 text-[color:var(--brand\/navy,#1b2a4e)] w-full" data-node-id="142:1628">
+            Send them your report
+          </p>
+          <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[color:var(--text\/primary,#282828)] w-full" data-node-id="142:1629">
+            They’ll see your warning-light scan and car report before you arrive.
+          </p>
+        </div>
+      </div>
+      <Button className="absolute bg-[var(--brand\/navy,#1b2a4e)] content-stretch cursor-pointer flex h-[56px] items-center justify-center left-[20px] rounded-[18px] top-[842px] w-[390px]" label="Send report on WhatsApp" />
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Heading/Large: Font(family: "Inter", style: Bold, size: 28, weight: 700, lineHeight: 100, letterSpacing: -0.9399999976158142), Body/Regular: Font(family: "Inter", style: Regular, size: 16, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.49000000953674316), Body/Small Strong: Font(family: "Inter", style: Semi Bold, size: 14, weight: 600, lineHeight: 100, letterSpacing: -0.30000001192092896), Body/Strong: Font(family: "Inter", style: Semi Bold, size: 16, weight: 600, lineHeight: 100, letterSpacing: -0.49000000953674316), Body/Small: Font(family: "Inter", style: Regular, size: 14, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.30000001192092896).
+Images and SVGs will be stored as constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

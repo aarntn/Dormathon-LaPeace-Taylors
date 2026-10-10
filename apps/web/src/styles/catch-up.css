@@ -1,0 +1,52 @@
+.catch-up-content { gap:20px; }
+.catch-card { padding:16px; border:1px solid var(--line-default); border-radius:18px; background:var(--bg-card); display:flex; flex-direction:column; gap:12px; }
+.app-frame--dark .catch-card { background:var(--drive-card); border-color:var(--drive-line); }
+.catch-error { color:var(--state-danger); }
+.catch-stats,.catch-data-row { display:flex; justify-content:space-between; gap:12px; }
+.catch-stats>div { display:flex; flex-direction:column; gap:4px; }
+.catch-empty-art { width:200px; max-width:100%; align-self:center; }
+.catch-card svg { width:100%; }
+.catch-up-content>.icon-button { align-self:flex-start; }
+.catch-up-card { padding:20px; border:1px solid var(--line-default); border-radius:20px; background:var(--bg-card); display:flex;flex-direction:column;gap:12px; }
+.catch-up-card.tint { background:var(--bg-tint);border:0;padding:16px;gap:4px; }
+.app-frame--dark .catch-up-card,.drive-frame[data-theme=Dark] .catch-up-card { background:var(--drive-card);border-color:var(--drive-line); }
+.readiness-question { border:0;padding:0;margin:0;min-width:0; }
+.readiness-question legend { margin-bottom:10px; }
+.readiness-question>div { display:flex;gap:8px; }
+.readiness-question button { flex:1;min-width:0;height:52px;background:var(--bg-field);border:0;border-radius:14px;color:var(--text-primary);padding:0 2px; }
+.readiness-question.small button { height:48px; }
+.readiness-question button[aria-pressed=true] { background:var(--brand-navy);color:var(--text-inverse); }
+.catch-up-row,.catch-up-stats { display:flex;justify-content:space-between;gap:14px;align-items:center; }
+.catch-up-row { padding:8px 0; }
+.catch-up-stats>div { display:flex;flex-direction:column;gap:4px; }
+.muted { color:var(--text-secondary); }
+.quiet-link { color:var(--brand-navy);text-align:center;background:none;border:0;padding:12px; }
+.readiness-chip { padding:8px 14px;border-radius:20px;align-self:center; }
+.readiness-chip.safe { background:var(--state-success-soft);color:var(--state-success); }
+.readiness-chip.caution { background:var(--state-warning-soft);color:var(--state-warning); }
+.readiness-chip.high { background:var(--state-danger-soft);color:var(--state-danger); }
+.face-reading { text-align:center; }
+.face-reading .catch-up-card { text-align:left;background:var(--drive-card);border-color:var(--drive-line); }
+.reading-ring { position:relative;align-self:center;width:300px;height:300px;margin-top:16px; }
+.reading-ring .eye-preview { position:absolute;inset:20px;width:260px;height:260px;border-radius:50%;object-fit:cover; }
+.reading-face-guide { position:absolute;left:65px;top:43px;width:170px;height:214px; }
+.reading-ring>.illustration { position:absolute;left:75px;top:105px; }
+.tap-test-area { position:relative;height:420px;border-radius:24px;background:var(--drive-card);display:grid;place-items:center;touch-action:manipulation; }
+.loading-card { margin-top:120px;text-align:center;align-items:center;gap:24px; }
+.live-summary-map { width:100%;height:190px;object-fit:contain;border-radius:20px;background:var(--bg-tint); }
+.summary-score { display:flex;gap:20px;align-items:center; }
+.contact-form { display:flex;flex-direction:column;gap:14px; }
+.api-error { color:var(--state-danger); }
+.camera-live { position:relative;height:520px;background:var(--drive-bg);border-radius:24px;overflow:hidden; }
+.camera-live video { width:100%;height:100%;object-fit:cover; }
+.camera-live .scan-line { position:absolute;inset:50px 20px; }
+.service-tabs { display:flex;gap:6px;overflow-x:auto; }
+.service-tabs button { padding:10px 12px;border:0;border-radius:16px;background:var(--bg-field);color:var(--text-primary); }
+.service-tabs button[aria-pressed=true] { background:var(--brand-navy);color:var(--text-inverse); }
+.workshop-actions { display:flex;gap:12px; }
+.workshop-actions a { flex:1;text-align:center;padding:12px;border-radius:14px;background:var(--bg-tint);color:var(--brand-navy); }
+.no-response-ring { align-self:center;margin:60px auto 30px; }
+.contact-alert-location { background:var(--drive-card);padding:20px;border-radius:20px; }
+.seatbelt-check { display:flex;align-items:center;gap:12px;padding:16px;border-radius:18px;background:var(--bg-tint); }
+.speed-stat { text-align:center;padding:16px;border-radius:18px;background:var(--drive-card); }
+@media(max-width:390px){.readiness-question button{font-size:var(--body-small-font-size)}.readiness-question.small>div{flex-wrap:wrap}.readiness-question.small button{flex-basis:calc(50% - 8px)} }

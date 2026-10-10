@@ -1,0 +1,216 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/c500b713-72ec-401e-9774-f99a60f99eb5";
+const imgIndicators = `${assetPathPrefix}/a391f.svg`;
+const imgGroup = `${assetPathPrefix}/fe23d.svg`;
+const imgGroup1 = `${assetPathPrefix}/d3c65.svg`;
+const imgGroup2 = `${assetPathPrefix}/a9f50.svg`;
+const imgGroup3 = `${assetPathPrefix}/339ce.svg`;
+const imgArt = `${assetPathPrefix}/56b6a.svg`;
+const imgIconCamera = `${assetPathPrefix}/c6f30.svg`;
+const imgGroup4 = `${assetPathPrefix}/24cc9.svg`;
+const imgIconWave = `${assetPathPrefix}/48db7.svg`;
+const imgIconWave1 = `${assetPathPrefix}/23af1.svg`;
+
+type StatusBarProps = {
+  className?: string;
+  theme?: "Light";
+};
+
+function StatusBar({ className, theme = "Light" }: StatusBarProps) {
+  return (
+    <div className={className || "h-[54px] relative w-[430px]"} data-node-id="27:134">
+      <p className="[word-break:break-word] absolute font-['SF_Pro:Semibold'] font-[590] leading-[normal] left-[52px] text-[17px] text-[color:var(--text\/primary,#282828)] top-[18px] tracking-[-0.408px] whitespace-nowrap" data-node-id="27:135" style={{ fontVariationSettings: '"wdth" 100' }}>
+        9:41
+      </p>
+      <div className="absolute bg-black h-[36px] left-[153px] rounded-[18px] top-[11px] w-[123.999px]" data-node-id="27:136" data-name="Dynamic Island" />
+      <div className="absolute h-[13px] left-[308px] top-[21px] w-[70px]" data-node-id="27:137" data-name="Indicators">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIndicators} />
+      </div>
+    </div>
+  );
+}
+
+export default function C1CarCheck() {
+  return (
+    <div className="bg-[var(--bg\/screen,#fcfcfe)] relative size-full" data-node-id="29:245" data-name="C1 Car check">
+      <StatusBar className="absolute h-[54px] left-0 top-0 w-[430px]" />
+      <div className="absolute bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch drop-shadow-[0px_10px_14px_rgba(0,0,0,0.08)] flex gap-[6px] items-start left-[85px] p-[8px] rounded-[26px] top-[832px]" data-node-id="29:257" data-name="Tab bar">
+        <a className="content-stretch cursor-pointer flex h-[48px] items-center justify-center overflow-clip relative rounded-[18px] shrink-0 w-[56px]" data-node-id="I29:257;27:88" data-name="Tab home">
+          <div className="overflow-clip relative shrink-0 size-[22px]" data-node-id="I29:257;27:89" data-name="icon/home">
+            <div className="absolute inset-[12.5%]" data-node-id="I29:257;27:90" data-name="Group">
+              <div className="absolute inset-[-5.28%]">
+                <img alt="" className="block max-w-none size-full" src={imgGroup} />
+              </div>
+            </div>
+          </div>
+        </a>
+        <a className="content-stretch cursor-pointer flex h-[48px] items-center justify-center overflow-clip relative rounded-[18px] shrink-0 w-[56px]" data-node-id="I29:257;27:92" data-name="Tab trips">
+          <div className="overflow-clip relative shrink-0 size-[22px]" data-node-id="I29:257;27:93" data-name="icon/trips">
+            <div className="absolute inset-[12.2%_12.5%_12.8%_12.5%]" data-node-id="I29:257;27:94" data-name="Group">
+              <div className="absolute inset-[-5.28%]">
+                <img alt="" className="block max-w-none size-full" src={imgGroup1} />
+              </div>
+            </div>
+          </div>
+        </a>
+        <div className="bg-[var(--brand\/navy,#1b2a4e)] content-stretch flex h-[48px] items-center justify-center overflow-clip relative rounded-[18px] shrink-0 w-[56px]" data-node-id="I29:257;27:98" data-name="Tab car">
+          <div className="overflow-clip relative shrink-0 size-[22px]" data-node-id="I29:257;27:99" data-name="icon/car">
+            <div className="absolute inset-[23.33%_12.5%_20.83%_12.5%]" data-node-id="I29:257;27:100" data-name="Group">
+              <div className="absolute inset-[-7.09%_-5.28%]">
+                <img alt="" className="block max-w-none size-full" src={imgGroup2} />
+              </div>
+            </div>
+          </div>
+        </div>
+        <a className="content-stretch cursor-pointer flex h-[48px] items-center justify-center overflow-clip relative rounded-[18px] shrink-0 w-[56px]" data-node-id="I29:257;27:105" data-name="Tab profile">
+          <div className="overflow-clip relative shrink-0 size-[22px]" data-node-id="I29:257;27:106" data-name="icon/profile">
+            <div className="absolute inset-[16.67%]" data-node-id="I29:257;27:107" data-name="Group">
+              <div className="absolute inset-[-5.94%]">
+                <img alt="" className="block max-w-none size-full" src={imgGroup3} />
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div className="absolute content-stretch flex flex-col gap-[20px] items-start left-0 overflow-clip px-[20px] py-[24px] top-[54px] w-[430px]" data-node-id="29:280" data-name="Content">
+        <div className="[word-break:break-word] content-stretch flex flex-col gap-[8px] items-center not-italic overflow-clip relative shrink-0 text-center w-full" data-node-id="29:281" data-name="Heading">
+          <p className="font-['Inter:Bold'] font-bold leading-[normal] relative shrink-0 text-[28px] text-[color:var(--text\/primary,#282828)] tracking-[-0.2632px] w-full" data-node-id="29:282">
+            Car check
+          </p>
+          <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[16px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.0784px] w-full" data-node-id="29:283">
+            Perodua Myvi · WXY 4821
+          </p>
+        </div>
+        <div className="content-stretch flex items-start justify-center overflow-clip relative shrink-0 w-full" data-node-id="29:284" data-name="Car">
+          <div className="h-[114.8px] relative shrink-0 w-[295.2px]" data-node-id="29:285" data-name="Car/Side">
+            <div className="absolute h-[114.799px] left-0 top-0 w-[295.198px]" data-node-id="I29:285;27:158" data-name="Art">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgArt} />
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch cursor-pointer flex flex-col gap-[12px] items-start overflow-clip relative shrink-0 w-full" data-node-id="29:300" data-name="Checks">
+          <a className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch flex gap-[14px] items-center overflow-clip pl-[14px] pr-[16px] py-[14px] relative rounded-[18px] shadow-[0px_6px_16px_0px_rgba(0,0,0,0.04)] shrink-0 w-full" data-node-id="29:305" data-name="Option dashboard scan">
+            <div className="bg-[var(--bg\/tint,#eef1f7)] content-stretch flex items-center justify-center overflow-clip relative rounded-[14px] shrink-0 size-[44px]" data-node-id="29:306" data-name="Frame">
+              <div className="relative shrink-0 size-[22px]" data-node-id="142:1389" data-name="icon/camera">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconCamera} />
+              </div>
+            </div>
+            <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start min-w-px not-italic overflow-clip relative text-left" data-node-id="29:307" data-name="Frame">
+              <div className="content-stretch flex gap-[8px] items-center leading-[normal] overflow-clip relative shrink-0 w-full" data-node-id="29:308" data-name="Frame">
+                <p className="flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold min-w-px relative text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="29:309">
+                  Scan a warning light
+                </p>
+                <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[12px] text-[color:var(--text\/tertiary,#a6a6a6)] tracking-[0.0024px] whitespace-nowrap" data-node-id="29:310">
+                  10 sec
+                </p>
+              </div>
+              <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] w-full" data-node-id="29:311">
+                Snap a dashboard light or gauge. We explain what it means.
+              </p>
+            </div>
+            <div className="overflow-clip relative shrink-0 size-[20px]" data-node-id="29:312" data-name="icon/chev">
+              <div className="absolute bottom-1/4 left-[37.5%] right-[37.5%] top-1/4" data-node-id="29:313" data-name="Group">
+                <div className="absolute inset-[-7.92%_-15.83%]">
+                  <img alt="" className="block max-w-none size-full" src={imgGroup4} />
+                </div>
+              </div>
+            </div>
+          </a>
+          <a className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch flex gap-[14px] items-center overflow-clip pl-[14px] pr-[16px] py-[14px] relative rounded-[18px] shadow-[0px_6px_16px_0px_rgba(0,0,0,0.04)] shrink-0 w-full" data-node-id="29:318" data-name="Option battery check">
+            <div className="bg-[var(--bg\/tint,#eef1f7)] content-stretch flex items-center justify-center overflow-clip relative rounded-[14px] shrink-0 size-[44px]" data-node-id="29:319" data-name="Frame">
+              <div className="relative shrink-0 size-[22px]" data-node-id="142:1393" data-name="icon/wave">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconWave} />
+              </div>
+            </div>
+            <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start min-w-px not-italic overflow-clip relative text-left" data-node-id="29:320" data-name="Frame">
+              <div className="content-stretch flex gap-[8px] items-center leading-[normal] overflow-clip relative shrink-0 w-full" data-node-id="29:321" data-name="Frame">
+                <p className="flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold min-w-px relative text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="29:322">
+                  Start-up battery check
+                </p>
+                <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[12px] text-[color:var(--text\/tertiary,#a6a6a6)] tracking-[0.0024px] whitespace-nowrap" data-node-id="29:323">
+                  5 sec
+                </p>
+              </div>
+              <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] w-full" data-node-id="29:324">
+                Record your engine starting. A slow start means a weak battery.
+              </p>
+            </div>
+            <div className="overflow-clip relative shrink-0 size-[20px]" data-node-id="29:325" data-name="icon/chev">
+              <div className="absolute bottom-1/4 left-[37.5%] right-[37.5%] top-1/4" data-node-id="29:326" data-name="Group">
+                <div className="absolute inset-[-7.92%_-15.83%]">
+                  <img alt="" className="block max-w-none size-full" src={imgGroup4} />
+                </div>
+              </div>
+            </div>
+          </a>
+          <a className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch flex gap-[14px] items-center overflow-clip pl-[14px] pr-[16px] py-[14px] relative rounded-[18px] shadow-[0px_6px_16px_0px_rgba(0,0,0,0.04)] shrink-0 w-full" data-node-id="142:1397" data-name="Option brakes">
+            <div className="bg-[var(--bg\/tint,#eef1f7)] content-stretch flex items-center justify-center overflow-clip relative rounded-[14px] shrink-0 size-[44px]" data-node-id="142:1398" data-name="Frame">
+              <div className="relative shrink-0 size-[22px]" data-node-id="142:1411" data-name="icon/wave">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconWave1} />
+              </div>
+            </div>
+            <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start min-w-px not-italic overflow-clip relative text-left" data-node-id="142:1403" data-name="Frame">
+              <div className="content-stretch flex gap-[8px] items-center leading-[normal] overflow-clip relative shrink-0 w-full" data-node-id="142:1404" data-name="Frame">
+                <p className="flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold min-w-px relative text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="142:1405">
+                  Brake check
+                </p>
+                <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[12px] text-[color:var(--text\/tertiary,#a6a6a6)] tracking-[0.0024px] whitespace-nowrap" data-node-id="142:1406">
+                  From your drives
+                </p>
+              </div>
+              <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] w-full" data-node-id="142:1407">
+                How hard you brake tells us when to get your brakes checked.
+              </p>
+            </div>
+            <div className="overflow-clip relative shrink-0 size-[20px]" data-node-id="142:1408" data-name="icon/chev">
+              <div className="absolute bottom-1/4 left-[37.5%] right-[37.5%] top-1/4" data-node-id="142:1409" data-name="Group">
+                <div className="absolute inset-[-7.92%_-15.83%]">
+                  <img alt="" className="block max-w-none size-full" src={imgGroup4} />
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div className="content-stretch flex flex-col gap-[12px] items-start overflow-clip pt-[4px] relative shrink-0 w-full" data-node-id="29:328" data-name="Last report section">
+          <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[normal] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.0784px] whitespace-nowrap" data-node-id="29:329">
+            Last report
+          </p>
+          <a className="bg-[var(--bg\/card,white)] border border-[var(--line\/default,#e8eaed)] border-solid content-stretch cursor-pointer flex gap-[14px] items-center overflow-clip pl-[14px] pr-[16px] py-[14px] relative rounded-[18px] shadow-[0px_6px_16px_0px_rgba(0,0,0,0.04)] shrink-0 w-full" data-node-id="29:344" data-name="Last report">
+            <div className="bg-[var(--bg\/field,#f2f3f5)] content-stretch flex items-center justify-center overflow-clip relative rounded-[14px] shrink-0 size-[44px]" data-node-id="29:345" data-name="Frame">
+              <div className="h-[39px] relative shrink-0 w-[20.8px]" data-node-id="29:330" data-name="Car/Top" />
+            </div>
+            <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start min-w-px not-italic overflow-clip relative text-left" data-node-id="29:346" data-name="Frame">
+              <div className="content-stretch flex gap-[8px] items-center leading-[normal] overflow-clip relative shrink-0 w-full" data-node-id="29:347" data-name="Frame">
+                <p className="flex-[1_0_0] font-['Inter:Semi_Bold'] font-semibold min-w-px relative text-[16px] text-[color:var(--text\/primary,#282828)] tracking-[-0.0784px]" data-node-id="29:348">
+                  2 things to check
+                </p>
+                <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[12px] text-[color:var(--text\/tertiary,#a6a6a6)] tracking-[0.0024px] whitespace-nowrap" data-node-id="29:349">
+                  Today
+                </p>
+              </div>
+              <p className="font-['Inter:Regular'] font-normal leading-[1.4] relative shrink-0 text-[14px] text-[color:var(--text\/secondary,#797979)] tracking-[-0.042px] w-full" data-node-id="29:350">
+                Weak battery, brakes due for a check
+              </p>
+            </div>
+            <div className="overflow-clip relative shrink-0 size-[20px]" data-node-id="29:351" data-name="icon/chev">
+              <div className="absolute bottom-1/4 left-[37.5%] right-[37.5%] top-1/4" data-node-id="29:352" data-name="Group">
+                <div className="absolute inset-[-7.92%_-15.83%]">
+                  <img alt="" className="block max-w-none size-full" src={imgGroup4} />
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Heading/Large: Font(family: "Inter", style: Bold, size: 28, weight: 700, lineHeight: 100, letterSpacing: -0.9399999976158142), Body/Regular: Font(family: "Inter", style: Regular, size: 16, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.49000000953674316), Body/Strong: Font(family: "Inter", style: Semi Bold, size: 16, weight: 600, lineHeight: 100, letterSpacing: -0.49000000953674316), Label/Small: Font(family: "Inter", style: Medium, size: 12, weight: 500, lineHeight: 100, letterSpacing: 0.019999999552965164), Body/Small: Font(family: "Inter", style: Regular, size: 14, weight: 400, lineHeight: 1.399999976158142, letterSpacing: -0.30000001192092896).
+Images and SVGs will be stored as constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

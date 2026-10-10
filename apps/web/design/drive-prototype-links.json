@@ -1,0 +1,656 @@
+[
+  {
+    "id": "28:2",
+    "name": "01 Home",
+    "links": [
+      {
+        "id": "I28:14;27:46",
+        "name": "Tab trips",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "105:1366",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "I28:14;27:52",
+        "name": "Tab car",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "29:245",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "I28:14;27:59",
+        "name": "Tab profile",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "44:934",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "28:40",
+        "name": "Avatar",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "44:934",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "28:42",
+        "name": "Car hero",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "29:245",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "28:70",
+        "name": "Button Start drive watch",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "38:837",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "28:81",
+        "name": "Trip card",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "29:153",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "38:837",
+    "name": "02 Mount your phone",
+    "links": [
+      {
+        "id": "38:850",
+        "name": "Back button",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "28:2",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "38:904",
+        "name": "Button My phone is mounted",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "38:906",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "38:906",
+    "name": "03 Line up your face",
+    "links": [
+      {
+        "id": "38:919",
+        "name": "Back button",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "38:837",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "38:994",
+        "name": "Button Waiting",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "39:849",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "39:849",
+    "name": "04 Quick eye check",
+    "links": [
+      {
+        "id": "39:862",
+        "name": "Back button",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "38:906",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "39:915",
+        "name": "Button Start driving",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "28:176",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "28:176",
+    "name": "05 Driving",
+    "links": [
+      {
+        "id": "28:199",
+        "name": "Alert gauge",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "39:961",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "51:1426",
+        "name": "Navigate card",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "51:1160",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "39:1028",
+        "name": "Simulate tiredness",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "39:961",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "28:234",
+        "name": "Simulate link",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "29:116",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "38:836",
+        "name": "Simulate phone moved",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "39:917",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "51:1438",
+        "name": "Simulate tiredness",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "51:1279",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "51:1440",
+        "name": "Simulate tiredness",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "51:1362",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "28:235",
+        "name": "Button End drive",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "29:153",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "39:917",
+    "name": "06 Can’t see your eyes",
+    "links": [
+      {
+        "id": "39:959",
+        "name": "Button OK",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "28:176",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "39:961",
+    "name": "07 Getting tired",
+    "links": [
+      {
+        "id": "39:1017",
+        "name": "Button Go to rest stop",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "29:153",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "39:1025",
+        "name": "Button Remind me in 10 min",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "28:176",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "39:1027",
+        "name": "Simulate microsleep",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "29:116",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "29:116",
+    "name": "08 Microsleep alarm",
+    "links": [
+      {
+        "id": "29:148",
+        "name": "Button Go to rest stop",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "29:153",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "29:151",
+        "name": "Button I'm awake",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "28:176",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "29:153",
+    "name": "09 Trip summary",
+    "links": [
+      {
+        "id": "29:166",
+        "name": "Close button",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "28:2",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "29:243",
+        "name": "Button Done",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "28:2",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "51:1160",
+    "name": "05a Waze open · still watching",
+    "links": [
+      {
+        "id": "51:1190",
+        "name": "Demo hotspot: tap map to simulate tiredness",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "51:1218",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "51:1206",
+        "name": "Dormathon bubble",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "28:176",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "51:1218",
+    "name": "05b Tired while Waze is open",
+    "links": [
+      {
+        "id": "51:1255",
+        "name": "Dormathon bubble",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "28:176",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "51:1274",
+        "name": "Go to rest stop",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "51:1160",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "51:1276",
+        "name": "I’m OK",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "51:1160",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "51:1279",
+    "name": "05c Split screen · Waze + Dormathon",
+    "links": [
+      {
+        "id": "51:1359",
+        "name": "Button",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "29:153",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "51:1362",
+    "name": "05d On iPhone · Maps open",
+    "links": [
+      {
+        "id": "51:1407",
+        "name": "Live Activity (Dynamic Island)",
+        "actions": [
+          {
+            "trigger": "ON_CLICK",
+            "actions": [
+              {
+                "type": "NODE",
+                "destinationId": "28:176",
+                "navigation": "NAVIGATE"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

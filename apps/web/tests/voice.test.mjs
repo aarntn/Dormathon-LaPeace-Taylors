@@ -1,0 +1,5 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+const {listenForAcknowledgement}=await import('../src/screens/drive/voice.ts').catch(()=>({}));
+test('cloud-only speech recognition is never started',async()=>{assert.ok(listenForAcknowledgement,'Local voice helper missing');let starts=0;class Cloud{start(){starts++;}}const stop=await listenForAcknowledgement(Cloud,()=>assert.fail('Unexpected acknowledgement'));stop();assert.equal(starts,0);});
+test('only final on-device acknowledgement is accepted; stopping releases the recognizer',async()=>{assert.ok(listenForAcknowledgement,'Local voice helper missing');let instance,ack=0,stops=0;class Local{processLocally=false;constructor(){instance=this;}static async available(){return'available';}start(){}abort(){stops++;}}
+  const stop=await listenForAcknowledgement(Local,()=>ack++);assert.equal(instance.processLocally,true);instance.onresult({results:[{isFinal:false,0:{transcript:"I'm OK"}}]});assert.equal(ack,0);instance.onresult({results:[{isFinal:true,0:{transcript:"I'm awake"}}]});assert.equal(ack,1);stop();assert.equal(stops,1);});
