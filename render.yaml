@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: buckl-demo
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_PUBLISHABLE_KEY
+        sync: false
+      - key: PYTHONUNBUFFERED
+        value: "1"

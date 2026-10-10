@@ -7,9 +7,11 @@ from uuid import UUID, uuid4
 
 import httpx
 from fastapi import Depends, FastAPI, File, Form, Header, HTTPException, Query, UploadFile
+from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from fastapi.openapi.docs import get_swagger_ui_html
+from pathlib import Path
 
 from . import maps
 from .auth import install_auth
@@ -45,6 +47,16 @@ def create_app(*, settings=None, store=None, http=None, clock=None):
         description='Authenticated trip, readiness, emergency and car APIs. Missing ML models return explicitly marked stubs. Safety scores are demo rules.')
     app.add_middleware(CORSMiddleware, allow_origins=settings.cors_origins, allow_credentials=False,
                        allow_methods=['GET', 'POST', 'PUT', 'PATCH'], allow_headers=['Authorization', 'Content-Type', 'Idempotency-Key'])
+
+    @app.middleware('http')
+    async def browser_api_prefix(request, call_next):
+        # Vite uses /api locally and production uses this same FastAPI service.
+        # Strip the prefix before routing so the web bundle never needs a separate
+        # API hostname or a browser-visible backend secret.
+        path = request.scope['path']
+        if path == '/api' or path.startswith('/api/'):
+            request.scope['path'] = path[4:] or '/'
+        return await call_next(request)
     bearer = HTTPBearer(auto_error=False)
     install_auth(app, settings, http)
     geocoder = Geocoder(http, settings.geocode_url)
@@ -407,6 +419,21 @@ def create_app(*, settings=None, store=None, http=None, clock=None):
     @app.get('/geocode', tags=['Maps'])
     def geocode(q: str = Query(min_length=3, max_length=150), ctx=Depends(authenticated)):
         return geocoder.search(q)
+
+    # Render's Docker image places the compiled Vite bundle here. API routes are
+    # registered first, so this SPA fallback never intercepts /health, /auth, etc.
+    web_root = Path('/app/web')
+    if web_root.is_dir():
+        @app.get('/', include_in_schema=False)
+        def web_home():
+            return FileResponse(web_root / 'index.html')
+
+        @app.get('/{client_path:path}', include_in_schema=False)
+        def web_app(client_path: str):
+            candidate = (web_root / client_path).resolve()
+            if candidate.is_relative_to(web_root) and candidate.is_file():
+                return FileResponse(candidate)
+            return FileResponse(web_root / 'index.html')
 
     return app
 

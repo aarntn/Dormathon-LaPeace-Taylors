@@ -1,0 +1,26 @@
+# Deploy BUCKL for the hackathon
+
+This project deploys as one Render web service. Render builds the Vite UI and serves it through the FastAPI service, so the UI and `/api` share one HTTPS URL.
+
+## Before deploying
+
+1. Create a Supabase project.
+2. In its SQL Editor, run `backend/schema.sql`, then `backend/migrations/002_update.sql`.
+3. Obtain the project URL and its **publishable** key. Do not use a secret or service-role key.
+
+## Render
+
+1. Push the branch containing this `render.yaml` to GitHub.
+2. In Render, choose **New** then **Blueprint** and select the repository.
+3. Render detects `render.yaml`; create the `buckl-demo` service.
+4. Enter these values when prompted:
+   - `SUPABASE_URL`: your `https://<project-ref>.supabase.co` URL.
+   - `SUPABASE_PUBLISHABLE_KEY`: your `sb_publishable_...` key.
+5. Deploy. `/health` should return `{"status":"ok","supabase_configured":true}`.
+
+The live app is the service URL. Sign up, add a car and emergency contact, then demonstrate the pre-drive check, drive watch and car checks.
+
+## Demo boundaries
+
+- The dashboard and start-up models are explicitly labelled demo indications until trained models are connected.
+- Do not configure Twilio or send real emergency messages during the presentation unless you have an explicit test recipient.
