@@ -10,7 +10,7 @@ export type PreDriveInput = {
   face_perclos: number; face_mean_blink_ms: number; face_yawns: number;
 };
 export type PreDriveResult = { id: string; level: Level; label: 'Safe to drive' | 'Caution' | 'High risk';
-  reasons: string[]; plan: string; disclaimer: string; score: number; score_source: 'demo_rule'; stub: boolean };
+  reasons: string[]; plan: string; disclaimer: string; score: number; score_source: 'demo_rule' | 'trained_model'; model?: string; stub: boolean };
 export type TripInput = { car_id: string; predrive_id?: string | null; origin?: Position | null; destination?: Position | null;
   passenger_mode?: boolean; route_choice?: 'safer' | 'fastest' };
 export type Trip = TripInput & { id: string; user_id: string; started_at: string; ended_at: string | null;

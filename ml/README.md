@@ -1,3 +1,5 @@
 # Dormathon ML
 
-Placeholder for Jupyter or Colab notebooks and saved models. See the repository-root AGENTS.md for the shared project brief. Model implementation starts with build-guide Prompts 5 and 6.
+- `readiness/`: the trained pre-drive readiness model (logistic regression). Includes the notebook, training script, results and charts. See `readiness/README.md`.
+
+The live app loads the exported weights from `backend/app/readiness_model.json`.

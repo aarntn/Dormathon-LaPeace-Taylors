@@ -115,13 +115,15 @@ def test_full_fake_trip(rig):
 def test_predrive_levels(rig, fields, level):
     result = predrive(rig['client'], **fields)
     assert result.status_code == 201 and result.json()['level'] == level
-    assert result.json()['score_source'] == 'demo_rule'
+    assert result.json()['score_source'] == 'trained_model' and result.json()['stub'] is False
 
 
-def test_predrive_uses_guide_thresholds(rig):
-    # 0.22 reaction + 0.08 trip = 0.30, still below the guide's 0.35 boundary.
-    result = predrive(rig['client'], taps_ms=[370, 380, 390], trip_length='over_2h').json()
-    assert result['score'] == .3 and result['level'] == 'safe'
+def test_predrive_uses_trained_model(rig):
+    # Slower taps alone raise the learned risk without leaving the Safe band.
+    fast = predrive(rig['client']).json()
+    slow = predrive(rig['client'], taps_ms=[370, 380, 390]).json()
+    assert 0 <= fast['score'] < slow['score'] <= 1 and fast['level'] == 'safe'
+    assert slow['model'] == 'buckl-readiness-logistic'
 
 
 def test_safety_score_high_risk_penalty_and_floor(rig):

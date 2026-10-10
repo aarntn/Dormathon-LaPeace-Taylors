@@ -1,0 +1,71 @@
+{
+  "name": "buckl-readiness-logistic",
+  "version": 1,
+  "trained_on": "simulated drivers (see ml/readiness/README.md)",
+  "features": [
+    "slept",
+    "awake",
+    "hour_sin",
+    "hour_cos",
+    "night",
+    "alert_self",
+    "trip_hours",
+    "reaction_slowing_ms",
+    "misses",
+    "face_perclos",
+    "face_mean_blink_ms",
+    "face_yawns",
+    "history"
+  ],
+  "intercept": -1.5633546578358037,
+  "coef": {
+    "slept": -0.17661026968665405,
+    "awake": 0.37704676277763965,
+    "hour_sin": 0.17610952896633994,
+    "hour_cos": 0.04627282495741757,
+    "night": 0.00948977630682238,
+    "alert_self": 0.08150220459759773,
+    "trip_hours": 1.0235565228761494,
+    "reaction_slowing_ms": 0.3789338628985975,
+    "misses": 0.12056868192731349,
+    "face_perclos": 0.2660486594599512,
+    "face_mean_blink_ms": 0.19939890646633524,
+    "face_yawns": 0.12367449308929908,
+    "history": 0.04817773878663054
+  },
+  "mean": {
+    "slept": 6.500880952380952,
+    "awake": 10.349238095238094,
+    "hour_sin": -0.07429871042610334,
+    "hour_cos": -0.16056341093266369,
+    "night": 0.1348095238095238,
+    "alert_self": 1.149857142857143,
+    "trip_hours": 1.1081785714285715,
+    "reaction_slowing_ms": 59.83669723512913,
+    "misses": 0.45152380952380955,
+    "face_perclos": 0.10759605229857719,
+    "face_mean_blink_ms": 248.07311907638757,
+    "face_yawns": 0.25,
+    "history": 0.06774514913844336
+  },
+  "scale": {
+    "slept": 1.344968289631164,
+    "awake": 5.657000247521076,
+    "hour_sin": 0.7739491387716825,
+    "hour_cos": 0.6080311038863534,
+    "night": 0.3415200083447136,
+    "alert_self": 0.9661755625594528,
+    "trip_hours": 0.8770644443487697,
+    "reaction_slowing_ms": 48.213000564941176,
+    "misses": 0.7717836866356506,
+    "face_perclos": 0.06271881249989755,
+    "face_mean_blink_ms": 94.4422469601052,
+    "face_yawns": 0.5615242860371435,
+    "history": 0.09114631679377654
+  },
+  "thresholds": {
+    "caution": 0.2686,
+    "high": 0.661
+  },
+  "test_auc": 0.8418
+}

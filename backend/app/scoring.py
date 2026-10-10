@@ -3,6 +3,10 @@ from datetime import datetime
 from math import asin, cos, radians, sin, sqrt
 from statistics import median
 
+from . import readiness
+
+MODEL = readiness.load()
+
 LABELS = {'safe': 'Safe to drive', 'caution': 'Caution', 'high': 'High risk'}
 URGENCY = {'monitor': 'Monitor', 'soon': 'Book service soon', 'stop': 'Stop safely now'}
 DISCLAIMER = 'A safety indication, not a medical diagnosis.'
@@ -19,7 +23,8 @@ def distance(a, b):
 
 
 def predrive_score(data, history=0, personal_median=270):
-    # Prompt 5's transparent demo rule; no trained model is present yet.
+    # Trained readiness model (ml/readiness/train_readiness.py): probability of a
+    # fatigue episode on this trip. The component flags below only pick the reasons.
     reaction = max(0, min(1, (median(data.taps_ms)-personal_median)/100))
     face = 1 if data.face_perclos > .15 or data.face_mean_blink_ms > 400 else .5 if data.face_perclos > .075 or data.face_mean_blink_ms > 200 else 0
     face = min(1, face + (.5 if data.face_yawns else 0))
@@ -28,10 +33,9 @@ def predrive_score(data, history=0, personal_median=270):
     alert = {'very_alert': 0, 'ok': .2, 'bit_tired': .6, 'very_tired': 1}[data.alert_self]
     trip = {'under_30': 0, '30_60': .3, '1_2h': .6, 'over_2h': 1}[data.trip_length]
     night = int(data.hour >= 22 or data.hour < 5)
-    score = reaction*.22 + face*.18 + sleep*.14 + alert*.1 + awake*.1 + night*.1 + trip*.08 + history*.05 + min(1, data.misses/3)*.03
-    # Prompt 5 thresholds: under .35 Safe, .35 through .6 Caution, above .6 High.
-    score = round(score, 10)
-    level = 'safe' if score < .35 else 'caution' if score <= .6 else 'high'
+    score, _ = readiness.predict(MODEL, readiness.features(data, history, personal_median))
+    cuts = MODEL['thresholds']
+    level = 'high' if score >= cuts['high'] else 'caution' if score >= cuts['caution'] else 'safe'
     reasons = []
     for condition, reason in [(reaction > .3, 'Your taps were slower than your usual pace.'),
         (face > 0, 'Your face reading showed possible tiredness.'), (sleep > 0, 'You reported less than seven hours of sleep.'),
@@ -44,7 +48,7 @@ def predrive_score(data, history=0, personal_median=270):
     return {'level': level, 'label': LABELS[level], 'reasons': reasons,
         'plan': {'safe': 'Stay alert and take breaks on your journey.', 'caution': 'Take a 15-minute break before you drive.',
                  'high': 'Get a ride instead. Rest before driving.'}[level],
-        'disclaimer': DISCLAIMER, 'score': round(score, 4), 'score_source': 'demo_rule', 'stub': True}
+        'disclaimer': DISCLAIMER, 'score': round(score, 4), 'score_source': 'trained_model', 'model': MODEL['name'], 'stub': False}
 
 
 def trip_summary(trip, points, events, predrive, now):
