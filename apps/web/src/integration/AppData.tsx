@@ -5,6 +5,7 @@ import { AuthClient, type AuthSession } from './auth';
 type AppData={api:BucklApi;session:AuthSession|null;configured:boolean;configState:'pending'|'configured'|'unconfigured'|'unavailable';loading:boolean;error:string;cars:Car[];contacts:Contact[];trips:Trip[];selectedCar:Car|undefined;selectCar:(id:string)=>void;
   refresh:()=>Promise<void>;signUp:(name:string,email:string,password:string)=>Promise<AuthSession|null>;signIn:(email:string,password:string)=>Promise<AuthSession>;signOut:()=>Promise<void>;rename:(name:string)=>Promise<void>;ensureSetup:(car:CarInput,contact?:ContactInput)=>Promise<Car>};
 const Context=createContext<AppData|null>(null);
+export const DEMO_SIGNED_OUT='buckl.demo.signedout';
 export function AppDataProvider({children}:{children:ReactNode}){
   const [auth]=useState(()=>new AuthClient({storage:sessionStorage}));
   const session=useSyncExternalStore(auth.subscribe,auth.getSnapshot);
@@ -21,6 +22,18 @@ export function AppDataProvider({children}:{children:ReactNode}){
     }catch(reason){if(currentUser.current===user)setError(reason instanceof Error?reason.message:'Could not load your account.');}
     finally{if(currentUser.current===user)setLoading(false);}
   },[api,auth]);
+  // The standalone demo server (and only it) reports `standalone` and offers a ready-made session, so a presenter
+  // never types a login. Signing out stops this for the rest of the tab's life, so sign-up can still be shown.
+  useEffect(()=>{
+    let current=true;
+    try{if(sessionStorage.getItem(DEMO_SIGNED_OUT))return;}catch{}
+    void fetch('/api/health').then(r=>r.ok?r.json():null).then(async health=>{
+      if(!current||!health?.standalone||auth.getSnapshot())return;
+      const response=await fetch('/api/auth/demo',{method:'POST'});if(!response.ok)return;
+      const {session:next}=await response.json();if(current&&next&&!auth.getSnapshot())auth.adopt(next);
+    }).catch(()=>{});
+    return()=>{current=false;};
+  },[auth]);
   useEffect(()=>{void fetch('/api/auth/config').then(r=>r.ok?r.json():Promise.reject()).then(data=>{if(typeof data.configured!=='boolean')throw new Error('Invalid account configuration');setConfigured(data.configured);setConfigState(data.configured?'configured':'unconfigured');}).catch(()=>{setConfigured(false);setConfigState('unavailable');});},[]);
   useEffect(()=>{setSelectedId(sessionStorage.getItem('buckl.car.'+(session?.user.id??''))??'');setCars([]);setContacts([]);setTrips([]);setError('');setLoading(false);if(session)void refresh();},[session?.user.id,refresh]);
   const setupPending=useRef<Promise<Car>|null>(null);
@@ -37,6 +50,6 @@ export function AppDataProvider({children}:{children:ReactNode}){
     })();try{return await setupPending.current;}finally{setupPending.current=null;}
   }
   return <Context value={{api,session,configured,configState,loading,error,cars,contacts,trips,selectedCar:cars.find(c=>c.id===selectedId)??cars[0],selectCar:(id)=>{if(!cars.some(c=>c.id===id))return;setSelectedId(id);sessionStorage.setItem('buckl.car.'+session?.user.id,id);},refresh,ensureSetup,
-    signUp:(...args)=>auth.signUp(...args),signIn:(...args)=>auth.signIn(...args),signOut:()=>auth.signOut(),rename:async(name)=>{const clean=name.trim();if(!clean)throw new Error('Enter your name.');await api.saveProfile(clean);auth.rename(clean);}}}>{children}</Context>;
+    signUp:(...args)=>auth.signUp(...args),signIn:(...args)=>auth.signIn(...args),signOut:()=>{try{sessionStorage.setItem(DEMO_SIGNED_OUT,'1');}catch{}return auth.signOut();},rename:async(name)=>{const clean=name.trim();if(!clean)throw new Error('Enter your name.');await api.saveProfile(clean);auth.rename(clean);}}}>{children}</Context>;
 }
 export function useAppData(){const value=useContext(Context);if(!value)throw new Error('AppDataProvider is required');return value;}

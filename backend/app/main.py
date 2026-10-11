@@ -120,7 +120,8 @@ def create_app(*, settings=None, store=None, http=None, clock=None):
 
     @app.get('/health', tags=['Operations'])
     def health():
-        return {'status': 'ok', 'supabase_configured': settings.supabase_ready, 'demo_mode': settings.demo_mode}
+        return {'status': 'ok', 'supabase_configured': settings.supabase_ready, 'demo_mode': settings.demo_mode,
+                'standalone': settings.standalone}
 
     @app.put('/profile', tags=['Setup'])
     def profile(body: Profile, ctx=Depends(authenticated)):

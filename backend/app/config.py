@@ -13,6 +13,8 @@ class Settings:
     cors_origins: list[str] = field(default_factory=lambda: os.getenv('CORS_ORIGINS', 'https://localhost:5173,https://172.20.10.4:5173').split(','))
 
     # Presentation mode: scripted car-check results (see demo.py). Off unless DEMO_MODE is set.
+    # Set only by the standalone demo server (standalone.py), never from the environment.
+    standalone: bool = False
     demo_mode: bool = field(default_factory=lambda: os.getenv('DEMO_MODE', '').strip().lower() in ('1', 'true', 'yes'))
 
     @property

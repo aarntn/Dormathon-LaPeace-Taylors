@@ -117,7 +117,7 @@ Copy-Item backend/.env.example backend/.env      # then fill it in
 backend/.venv/Scripts/python -m uvicorn backend.app.main:app --port 8000 --env-file backend/.env
 ```
 
-Vite proxies `/api` to port 8000. Without Supabase configured, `GET /auth/config` answers `configured: false` and the app shows its signed-out state. The `?preview` links below need no account. For a full signed-in flow with no Supabase at all, run the **standalone demo** instead: `python -m uvicorn backend.app.standalone:app --port 8000`, then sign in as `demo@buckl.test` / `buckl-demo` (see [the demo script](docs/DEMO_SCRIPT.md)).
+Vite proxies `/api` to port 8000. Without Supabase configured, `GET /auth/config` answers `configured: false` and the app shows its signed-out state. The `?preview` links below need no account. For a full signed-in flow with no Supabase at all, run the **standalone demo** instead: `python -m uvicorn backend.app.standalone:app --port 8000`, then open the app. It **signs itself in** as a ready-made demo driver, so nothing is typed (see [the demo script](docs/DEMO_SCRIPT.md)).
 
 | Try | Link |
 |---|---|

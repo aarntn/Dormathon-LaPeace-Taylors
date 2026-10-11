@@ -20,18 +20,18 @@ python -m uvicorn backend.app.standalone:app --port 8000
 cd apps/web; npm ci; npm run build; npm run preview
 ```
 
-Open the printed `https://...:4173` address. **Sign in as `demo@buckl.test` with password `buckl-demo`**: the account is already filled with a car, a contact and six weeks of trips. Or sign up as anyone to show the full onboarding from empty.
+Open the printed `https://...:4173` address. **The app signs itself in** as the demo driver, so you never type an email or password: it lands on Home with a car, a contact and six weeks of trips already there. To show the full onboarding from empty, tap **Sign out** in Profile and sign up as anyone new, then use **Sign in as the demo driver again** at the bottom of the hidden panel to come back.
 
 What standalone does and does not do:
 
-- Accounts, sign-in and sign-out work inside the server. No email is sent or needed.
+- Accounts, sign-in and sign-out work inside the server. No email is sent or needed. If you ever want to type a login, the demo account is `demo@buckl.test` and the server prints its random password when it starts.
 - Car checks always use the scripted, labelled demo results chosen in the hidden panel.
 - **Emergency and test texts are simulated.** They print in the server terminal as `[simulated SMS to ...]` and the app reports them as submitted. Nothing leaves the machine.
 - Workshops, rest stops and routes still use the real OpenStreetMap services when you are online.
 - Everything resets when the server restarts, and the demo account is rebuilt.
 - It is for demonstrations only. Do not use it for real drivers: the normal server still refuses to run without Supabase.
 
-**On Render:** set the environment variable `BUCKL_ASGI_APP=backend.app.standalone:app` and you can leave the Supabase and Twilio variables empty. A free service sleeps, so open it once a few minutes before you present.
+**On Render:** set the environment variable `BUCKL_MODE=standalone` and leave the Supabase and Twilio variables **empty** (the standalone server refuses to start if they are set). A free service sleeps, so open it once a few minutes before you present. Anyone who can open the address gets the demo account, so keep real data out of it and shut the service down afterwards.
 
 Then skip to [1.3](#13-rehearse-on-the-demo-phone). The rest of this section is path B.
 

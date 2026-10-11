@@ -22,7 +22,7 @@ The live app is the service URL. Sign up, add a car and emergency contact, then 
 
 ## No accounts needed: standalone demo
 
-For a stage demo you do not need Supabase or Twilio at all. Set the environment variable `BUCKL_ASGI_APP=backend.app.standalone:app` on the Render service. The server then answers sign-in itself, keeps data in memory, rebuilds a ready-made account (`demo@buckl.test`, password `buckl-demo`) on every start, and **simulates** emergency texts (printed in the log, never sent). It is for demonstrations only. See [DEMO_SCRIPT.md](DEMO_SCRIPT.md).
+For a stage demo you do not need Supabase or Twilio at all. Set the environment variable `BUCKL_MODE=standalone` on the Render service, with the Supabase and Twilio variables **empty** (it refuses to start otherwise). The server then answers sign-in itself, keeps data in memory, rebuilds a ready-made demo account on every start, **signs the app in as that account automatically**, and **simulates** emergency texts (printed in the log, never sent). Anyone who can open the address gets that demo account, so it is for demonstrations only: keep real data out and shut it down afterwards. See [DEMO_SCRIPT.md](DEMO_SCRIPT.md).
 
 ## Demo mode and demo data
 

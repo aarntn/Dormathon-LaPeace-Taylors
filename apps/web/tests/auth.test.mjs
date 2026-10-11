@@ -51,3 +51,14 @@ test('renaming updates the signed-in name and is saved with the session', () => 
   const empty = new AuthClient({ storage: { getItem: () => null, setItem() {}, removeItem() {} }, fetcher: async () => Response.json({}) });
   assert.doesNotThrow(() => empty.rename('Nobody'));
 });
+
+test('adopting a session from the demo server signs the app in and saves it', () => {
+  const values = new Map(); const disk = { getItem: key => values.get(key) ?? null, setItem: (key, value) => values.set(key, value), removeItem: key => values.delete(key) };
+  const auth = new AuthClient({ storage: disk, now: () => 1000 * 1000, fetcher: async () => Response.json({}) }); let notified = 0; auth.subscribe(() => notified++);
+  assert.equal(auth.getSnapshot(), null);
+  auth.adopt({ access_token: 'a', refresh_token: 'r', expires_in: 3600, user: { id: 'demo', user_metadata: { name: 'Aaron' } } });
+  assert.equal(auth.getSnapshot().user.user_metadata.name, 'Aaron');
+  assert.equal(auth.getSnapshot().expires_at, 1000 + 3600);
+  assert.equal(JSON.parse(values.get('buckl.session.v1')).access_token, 'a');
+  assert.equal(notified, 1);
+});
