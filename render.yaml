@@ -1,18 +1,22 @@
+# One-click demo of the whole BUCKL app on Render, with NO accounts or keys to set up.
+#
+# BUCKL_MODE=standalone runs the standalone demo server (backend/app/standalone.py): the app signs itself in
+# as a ready-made demo driver, data lives in memory (it resets on restart), and emergency texts are
+# SIMULATED (printed in the log, never sent). It refuses to start if Supabase or Twilio settings are present,
+# so do not add them to this service. Anyone who can open the address can use the demo account, so keep real
+# data out and suspend or delete the service after the presentation.
+#
+# For the real deployment (Supabase accounts, Twilio texts) use render.supabase.yaml instead.
 services:
   - type: web
     name: buckl-demo
     runtime: docker
     dockerfilePath: ./backend/Dockerfile
     dockerContext: .
+    plan: free
     healthCheckPath: /health
     envVars:
-      - key: SUPABASE_URL
-        sync: false
-      - key: SUPABASE_PUBLISHABLE_KEY
-        sync: false
-      # Presentation mode: scripted dashboard and start-up results chosen from the hidden demo panel.
-      # Every such result is labelled a demo. Remove this line (or set it to 0) for anything but a demo.
-      - key: DEMO_MODE
-        value: "1"
+      - key: BUCKL_MODE
+        value: standalone
       - key: PYTHONUNBUFFERED
         value: "1"

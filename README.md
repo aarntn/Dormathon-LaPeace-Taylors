@@ -145,7 +145,7 @@ The browser checks drive an installed Chrome or Edge against a loopback copy of 
 
 ## Deploy
 
-One Docker image builds the web app and serves it from FastAPI, so the app and `/api` share one HTTPS address. Follow [docs/DEPLOY_DEMO.md](docs/DEPLOY_DEMO.md). It needs a Supabase project (run `backend/schema.sql`, then `backend/migrations/002_update.sql`) and, only if you want real texts, Twilio credentials. **Do not configure Twilio during a demo unless you have a test recipient.**
+One Docker image builds the web app and serves it from FastAPI, so the app and `/api` share one HTTPS address. **For a presentation, deploy the standalone demo with no accounts to set up:** in Render choose New, Blueprint and pick this branch, and `render.yaml` does the rest (the app signs itself in as a demo driver). For real accounts use `render.supabase.yaml`. Follow [docs/DEPLOY_DEMO.md](docs/DEPLOY_DEMO.md). The real deployment needs a Supabase project (run `backend/schema.sql`, then `backend/migrations/002_update.sql`) and, only if you want real texts, Twilio credentials. **Do not configure Twilio during a demo unless you have a test recipient.**
 
 ## Privacy rules the code follows
 

@@ -37,7 +37,7 @@ Then skip to [1.3](#13-rehearse-on-the-demo-phone). The rest of this section is 
 
 ### 1.1 Path B: turn demo mode on
 
-On the deployed service, set the environment variable **`DEMO_MODE=1`** (it is already in `render.yaml`). Open `<service url>/health` and check it says `"demo_mode": true`.
+On the deployed service, set the environment variable **`DEMO_MODE=1`** (it is already in `render.supabase.yaml`). Open `<service url>/health` and check it says `"demo_mode": true`.
 
 Demo mode lets the hidden panel choose what the next dashboard scan and start-up check return. Every such result is labelled a demo in the app. With demo mode **off**, a dashboard photo finds nothing and shows "Couldn't read that light", because no dashboard model is connected. Turn demo mode off for anything that is not a presentation.
 
